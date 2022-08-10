@@ -1,0 +1,4 @@
+output:
+  html_document:
+    css: static/markdown.css
+name: "advanced-analytics-web-accelerator"

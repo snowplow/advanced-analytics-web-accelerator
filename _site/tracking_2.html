@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Tracking out of the box events</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="static/markdown.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<div class="topnav">
+    <h1>Advanced Analytics for Web</h1>
+</div>
+<div class="lessonPage">
+    <div class="lessonsNav">
+        <a href="index.html">
+            <h3>Overview</h3>
+        </a>
+        <h3>Track</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Install JS Tracker</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Basic Events</a>
+        <a href="tracking_3.html"><span class="lessonsNumber">3</span>Tracking Design</a>
+        <a href="tracking_4.html"><span class="lessonsNumber">4</span>Custom Events</a>
+        <a href="tracking_5.html"><span class="lessonsNumber">5</span>Testing</a>
+        <h3>Enrich</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Enrich 1</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Enrich 2</a>
+        <h3>Model</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Model 1</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Model 2</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">3</span>Model 3</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">4</span>Model 4</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">5</span>Model 5</a>
+        <h3>Visualise</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Visualise 1</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Visualise 2</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">3</span>Visualise 3</a>
+    </div>
+    <div class="lessonContent">
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Tracking out of the box events</h1>
+
+</div>
+
+
+<p>A number of tracking events are available out of the box. These
+include, but aren’t limited to:</p>
+<ul>
+<li>Page views</li>
+<li>Heartbeats (Page Pings)</li>
+<li>Link clicks</li>
+<li>HTML form actions</li>
+</ul>
+<p>In this section, we will implement all 4 of these built-in
+events.</p>
+<hr />
+<div id="step-1-enable-activity-tracking" class="section level3">
+<h3><strong>Step 1:</strong> Enable Activity Tracking</h3>
+<p>First we will enable activity tracking to collect ‘page ping’ events.
+This will allow us to monitor engagement and record how a user digests
+content on the page over time.</p>
+<ul>
+<li><code>minimumVisitLength</code> : The number of seconds from page
+load before the first page ping occurs</li>
+<li><code>heartbeatDelay</code>: The number of seconds between page
+pings</li>
+</ul>
+<p>Add the snippet to your <code>script</code> tag below the tracker
+instance.</p>
+<pre class="javascript"><code>snowplow(&#39;enableActivityTracking&#39;, { 
+  minimumVisitLength: 5, 
+  heartbeatDelay: 10 
+});</code></pre>
+<p><strong>Should we encourage call back function to limit number of
+events sent with enableActivityTrackingCallback?</strong></p>
+<hr />
+</div>
+<div id="step-2-track-page-view" class="section level3">
+<h3><strong>Step 2:</strong> Track Page View</h3>
+<p>To track a page view, simply call `trackPageView’.</p>
+<pre class="javascript"><code>snowplow(&#39;trackPageView&#39;)</code></pre>
+<p><strong>Note:</strong> <code>trackPageView</code> should go after the
+page ping event in step 1</p>
+<hr />
+</div>
+<div id="step-3-link-click-tracking" class="section level3">
+<h3><strong>Step 3:</strong> Link Click Tracking</h3>
+<p>To enable link click tracking, call the
+<code>enableLinkClickTracking</code> method.</p>
+<pre class="javascript"><code>snowplow(&#39;enableLinkClickTracking&#39;);</code></pre>
+<p>You only need to call the method once to track all the links on a
+page. This will capture the links <code>href</code> by default as well
+as the <code>id</code>, <code>class</code> and <code>target</code> of
+the link.</p>
+<p><strong>Add more complex link tracking?</strong></p>
+<hr />
+</div>
+<div id="step-4-html-form-tracking" class="section level3">
+<h3><strong>Step 4:</strong> HTML Form Tracking</h3>
+<p>To enable form tracking, simply call the
+<code>enableFormTracking</code> method.</p>
+<pre class="javascript"><code>snowplow(&#39;enableFormTracking&#39;);</code></pre>
+<p>This will track an event when a user focuses, changes or submits a
+form.</p>
+</div>
+<div id="next---tracking-design" class="section level3">
+<h3><a href="tracking_3.html">NEXT -&gt; Tracking Design</a></h3>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

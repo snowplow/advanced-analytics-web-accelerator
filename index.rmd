@@ -1,0 +1,26 @@
+---
+title: "Advanced Analytics for Web"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [navbar.html, navbar_left.html]
+
+---
+
+Welcome to the Advanced Analytics for Web accelerator. In this guide you'll learn how to set up tracking and enrichment as well as how to model and visualise your data. 
+
+Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
+
+### What you'll learn
+- **Track-** Setup and deploy tracking to your web app
+- **Enrich-** Add enrichments to your data
+- **Model-** Configure the snowplow-web data model and run it against your Snowflake warehouse
+- **Visualise-** Visualise your output data in Looker BI 
+
+### Prerequisites
+- Snowplow Pipeline
+- Web app to implement tracking on
+
+
+
