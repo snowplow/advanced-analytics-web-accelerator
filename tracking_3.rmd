@@ -1,0 +1,35 @@
+---
+title: "Designing Custom Tracking"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [navbar.html, navbar_left.html]
+
+---
+
+We now have some basic event tracking setup, however to get the most out of Snowplow we should define custom events that fit your use cases more specifically. 
+
+To do this we will use the `trackSelfDescribingEvent` method alongside a custom JSON schema uploaded to your schema repository.
+
+### Defining a schema
+The schema will define the structure of the event data that we collect. The collected data is validated against the schema, which means only clean and consistent data will reach your data warehouse.
+
+We will define 3 schemas to track custom events
+
+```javascript
+event: {
+    schema: 'iglu:com.acme_company/viewed_product/jsonschema/1-0-0',
+    data: {
+        productId: 'ASO01043',
+        category: 'Dresses',
+        brand: 'ACME',
+        returning: true,
+        price: 49.95,
+        sizes: ['xs', 's', 'l', 'xl', 'xxl'],
+        availableSince: new Date(2013,3,7)
+    }
+}
+```
+
+### [NEXT -> Tracking Custom Events](tracking_4.html)

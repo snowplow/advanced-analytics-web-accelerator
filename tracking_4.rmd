@@ -1,0 +1,10 @@
+---
+title: "Tracking Custom Events"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [navbar.html, navbar_left.html]
+
+---
+
