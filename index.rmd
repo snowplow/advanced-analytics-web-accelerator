@@ -8,19 +8,47 @@ output:
 
 ---
 
-Welcome to the Advanced Analytics for Web accelerator. In this guide you'll learn how to set up tracking and enrichment as well as how to model and visualise your data. 
+```{r setup, include=FALSE}
+library(DiagrammeR)
+```
+
+Welcome to the Advanced Analytics for Web accelerator. In this guide you'll learn how to set up tracking and enrichment as well as how to model and visualise your data.
 
 Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
 
+### Who is this guide for?
+Data practicioners with or without Javascript developer experience who would like to set up tracking on their company's website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers' behavioural data as quick as possible.
+
 ### What you'll learn
-- **Track-** Setup and deploy tracking to your web app
+- **Track-** Setup and deploy tracking to your web app using Javascript
 - **Enrich-** Add enrichments to your data
 - **Model-** Configure the snowplow-web data model and run it against your Snowflake warehouse
-- **Visualise-** Visualise your output data in Looker BI 
+- **Visualise-** Visualise your output data in Looker BI
 
 ### Prerequisites
 - Snowplow Pipeline
 - Web app to implement tracking on
+- Familiarity with dbt
 
+### Implementation timeline:
 
+```{r diagram}
+DiagrammeR::mermaid("
+gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat %H:%M
+    title       Estimated total working hours
 
+    section 1. Track
+    8h          :active, tracking, 2022-09-01, 8h
+
+    section 2. Enrich
+    4h            :enrich, after tracking, 4h
+
+    section 3. Model
+    2h          :model, after enrich, 2h
+
+    section 4. Visualise
+    5h            :visaualise, after model, 5h
+")
+```

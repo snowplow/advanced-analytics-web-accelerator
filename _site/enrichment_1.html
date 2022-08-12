@@ -11,7 +11,7 @@
 
 
 
-<title>Tracking Custom Events</title>
+<title>Enrichment</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -192,12 +192,84 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Tracking Custom Events</h1>
+<h1 class="title toc-ignore">Enrichment</h1>
 
 </div>
 
 
-
+<p><img src="enrichment.png" /></p>
+<p>To enrich your data we recommend enabling the below enrichments
+within your Console:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Enrichment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Campaign attribution</td>
+<td>The original version of the campaign attribution enrichment lets you
+choose which querystring parameters will be used to generate the
+marketing campaign fields mkt_medium, mkt_source, mkt_term, mkt_content,
+and mkt_campaign. If you do not enable the campaign_attribution
+enrichment, those fields will not be populated.</td>
+</tr>
+<tr class="even">
+<td>Cookie extractor</td>
+<td>This community-contributed enrichment lets you specify cookies that
+you want to extract if found; each extracted cookie will end up a single
+derived context in the JSON Schema
+org.ietf/http_cookie/jsonschema/1-0-0.</td>
+</tr>
+<tr class="odd">
+<td>Event fingerprint</td>
+<td>This enrichment generates a fingerprint for the event using a hash
+of client-set fields. This is helpful when deduplicating events.</td>
+</tr>
+<tr class="even">
+<td>IAB</td>
+<td>The IAB Spiders &amp; Robots Enrichment uses the IAB/ABC
+International Spiders and Bots List to determine whether an event was
+produced by a user or a robot/spider based on its’ IP address and user
+agent.</td>
+</tr>
+<tr class="odd">
+<td>IP lookups</td>
+<td>This enrichment uses MaxMind databases to look up useful data based
+on a user’s IP address. Please change the ‘uri’ attribute to point to
+where your MaxMind database is hosted. See the documentation for more
+details.</td>
+</tr>
+<tr class="even">
+<td>PII Pseudonymization</td>
+<td>The PII Enrichment provides capabilities for Snowplow operators to
+better protect the privacy rights of data subjects by psuedoanonymizing
+collected data.</td>
+</tr>
+<tr class="odd">
+<td>Referer parser</td>
+<td>The referer parser enrichment uses the Snowplow referer-parser to
+extract attribution data from referer URLs.</td>
+</tr>
+<tr class="even">
+<td>UA parser</td>
+<td>This enrichment uses the ua-parser library to parse the useragent
+and attach a ua_parser_context to each event.</td>
+</tr>
+<tr class="odd">
+<td>YAUAA</td>
+<td>This enrichment uses YAUAA API to parse and analyze the user agent
+string of an event and extract as many relevant attributes as possible,
+like for example the device class (Phone, Tablet, etc.).</td>
+</tr>
+</tbody>
+</table>
 
 
 

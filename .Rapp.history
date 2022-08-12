@@ -1,0 +1,11 @@
+setwd("~/Desktop/Repos/advanced-analytics-web-accelerator")
+rmarkdown::render_site()
+rmarkdown::pandoc_available
+install.packages("rmarkdown")
+rmarkdown::render_site()
+setwd("~/Desktop/Repos/advanced-analytics-web-accelerator/_site")
+rmarkdown::render_site()
+setwd("~/Desktop/Repos/advanced-analytics-web-accelerator")
+rmarkdown::render_site()
+Sys.getenv("RSTUDIO_PANDOC")
+rmarkdown::render_site()
