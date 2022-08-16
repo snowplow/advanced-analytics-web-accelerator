@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
+#mermaidChart0 {
+    height: auto !important;
+}
+
+.DiagrammeR {
+    height: auto !important;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
@@ -662,6 +670,16 @@ table.table td a:only-child:active {
     display: -ms-flexbox;
 }
 
+.lessonsNav {
+    position: fixed;
+    padding-top: 30px;
+}
+
+.lessonContent {
+    margin-left: 290px;
+    padding-top: 50px
+}
+
 .lessonPage .lessonsNav {
     margin-top: 23px;
     min-width: 290px;
@@ -691,6 +709,12 @@ table.table td a:only-child:active {
     border-radius: 50%;
     padding: 6px 10px;
     margin-right: 10px;
+}
+
+.topnav {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
 }
 
 

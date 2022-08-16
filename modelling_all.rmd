@@ -1,0 +1,98 @@
+---
+title: "Model your data with dbt"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [includes/navbar.html, includes/navbar_left.html]
+
+---
+
+In this section you will configure your dbt project and learn how to run the snowplow-web package to model your web behavioural data.
+
+## Prerequisites
+- dbt must be installed
+- a new dbt project created and configured
+- a dataset of web events from the Snowplow Javascript tracker must be available in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)
+
+## Steps:
+
+1. Install the snowplow-web dbt package
+2. Change the default variables
+3. Copy the selectors.yml into your project
+4. Run the model
+5. Check the output
+
+***
+
+### **Step 1:** Install the snowplow-web package
+Find out which is the latest snowplow-web package from dbt's official website: https://hub.getdbt.com/snowplow/snowplow_web/latest/
+
+1.1 Add the snowplow-web package to your packages.yml file:
+
+```yml
+packages:
+  - package: snowplow/snowplow_web
+    version: [">=0.9.0", "<0.10.0"]
+```
+1.2 Run `dbt deps` to install the package.
+For more information refer to dbt’s package hub.
+
+***
+
+### **Step 2:** Change the default variables
+
+Theoretically, what you would need to do is go to `your_dbt_project/dbt_packages/snowplow_web/dbt_project.yml` file and check each default variable under the `vars` section to see if you need to make any changes.
+Any time a change is required, add that variable to your project's dbt_project.yml file to overwrite the default value due to precenence.
+For an in-depth guide for this section please refer to the main [`documentation site`][snowplow-web-documentation].
+
+However, for sake of simplicity we assume you followed the precious tracking and enrichment steps and you have:
+
+- data in the atomic.events table
+- enabled iab, ua and yauaa contexts / enrichments for your Snowplow pipeline
+
+Let's modify the most relevant variables at this stage (don't worry about the rest for now, you can fine-tune the model at a later stage once you become a more advanced user, if necessary).
+Add the following vars section to your dbt_project.yml file:
+
+```yml
+vars:
+  snowplow_web:
+    snowplow__start_date: '2022-09-01'
+    snowplow__backfill_limit_days: 1
+    snowplow__enable_iab: true
+    snowplow__enable_ua: true
+    snowplow__enable_yauaa: true
+```
+Change the values to fit your needs. Here is a quick guide to understand what they mean:
+
+> `snowplow__start_date`:
+The date of the first tracked event inside your atomic.events table you would like to model. By default '2020-01-01' is set but you should overwrite it according your dataset.
+> `snowplow__backfill_limit_days`:Default 30. The maximum numbers of days of new data to be processed since the latest event processed. I would suggest to change this to 1 while you are working in your dev environment so that you will be able to test how your incremental runs work with your supposedly limited dataset once you have a a couple of days worth of data in your atomic.events table.
+> `snowplow__enable_iab`: Set this to true if have the iab context enabled during enrichment
+> `snowplow__enable_ua`: Set this to true if you have the ua parser enabled during enrichment
+> `snowplow__enable_yauaa`: Set this to true if you have the yauaa context enabled during enrichment
+
+***
+
+### **Step 3:** Copy the selectors.yml into your project
+
+The web package provides a suite of suggested selectors, which will help run and test the models. These are defined in the [`selectors.yml file`][selectors-yml-file] within the package, however in order to use these model selections you will need to copy this file into your own dbt project directory. This is a top-level file and therefore should sit alongside your `dbt_project.yml` file.
+
+***
+
+### **Step 4:** Run the model
+
+Execute the following either through your CLI or from within dbt Cloud
+```dbt run --selector snowplow_web```
+This should take a couple of minutes maximum.
+
+***
+
+### **Step 5:** Check the output
+Now head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model's output. You should be able to see three new schemas created:
+1. your_custom_schema_name_*scratch*: drop and recompute models that aid the incremental run
+2. your_custom_schema_name_*derived*: main output models you can use in your downstream models and reporting
+3. your_custom_schema_name_*manifest*: tables that help the integrity and core incremental logic of the model
+Check out the `database` section of the [`documentation site`][snowplow-web-documentation] for a breakdown of what the output should look like.
+[selectors-yml-file]: https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml
+[snowplow-web-documentation]: https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web

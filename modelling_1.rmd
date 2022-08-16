@@ -1,0 +1,29 @@
+---
+title: "Install Snowplow Web dbt Package"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [includes/navbar.html, includes/navbar_left.html]
+
+---
+
+The [snowplow-web dbt package](https://hub.getdbt.com/snowplow/snowplow_web/latest/) transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users. Modelling the data makes it easier to digest and derive business value from the Snowplow data.
+
+***
+
+### **Step 1:** Add snowplow-web package
+Add the snowplow-web package to your packages.yml file. The latest version can be found [here](https://hub.getdbt.com/snowplow/snowplow_web/latest/)
+
+```yml
+packages:
+  - package: snowplow/snowplow_web
+    version: 0.9.0
+```
+
+### **Step 2:** Install the package
+Run `dbt deps` to install the package.
+
+***
+
+### [NEXT -> Setup Snowplow Web dbt Package](modelling_2.html)
