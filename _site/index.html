@@ -32,6 +32,14 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/d3-3.3.8/d3.min.js"></script>
+<script src="site_libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="site_libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="site_libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="site_libs/chromatography-0.1/chromatography.js"></script>
+<script src="site_libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -173,19 +181,16 @@ pre code {
         </a>
         <h3>Track</h3>
         <a href="tracking_1.html"><span class="lessonsNumber">1</span>Install JS Tracker</a>
-        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Basic Events</a>
-        <a href="tracking_3.html"><span class="lessonsNumber">3</span>Tracking Design</a>
-        <a href="tracking_4.html"><span class="lessonsNumber">4</span>Custom Events</a>
-        <a href="tracking_5.html"><span class="lessonsNumber">5</span>Testing</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Tracking Events</a>
+        <!-- <a href="tracking_3.html"><span class="lessonsNumber">3</span><strike>Tracking Design</strike></a> -->
+        <a href="tracking_4.html"><span class="lessonsNumber">3</span>Adding Context</a>
+        <a href="tracking_5.html"><span class="lessonsNumber">4</span>Testing</a>
         <h3>Enrich</h3>
-        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Enrich 1</a>
-        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Enrich 2</a>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Enable Enrichments</a>
         <h3>Model</h3>
-        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Model 1</a>
-        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Model 2</a>
-        <a href="tracking_2.html"><span class="lessonsNumber">3</span>Model 3</a>
-        <a href="tracking_2.html"><span class="lessonsNumber">4</span>Model 4</a>
-        <a href="tracking_2.html"><span class="lessonsNumber">5</span>Model 5</a>
+        <a href="modelling_1.html"><span class="lessonsNumber">1</span>Install dbt package</a>
+        <a href="modelling_2.html"><span class="lessonsNumber">2</span>Setup Snowplow Package</a>
+        <a href="modelling_3.html"><span class="lessonsNumber">3</span>Testing</a>
         <h3>Visualise</h3>
         <a href="tracking_1.html"><span class="lessonsNumber">1</span>Visualise 1</a>
         <a href="tracking_2.html"><span class="lessonsNumber">2</span>Visualise 2</a>
@@ -204,10 +209,20 @@ pre code {
 
 <p>Welcome to the Advanced Analytics for Web accelerator. In this guide
 you’ll learn how to set up tracking and enrichment as well as how to
-model and visualise your data.</p>
+model and visualise Snowplow data.</p>
 <p>Once finished, you will be able to build a deeper understanding of
 customer behavior on your website and use your data to influence
 business decisions.</p>
+<hr />
+<div id="who-is-this-guide-for" class="section level3">
+<h3>Who is this guide for?</h3>
+<p>Data practicioners with or without Javascript developer experience
+who would like to set up tracking on their company’s website and learn
+how to use the out of the box snowplow web data modelling so that they
+can gain insight of their customers’ behavioural data as quick as
+possible.</p>
+<hr />
+</div>
 <div id="what-youll-learn" class="section level3">
 <h3>What you’ll learn</h3>
 <ul>
@@ -216,15 +231,25 @@ app</li>
 <li><strong>Enrich-</strong> Add enrichments to your data</li>
 <li><strong>Model-</strong> Configure the snowplow-web data model and
 run it against your Snowflake warehouse</li>
-<li><strong>Visualise-</strong> Visualise your output data in Looker
-BI</li>
+<li><strong>Visualise-</strong> Visualise your output data with
+Streamlit</li>
 </ul>
+<div id="htmlwidget-d808cc864475120e2840" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d808cc864475120e2840">{"x":{"diagram":"\n                gantt \n                dateFormat H HH\n                section 1. Track\n                8h          :tracking, 0, 8h\n                section 2. Enrich\n                4h            :enrich, after tracking, 4h\n                section 3. Model\n                2h          :model, after enrich, 2h\n                section 4. Visualise\n                5h            :visaualise, after model, 5h\n                "},"evals":[],"jsHooks":[]}</script>
+<hr />
 </div>
 <div id="prerequisites" class="section level3">
 <h3>Prerequisites</h3>
 <ul>
 <li>Snowplow Pipeline</li>
 <li>Web app to implement tracking on</li>
+<li>dbt installed
+<ul>
+<li>a new dbt project created and configured</li>
+<li>a dataset of web events from the Snowplow Javascript tracker in your
+data warehouse (Snowflake will be used for illustration but the package
+also supports BigQuery, Databricks, Postgres and Redshift)</li>
+</ul></li>
 </ul>
 </div>
 

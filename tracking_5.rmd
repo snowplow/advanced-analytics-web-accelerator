@@ -1,20 +1,21 @@
 ---
-title: "Testing"
+title: "Testing using Snowplow Mini"
 output:
   html_document:
     toc_float: false
     includes:
-      before_body: [navbar.html, navbar_left.html]
+      before_body: [includes/navbar.html, includes/navbar_left.html]
 
 ---
 
-Test using Snowplow Mini/Micro
+**Test using Snowplow Mini or Micro??**
 
-The Snowplow Chrome Extension can be used to ensure the event was emitted correctly
-from a browser (the extension parses out the http request), but the browser extension
-does not check that the event was processed (ie validated) correctly. To get the full
-picture, tracking must be QA’d using the Snowplow Mini, not just by simply checking in the
-browser.
+The [Snowplow Chrome Extension](https://chrome.google.com/webstore/detail/snowplow-inspector/maplkdomeamdlngconidoefjpogkmljm?hl=en) can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly. 
+
+![](media/chrome_extension.png)
+
+To get the full picture, tracking must be QA’d using the Snowplow Mini, not just by simply checking in the browser.
+
 Note: both events and context entities must be tested thoroughly - if a context entity
 that is appended to an event fails validation, the whole event will fail validation.
 
@@ -26,3 +27,7 @@ Data Structures > Testing Details.
 mode etc).
 3. The processed events can then be viewed in Kibana as shown below. The “bad”
 index should be checked too, to ensure that no events are landing there.
+
+***
+
+### [NEXT -> Enable Recommended Enrichments](enrich_1.html)

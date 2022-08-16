@@ -4,7 +4,7 @@ output:
   html_document:
     toc_float: false
     includes:
-      before_body: [navbar.html, navbar_left.html]
+      before_body: [includes/navbar.html, includes/navbar_left.html]
 
 ---
 

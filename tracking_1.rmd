@@ -4,7 +4,7 @@ output:
   html_document:
     toc_float: false
     includes:
-      before_body: [navbar.html ,navbar_left.html]
+      before_body: [includes/navbar.html, includes/navbar_left.html]
 
 ---
 
@@ -19,7 +19,7 @@ Add the sp.js file to your project directory. The latest version can be found [h
 
 *** 
 
-### **Step 2:** Add JS snippet to site
+### **Step 2:** Add JS snippet
 Add the below snippet to all of the pages you would like to track. **Make sure to update the link to the sp.js file**
 
 Typically this will be placed into the `<head>` element of your page or in a similar, suitable, location if using a Single Page Application framework.
@@ -42,31 +42,24 @@ Call `newTracker` with the following arguments. This creates an instance of a ba
 window.snowplow('newTracker', 'sp', '{{Url for Collector}}')
 ```
 
+**point the collector to mini/micro collector for testing**
+
 In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow's more advanced features.
 
 - Optional Settings (JSON):
   - `appId`: Identify events that occur on different applications
   - `platform`: Identify the platform the event occurred on, in this case `web`
   - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recomended**
-- Contexts (JSON):
-  - `webPage`: True by default
-  -  `session`: Adds client session context entity to events
-  - `geolocation`: 
-
-You can view more optional arguments for `contexts` [here](https://docs.snowplowanalytics.com/docs/collecting-data/collecting-from-own-applications/javascript-trackers/javascript-tracker/javascript-tracker-v3/tracker-setup/initialization-options/)
 
 ```javascript 
 window.snowplow('newTracker', 'sp', '{{Url for Collector}}', { 
     appId: 'appId',
     platform: 'web',
     cookieSameSite: 'Lax',
-    contexts: {
-      webPage: true,
-      session: true,
-      geolocation: true
-    }
 });
 ```
+
+***
 
 Now you have a tracker set up, you can begin to implement event tracking in your web app.
 

@@ -11,7 +11,7 @@
 
 
 
-<title>Tracking out of the box events</title>
+<title>Testing</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -194,81 +194,31 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Tracking out of the box events</h1>
+<h1 class="title toc-ignore">Testing</h1>
 
 </div>
 
 
-<p>The trackers create data on user <strong>actions</strong> at a
-specific point in time. For example:</p>
-<ul>
-<li>Loading a web page</li>
-<li>Clicking a link</li>
-<li>Submitting a form</li>
-</ul>
-<p>A number of tracking events are available out of the box. These
-include, but aren’t limited to:</p>
-<ul>
-<li>Page views</li>
-<li>Heartbeats (Page Pings)</li>
-<li>Link clicks</li>
-<li>HTML form actions</li>
-</ul>
-<p>In this section, we will implement all 4 of these built-in
-events.</p>
-<hr />
-<div id="step-1-enable-activity-tracking" class="section level3">
-<h3><strong>Step 1:</strong> Enable Activity Tracking</h3>
-<p>First we will enable activity tracking to collect ‘page ping’ events.
-This will allow us to monitor engagement and record how a user digests
-content on the page over time.</p>
-<ul>
-<li><code>minimumVisitLength</code> : The number of seconds from page
-load before the first page ping occurs</li>
-<li><code>heartbeatDelay</code>: The number of seconds between page
-pings</li>
-</ul>
-<p>Add the snippet to your <code>script</code> tag below the tracker
-instance.</p>
-<pre class="javascript"><code>snowplow(&#39;enableActivityTracking&#39;, { 
-  minimumVisitLength: 5, 
-  heartbeatDelay: 10 
-});</code></pre>
-<p><strong>Should we encourage call back function to limit number of
-events sent with enableActivityTrackingCallback?</strong></p>
-<hr />
-</div>
-<div id="step-2-track-page-view" class="section level3">
-<h3><strong>Step 2:</strong> Track Page View</h3>
-<p>To track a page view, simply call `trackPageView’.</p>
-<pre class="javascript"><code>snowplow(&#39;trackPageView&#39;)</code></pre>
-<p><strong>Note:</strong> <code>trackPageView</code> should go after the
-page ping event in step 1</p>
-<hr />
-</div>
-<div id="step-3-link-click-tracking" class="section level3">
-<h3><strong>Step 3:</strong> Link Click Tracking</h3>
-<p>To enable link click tracking, call the
-<code>enableLinkClickTracking</code> method.</p>
-<pre class="javascript"><code>snowplow(&#39;enableLinkClickTracking&#39;);</code></pre>
-<p>You only need to call the method once to track all the links on a
-page. This will capture the links <code>href</code> by default as well
-as the <code>id</code>, <code>class</code> and <code>target</code> of
-the link.</p>
-<p><strong>Add more complex link tracking?</strong></p>
-<hr />
-</div>
-<div id="step-4-html-form-tracking" class="section level3">
-<h3><strong>Step 4:</strong> HTML Form Tracking</h3>
-<p>To enable form tracking, simply call the
-<code>enableFormTracking</code> method.</p>
-<pre class="javascript"><code>snowplow(&#39;enableFormTracking&#39;);</code></pre>
-<p>This will track an event when a user focuses, changes or submits a
-form.</p>
-<hr />
-</div>
-<div id="next---adding-context" class="section level3">
-<h3><a href="tracking_4.html">NEXT -&gt; Adding Context</a></h3>
+<p>Data should now be loaded into your warehouse, next we will check the
+models output.</p>
+<div id="step-1-check-the-output" class="section level3">
+<h3><strong>Step 1:</strong> Check the output</h3>
+<p>Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to
+check the model’s output. You should be able to see three new schemas
+created: 1. your_custom_schema_name_<em>scratch</em>: drop and recompute
+models that aid the incremental run 2.
+your_custom_schema_name_<em>derived</em>: main output models you can use
+in your downstream models and reporting 3.
+your_custom_schema_name_<em>manifest</em>: tables that help the
+integrity and core incremental logic of the model Check out the
+<code>database</code> section of the
+[<code>documentation site</code>][snowplow-web-documentation] for a
+breakdown of what the output should look like. [selectors-yml-file]: <a
+href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml"
+class="uri">https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml</a>
+[snowplow-web-documentation]: <a
+href="https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web"
+class="uri">https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web</a></p>
 </div>
 
 

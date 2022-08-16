@@ -11,7 +11,7 @@
 
 
 
-<title>Tracking</title>
+<title>Install Snowplow Web dbt Package</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -163,69 +163,66 @@ pre code {
 
 
 
+<div class="topnav">
+    <h1>Advanced Analytics for Web</h1>
+</div>
+<div class="lessonPage">
+    <div class="lessonsNav">
+        <a href="index.html">
+            <h3>Overview</h3>
+        </a>
+        <h3>Track</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Install JS Tracker</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Tracking Events</a>
+        <!-- <a href="tracking_3.html"><span class="lessonsNumber">3</span><strike>Tracking Design</strike></a> -->
+        <a href="tracking_4.html"><span class="lessonsNumber">3</span>Adding Context</a>
+        <a href="tracking_5.html"><span class="lessonsNumber">4</span>Testing</a>
+        <h3>Enrich</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Enable Enrichments</a>
+        <h3>Model</h3>
+        <a href="modelling_1.html"><span class="lessonsNumber">1</span>Install dbt package</a>
+        <a href="modelling_2.html"><span class="lessonsNumber">2</span>Setup Snowplow Package</a>
+        <a href="modelling_3.html"><span class="lessonsNumber">3</span>Testing</a>
+        <h3>Visualise</h3>
+        <a href="tracking_1.html"><span class="lessonsNumber">1</span>Visualise 1</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">2</span>Visualise 2</a>
+        <a href="tracking_2.html"><span class="lessonsNumber">3</span>Visualise 3</a>
+    </div>
+    <div class="lessonContent">
 
 <div id="header">
 
 
 
+<h1 class="title toc-ignore">Install Snowplow Web dbt Package</h1>
 
 </div>
 
 
-<div id="implement-tracking-in-your-js-project" class="section level1">
-<h1>Implement tracking in your JS project</h1>
-<div id="prerequisites" class="section level3">
-<h3>Prerequisites</h3>
-<ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-</ul>
+<p>The <a
+href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">snowplow-web
+dbt package</a> transforms and aggregates the raw web event data
+collected from the Snowplow JavaScript tracker into a set of derived
+tables: page views, sessions and users. Modelling the data makes it
+easier to digest and derive business value from the Snowplow data.</p>
+<hr />
+<div id="step-1-add-snowplow-web-package" class="section level3">
+<h3><strong>Step 1:</strong> Add snowplow-web package</h3>
+<p>Add the snowplow-web package to your packages.yml file. The latest
+version can be found <a
+href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">here</a></p>
+<pre class="yml"><code>packages:
+  - package: snowplow/snowplow_web
+    version: 0.9.0</code></pre>
 </div>
-<div id="step-1-install-and-initialise-the-js-browser-tracker"
-class="section level2">
-<h2><strong>Step 1: </strong> Install and initialise the JS browser
-tracker</h2>
-<pre class="javascript"><code>import { newTracker, trackPageView } from &quot;@snowplow/browser-tracker&quot;
-
-newTracker(&#39;sp1&#39;, &#39;{{collector_url}}&#39;, {
-    appId: &#39;my-app-id&#39;,
-    plugins: [ ],
-});
-
-trackPageView();</code></pre>
+<div id="step-2-install-the-package" class="section level3">
+<h3><strong>Step 2:</strong> Install the package</h3>
+<p>Run <code>dbt deps</code> to install the package.</p>
+<hr />
 </div>
-<div
-id="step-1-download-the-javascript-tracker-code-snippets-and-add-to-site"
-class="section level2">
-<h2><strong>Step 1: </strong> Download the Javascript Tracker Code
-Snippets!? and add to site</h2>
-<pre class="javascript"><code>(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, &quot;script&quot;, &quot;{{Link to sp.js file}}&quot;, &quot;snowplow&quot;));
-
-window.snowplow(&#39;newTracker&#39;, &#39;sp&#39;, &#39;{{Url for Collector}}&#39;, { // 
-    appId: &#39;demo-app&#39;
-});
-
-window.snowplow(&#39;trackPageView&#39;);</code></pre>
-<p>npm, yarn and pnpm vs dl <a
-href="https://github.com/snowplow/snowplow-javascript-tracker/releases">sp.js</a>
-do we have a preference?</p>
-</div>
-<div id="step-2-tracking-out-of-the-box-events" class="section level2">
-<h2><strong>Step 2: </strong> Tracking out of the box events</h2>
-<ul>
-<li>Scope and initialisation options</li>
-<li>Page views</li>
-<li>Page pings</li>
-</ul>
-</div>
-<div id="step-3-tracking-custom-events" class="section level2">
-<h2><strong>Step 3: </strong> Tracking custom events</h2>
-</div>
-<div id="step-4-tracking-strategy-for-advanced-web-analytics"
-class="section level2">
-<h2><strong>Step 4: </strong> Tracking (strategy?) for advanced web
-analytics</h2>
-</div>
+<div id="next---setup-snowplow-web-dbt-package" class="section level3">
+<h3><a href="modelling_2.html">NEXT -&gt; Setup Snowplow Web dbt
+Package</a></h3>
 </div>
 
 
