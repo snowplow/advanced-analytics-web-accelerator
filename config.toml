@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://snowplow-incubator.github.io/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 

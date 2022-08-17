@@ -1,97 +1,97 @@
 [
 {
-	"uri": "/modelling/modelling_1/",
+	"uri": "https://snowplow-incubator.github.io/modelling/modelling_1/",
 	"title": "Install Snowplow dbt Package",
 	"tags": [],
 	"description": "",
 	"content": "Step 1: Add snowplow-web package Add the snowplow-web package to your packages.yml file. The latest version can be found here\npackages: - package: snowplow/snowplow_web version: 0.9.0 Step 2: Install the package Install the package by running:\ndbt deps "
 },
 {
-	"uri": "/tracking/tracking_1/",
+	"uri": "https://snowplow-incubator.github.io/tracking/tracking_1/",
 	"title": "Setup",
 	"tags": [],
 	"description": "",
 	"content": "There are a number of options to implement Snowplow tracking in your web app. Select the required pathway to implement tracking on your web app:\nJS React Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.\nStep 2: Add JS snippet Add the below snippet to all of the pages you would like to track. Make sure to update the link to the sp.js file\nTypically this will be placed into the \u0026lt;head\u0026gt; element of your page or in a similar, suitable, location if using a Single Page Application framework.\n\u0026lt;script type=\u0026#34;text/javascript\u0026#34; async=1 \u0026gt; ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, \u0026#34;script\u0026#34;, \u0026#34;{{Link to sp.js file}}\u0026#34;, \u0026#34;snowplow\u0026#34;)); \u0026lt;script\u0026gt; Step 3: Configure the Tracker Call newTracker in the \u0026lt;script\u0026gt; tag, with the following arguments. This creates an instance of a basic tracker without any additional context.\nTracker Name: 'sp' Collector Url: '{{Url for Collector}}' window.snowplow(\u0026#39;newTracker\u0026#39;, \u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;) In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow\u0026rsquo;s more advanced features.\nOptional Settings (JSON):\nappId: Identify events that occur on different applications platform: Identify the platform the event occurred on, in this case web cookieSameSite: Lax Not sure why, or what explanation to give, but is recommended window.snowplow(\u0026#39;newTracker\u0026#39;, \u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;, { appId: \u0026#39;appId\u0026#39;, platform: \u0026#39;web\u0026#39;, cookieSameSite: \u0026#39;Lax\u0026#39;, }); Step 1: Install browser-tracker package Install the @snowplow/browser-tracker via npm by running:\nnpm install @snowplow/browser-tracker Have react router dom installed\nStep 2: Import the tracker package In your src folder, create a file called tracker.js.\nImport the browser tracker into tracker.js with the below snippet:\nimport React from \u0026#39;react\u0026#39;; import { newTracker, trackPageView, enableActivityTracking } from \u0026#34;@snowplow/browser-tracker\u0026#34;; Step 3: Configure the tracker Create the tracker with the with the following arguments. This creates an instance of a basic tracker without any additional context.\nTracker Name: 'sp' Collector Url: '{{Url for Collector}}' let tracker = newTracker(\u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;) In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow\u0026rsquo;s more advanced features.\nOptional Settings (JSON):\nappId: Identify events that occur on different applications platform: Identify the platform the event occurred on, in this case web cookieSameSite: Lax Not sure why, or what explanation to give, but is recommended let tracker = newTracker(\u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;, { appId: \u0026#39;appId\u0026#39;, platform: \u0026#39;web\u0026#39;, cookieSameSite: \u0026#39;Lax\u0026#39;, }); "
 },
 {
-	"uri": "/tracking/",
+	"uri": "https://snowplow-incubator.github.io/tracking/",
 	"title": "Tracking",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 1 Tracking flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id1 fill:#f9f,stroke:#000,stroke-width:4px Getting started with sending events using the JavaScript tracker is very similar to other web analytics vendors like Google Analytics and Adobe Analytics.\nOnce setup, you will have the ability to send behavioral data to your Snowplow pipeline.\nReact\n"
 },
 {
-	"uri": "/enrich/",
+	"uri": "https://snowplow-incubator.github.io/enrich/",
 	"title": "Enrich",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 3 Enrich flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id2 fill:#f9f,stroke:#000,stroke-width:4px The enrichment process adds extra properties and values to your collected data.\n"
 },
 {
-	"uri": "/modelling/modelling_2/",
+	"uri": "https://snowplow-incubator.github.io/modelling/modelling_2/",
 	"title": "Setup dbt Package",
 	"tags": [],
 	"description": "",
 	"content": "At this stage you should have tracking and enrichment setup as well as:\nData in the atomic.events table Enabled IAB, UA parser and YAUAA enrichments Step 1: Setup Variables Edit the dbt_project.yml which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml with the below options.\nsnowplow__start_date: The date of the first tracked event inside your atomic.events table you would like to model. snowplow__backfill_limit_days: The maximum number of days of new data to be processed since the latest event processed. We suggest changing this to 1 whilst working in your dev environment so that can test that your incremental runs work. Add the snippet to dbt_project.yml:\nvars: snowplow_web: snowplow__start_date: {{YYYY-MM-DD}} snowplow__backfill_limit_days: 1 snowplow__enable_iab: true snowplow__enable_ua: true snowplow__enable_yauaa: true Step 2: Add the selectors.yml to your project The web package provides a suite of suggested selectors to help run and test the models.\nThese are defined in the selectors.yml file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.\nThis is a top-level file and therefore should sit alongside your dbt_project.yml file.\nStep 3: Run the model Execute the following either through your CLI or from within dbt Cloud\ndbt run --selector snowplow_web This should take a couple of minutes to run.\n"
 },
 {
-	"uri": "/tracking/tracking_2/",
+	"uri": "https://snowplow-incubator.github.io/tracking/tracking_2/",
 	"title": "Tracking Events",
 	"tags": [],
 	"description": "",
 	"content": "The trackers create data on user actions at a specific point in time. For example:\nLoading a web page Clicking a link Submitting a form A number of tracking events are available out of the box. These include, but aren\u0026rsquo;t limited to:\nPage views Heartbeats (Page Pings) Link clicks HTML form actions In this section, we will implement page views and page pings.\nJS React Step 1: Enable Activity Tracking First we will enable activity tracking to collect \u0026lsquo;page ping\u0026rsquo; events. This will allow us to monitor engagement and record how a user digests content on the page over time.\nminimumVisitLength : The number of seconds from page load before the first page ping occurs heartbeatDelay: The number of seconds between page pings Add the snippet to your script tag below the tracker instance.\nsnowplow(\u0026#39;enableActivityTracking\u0026#39;, { minimumVisitLength: 5, heartbeatDelay: 10 }); Should we encourage call back function to limit number of events sent with enableActivityTrackingCallback?\nStep 2: Track Page View To track a page view, simply call `trackPageView\u0026rsquo;.\nsnowplow(\u0026#39;trackPageView\u0026#39;) Note: trackPageView should go after the page ping event in step 1\nStep 1: Enable Activity Tracking First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.\nminimumVisitLength : The number of seconds from page load before the first page ping occurs heartbeatDelay: The number of seconds between page pings Add the snippet to your tracker.js file below the tracker instance.\nenableActivityTracking({ minimumVisitLength: 5, heartbeatDelay: 10, }); Step 2: Track Page View react-router-dom is required\nTo track page views, we will first define a function called useLocationChange. This will take advantage of useEffect and the useLocation hook from react-router-dom and trackPageView function from browser-tracker.\nuseLocation: returns an object, location, describing the current page. useEffect: Exececutes a function whenever location changes. In this case trackPageView() trackPageView(): Sends a Snowplow page view event to the collector URL Add the below snippet to tracker.js\nconst useLocationChange = () =\u0026gt; { const location = useLocation(); React.useEffect(() =\u0026gt; { trackPageView(); }, [location]); }; export { tracker, useLocationChange }; "
 },
 {
-	"uri": "/modelling/",
+	"uri": "https://snowplow-incubator.github.io/modelling/",
 	"title": "Modelling",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 3 Modelling your Data flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id3 fill:#f9f,stroke:#000,stroke-width:4px The snowplow-web dbt package transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users. Modelling the data makes it easier to digest and derive business value from the Snowplow data.\n"
 },
 {
-	"uri": "/tracking/tracking_3/",
+	"uri": "https://snowplow-incubator.github.io/tracking/tracking_3/",
 	"title": "Adding Context",
 	"tags": [],
 	"description": "",
 	"content": "Whilst the tracking set up provides event data on user actions at a specific point in time, context describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual entities. For example:\nThe user performing an action The web page the action occured on A product that has been interacted with Together, these entities make up the context of an event.\nSimilar to the predefined events, a number of entities are available to implement out of the box including:\nwebPage Entity - Explanation? session Entity - Information about the user session performanceTiming Entity - Calculate page performance metrics geolocation Entity - Information on the users location Step 1: Enable Predefined Entities The webPage entity is enabled by default in the JavaScript tracker.\nwindow.snowplow(\u0026#39;newTracker\u0026#39;, \u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;, { ... contexts: { webPage: true, } ... }); Each event sent with this tracker will now contain the data from each of these entities.\nStep 2: Custom Entities Do we want to do this? In addition to the out of the box entities, Snowplow lets you add custom entities to provide additional information surrounding an event.\nThese are defined using JSON schemas uploaded to your iglu repository\n"
 },
 {
-	"uri": "/modelling/modelling_3/",
+	"uri": "https://snowplow-incubator.github.io/modelling/modelling_3/",
 	"title": "Testing",
 	"tags": [],
 	"description": "",
 	"content": "Data should now be loaded into your warehouse, next we will check the models output.\nStep 1: Check the output Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model\u0026rsquo;s output. You should be able to see three new schemas created:\n[your_custom_schema_name_]scratch: drop and recompute models that aid the incremental run [your_custom_schema_name_]derived: main output models you can use in your downstream models and reporting [your_custom_schema_name_]manifest: tables that help the integrity and core incremental logic of the model Check out the database section of the [documentation site] [snowplow-web-documentation] for a breakdown of what the output should look like. selectors-yml-file snowplow-web-documentation\n"
 },
 {
-	"uri": "/tracking/tracking_4/",
+	"uri": "https://snowplow-incubator.github.io/tracking/tracking_4/",
 	"title": "Testing",
 	"tags": [],
 	"description": "",
 	"content": "Test using Snowplow Mini or Micro??\nThe Snowplow Chrome Extension can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.\nTo get the full picture, tracking must be QA’d using the Snowplow Mini, not just by simply checking in the browser.\nNote: both events and context entities must be tested thoroughly - if a context entity that is appended to an event fails validation, the whole event will fail validation.\nTo QA events in Snowplow Mini:\nThe collector endpoint in the tracker code should be set to point to the Snowplow Mini collector endpoint. The endpoint address can be found in your console under Data Structures \u0026gt; Testing Details. Events can be triggered manually (from a testflight app, staging site, GTM preview mode etc). The processed events can then be viewed in Kibana as shown below. The “bad” index should be checked too, to ensure that no events are landing there. "
 },
 {
-	"uri": "/visualisation/",
+	"uri": "https://snowplow-incubator.github.io/visualisation/",
 	"title": "Visualisation",
 	"tags": [],
 	"description": "",
 	"content": "Chapter 4 Visualisation flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id4 fill:#f9f,stroke:#000,stroke-width:4px Streamlit Looker Databricks Datastudio\n"
 },
 {
-	"uri": "/",
+	"uri": "https://snowplow-incubator.github.io/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": "Advanced Analytics for Web Introduction Welcome to the Advanced Analytics for Web accelerator. In this guide you\u0026rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.\nOnce finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.\nWho is this guide for? Data practicioners with or without Javascript developer experience who would like to set up tracking on their company\u0026rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers\u0026rsquo; behavioural data as quickly as possible.\nWhat you\u0026rsquo;ll learn Track - Setup and deploy tracking to your web app Enrich - Add enrichments to your data Model - Configure the snowplow-web data model and run it against your Snowflake warehouse Visualise - Visualise your output data with Streamlit gantt dateFormat HH-mm axisFormat %M section 1. Track 8h :track, 00-00, 8m section 2. Enrich 4h :enrich, after track, 4m section 3. Model 2h :model, after enrich, 2m section 4. Visualise 5h :visaualise, after model, 5m Prerequisites Snowplow Pipeline Web app to implement tracking on dbt installed a new dbt project created and configured a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) "
 },
 {
-	"uri": "/categories/",
+	"uri": "https://snowplow-incubator.github.io/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/tags/",
+	"uri": "https://snowplow-incubator.github.io/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
