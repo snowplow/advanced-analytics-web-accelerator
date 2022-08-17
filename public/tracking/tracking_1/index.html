@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Setup :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/tracking/tracking_1/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -72,7 +72,7 @@
   
     
     <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
+        parent
         
         
         ">
@@ -100,7 +100,7 @@
  
   
     
-      <li data-nav-id="/tracking/tracking_1/" title="Setup" class="dd-item ">
+      <li data-nav-id="/tracking/tracking_1/" title="Setup" class="dd-item active">
         <a href="/tracking/tracking_1/">
         Setup
         <i class="fas fa-check read-icon"></i>
@@ -376,70 +376,116 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/tracking/'>Tracking</a> > Setup
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-download-spjs"><strong>Step 1:</strong> Download sp.js</a></li>
+        <li><a href="#step-2-add-js-snippet"><strong>Step 2:</strong> Add JS snippet</a></li>
+        <li><a href="#step-3-configure-the-tracker"><strong>Step 3:</strong> Configure the Tracker</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Setup
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
+<h3 id="step-1-download-spjs"><strong>Step 1:</strong> Download sp.js</h3>
+<p>Add the sp.js file to your project directory. The latest version can be found <a href="https://github.com/snowplow/snowplow-javascript-tracker/releases">here</a>.</p>
 <hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
+<h3 id="step-2-add-js-snippet"><strong>Step 2:</strong> Add JS snippet</h3>
+<p>Add the below snippet to all of the pages you would like to track. <strong>Make sure to update the link to the sp.js file</strong></p>
+<p>Typically this will be placed into the <code>&lt;head&gt;</code> element of your page or in a similar, suitable, location if using a Single Page Application framework.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#66d9ef">async</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>;(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">o</span>, <span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">g</span>) { <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>]) { <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">GlobalSnowplowNamespace</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">GlobalSnowplowNamespace</span> <span style="color:#f92672">||</span> []; <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">GlobalSnowplowNamespace</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>); <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () { (<span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">||</span> []).<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>) }; <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">||</span> []; <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">createElement</span>(<span style="color:#a6e22e">o</span>); <span style="color:#a6e22e">g</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#a6e22e">o</span>)[<span style="color:#ae81ff">0</span>]; <span style="color:#a6e22e">n</span>.<span style="color:#66d9ef">async</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w</span>; <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">g</span>) } }(window, document, <span style="color:#e6db74">&#34;script&#34;</span>, <span style="color:#e6db74">&#34;{{Link to sp.js file}}&#34;</span>, <span style="color:#e6db74">&#34;snowplow&#34;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><hr>
+<h3 id="step-3-configure-the-tracker"><strong>Step 3:</strong> Configure the Tracker</h3>
+<p>Call <code>newTracker</code> in the <code>&lt;script&gt;</code> tag, with the following arguments. This creates an instance of a basic tracker without any additional context.</p>
 <ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
+<li>Tracker Name: <code>'sp'</code></li>
+<li>Collector Url: <code>'{{Url for Collector}}'</code></li>
 </ul>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
-
-<div class="mermaid" align="center">
-    
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
-
-</div>
-<hr>
-<h4 id="prerequisites">Prerequisites</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p>In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow&rsquo;s more advanced features.</p>
+<p><strong>Optional Settings (JSON):</strong></p>
 <ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
+<li><code>appId</code>: Identify events that occur on different applications</li>
+<li><code>platform</code>: Identify the platform the event occurred on, in this case <code>web</code></li>
+<li><code>cookieSameSite</code>: Lax <strong>Not sure why, or what explanation to give, but is recomended</strong></li>
 </ul>
-</li>
-</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>, { 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;appId&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">platform</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;web&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cookieSameSite</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Lax&#39;</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><hr>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -471,8 +517,6 @@ gantt
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -486,6 +530,7 @@ gantt
             
             
                 
+                    
                     
                 
                 
@@ -502,6 +547,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +702,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/" title="Tracking"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/tracking/tracking_2/" title="Tracking Events" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

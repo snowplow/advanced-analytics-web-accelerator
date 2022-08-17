@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Modelling :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/modelling/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -219,7 +219,7 @@
     
     <li data-nav-id="/modelling/" title="Modelling" class="dd-item
         
-        
+        active
         
         ">
       <a href="/modelling/">
@@ -376,36 +376,54 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > Modelling
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
+        
+          <div id="chapter">
         
         <div id="body-inner">
           
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
-<hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
-<ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
-</ul>
+
+	<h3 id="chapter-3">Chapter 3</h3>
+<h1 id="modelling-your-data">Modelling your Data</h1>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true });
@@ -413,33 +431,23 @@
 
 <div class="mermaid" align="center">
     
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
+flowchart LR
+    id1(Track)-->id2(Enrich)-->id3(Model)-->id4(Visualise)
+    style id3 fill:#f9f,stroke:#000,stroke-width:4px
 
 </div>
-<hr>
-<h4 id="prerequisites">Prerequisites</h4>
-<ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
-</ul>
-</li>
-</ul>
+<p>The <a href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">snowplow-web dbt package</a> transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users. Modelling the data makes it easier to digest and derive business value from the Snowplow data.</p>
+
+
+
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
+        
+            </div> 
         
         </div>
         
@@ -570,6 +578,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -582,6 +591,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +666,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/enrich/" title="Enrich"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/modelling/modelling_1/" title="Install Snowplow dbt Package" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -687,4 +701,3 @@ gantt
 
   </body>
 </html>
-

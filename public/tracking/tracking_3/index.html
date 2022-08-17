@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Adding Context :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/tracking/tracking_3/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -72,7 +72,7 @@
   
     
     <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
+        parent
         
         
         ">
@@ -142,7 +142,7 @@
  
   
     
-      <li data-nav-id="/tracking/tracking_3/" title="Adding Context" class="dd-item ">
+      <li data-nav-id="/tracking/tracking_3/" title="Adding Context" class="dd-item active">
         <a href="/tracking/tracking_3/">
         Adding Context
         <i class="fas fa-check read-icon"></i>
@@ -376,70 +376,116 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/tracking/'>Tracking</a> > Adding Context
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</a></li>
+        <li><a href="#step-2-custom-entities"><strong>Step 2:</strong> Custom Entities</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Adding Context
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
-<hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
+<p>Whilst the tracking set up provides event data on user <strong>actions</strong> at a specific point in time, <strong>context</strong> describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual <strong>entities</strong>. For example:</p>
 <ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
+<li>The user performing an action</li>
+<li>The web page the action occured on</li>
+<li>A product that has been interacted with</li>
 </ul>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
-
-<div class="mermaid" align="center">
-    
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
-
-</div>
+<p>Together, these entities make up the context of an event.</p>
+<p>Similar to the predefined events, a number of entities are available to implement out of the box including:</p>
+<ul>
+<li><strong>webPage Entity -</strong> Explanation?</li>
+<li><strong>session Entity -</strong> Information about the user session</li>
+<li><strong>performanceTiming Entity -</strong> Calculate page performance metrics</li>
+<li><strong>geolocation Entity -</strong> Information on the users location</li>
+</ul>
 <hr>
-<h4 id="prerequisites">Prerequisites</h4>
-<ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
-</ul>
-</li>
-</ul>
+<h3 id="step-1-enable-predefined-entities"><strong>Step 1:</strong> Enable Predefined Entities</h3>
+<p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker.</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>, { 
+</span></span><span style="display:flex;"><span>...    
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">contexts</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">webPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Each event sent with this tracker will now contain the data from each of these entities.</p>
+<hr>
+<h3 id="step-2-custom-entities"><strong>Step 2:</strong> Custom Entities</h3>
+<p><strong>Do we want to do this?</strong>
+In addition to the out of the box entities, Snowplow lets you add custom entities to provide additional information surrounding an event.</p>
+<p>These are defined using JSON schemas uploaded to your iglu repository</p>
+<hr>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -471,8 +517,6 @@ gantt
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -486,6 +530,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -519,6 +566,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -534,6 +582,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +705,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/tracking_2/" title="Tracking Events"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/tracking/tracking_4/" title="Testing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

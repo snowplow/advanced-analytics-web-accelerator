@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Setup dbt Package :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/modelling/modelling_2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -218,7 +218,7 @@
   
     
     <li data-nav-id="/modelling/" title="Modelling" class="dd-item
-        
+        parent
         
         
         ">
@@ -267,7 +267,7 @@
  
   
     
-      <li data-nav-id="/modelling/modelling_2/" title="Setup dbt Package" class="dd-item ">
+      <li data-nav-id="/modelling/modelling_2/" title="Setup dbt Package" class="dd-item active">
         <a href="/modelling/modelling_2/">
         Setup dbt Package
         <i class="fas fa-check read-icon"></i>
@@ -376,70 +376,115 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/modelling/'>Modelling</a> > Setup dbt Package
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</a></li>
+        <li><a href="#step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</a></li>
+        <li><a href="#step-3-run-the-model"><strong>Step 3:</strong> Run the model</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Setup dbt Package
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
-<hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
+<p>At this stage you should have tracking and enrichment setup as well as:</p>
 <ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
+<li>Data in the <code>atomic.events</code> table</li>
+<li>Enabled IAB, UA parser and YAUAA enrichments</li>
 </ul>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
-
-<div class="mermaid" align="center">
-    
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
-
-</div>
 <hr>
-<h4 id="prerequisites">Prerequisites</h4>
+<h3 id="step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</h3>
+<p>Edit the <code>dbt_project.yml</code> which can be found at <code>[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml</code> with the below options.</p>
 <ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
+<li><code>snowplow__start_date</code>: The date of the first tracked event inside your atomic.events table you would like to model.</li>
+<li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since the latest event processed. We suggest changing this to 1 whilst  working in your dev environment so that can test that your incremental runs work.</li>
 </ul>
-</li>
-</ul>
+<p>Add the snippet to <code>dbt_project.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__start_date</span>: {{<span style="color:#ae81ff">YYYY-MM-DD}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__backfill_limit_days</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_iab</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_ua</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_yauaa</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><hr>
+<h3 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h3>
+<p>The web package provides a suite of suggested selectors to help run and test the models.</p>
+<p>These are defined in the <code>selectors.yml</code> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
+<p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
+<hr>
+<h3 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h3>
+<p>Execute the following either through your CLI or from within dbt Cloud</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>dbt run --selector snowplow_web
+</span></span></code></pre></div><p>This should take a couple of minutes to run.</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -570,6 +615,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -582,6 +628,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -599,6 +648,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -614,6 +664,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +707,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/modelling/modelling_1/" title="Install Snowplow dbt Package"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/modelling/modelling_3/" title="Testing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

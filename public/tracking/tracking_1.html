@@ -1,18 +1,8 @@
----
-title: "Install and Initialise the JS tracker"
-output:
-  html_document:
-    toc_float: false
-    includes:
-      before_body: [includes/navbar.html, includes/navbar_left.html]
-
----
 
 
 
 <p>+++
-title = “Setup”
-weight = 1
+weight = 2
 post = “”
 +++</p>
 <div id="step-1-download-sp.js" class="section level3">
@@ -29,35 +19,28 @@ post = “”
 &lt;script&gt;</code></pre>
 <hr />
 </div>
-<div id="step-3-configure-the-tracker" class="section level3">
-<h3><strong>Step 3:</strong> Configure the Tracker</h3>
-<p>Call <code>newTracker</code> in the <code>&lt;script&gt;</code> tag, with the following arguments. This creates an instance of a basic tracker without any additional context.</p>
+<div id="step-3-configure-your-tracker" class="section level3">
+<h3><strong>Step 3:</strong> Configure your Tracker</h3>
+<p>Call <code>newTracker</code> with the following arguments. This creates an instance of a basic tracker without any additional contexts.</p>
 <ul>
 <li>Tracker Name: <code>'sp'</code></li>
 <li>Collector Url: <code>'{{Url for Collector}}'</code></li>
 </ul>
 <pre class="javascript"><code>window.snowplow(&#39;newTracker&#39;, &#39;sp&#39;, &#39;{{Url for Collector}}&#39;)</code></pre>
-<!-- **should we point the collector to mini/micro collector for testing??** -->
+<p><strong>point the collector to mini/micro collector for testing</strong></p>
 <p>In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow’s more advanced features.</p>
-<p><strong>Optional Settings (JSON):</strong>
-- <code>appId</code>: Identify events that occur on different applications
-- <code>platform</code>: Identify the platform the event occurred on, in this case <code>web</code>
-- <code>cookieSameSite</code>: Lax <strong>Not sure why, or what explanation to give, but is recomended</strong></p>
+<ul>
+<li>Optional Settings (JSON):
+<ul>
+<li><code>appId</code>: Identify events that occur on different applications</li>
+<li><code>platform</code>: Identify the platform the event occurred on, in this case <code>web</code></li>
+<li><code>cookieSameSite</code>: Lax <strong>Not sure why, or what explanation to give, but is recomended</strong></li>
+</ul></li>
+</ul>
 <pre class="javascript"><code>window.snowplow(&#39;newTracker&#39;, &#39;sp&#39;, &#39;{{Url for Collector}}&#39;, { 
     appId: &#39;appId&#39;,
     platform: &#39;web&#39;,
     cookieSameSite: &#39;Lax&#39;,
 });</code></pre>
 <hr />
-</div>
-<div id="results" class="section level2 tabset">
-<h2>Results</h2>
-<div id="plots" class="section level3">
-<h3>Plots</h3>
-<p>We show a scatter plot in this section.</p>
-</div>
-<div id="tables" class="section level3">
-<h3>Tables</h3>
-<p>We show the data in this tab.</p>
-</div>
 </div>
