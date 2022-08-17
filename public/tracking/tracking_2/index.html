@@ -12,20 +12,20 @@
     <title>Tracking Events :: Advanced Analytics for Web</title>
 
     
-    <link href="/css/nucleus.css?1660747670" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1660747670" rel="stylesheet">
-    <link href="/css/hybrid.css?1660747670" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1660747670" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1660747670" rel="stylesheet">
-    <link href="/css/auto-complete.css?1660747670" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1660747670" rel="stylesheet">
-    <link href="/css/theme.css?1660747670" rel="stylesheet">
-    <link href="/css/tabs.css?1660747670" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1660747670" rel="stylesheet">
+    <link href="/css/nucleus.css?1660764525" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660764525" rel="stylesheet">
+    <link href="/css/hybrid.css?1660764525" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660764525" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660764525" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660764525" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660764525" rel="stylesheet">
+    <link href="/css/theme.css?1660764525" rel="stylesheet">
+    <link href="/css/tabs.css?1660764525" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660764525" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1660747670"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660764525"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -364,7 +364,8 @@
     </section>
     
     <section id="footer">
-      
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
     </section>
   </div>
 </nav>
@@ -416,18 +417,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</a></li>
-        <li><a href="#step-2-track-page-view"><strong>Step 2:</strong> Track Page View</a></li>
-        <li><a href="#step-3--link-click-tracking"><strong>Step 3:</strong>  Link Click Tracking</a></li>
-        <li><a href="#step-4-html-form-tracking"><strong>Step 4:</strong> HTML Form Tracking</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -463,9 +453,32 @@
 <li>Link clicks</li>
 <li>HTML form actions</li>
 </ul>
-<p>In this section, we will implement all 4 of these built-in events.</p>
+<p>In this section, we will implement page views and page pings.</p>
 <hr>
-<h3 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h3>
+
+
+<div class="tab-panel">
+    <div class="tab-nav">
+    
+        <button
+          data-tab-item="JS"
+          data-tab-group="enable"
+          class="tab-nav-button btn active"
+          onclick="switchTab('enable','JS')"
+         >JS</button>
+    
+        <button
+          data-tab-item="React"
+          data-tab-group="enable"
+          class="tab-nav-button btn "
+          onclick="switchTab('enable','React')"
+         >React</button>
+    
+    </div>
+    <div class="tab-content">
+        
+        <div data-tab-item="JS" data-tab-group="enable" class="tab-item active">
+            <h3 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h3>
 <p>First we will enable activity tracking to collect &lsquo;page ping&rsquo; events. This will allow us to monitor engagement and record how a user digests content on the page over time.</p>
 <ul>
 <li><code>minimumVisitLength</code> : The number of seconds from page load before the first page ping occurs</li>
@@ -482,18 +495,46 @@
 <p>To track a page view, simply call `trackPageView&rsquo;.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;trackPageView&#39;</span>)
 </span></span></code></pre></div><p><strong>Note:</strong> <code>trackPageView</code> should go after the page ping event in step 1</p>
-<hr>
-<h3 id="step-3--link-click-tracking"><strong>Step 3:</strong>  Link Click Tracking</h3>
-<p>To enable link click tracking, call the <code>enableLinkClickTracking</code> method.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;enableLinkClickTracking&#39;</span>);
-</span></span></code></pre></div><p>You only need to call the method once to track all the links on a page. This will capture the links <code>href</code> by default as well as the <code>id</code>, <code>class</code> and <code>target</code> of the link.</p>
-<p><strong>Add more complex link tracking?</strong></p>
-<hr>
-<h3 id="step-4-html-form-tracking"><strong>Step 4:</strong> HTML Form Tracking</h3>
-<p>To enable form tracking, simply call the <code>enableFormTracking</code> method.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;enableFormTracking&#39;</span>);
-</span></span></code></pre></div><p>This will track an event when a user focuses, changes or submits a form.</p>
-<hr>
+
+        </div>
+        
+        <div data-tab-item="React" data-tab-group="enable" class="tab-item ">
+            <h3 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h3>
+<p>First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.</p>
+<ul>
+<li><code>minimumVisitLength</code> : The number of seconds from page load before the first page ping occurs</li>
+<li><code>heartbeatDelay</code>: The number of seconds between page pings</li>
+</ul>
+<p>Add the snippet to your <code>tracker.js</code> file below the tracker instance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">enableActivityTracking</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">minimumVisitLength</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">heartbeatDelay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="step-2-track-page-view"><strong>Step 2:</strong> Track Page View</h3>
+<p><strong>react-router-dom is required</strong></p>
+<p>To track page views, we will first define a function called <code>useLocationChange</code>. This will take advantage of <code>useEffect</code> and the <code>useLocation</code> hook from <code>react-router-dom</code> and <code>trackPageView</code> function from <code>browser-tracker</code>.</p>
+<ul>
+<li><code>useLocation</code>: returns an object, <code>location</code>, describing the current page.</li>
+<li><code>useEffect</code>: Exececutes a function whenever <code>location</code> changes. In this case <code>trackPageView()</code></li>
+<li><code>trackPageView()</code>: Sends a Snowplow page view event to the collector URL</li>
+</ul>
+<p>Add the below snippet to <code>tracker.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useLocationChange</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useLocation</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">useEffect</span>(() =&gt; { 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">trackPageView</span>();
+</span></span><span style="display:flex;"><span>   }, [<span style="color:#a6e22e">location</span>]);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">tracker</span>, <span style="color:#a6e22e">useLocationChange</span> };
+</span></span></code></pre></div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
 
 <footer class="footline">
@@ -732,16 +773,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1660747670"></script>
-    <script src="/js/perfect-scrollbar.min.js?1660747670"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1660747670"></script>
-    <script src="/js/jquery.sticky.js?1660747670"></script>
-    <script src="/js/featherlight.min.js?1660747670"></script>
-    <script src="/js/highlight.pack.js?1660747670"></script>
+    <script src="/js/clipboard.min.js?1660764525"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660764525"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660764525"></script>
+    <script src="/js/jquery.sticky.js?1660764525"></script>
+    <script src="/js/featherlight.min.js?1660764525"></script>
+    <script src="/js/highlight.pack.js?1660764525"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1660747670"></script>
-    <script src="/js/learn.js?1660747670"></script>
-    <script src="/js/hugo-learn.js?1660747670"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660764525"></script>
+    <script src="/js/learn.js?1660764525"></script>
+    <script src="/js/hugo-learn.js?1660764525"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
