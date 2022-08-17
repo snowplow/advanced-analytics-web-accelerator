@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Testing :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/tracking/tracking_4/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -72,7 +72,7 @@
   
     
     <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
+        parent
         
         
         ">
@@ -163,7 +163,7 @@
  
   
     
-      <li data-nav-id="/tracking/tracking_4/" title="Testing" class="dd-item ">
+      <li data-nav-id="/tracking/tracking_4/" title="Testing" class="dd-item active">
         <a href="/tracking/tracking_4/">
         Testing
         <i class="fas fa-check read-icon"></i>
@@ -376,70 +376,92 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/tracking/'>Tracking</a> > Testing
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Testing
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
+<p><strong>Test using Snowplow Mini or Micro??</strong></p>
+<p>The <a href="https://chrome.google.com/webstore/detail/snowplow-inspector/maplkdomeamdlngconidoefjpogkmljm?hl=en">Snowplow Chrome Extension</a> can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.</p>
+<p><img src="/images/chrome_extension.png" alt=""></p>
+<p>To get the full picture, tracking must be QA’d using the Snowplow Mini, not just by simply checking in the browser.</p>
+<p>Note: both events and context entities must be tested thoroughly - if a context entity
+that is appended to an event fails validation, the whole event will fail validation.</p>
+<p>To QA events in Snowplow Mini:</p>
+<ol>
+<li>The collector endpoint in the tracker code should be set to point to the Snowplow
+Mini collector endpoint. The endpoint address can be found in your console under
+Data Structures &gt; Testing Details.</li>
+<li>Events can be triggered manually (from a testflight app, staging site, GTM preview
+mode etc).</li>
+<li>The processed events can then be viewed in Kibana as shown below. The “bad”
+index should be checked too, to ensure that no events are landing there.</li>
+</ol>
 <hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
-<ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
-</ul>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
 
-<div class="mermaid" align="center">
-    
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
-
-</div>
-<hr>
-<h4 id="prerequisites">Prerequisites</h4>
-<ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
-</ul>
-</li>
-</ul>
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -471,8 +493,6 @@ gantt
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -486,6 +506,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -535,6 +558,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -553,6 +577,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +681,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/tracking_3/" title="Adding Context"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/enrich/" title="Enrich" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

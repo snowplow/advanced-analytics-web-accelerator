@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Testing :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/modelling/modelling_3/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -218,7 +218,7 @@
   
     
     <li data-nav-id="/modelling/" title="Modelling" class="dd-item
-        
+        parent
         
         
         ">
@@ -288,7 +288,7 @@
  
   
     
-      <li data-nav-id="/modelling/modelling_3/" title="Testing" class="dd-item ">
+      <li data-nav-id="/modelling/modelling_3/" title="Testing" class="dd-item active">
         <a href="/modelling/modelling_3/">
         Testing
         <i class="fas fa-check read-icon"></i>
@@ -376,70 +376,94 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/modelling/'>Modelling</a> > Testing
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-check-the-output"><strong>Step 1:</strong> Check the output</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Testing
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
-<hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
-<ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
-</ul>
+<p>Data should now be loaded into your warehouse, next we will check the models output.</p>
+<h3 id="step-1-check-the-output"><strong>Step 1:</strong> Check the output</h3>
+<p>Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&rsquo;s output. You should be able to see three new schemas created:</p>
+<ol>
+<li>[your_custom_schema_name_]<em>scratch</em>: drop and recompute models that aid the incremental run</li>
+<li>[your_custom_schema_name_]<em>derived</em>: main output models you can use in your downstream models and reporting</li>
+<li>[your_custom_schema_name_]<em>manifest</em>: tables that help the integrity and core incremental logic of the model
+Check out the <code>database</code> section of the [<code>documentation site</code>] [snowplow-web-documentation] for a breakdown of what the output should look like.</li>
+</ol>
+<p><a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors-yml-file</a>
+<a href="https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web">snowplow-web-documentation</a></p>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
 
-<div class="mermaid" align="center">
-    
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
-
-</div>
-<hr>
-<h4 id="prerequisites">Prerequisites</h4>
-<ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
-</ul>
-</li>
-</ul>
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -570,6 +594,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -582,6 +607,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -615,6 +643,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -633,6 +662,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +686,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/modelling/modelling_2/" title="Setup dbt Package"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/visualisation/" title="Visualisation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: Advanced Analytics for Web</title>
+    <title>Tracking Events :: Advanced Analytics for Web</title>
 
     
     <link href="/css/nucleus.css?1660747670" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/tracking/tracking_2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -72,7 +72,7 @@
   
     
     <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
+        parent
         
         
         ">
@@ -121,7 +121,7 @@
  
   
     
-      <li data-nav-id="/tracking/tracking_2/" title="Tracking Events" class="dd-item ">
+      <li data-nav-id="/tracking/tracking_2/" title="Tracking Events" class="dd-item active">
         <a href="/tracking/tracking_2/">
         Tracking Events
         <i class="fas fa-check read-icon"></i>
@@ -376,70 +376,130 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/tracking/'>Tracking</a> > Tracking Events
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</a></li>
+        <li><a href="#step-2-track-page-view"><strong>Step 2:</strong> Track Page View</a></li>
+        <li><a href="#step-3--link-click-tracking"><strong>Step 3:</strong>  Link Click Tracking</a></li>
+        <li><a href="#step-4-html-form-tracking"><strong>Step 4:</strong> HTML Form Tracking</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Tracking Events
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="advanced-analytics-for-web">Advanced Analytics for Web</h2>
-<p><img src="/images/logo_banner.png" alt=""></p>
-<h4 id="introduction">Introduction</h4>
-<p>Welcome to the Advanced Analytics for Web accelerator. In this guide you&rsquo;ll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data.</p>
-<p>Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
-<hr>
-<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
-<p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers&rsquo; behavioural data as quickly as possible.</p>
-<hr>
-<h4 id="what-youll-learn">What you&rsquo;ll learn</h4>
+<p>The trackers create data on user <strong>actions</strong> at a specific point in time. For example:</p>
 <ul>
-<li><strong>Track -</strong> Setup and deploy tracking to your web app</li>
-<li><strong>Enrich -</strong> Add enrichments to your data</li>
-<li><strong>Model -</strong> Configure the snowplow-web data model and run it against your Snowflake warehouse</li>
-<li><strong>Visualise -</strong> Visualise your output data with Streamlit</li>
+<li>Loading a web page</li>
+<li>Clicking a link</li>
+<li>Submitting a form</li>
 </ul>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
-
-<div class="mermaid" align="center">
-    
-gantt
-        dateFormat  HH-mm
-        axisFormat %M
-        section 1. Track
-        8h          :track, 00-00, 8m
-        section 2. Enrich
-        4h            :enrich, after track, 4m
-        section 3. Model
-        2h          :model, after enrich, 2m
-        section 4. Visualise
-        5h            :visaualise, after model, 5m
-
-</div>
+<p>A number of tracking events are available out of the box. These include, but aren&rsquo;t limited to:</p>
+<ul>
+<li>Page views</li>
+<li>Heartbeats (Page Pings)</li>
+<li>Link clicks</li>
+<li>HTML form actions</li>
+</ul>
+<p>In this section, we will implement all 4 of these built-in events.</p>
 <hr>
-<h4 id="prerequisites">Prerequisites</h4>
+<h3 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h3>
+<p>First we will enable activity tracking to collect &lsquo;page ping&rsquo; events. This will allow us to monitor engagement and record how a user digests content on the page over time.</p>
 <ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
-<li>dbt installed
-<ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
+<li><code>minimumVisitLength</code> : The number of seconds from page load before the first page ping occurs</li>
+<li><code>heartbeatDelay</code>: The number of seconds between page pings</li>
 </ul>
-</li>
-</ul>
+<p>Add the snippet to your <code>script</code> tag below the tracker instance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;enableActivityTracking&#39;</span>, { 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">minimumVisitLength</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>, 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">heartbeatDelay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> 
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p><strong>Should we encourage call back function to limit number of events sent with enableActivityTrackingCallback?</strong></p>
+<hr>
+<h3 id="step-2-track-page-view"><strong>Step 2:</strong> Track Page View</h3>
+<p>To track a page view, simply call `trackPageView&rsquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;trackPageView&#39;</span>)
+</span></span></code></pre></div><p><strong>Note:</strong> <code>trackPageView</code> should go after the page ping event in step 1</p>
+<hr>
+<h3 id="step-3--link-click-tracking"><strong>Step 3:</strong>  Link Click Tracking</h3>
+<p>To enable link click tracking, call the <code>enableLinkClickTracking</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;enableLinkClickTracking&#39;</span>);
+</span></span></code></pre></div><p>You only need to call the method once to track all the links on a page. This will capture the links <code>href</code> by default as well as the <code>id</code>, <code>class</code> and <code>target</code> of the link.</p>
+<p><strong>Add more complex link tracking?</strong></p>
+<hr>
+<h3 id="step-4-html-form-tracking"><strong>Step 4:</strong> HTML Form Tracking</h3>
+<p>To enable form tracking, simply call the <code>enableFormTracking</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;enableFormTracking&#39;</span>);
+</span></span></code></pre></div><p>This will track an event when a user focuses, changes or submits a form.</p>
+<hr>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -471,8 +531,6 @@ gantt
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -486,6 +544,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -503,6 +564,7 @@ gantt
             
                 
                     
+                    
                 
                 
 
@@ -518,6 +580,9 @@ gantt
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -654,8 +719,10 @@ gantt
 	 
 	 
 		
+			<a class="nav nav-prev" href="/tracking/tracking_1/" title="Setup"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/tracking/tracking_3/" title="Adding Context" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
