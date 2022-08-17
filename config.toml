@@ -1,0 +1,40 @@
+baseURL = "/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "Advanced Analytics for Web"
+theme = "hugo-theme-learn"
+themesdir = "themes"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+[params]
+  description = "Advanced Analytics for Web"
+  author = "Agnes Kiss and Jack Keene"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  disableLandingPageButton = false
+  disableMermaid = false
+  disableSearch = true
+  customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
+  titleSeparator = ""
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[Languages]
+[Languages.en]
+title = "Advanced Analytics for Web"
+titleSeparator = ""
+weight = 1
+languageName = "English"
+landingPageURL = "/advance-analytics-web"
+landingPageName = "Introduction" 
+
+[[Languages.en.menu.shortcuts]]
+name = "Try Snowplow"
+identifier = "ds"
+url = "https://try.snowplowanalytics.com/"
+weight = 10
+
