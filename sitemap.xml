@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snowplow-incubator.github.io/modelling/modelling_1/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_1/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/tracking/tracking_1/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_1/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/tracking/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/enrich/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/enrich/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/modelling/modelling_2/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_2/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/tracking/tracking_2/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_2/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/modelling/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/</loc>
     <lastmod>2022-08-16T17:24:05+01:00</lastmod>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/tracking/tracking_3/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_3/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/modelling/modelling_3/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_3/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/tracking/tracking_4/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_4/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/visualisation/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/visualisation/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/</loc>
     <lastmod>2022-08-16T17:24:05+01:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/categories/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/categories/</loc>
   </url><url>
-    <loc>https://snowplow-incubator.github.io/tags/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tags/</loc>
   </url>
 </urlset>
