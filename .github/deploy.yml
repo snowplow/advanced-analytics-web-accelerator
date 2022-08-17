@@ -1,27 +1,27 @@
-name: deploy
+# name: Deploy
 
-on:
-  push: 
-    branches:
-      - main
-      - feature/create_hugo_site
+# on:
+#   push: 
+#     branches:
+#       - main
+#       - feature/create_hugo_site
 
-jobs: 
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@master
-    - uses: jakejarvis/hugo-build-action@master
-      with:
-        args: --minify --buildDrafts
-    - uses: actions/upload-artifact@master
-      with:
-        name: website
-        path: './public'
-    - name: Deploy to GitHub Pages
-      if: success()
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+# jobs: 
+#   runs-on: ubuntu-latest
+#   steps:
+#     - uses: actions/checkout@master
+#     - uses: jakejarvis/hugo-build-action@master
+#       with:
+#         args: --minify --buildDrafts
+#     - uses: actions/upload-artifact@master
+#       with:
+#         name: website
+#         path: './public'
+#     - name: Deploy to GitHub Pages
+#       if: success()
+#       uses: peaceiris/actions-gh-pages@v3
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
+#         publish_dir: ./public
 
 
