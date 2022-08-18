@@ -24,7 +24,7 @@ In this section, we will implement page views and page pings.
 {{< tabs groupId="enable" >}}
 {{% tab name="JS" %}}
 
-### **Step 1:** Enable Activity Tracking
+#### **Step 1:** Enable Activity Tracking
 First we will enable activity tracking to collect 'page ping' events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
 
   - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
@@ -43,7 +43,7 @@ snowplow('enableActivityTracking', {
 
 ***
 
-### **Step 2:** Track Page View
+#### **Step 2:** Track Page View
 To track a page view, simply call `trackPageView'. 
 
 ```javascript
@@ -55,7 +55,7 @@ snowplow('trackPageView')
 {{% /tab %}}
 {{% tab name="React" %}}
 
-### **Step 1:** Enable Activity Tracking
+#### **Step 1:** Enable Activity Tracking
 First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
 
   - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
@@ -70,7 +70,7 @@ enableActivityTracking({
 });
 ```
 
-### **Step 2:** Track Page View
+#### **Step 2:** Track Page View
 **react-router-dom is required**
 
 To track page views, we will first define a function called `useLocationChange`. This will take advantage of `useEffect` and the `useLocation` hook from `react-router-dom` and `trackPageView` function from `browser-tracker`. 
@@ -94,11 +94,42 @@ export { tracker, useLocationChange };
 ```
 
 {{% /tab %}}
+{{% tab name="Angular" %}}
+
+
+#### **Step 1:** Enable Activity Tracking
+First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
+
+  - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
+  - `heartbeatDelay`: The number of seconds between page pings 
+
+Add the snippet to your `snowplow.service.ts` file within the `WindowRef` constructor. 
+
+```javascript
+this._window.snowplow('enableActivityTracking', 5, 10);
+```
+
+***
+
+#### **Step 2:** Track Page Views
+To track a page view, we will create a `trackPageView()` function which will make use of the built in Snowplow method.
+
+Add the below snippet to your `snowplow.service.ts` file. 
+
+```javascript
+public trackPageView(): void {
+  if (this._window.snowplow) {
+      this._window.snowplow('trackPageView');
+  }
+}
+```
+
+{{% /tab %}}
 {{< /tabs >}}
 
 <!-- ## Further reading
 
-### **Step 3:**  Link Click Tracking
+#### **Step 3:**  Link Click Tracking
 To enable link click tracking, call the `enableLinkClickTracking` method.
 
 ```javascript
@@ -111,7 +142,7 @@ You only need to call the method once to track all the links on a page. This wil
 
 ***
 
-### **Step 4:** HTML Form Tracking
+#### **Step 4:** HTML Form Tracking
 To enable form tracking, simply call the `enableFormTracking` method.
 
 ```javascript

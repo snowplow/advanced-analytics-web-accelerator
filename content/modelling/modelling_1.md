@@ -4,7 +4,7 @@ weight = 1
 post = ""
 +++
 
-### **Step 1:** Add snowplow-web package
+#### **Step 1:** Add snowplow-web package
 Add the snowplow-web package to your packages.yml file. The latest version can be found [here](https://hub.getdbt.com/snowplow/snowplow_web/latest/)
 
 ```yml
@@ -13,7 +13,7 @@ packages:
     version: 0.9.0
 ```
 
-### **Step 2:** Install the package
+#### **Step 2:** Install the package
 Install the package by running:
 
 ```cmd
