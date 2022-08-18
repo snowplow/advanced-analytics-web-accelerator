@@ -1,6 +1,6 @@
 ## Advanced Analytics for Web
 
-![](/images/logo_banner.png)
+!['logo-banner'](images/logo_banner.png)
 
 #### Introduction
 
