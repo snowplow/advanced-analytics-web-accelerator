@@ -25,7 +25,7 @@ dbt deps </description>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_1/</guid>
       <description>There are a number of options to implement Snowplow tracking in your web app. Select the required pathway to implement tracking on your web app:
-JS React Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.
+JS React Angular Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.
 Step 2: Add JS snippet Add the below snippet to all of the pages you would like to track. Make sure to update the link to the sp.</description>
     </item>
     
@@ -49,7 +49,7 @@ snowplow__start_date: The date of the first tracked event inside your atomic.eve
       <description>The trackers create data on user actions at a specific point in time. For example:
 Loading a web page Clicking a link Submitting a form A number of tracking events are available out of the box. These include, but aren&amp;rsquo;t limited to:
 Page views Heartbeats (Page Pings) Link clicks HTML form actions In this section, we will implement page views and page pings.
-JS React Step 1: Enable Activity Tracking First we will enable activity tracking to collect &amp;lsquo;page ping&amp;rsquo; events.</description>
+JS React Angular Step 1: Enable Activity Tracking First we will enable activity tracking to collect &amp;lsquo;page ping&amp;rsquo; events.</description>
     </item>
     
     <item>
