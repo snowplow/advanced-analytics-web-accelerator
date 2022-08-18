@@ -29,7 +29,7 @@ title = "Advanced Analytics for Web"
 titleSeparator = ""
 weight = 1
 languageName = "English"
-landingPageURL = "/advance-analytics-web"
+landingPageURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
 landingPageName = "Introduction" 
 
 [[Languages.en.menu.shortcuts]]
