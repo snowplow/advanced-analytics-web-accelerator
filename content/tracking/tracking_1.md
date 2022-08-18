@@ -199,7 +199,7 @@ constructor(window: WindowRef) {
 {{% /tab %}}
 {{< /tabs >}}
 
-
+<!-- 
 Angular Tracking
 ```javascript
       this._window.snowplow('enableActivityTracking', 10, 10);
@@ -210,4 +210,4 @@ Angular Tracking
       this._window.snowplow('trackPageView');
     }
   }
-```
+``` -->

@@ -1,4 +1,4 @@
-baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
+baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 landingPageURL = "/advanced-analytics-web-accelerator/"
