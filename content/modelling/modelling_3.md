@@ -6,7 +6,7 @@ post = ""
 
 Data should now be loaded into your warehouse, next we will check the models output.
 
-### **Step 1:** Check the output
+#### **Step 1:** Check the output
 Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model's output. You should be able to see three new schemas created:
 1. [your_custom_schema_name_]*scratch*: drop and recompute models that aid the incremental run
 2. [your_custom_schema_name_]*derived*: main output models you can use in your downstream models and reporting

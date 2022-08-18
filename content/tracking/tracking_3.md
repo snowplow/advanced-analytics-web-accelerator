@@ -21,7 +21,7 @@ Similar to the predefined events, a number of entities are available to implemen
 
 ***
 
-### **Step 1:** Enable Predefined Entities
+#### **Step 1:** Enable Predefined Entities
 The `webPage` entity is enabled by default in the JavaScript tracker.
 
 <!-- To enable `session`, `performanceTiming` and `geolocation` use the options below. -->
@@ -40,7 +40,7 @@ Each event sent with this tracker will now contain the data from each of these e
 
 ***
 
-### **Step 2:** Custom Entities 
+#### **Step 2:** Custom Entities 
 **Do we want to do this?**
 In addition to the out of the box entities, Snowplow lets you add custom entities to provide additional information surrounding an event. 
 

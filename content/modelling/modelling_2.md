@@ -11,7 +11,7 @@ At this stage you should have tracking and enrichment setup as well as:
 
 ***
 
-### **Step 1:** Setup Variables
+#### **Step 1:** Setup Variables
 
 Edit the `dbt_project.yml` which can be found at `[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml` with the below options. 
 
@@ -32,7 +32,7 @@ vars:
 
 ***
 
-### **Step 2:** Add the selectors.yml to your project
+#### **Step 2:** Add the selectors.yml to your project
 
 The web package provides a suite of suggested selectors to help run and test the models. 
 
@@ -42,7 +42,7 @@ This is a top-level file and therefore should sit alongside your `dbt_project.ym
 
 ***
 
-### **Step 3:** Run the model
+#### **Step 3:** Run the model
 
 Execute the following either through your CLI or from within dbt Cloud
 
