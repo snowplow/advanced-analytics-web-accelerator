@@ -8,6 +8,18 @@
     <language>en-US</language>
     <lastBuildDate>Tue, 16 Aug 2022 17:24:05 +0100</lastBuildDate><atom:link href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Add Enrichments</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/enrich/enrich_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/enrich/enrich_1/</guid>
+      <description>Snowplow offers a large number of enrichments that can be used to enhance your event data. An enrichment either updates or populates fields of the atomic event or adds a self-describing context to derived_contexts.
+For this project, we&amp;rsquo;ll enable the IAB, UA parser and YAUAA enrichments in your console:
+IAB requires purchase (included with Snowplow BDP)
+IAB Use the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its’ IP address and user agent.</description>
+    </item>
+    
+    <item>
       <title>Install Snowplow dbt Package</title>
       <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -24,7 +36,8 @@ dbt deps </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_1/</guid>
-      <description>There are a number of options to implement Snowplow tracking in your web app. Select the required pathway to implement tracking on your web app:
+      <description>There are a number of options to implement Snowplow tracking in your website or single page application.
+Select the required pathway to implement tracking on your project.
 JS React Angular Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.
 Step 2: Add JS snippet Add the below snippet to all of the pages you would like to track. Make sure to update the link to the sp.</description>
     </item>
@@ -48,8 +61,8 @@ snowplow__start_date: The date of the first tracked event inside your atomic.eve
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_2/</guid>
       <description>The trackers create data on user actions at a specific point in time. For example:
 Loading a web page Clicking a link Submitting a form A number of tracking events are available out of the box. These include, but aren&amp;rsquo;t limited to:
-Page views Heartbeats (Page Pings) Link clicks HTML form actions In this section, we will implement page views and page pings.
-JS React Angular Step 1: Enable Activity Tracking First we will enable activity tracking to collect &amp;lsquo;page ping&amp;rsquo; events.</description>
+Page views Heartbeats (Page Pings) Link clicks HTML form actions Pageviews and Page Pings In this section, we will implement page views and page pings.
+JS React Angular Step 1: Enable Activity Tracking First we will enable activity tracking to collect page ping events.</description>
     </item>
     
     <item>
@@ -79,10 +92,8 @@ Step 1: Check the output Head to the SQL editor of your choice (e.g.: Snowflake 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/tracking/tracking_4/</guid>
-      <description>Test using Snowplow Mini or Micro??
-The Snowplow Chrome Extension can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.
-To get the full picture, tracking must be QA’d using the Snowplow Mini, not just by simply checking in the browser.
-Note: both events and context entities must be tested thoroughly - if a context entity that is appended to an event fails validation, the whole event will fail validation.</description>
+      <description>The Snowplow Chrome Extension can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.
+Step 1: Installation Install the Snowplow Chrome Extension, you may need to restart your browser. Step 2: Check your data Open up devtools (F12) and navigate to the Snowplow extension. You should see a list of Pageview and Page Ping events start to form as you interact with your site.</description>
     </item>
     
   </channel>

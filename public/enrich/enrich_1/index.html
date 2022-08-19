@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Enrich :: Advanced Analytics for Web</title>
+    <title>Add Enrichments :: Advanced Analytics for Web</title>
 
     
     <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1660933290" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/advanced-analytics-web-accelerator/enrich/">
+  <body class="" data-url="/advanced-analytics-web-accelerator/enrich/enrich_1/">
     <nav id="sidebar" class="showVisitedLinks">
 
   
@@ -196,8 +196,8 @@
 
 
 <li data-nav-id="/advanced-analytics-web-accelerator/enrich/" title="Enrich" class="dd-item
+        parent
         
-        active
         
         ">
   <a href="/advanced-analytics-web-accelerator/enrich/">
@@ -225,7 +225,7 @@
 
 
 <li data-nav-id="/advanced-analytics-web-accelerator/enrich/enrich_1/" title="Add Enrichments"
-  class="dd-item ">
+  class="dd-item active">
   <a href="/advanced-analytics-web-accelerator/enrich/enrich_1/">
     Add Enrichments
     <i class="fas fa-check read-icon"></i>
@@ -426,6 +426,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -436,7 +438,13 @@
             
           
           
-            <a href='/advanced-analytics-web-accelerator/'></a> > Enrich
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'></a> > <a href='/advanced-analytics-web-accelerator/enrich/'>Enrich</a> > Add Enrichments
+          
+        
           
         
           
@@ -445,6 +453,21 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -452,41 +475,34 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Add Enrichments
+            </h1>
           
 
         
 
 
+<p>Snowplow offers a large number of enrichments that can be used to enhance your event data. An enrichment either updates or populates fields of the atomic event or adds a self-describing context to derived_contexts.</p>
+<p>For this project, we&rsquo;ll enable the IAB, UA parser and YAUAA enrichments in your console:</p>
 
-	<h3 id="chapter-3">Chapter 3</h3>
-<h1 id="enrich">Enrich</h1>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });
-</script>
-
-<div class="mermaid" align="center">
-    
-flowchart LR
-    id1(Track)-->id2(Enrich)-->id3(Model)-->id4(Visualise)
-    style id2 fill:#f9f,stroke:#000,stroke-width:4px
-
+<div class="notices note" ><p>IAB requires purchase (included with Snowplow BDP)</p>
 </div>
-<p>The enrichment process adds extra properties and values to your collected data.</p>
+<h4 id="iab">IAB</h4>
+<p>Use the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its’ IP address and user agent.</p>
+<h4 id="ua-parser">UA Parser</h4>
+<p>Parse the useragent and attach detailed useragent information to each event.</p>
+<h4 id="yauaa">YAUAA</h4>
+<p>Parse and analyse the user agent string of an event and extract as many relevant attributes as possible using YAUAA API.</p>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -615,8 +631,6 @@ flowchart LR
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -636,6 +650,9 @@ flowchart LR
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -721,10 +738,10 @@ flowchart LR
 	 
 	 
 		
-			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/tracking/tracking_4/" title="Testing"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/enrich/" title="Enrich"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/enrich/enrich_1/" title="Add Enrichments" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/modelling/" title="Modelling" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -756,3 +773,4 @@ flowchart LR
 
   </body>
 </html>
+
