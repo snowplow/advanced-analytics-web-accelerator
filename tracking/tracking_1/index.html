@@ -12,20 +12,20 @@
     <title>Setup :: Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1660840608" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1660840608" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1660935288" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1660935288" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1660840608"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1660935288"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -203,6 +203,37 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/enrich/enrich_1/" title="Add Enrichments" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/enrich/enrich_1/">
+        Add Enrichments
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -440,7 +471,8 @@
         
 
 
-<p>There are a number of options to implement Snowplow tracking in your web app. Select the required pathway to implement tracking on your web app:</p>
+<p>There are a number of options to implement Snowplow tracking in your website or single page application.</p>
+<p>Select the required pathway to implement tracking on your project.</p>
 
 
 <div class="tab-panel">
@@ -448,29 +480,29 @@
     
         <button
           data-tab-item="JS"
-          data-tab-group="install"
+          data-tab-group="select"
           class="tab-nav-button btn active"
-          onclick="switchTab('install','JS')"
+          onclick="switchTab('select','JS')"
          >JS</button>
     
         <button
           data-tab-item="React"
-          data-tab-group="install"
+          data-tab-group="select"
           class="tab-nav-button btn "
-          onclick="switchTab('install','React')"
+          onclick="switchTab('select','React')"
          >React</button>
     
         <button
           data-tab-item="Angular"
-          data-tab-group="install"
+          data-tab-group="select"
           class="tab-nav-button btn "
-          onclick="switchTab('install','Angular')"
+          onclick="switchTab('select','Angular')"
          >Angular</button>
     
     </div>
     <div class="tab-content">
         
-        <div data-tab-item="JS" data-tab-group="install" class="tab-item active">
+        <div data-tab-item="JS" data-tab-group="select" class="tab-item active">
             <h4 id="step-1-download-spjs"><strong>Step 1:</strong> Download sp.js</h4>
 <p>Add the sp.js file to your project directory. The latest version can be found <a href="https://github.com/snowplow/snowplow-javascript-tracker/releases">here</a>.</p>
 <hr>
@@ -503,7 +535,7 @@
 </span></span></code></pre></div>
         </div>
         
-        <div data-tab-item="React" data-tab-group="install" class="tab-item ">
+        <div data-tab-item="React" data-tab-group="select" class="tab-item ">
             <h4 id="step-1-install-browser-tracker-package"><strong>Step 1:</strong> Install browser-tracker package</h4>
 <p>Install the <code>@snowplow/browser-tracker</code> via npm by running:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>npm install @snowplow/browser-tracker
@@ -535,59 +567,20 @@
 </span></span></code></pre></div>
         </div>
         
-        <div data-tab-item="Angular" data-tab-group="install" class="tab-item ">
-            <h4 id="step-1-download-spjs"><strong>Step 1:</strong> Download sp.js</h4>
-<p>Add the sp.js file to your assets folder. The latest version can be found <a href="https://github.com/snowplow/snowplow-javascript-tracker/releases">here</a>.</p>
-<hr>
-<h4 id="step-2-add-js-snippet"><strong>Step 2:</strong> Add JS snippet</h4>
-<p>Add the below snippet to your <code>index.html</code> file. <strong>Make sure to update the link to the sp.js file</strong></p>
-<p>This should be placed into the <code>&lt;head&gt;</code> element of your page.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#66d9ef">async</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>;(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">l</span>, <span style="color:#a6e22e">o</span>, <span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">g</span>) { <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>]) { <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">GlobalSnowplowNamespace</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">GlobalSnowplowNamespace</span> <span style="color:#f92672">||</span> []; <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">GlobalSnowplowNamespace</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>); <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () { (<span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">||</span> []).<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">arguments</span>) }; <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">q</span> <span style="color:#f92672">||</span> []; <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">createElement</span>(<span style="color:#a6e22e">o</span>); <span style="color:#a6e22e">g</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#a6e22e">o</span>)[<span style="color:#ae81ff">0</span>]; <span style="color:#a6e22e">n</span>.<span style="color:#66d9ef">async</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w</span>; <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">g</span>) } }(window, document, <span style="color:#e6db74">&#34;script&#34;</span>, <span style="color:#e6db74">&#34;{{Link to sp.js file}}&#34;</span>, <span style="color:#e6db74">&#34;snowplow&#34;</span>));
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-</span></span></code></pre></div><h4 id="step-3-configure-your-angular-project"><strong>Step 3:</strong> Configure your Angular project</h4>
-<p>Run <code>ng generate class window-ref</code> to create <code>window-ref.ts</code> and <code>window-ref.spec.ts</code> within <code>src/app</code>.</p>
-<p>Copy and paste the snippet below into <code>window-ref.ts</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Injectable</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ISnowplowWindow</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Window</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">snowplow</span><span style="color:#f92672">:</span> (...<span style="color:#a6e22e">args</span>) =&gt; <span style="color:#66d9ef">void</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getWindow</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> window;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">Injectable</span>()
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WindowRef</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">nativeWindow</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">ISnowplowWindow</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">getWindow</span>();
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="step-4-generate-snowplow-service-and-configure-the-tracker"><strong>Step 4:</strong> Generate Snowplow service and Configure the tracker</h4>
+        <div data-tab-item="Angular" data-tab-group="select" class="tab-item ">
+            <h4 id="step-1-install-browser-tracker-package"><strong>Step 1:</strong> Install browser-tracker package</h4>
+<p>Install the <code>@snowplow/browser-tracker</code> via npm by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>npm install @snowplow/browser-tracker
+</span></span></code></pre></div><h4 id="step-2-generate-snowplow-service-and-configure-the-tracker"><strong>Step 2:</strong> Generate Snowplow service and Configure the tracker</h4>
 <p>Run <code>ng generate service snowplow</code> to create <code>snowplow.service.ts</code> and <code>snowplow.service.spec.ts</code> within <code>src/app</code>.</p>
 <p>Create the tracker with the with the following arguments. This creates an instance of a basic tracker without any additional context.</p>
 <ul>
 <li>Tracker Name: <code>'sp'</code></li>
 <li>Collector Url: <code>'{{Url for Collector}}'</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">Injectable</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">WindowRef</span>, <span style="color:#a6e22e">ISnowplowWindow</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./window-ref&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">Injectable</span>({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">providedIn</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;root&#39;</span>
-</span></span><span style="display:flex;"><span>})
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnowplowService</span> {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">_window</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ISnowplowWindow</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(window<span style="color:#f92672">:</span> <span style="color:#a6e22e">WindowRef</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_window</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">nativeWindow</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_window</span>.<span style="color:#a6e22e">snowplow</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_window</span>.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">`&#39;{{Url for Collector}}&#39;`</span>
-</span></span><span style="display:flex;"><span>      )}
-</span></span><span style="display:flex;"><span>  }
+<p>Add the below snippet to <code>snowplow.service.ts</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnowplowService</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tracker</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">BrowserTracker</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newTracker</span>(<span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;{{Url for Collector}}&#39;</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow&rsquo;s more advanced features.</p>
 <p><strong>Optional Settings (JSON):</strong></p>
@@ -596,24 +589,19 @@
 <li><code>platform</code>: Identify the platform the event occurred on, in this case <code>web</code></li>
 <li><code>cookieSameSite</code>: Lax <strong>Not sure why, or what explanation to give, but is recommended</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">constructor</span>(window<span style="color:#f92672">:</span> <span style="color:#a6e22e">WindowRef</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_window</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">nativeWindow</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_window</span>.<span style="color:#a6e22e">snowplow</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_window</span>.<span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;newTracker&#39;</span>, <span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;collector&#39;</span>, {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ngSnowplow&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">contexts</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">webPage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">performanceTiming</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>      });
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SnowplowService</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tracker</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">BrowserTracker</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newTracker</span>(<span style="color:#e6db74">&#39;sp&#39;</span>, <span style="color:#e6db74">&#39;localhost:9090&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;appId&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">platform</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;web&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cookieSameSite</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Lax&#39;</span>,
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
         </div>
         
     </div>
 </div>
 
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 
 
 <footer class="footline">
@@ -744,6 +732,22 @@
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -849,16 +853,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1660840608"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1660935288"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1660840608"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1660840608"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1660935288"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1660935288"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
