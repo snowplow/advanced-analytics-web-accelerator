@@ -1,4 +1,4 @@
-## Advanced Analytics for Web
+# Advanced Analytics for Web
 
 !['logo-banner'](images/logo_banner.png)
 
@@ -8,17 +8,17 @@ Welcome to the Advanced Analytics for Web accelerator. In this guide you'll lear
 
 Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
 
-
 ***
 
 #### Who is this guide for?
-Data practicioners with or without Javascript developer experience who would like to set up tracking on their company's website and learn how to use the out of the box snowplow web data modelling so that they can gain insight of their customers' behavioural data as quickly as possible.
+Data practicioners with or without Javascript developer experience who would like to set up tracking on their company's website or single page application and learn how to use the Snowplow web data model to gain insight from their customers' behavioural data as quickly as possible.
 
 ***
 
 #### What you'll learn
+In approximately 2 working days you will learn to: 
 
-- **Track -** Setup and deploy tracking to your web app
+- **Track -** Setup and deploy tracking to your website or single page application
 - **Enrich -** Add enrichments to your data
 - **Model -** Configure the snowplow-web data model and run it against your Snowflake warehouse
 - **Visualise -** Visualise your output data with Streamlit 
@@ -28,13 +28,13 @@ gantt
         dateFormat  HH-mm
         axisFormat %M
         section 1. Track
-        8h          :track, 00-00, 8m
+        8h          :track, 00-00, 6m
         section 2. Enrich
-        4h            :enrich, after track, 4m
+        4h          :enrich, after track, 2m
         section 3. Model
-        2h          :model, after enrich, 2m
+        2h          :model, after enrich, 4m
         section 4. Visualise
-        5h            :visaualise, after model, 5m
+        5h          :visaualise, after model, 4m
 {{</mermaid >}}
 
 ***

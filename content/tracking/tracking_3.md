@@ -21,29 +21,74 @@ Similar to the predefined events, a number of entities are available to implemen
 
 ***
 
+{{< tabs groupId="select" >}}
+{{% tab name="JS" %}}
+
 #### **Step 1:** Enable Predefined Entities
-The `webPage` entity is enabled by default in the JavaScript tracker.
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for the dbt web model used in later steps.
 
 <!-- To enable `session`, `performanceTiming` and `geolocation` use the options below. -->
 
 ```javascript 
 window.snowplow('newTracker', 'sp', '{{Url for Collector}}', { 
-...    
-contexts: {
-      webPage: true,
-    }
-...
+  ...    
+  contexts: {
+        webPage: true,
+      }
+  ...
 });
 ```
 
 Each event sent with this tracker will now contain the data from each of these entities.
 
-***
-
+<!-- 
 #### **Step 2:** Custom Entities 
 **Do we want to do this?**
 In addition to the out of the box entities, Snowplow lets you add custom entities to provide additional information surrounding an event. 
 
 These are defined using JSON schemas uploaded to your iglu repository
 
-***
+*** -->
+
+{{% /tab %}}
+{{% tab name="React" %}}
+#### **Step 1:** Enable Predefined Entities
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for the dbt web model used in later steps.
+
+<!-- To enable `session`, `performanceTiming` and `geolocation` use the options below. -->
+
+```javascript 
+let tracker = newTracker('sp', '{{Url for Collector}}', { 
+  ...
+  contexts: {
+    webPage: true
+  }
+  ...
+});
+```
+
+Each event sent with this tracker will now contain the data from each of these entities.
+
+{{% /tab %}}
+{{% tab name="Angular" %}}
+
+#### **Step 1:** Enable Predefined Entities
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for the dbt web model used in later steps.
+
+```javascript 
+export class SnowplowService {
+  tracker: BrowserTracker = newTracker('sp', 'localhost:9090', {
+  ...    
+  contexts: {
+      webPage: true,
+      session: false
+      }
+  ...
+  }
+});
+```
+
+Each event sent with this tracker will now contain the data from each of these entities.
+
+{{% /tab %}}
+{{< /tabs >}}
