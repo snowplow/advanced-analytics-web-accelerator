@@ -9,7 +9,7 @@ Snowplow offers a large number of enrichments that can be used to enhance your e
 For this project, we'll enable the IAB, UA parser and YAUAA enrichments in your console:
 
 {{% notice note %}}
-IAB requires purchase (included with Snowplow BDP)
+The IAB enrichment requires purchase (included with Snowplow BDP)
 {{% /notice %}}
 
 #### IAB

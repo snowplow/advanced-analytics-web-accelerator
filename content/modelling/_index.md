@@ -17,4 +17,6 @@ flowchart LR
 {{</mermaid >}}
 
 
-The [snowplow-web dbt package](https://hub.getdbt.com/snowplow/snowplow_web/latest/) transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users. Modelling the data makes it easier to digest and derive business value from the Snowplow data.
+The [snowplow-web dbt package](https://hub.getdbt.com/snowplow/snowplow_web/latest/) transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users. 
+
+Modelling the data makes it easier to digest and derive business value from the Snowplow data.

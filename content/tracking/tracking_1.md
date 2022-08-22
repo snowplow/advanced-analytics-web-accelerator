@@ -27,6 +27,8 @@ Typically this will be placed into the `<head>` element of your page or in a sim
 <script>
 ```
 
+***
+
 #### **Step 3:** Configure the Tracker
 Call `newTracker` in the `<script>` tag, with the following arguments. This creates an instance of a basic tracker without any additional context.
 
@@ -67,6 +69,8 @@ npm install @snowplow/browser-tracker
 
 **Have react router dom installed**
 
+***
+
 #### **Step 2:** Import the tracker package
 In your `src` folder, create a file called `tracker.js`. 
 
@@ -76,6 +80,8 @@ Import the browser tracker into `tracker.js` with the below snippet:
 import React from 'react';
 import { newTracker, trackPageView, enableActivityTracking } from "@snowplow/browser-tracker";
 ```
+
+***
 
 #### **Step 3:** Configure the tracker
 Create the tracker with the with the following arguments. This creates an instance of a basic tracker without any additional context.
@@ -114,9 +120,14 @@ Install the `@snowplow/browser-tracker` via npm by running:
 npm install @snowplow/browser-tracker
 ```
 
-####  **Step 2:** Generate Snowplow service and Configure the tracker
+***
+
+####  **Step 2:** Generate Snowplow Service 
 Run `ng generate service snowplow` to create `snowplow.service.ts` and `snowplow.service.spec.ts` within `src/app`.
 
+***
+
+#### **Step 3:**  Configure the tracker
 Create the tracker with the with the following arguments. This creates an instance of a basic tracker without any additional context.
 
 - Tracker Name: `'sp'`

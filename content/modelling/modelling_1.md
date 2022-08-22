@@ -13,11 +13,11 @@ packages:
     version: 0.9.0
 ```
 
+***
+
 #### **Step 2:** Install the package
 Install the package by running:
 
 ```cmd
 dbt deps
 ```
-
-***

@@ -14,7 +14,7 @@
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/enrich/enrich_1/</guid>
       <description>Snowplow offers a large number of enrichments that can be used to enhance your event data. An enrichment either updates or populates fields of the atomic event or adds a self-describing context to derived_contexts.
 For this project, we&amp;rsquo;ll enable the IAB, UA parser and YAUAA enrichments in your console:
-IAB requires purchase (included with Snowplow BDP)
+The IAB enrichment requires purchase (included with Snowplow BDP)
 IAB Use the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its’ IP address and user agent.</description>
     </item>
     
