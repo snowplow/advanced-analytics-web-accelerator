@@ -1,6 +1,6 @@
 +++
 title = "Install Snowplow dbt Package"
-weight = 1
+weight = 2
 post = ""
 +++
 
