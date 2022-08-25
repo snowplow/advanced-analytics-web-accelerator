@@ -12,20 +12,20 @@
     <title>Setup dbt Package :: Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661165429" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661444664" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661165429"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661444664"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -277,6 +277,27 @@
  
   
     
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_0/" title="Load sample data (optional)" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/modelling/modelling_0/">
+        Load sample data (optional)
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_1/" title="Install Snowplow dbt Package" class="dd-item ">
         <a href="/advanced-analytics-web-accelerator/modelling/modelling_1/">
         Install Snowplow dbt Package
@@ -319,9 +340,9 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing" class="dd-item ">
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing the output" class="dd-item ">
         <a href="/advanced-analytics-web-accelerator/modelling/modelling_3/">
-        Testing
+        Testing the output
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -510,10 +531,19 @@
         
 
 
-<p>At this stage you should have tracking and enrichment setup as well as:</p>
+<p>At this stage you should EITHER:</p>
+<ol>
+<li>Have tracking and enrichment setup, as well as:</li>
+</ol>
 <ul>
-<li>Data in the <code>atomic.events</code> table</li>
+<li>Data in the <code>ATOMIC.EVENTS</code> table</li>
 <li>Enabled IAB, UA parser and YAUAA enrichments</li>
+</ul>
+<ol start="2">
+<li>In case you skipped the tracking and enrichment steps and used our SAMPLE_DATA.csv instead you should have:</li>
+</ol>
+<ul>
+<li>Data in the <code>ATOMIC.SAMPLE_EVENTS</code> table</li>
 </ul>
 <hr>
 <h4 id="step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</h4>
@@ -530,10 +560,16 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_iab</span>: <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_ua</span>: <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_yauaa</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>If you would like to use the <code>ATOMIC.SAMPLE_EVENTS</code> table as a base instead of <code>ATOMIC.EVENTS</code> where the data is sent through the pipeline, add the following variable as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__events</span>: <span style="color:#e6db74">&#39;SAMPLE_EVENTS&#39;</span>
 </span></span></code></pre></div><hr>
 <h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h4>
 <p>The web package provides a suite of suggested selectors to help run and test the models.</p>
-<p>These are defined in the <code>selectors.yml</code> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
+<p>These are defined in the <a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors.yml</a> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
 <p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
 <hr>
 <h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
@@ -725,6 +761,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -803,7 +855,7 @@
 			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/modelling/modelling_1/" title="Install Snowplow dbt Package"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing the output" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -813,16 +865,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661165429"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661444664"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661165429"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661444664"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

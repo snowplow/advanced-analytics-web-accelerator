@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Advanced Analytics for Web">
+<meta name="author" content="Agnes Kiss and Jack Keene">
+
+    <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
+
+    <title>Load sample data (optional) :: Advanced Analytics for Web</title>
+
+    
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661444664" rel="stylesheet">
+    
+    
+
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661444664"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/advanced-analytics-web-accelerator/modelling/modelling_0/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator">
+    <img src="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/images/logo.png" />
+</a>
+    </div>
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'>Introduction</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/tracking/" title="Tracking" class="dd-item
+        
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/tracking/">
+          <b>1. </b>Tracking
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_1/" title="Setup" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/tracking_1/">
+        Setup
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_2/" title="Tracking Events" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/tracking_2/">
+        Tracking Events
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_3/" title="Adding Context" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/tracking_3/">
+        Adding Context
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/tracking/tracking_4/" title="Testing" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/tracking/tracking_4/">
+        Testing
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/enrich/" title="Enrich" class="dd-item
+        
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/enrich/">
+          <b>2. </b>Enrich
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/enrich/enrich_1/" title="Add Enrichments" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/enrich/enrich_1/">
+        Add Enrichments
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/modelling/" title="Modelling" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/modelling/">
+          <b>3. </b>Modelling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_0/" title="Load sample data (optional)" class="dd-item active">
+        <a href="/advanced-analytics-web-accelerator/modelling/modelling_0/">
+        Load sample data (optional)
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_1/" title="Install Snowplow dbt Package" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/modelling/modelling_1/">
+        Install Snowplow dbt Package
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_2/" title="Setup dbt Package" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/modelling/modelling_2/">
+        Setup dbt Package
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing the output" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/modelling/modelling_3/">
+        Testing the output
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/advanced-analytics-web-accelerator/visualisation/" title="Visualisation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/advanced-analytics-web-accelerator/visualisation/">
+          <b>4. </b>Visualisation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/advanced-analytics-web-accelerator/visualisation/visualisation_1/" title="Setup" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/visualisation/visualisation_1/">
+        Setup
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://try.snowplowanalytics.com/">Try Snowplow</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'></a> > <a href='/advanced-analytics-web-accelerator/modelling/'>Modelling</a> > Load sample data (optional)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Load sample data (optional)
+            </h1>
+          
+
+        
+
+
+<p>In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data you can download and use our sample data:</p>
+<section class="attachments ">
+  <label>
+    <i class="fas fa-paperclip" aria-hidden="true"></i>
+    Attachments
+  </label>
+  <div class="attachments-files">
+    <li>
+      <a href="/advanced-analytics-web-accelerator/modelling/modelling_0.files/sample_events.csv">sample_events.csv</a>
+      (35 MB)
+    </li>
+  </div>
+</section>
+
+<p>In the below example we will be loading the data using the <code>Snowflake Web Interface</code>. For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
+<h4 id="step-1--create-the-atomic-schema-in-your-target-database-unless-it-exists-already"><strong>Step 1:</strong>  Create the <strong>ATOMIC</strong> schema in your target database (unless it exists already):</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">SCHEMA</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-2--create-the-sample_events_base-table-to-load-data-to"><strong>Step 2:</strong>  Create the <strong>SAMPLE_EVENTS_BASE</strong> table to load data to:</h4>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	SQL_script
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	APP_ID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	PLATFORM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	ETL_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	COLLECTOR_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	DVCE_CREATED_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	EVENT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	EVENT_ID VARCHAR(<span style="color:#ae81ff">36</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	TXN_ID NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	NAME_TRACKER VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	V_TRACKER VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	V_COLLECTOR VARCHAR(<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	V_ETL VARCHAR(<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>	USER_ID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	USER_IPADDRESS VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	USER_FINGERPRINT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DOMAIN_USERID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONIDX NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	NETWORK_USERID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	GEO_COUNTRY VARCHAR(<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	GEO_REGION VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	GEO_CITY VARCHAR(<span style="color:#ae81ff">75</span>),
+</span></span><span style="display:flex;"><span>	GEO_ZIPCODE VARCHAR(<span style="color:#ae81ff">15</span>),
+</span></span><span style="display:flex;"><span>	GEO_LATITUDE FLOAT,
+</span></span><span style="display:flex;"><span>	GEO_LONGITUDE FLOAT,
+</span></span><span style="display:flex;"><span>	GEO_REGION_NAME VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	IP_ISP VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	IP_ORGANIZATION VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	IP_DOMAIN VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	IP_NETSPEED VARCHAR(<span style="color:#ae81ff">100</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URL VARCHAR(<span style="color:#ae81ff">4096</span>),
+</span></span><span style="display:flex;"><span>	PAGE_TITLE VARCHAR(<span style="color:#ae81ff">2000</span>),
+</span></span><span style="display:flex;"><span>	PAGE_REFERRER VARCHAR(<span style="color:#ae81ff">4096</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLSCHEME VARCHAR(<span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLHOST VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLPORT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLPATH VARCHAR(<span style="color:#ae81ff">3000</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLQUERY VARCHAR(<span style="color:#ae81ff">6000</span>),
+</span></span><span style="display:flex;"><span>	PAGE_URLFRAGMENT VARCHAR(<span style="color:#ae81ff">3000</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLSCHEME VARCHAR(<span style="color:#ae81ff">16</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLHOST VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLPORT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLPATH VARCHAR(<span style="color:#ae81ff">6000</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLQUERY VARCHAR(<span style="color:#ae81ff">6000</span>),
+</span></span><span style="display:flex;"><span>	REFR_URLFRAGMENT VARCHAR(<span style="color:#ae81ff">3000</span>),
+</span></span><span style="display:flex;"><span>	REFR_MEDIUM VARCHAR(<span style="color:#ae81ff">25</span>),
+</span></span><span style="display:flex;"><span>	REFR_SOURCE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	REFR_TERM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_MEDIUM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_SOURCE VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_TERM VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	MKT_CONTENT VARCHAR(<span style="color:#ae81ff">500</span>),
+</span></span><span style="display:flex;"><span>	MKT_CAMPAIGN VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	SE_CATEGORY VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	SE_ACTION VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	SE_LABEL VARCHAR(<span style="color:#ae81ff">4096</span>),
+</span></span><span style="display:flex;"><span>	SE_PROPERTY VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	SE_VALUE FLOAT,
+</span></span><span style="display:flex;"><span>	TR_ORDERID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_AFFILIATION VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_TOTAL NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_TAX NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_SHIPPING NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_CITY VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_STATE VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TR_COUNTRY VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_ORDERID VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_SKU VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_NAME VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_CATEGORY VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	TI_PRICE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TI_QUANTITY NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MIN NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MAX NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MIN NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MAX NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	USERAGENT VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	BR_NAME VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_FAMILY VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_VERSION VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_TYPE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_RENDERENGINE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	BR_LANG VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	BR_FEATURES_PDF BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_FLASH BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_JAVA BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_DIRECTOR BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_QUICKTIME BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_REALPLAYER BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_WINDOWSMEDIA BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_GEARS BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_SILVERLIGHT BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_COOKIES BOOLEAN,
+</span></span><span style="display:flex;"><span>	BR_COLORDEPTH VARCHAR(<span style="color:#ae81ff">12</span>),
+</span></span><span style="display:flex;"><span>	BR_VIEWWIDTH NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	BR_VIEWHEIGHT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	OS_NAME VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	OS_FAMILY VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	OS_MANUFACTURER VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	OS_TIMEZONE VARCHAR(<span style="color:#ae81ff">255</span>),
+</span></span><span style="display:flex;"><span>	DVCE_TYPE VARCHAR(<span style="color:#ae81ff">50</span>),
+</span></span><span style="display:flex;"><span>	DVCE_ISMOBILE BOOLEAN,
+</span></span><span style="display:flex;"><span>	DVCE_SCREENWIDTH NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	DVCE_SCREENHEIGHT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	DOC_CHARSET VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DOC_WIDTH NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	DOC_HEIGHT NUMBER(<span style="color:#ae81ff">38</span>,<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>	TR_CURRENCY VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	TR_TOTAL_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_TAX_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TR_SHIPPING_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	TI_CURRENCY VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	TI_PRICE_BASE NUMBER(<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>	BASE_CURRENCY VARCHAR(<span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>	GEO_TIMEZONE VARCHAR(<span style="color:#ae81ff">64</span>),
+</span></span><span style="display:flex;"><span>	MKT_CLICKID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	MKT_NETWORK VARCHAR(<span style="color:#ae81ff">64</span>),
+</span></span><span style="display:flex;"><span>	ETL_TAGS VARCHAR(<span style="color:#ae81ff">500</span>),
+</span></span><span style="display:flex;"><span>	DVCE_SENT_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	REFR_DOMAIN_USERID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	REFR_DVCE_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONID VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	DERIVED_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	EVENT_VENDOR VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	EVENT_NAME VARCHAR(<span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>	EVENT_FORMAT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	EVENT_VERSION VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	EVENT_FINGERPRINT VARCHAR(<span style="color:#ae81ff">128</span>),
+</span></span><span style="display:flex;"><span>	TRUE_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	LOAD_TSTAMP TIMESTAMP_NTZ(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>	CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_UA_PARSER_CONTEXT_1 VARCHAR,
+</span></span><span style="display:flex;"><span>	CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_WEB_PAGE_1 VARCHAR,
+</span></span><span style="display:flex;"><span>	CONTEXTS_COM_IAB_SNOWPLOW_SPIDERS_AND_ROBOTS_1 VARCHAR,
+</span></span><span style="display:flex;"><span>	CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1 VARCHAR,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">constraint</span> EVENT_ID_PK <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (EVENT_ID)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div>
+    </div>
+</div>
+<hr>
+<h4 id="step-3-load-the-data-using-the-web-interface"><strong>Step 3:</strong> Load the data using the web interface</h4>
+<p>3.1 Log into your web interface and click on <code>Databases</code> tab.</p>
+<p>3.2 Locate the <strong>SAMPLE_EVENTS_BASE</strong> table that you just created and select it.</p>
+<p>3.3 Click the <code>Load Table</code> button to open the Load Data wizard.</p>
+<p>3.4 Select the relevant warehouse from the dropdown list. Click <code>Next</code>.</p>
+<p>3.5 Within the <code>Source Files</code> section select <code>Load files from your computer</code> option, and click the <code>Select Files</code> button.
+Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Open</code> then the <code>Next</code> button.</p>
+<p>3.6 Create a new File Format with the plus (+) symbol beside the dropdown list and change the following settings for the default csv file formats:</p>
+<ul>
+<li><code>Header lines to skip</code>= 1</li>
+<li><code>Field optionally enclosed by</code>= Double Quote</li>
+</ul>
+<p>3.7 Click the <code>Load button</code> (no need to alter the Load Options). Loading should take place within a couple of minutes.</p>
+<p>For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
+<hr>
+<h4 id="step-4-create-the-atomicsample_events-table"><strong>Step 4:</strong> Create the <strong>ATOMIC.SAMPLE_EVENTS</strong> table</h4>
+<p>The Snowplow pipeline would create context fields as arrays not varchars for Snowflake, therefore in order for the web data model to work they need to be converted. Run the below DDL statement in your SQL editor of choice:</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	SQL_script
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>	APP_ID,
+</span></span><span style="display:flex;"><span>	PLATFORM,
+</span></span><span style="display:flex;"><span>	ETL_TSTAMP,
+</span></span><span style="display:flex;"><span>	COLLECTOR_TSTAMP,
+</span></span><span style="display:flex;"><span>	DVCE_CREATED_TSTAMP,
+</span></span><span style="display:flex;"><span>	EVENT,
+</span></span><span style="display:flex;"><span>	EVENT_ID,
+</span></span><span style="display:flex;"><span>	TXN_ID,
+</span></span><span style="display:flex;"><span>	NAME_TRACKER,
+</span></span><span style="display:flex;"><span>	V_TRACKER,
+</span></span><span style="display:flex;"><span>	V_COLLECTOR,
+</span></span><span style="display:flex;"><span>	V_ETL,
+</span></span><span style="display:flex;"><span>	USER_ID,
+</span></span><span style="display:flex;"><span>	USER_IPADDRESS,
+</span></span><span style="display:flex;"><span>	USER_FINGERPRINT,
+</span></span><span style="display:flex;"><span>	DOMAIN_USERID,
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONIDX,
+</span></span><span style="display:flex;"><span>	NETWORK_USERID,
+</span></span><span style="display:flex;"><span>	GEO_COUNTRY,
+</span></span><span style="display:flex;"><span>	GEO_REGION,
+</span></span><span style="display:flex;"><span>	GEO_CITY,
+</span></span><span style="display:flex;"><span>	GEO_ZIPCODE,
+</span></span><span style="display:flex;"><span>	GEO_LATITUDE,
+</span></span><span style="display:flex;"><span>	GEO_LONGITUDE,
+</span></span><span style="display:flex;"><span>	GEO_REGION_NAME,
+</span></span><span style="display:flex;"><span>	IP_ISP,
+</span></span><span style="display:flex;"><span>	IP_ORGANIZATION,
+</span></span><span style="display:flex;"><span>	IP_DOMAIN,
+</span></span><span style="display:flex;"><span>	IP_NETSPEED,
+</span></span><span style="display:flex;"><span>	PAGE_URL,
+</span></span><span style="display:flex;"><span>	PAGE_TITLE,
+</span></span><span style="display:flex;"><span>	PAGE_REFERRER,
+</span></span><span style="display:flex;"><span>	PAGE_URLSCHEME,
+</span></span><span style="display:flex;"><span>	PAGE_URLHOST,
+</span></span><span style="display:flex;"><span>	PAGE_URLPORT,
+</span></span><span style="display:flex;"><span>	PAGE_URLPATH,
+</span></span><span style="display:flex;"><span>	PAGE_URLQUERY,
+</span></span><span style="display:flex;"><span>	PAGE_URLFRAGMENT,
+</span></span><span style="display:flex;"><span>	REFR_URLSCHEME,
+</span></span><span style="display:flex;"><span>	REFR_URLHOST,
+</span></span><span style="display:flex;"><span>	REFR_URLPORT,
+</span></span><span style="display:flex;"><span>	REFR_URLPATH,
+</span></span><span style="display:flex;"><span>	REFR_URLQUERY,
+</span></span><span style="display:flex;"><span>	REFR_URLFRAGMENT,
+</span></span><span style="display:flex;"><span>	REFR_MEDIUM,
+</span></span><span style="display:flex;"><span>	REFR_SOURCE,
+</span></span><span style="display:flex;"><span>	REFR_TERM,
+</span></span><span style="display:flex;"><span>	MKT_MEDIUM,
+</span></span><span style="display:flex;"><span>	MKT_SOURCE,
+</span></span><span style="display:flex;"><span>	MKT_TERM,
+</span></span><span style="display:flex;"><span>	MKT_CONTENT,
+</span></span><span style="display:flex;"><span>	MKT_CAMPAIGN,
+</span></span><span style="display:flex;"><span>	SE_CATEGORY,
+</span></span><span style="display:flex;"><span>	SE_ACTION,
+</span></span><span style="display:flex;"><span>	SE_LABEL,
+</span></span><span style="display:flex;"><span>	SE_PROPERTY,
+</span></span><span style="display:flex;"><span>	SE_VALUE,
+</span></span><span style="display:flex;"><span>	TR_ORDERID,
+</span></span><span style="display:flex;"><span>	TR_AFFILIATION,
+</span></span><span style="display:flex;"><span>	TR_TOTAL,
+</span></span><span style="display:flex;"><span>	TR_TAX,
+</span></span><span style="display:flex;"><span>	TR_SHIPPING,
+</span></span><span style="display:flex;"><span>	TR_CITY,
+</span></span><span style="display:flex;"><span>	TR_STATE,
+</span></span><span style="display:flex;"><span>	TR_COUNTRY,
+</span></span><span style="display:flex;"><span>	TI_ORDERID,
+</span></span><span style="display:flex;"><span>	TI_SKU,
+</span></span><span style="display:flex;"><span>	TI_NAME,
+</span></span><span style="display:flex;"><span>	TI_CATEGORY,
+</span></span><span style="display:flex;"><span>	TI_PRICE,
+</span></span><span style="display:flex;"><span>	TI_QUANTITY,
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MIN,
+</span></span><span style="display:flex;"><span>	PP_XOFFSET_MAX,
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MIN,
+</span></span><span style="display:flex;"><span>	PP_YOFFSET_MAX,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">REPLACE</span>(USERAGENT, <span style="color:#e6db74">&#39;\&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#66d9ef">as</span> USERAGENT,
+</span></span><span style="display:flex;"><span>	BR_NAME,
+</span></span><span style="display:flex;"><span>	BR_FAMILY,
+</span></span><span style="display:flex;"><span>	BR_VERSION,
+</span></span><span style="display:flex;"><span>	BR_TYPE,
+</span></span><span style="display:flex;"><span>	BR_RENDERENGINE,
+</span></span><span style="display:flex;"><span>	BR_LANG,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_PDF,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_FLASH,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_JAVA,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_DIRECTOR,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_QUICKTIME,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_REALPLAYER,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_WINDOWSMEDIA,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_GEARS,
+</span></span><span style="display:flex;"><span>	BR_FEATURES_SILVERLIGHT,
+</span></span><span style="display:flex;"><span>	BR_COOKIES,
+</span></span><span style="display:flex;"><span>	BR_COLORDEPTH,
+</span></span><span style="display:flex;"><span>	BR_VIEWWIDTH,
+</span></span><span style="display:flex;"><span>	BR_VIEWHEIGHT,
+</span></span><span style="display:flex;"><span>	OS_NAME,
+</span></span><span style="display:flex;"><span>	OS_FAMILY,
+</span></span><span style="display:flex;"><span>	OS_MANUFACTURER,
+</span></span><span style="display:flex;"><span>	OS_TIMEZONE,
+</span></span><span style="display:flex;"><span>	DVCE_TYPE,
+</span></span><span style="display:flex;"><span>	DVCE_ISMOBILE,
+</span></span><span style="display:flex;"><span>	DVCE_SCREENWIDTH,
+</span></span><span style="display:flex;"><span>	DVCE_SCREENHEIGHT,
+</span></span><span style="display:flex;"><span>	DOC_CHARSET,
+</span></span><span style="display:flex;"><span>	DOC_WIDTH,
+</span></span><span style="display:flex;"><span>	DOC_HEIGHT,
+</span></span><span style="display:flex;"><span>	TR_CURRENCY,
+</span></span><span style="display:flex;"><span>	TR_TOTAL_BASE,
+</span></span><span style="display:flex;"><span>	TR_TAX_BASE,
+</span></span><span style="display:flex;"><span>	TR_SHIPPING_BASE,
+</span></span><span style="display:flex;"><span>	TI_CURRENCY,
+</span></span><span style="display:flex;"><span>	TI_PRICE_BASE,
+</span></span><span style="display:flex;"><span>	BASE_CURRENCY,
+</span></span><span style="display:flex;"><span>	GEO_TIMEZONE,
+</span></span><span style="display:flex;"><span>	MKT_CLICKID,
+</span></span><span style="display:flex;"><span>	MKT_NETWORK,
+</span></span><span style="display:flex;"><span>	ETL_TAGS,
+</span></span><span style="display:flex;"><span>	DVCE_SENT_TSTAMP,
+</span></span><span style="display:flex;"><span>	REFR_DOMAIN_USERID,
+</span></span><span style="display:flex;"><span>	REFR_DVCE_TSTAMP,
+</span></span><span style="display:flex;"><span>	DOMAIN_SESSIONID,
+</span></span><span style="display:flex;"><span>	DERIVED_TSTAMP,
+</span></span><span style="display:flex;"><span>	EVENT_VENDOR,
+</span></span><span style="display:flex;"><span>	EVENT_NAME,
+</span></span><span style="display:flex;"><span>	EVENT_FORMAT,
+</span></span><span style="display:flex;"><span>	EVENT_VERSION,
+</span></span><span style="display:flex;"><span>	EVENT_FINGERPRINT,
+</span></span><span style="display:flex;"><span>	TRUE_TSTAMP,
+</span></span><span style="display:flex;"><span>	LOAD_TSTAMP,
+</span></span><span style="display:flex;"><span>	PARSE_JSON(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_UA_PARSER_CONTEXT_1,<span style="color:#e6db74">&#39;\&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),<span style="color:#e6db74">&#39;&#39;&#39;&#39;</span>,<span style="color:#e6db74">&#39;\&#34;&#39;</span>)) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_UA_PARSER_CONTEXT_1,
+</span></span><span style="display:flex;"><span>	PARSE_JSON(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_WEB_PAGE_1,<span style="color:#e6db74">&#39;\&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),<span style="color:#e6db74">&#39;&#39;&#39;&#39;</span>,<span style="color:#e6db74">&#39;\&#34;&#39;</span>)) <span style="color:#66d9ef">as</span> CONTEXTS_COM_SNOWPLOWANALYTICS_SNOWPLOW_WEB_PAGE_1,
+</span></span><span style="display:flex;"><span>	PARSE_JSON(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(CONTEXTS_COM_IAB_SNOWPLOW_SPIDERS_AND_ROBOTS_1,<span style="color:#e6db74">&#39;\&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),<span style="color:#e6db74">&#39;&#39;&#39;&#39;</span>,<span style="color:#e6db74">&#39;\&#34;&#39;</span>)) <span style="color:#66d9ef">as</span> CONTEXTS_COM_IAB_SNOWPLOW_SPIDERS_AND_ROBOTS_1,
+</span></span><span style="display:flex;"><span>	PARSE_JSON(<span style="color:#66d9ef">REPLACE</span>(<span style="color:#66d9ef">REPLACE</span>(CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1,<span style="color:#e6db74">&#39;\&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>),<span style="color:#e6db74">&#39;&#39;&#39;&#39;</span>,<span style="color:#e6db74">&#39;\&#34;&#39;</span>)) <span style="color:#66d9ef">as</span> CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE )
+</span></span></code></pre></div>
+    </div>
+</div>
+<hr>
+<h4 id="step-5--drop-the-sample_events_base-table"><strong>Step 5:</strong>  Drop the <strong>SAMPLE_EVENTS_BASE</strong> table</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE
+</span></span></code></pre></div>
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/modelling/" title="Modelling"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/modelling/modelling_1/" title="Install Snowplow dbt Package" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661444664"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661444664"></script>
+    
+        
+            <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+

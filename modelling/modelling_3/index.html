@@ -9,23 +9,23 @@
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Testing :: Advanced Analytics for Web</title>
+    <title>Testing the output :: Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661165429" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661165429" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661444664" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661165429"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661444664"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -277,6 +277,27 @@
  
   
     
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_0/" title="Load sample data (optional)" class="dd-item ">
+        <a href="/advanced-analytics-web-accelerator/modelling/modelling_0/">
+        Load sample data (optional)
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_1/" title="Install Snowplow dbt Package" class="dd-item ">
         <a href="/advanced-analytics-web-accelerator/modelling/modelling_1/">
         Install Snowplow dbt Package
@@ -319,9 +340,9 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing" class="dd-item active">
+      <li data-nav-id="/advanced-analytics-web-accelerator/modelling/modelling_3/" title="Testing the output" class="dd-item active">
         <a href="/advanced-analytics-web-accelerator/modelling/modelling_3/">
-        Testing
+        Testing the output
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -466,7 +487,7 @@
             
           
           
-            <a href='/advanced-analytics-web-accelerator/'></a> > <a href='/advanced-analytics-web-accelerator/modelling/'>Modelling</a> > Testing
+            <a href='/advanced-analytics-web-accelerator/'></a> > <a href='/advanced-analytics-web-accelerator/modelling/'>Modelling</a> > Testing the output
           
         
           
@@ -503,7 +524,7 @@
           
             <h1>
               
-              Testing
+              Testing the output
             </h1>
           
 
@@ -511,16 +532,120 @@
 
 
 <p>Data should now be loaded into your warehouse, next we will check the models output.</p>
-<h4 id="step-1-check-the-output"><strong>Step 1:</strong> Check the output</h4>
+<h4 id="step-1-check-the-output-schemas"><strong>Step 1:</strong> Check the output schemas</h4>
 <p>Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&rsquo;s output. You should be able to see three new schemas created:</p>
 <ol>
-<li>[your_custom_schema_name_]<em>scratch</em>: drop and recompute models that aid the incremental run</li>
-<li>[your_custom_schema_name_]<em>derived</em>: main output models you can use in your downstream models and reporting</li>
-<li>[your_custom_schema_name_]<em>manifest</em>: tables that help the integrity and core incremental logic of the model
-Check out the <code>database</code> section of the [<code>documentation site</code>] [snowplow-web-documentation] for a breakdown of what the output should look like.</li>
+<li>[your_custom_schema]_<em><strong>scratch</strong></em>: drop and recompute models that aid the incremental run</li>
+<li>[your_custom_schema]_<em><strong>derived</strong></em>: main output models you can use in your downstream models and reporting</li>
+<li>[your_custom_schema]_<em><strong>manifest</strong></em>: tables that help the integrity and core incremental logic of the model</li>
 </ol>
-<p><a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors-yml-file</a>
-<a href="https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web">snowplow-web-documentation</a></p>
+<hr>
+<h4 id="step-2-run-dbt-test"><strong>Step 2:</strong> Run dbt test</h4>
+<p>Run our recommended selector specified tests to identify potential issues with the data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dbt test --selector snowplow_web_lean_tests
+</span></span></code></pre></div><hr>
+<h4 id="step-3-explore-your-data"><strong>Step 3:</strong> Explore your data</h4>
+<p>Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below:</p>
+<p><strong>Find out the number of page reads using <code>derived.snowplow_web_page_views:</code></strong>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	SQL_script
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">READS</span> <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    PAGE_TITLE,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> [YOUR_CUSTOM_SCHEMA]_DERIVED.SNOWPLOW_WEB_PAGE_VIEWS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">WHERE</span> ENGAGED_TIME_IN_S <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">AND</span> VERTICAL_PIXELS_SCROLLED <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">READS</span>
+</span></span></code></pre></div>
+    </div>
+</div></p>
+<p><strong>Calculate the bounce rate using <code>derived.snowplow_sessions:</code></strong>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	SQL_script
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> BOUNCE_RATE <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    FIRST_PAGE_URLPATH,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> DOMAIN_SESSIONID) <span style="color:#66d9ef">AS</span> SESSIONS,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> <span style="color:#66d9ef">CASE</span> <span style="color:#66d9ef">WHEN</span> PAGE_VIEWS <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> DOMAIN_SESSIONID <span style="color:#66d9ef">END</span>) <span style="color:#f92672">/</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> DOMAIN_SESSIONID) <span style="color:#66d9ef">AS</span> BOUNCE_RATE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> DERIVED.SNOWPLOW_WEB_SESSIONS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> SESSIONS <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> BOUNCE_RATE
+</span></span></code></pre></div>
+    </div>
+</div></p>
+<p><strong>Find out details about the highest engaged user using <code>derived.snowplow_users:</code></strong>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	SQL_script
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> ENGAGEMENT <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> DERIVED.SNOWPLOW_WEB_USERS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> ENGAGED_TIME_IN_S <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> ENGAGEMENT
+</span></span></code></pre></div>
+    </div>
+</div></p>
+<hr>
+<p>Check out the <strong>database</strong> section of the <a href="https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web"><code>documentation site</code></a> for a breakdown of what the output should look like.</p>
 
 
 <footer class="footline">
@@ -722,6 +847,22 @@ Check out the <code>database</code> section of the [<code>documentation site</co
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -794,16 +935,16 @@ Check out the <code>database</code> section of the [<code>documentation site</co
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661165429"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661444664"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661165429"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661165429"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661444664"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
