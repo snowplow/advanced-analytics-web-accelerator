@@ -151,7 +151,7 @@ In addition to the basic tracker, add the below optional arguments to the tracke
   
 ```javascript 
 export class SnowplowService {
-  tracker: BrowserTracker = newTracker('sp', 'localhost:9090', {
+  tracker: BrowserTracker = newTracker('sp',  '{{Url for Collector}}', {
     appId: 'appId',
     platform: 'web',
     cookieSameSite: 'Lax',

@@ -159,7 +159,7 @@ This will track an event when a user focuses, changes or submits a form.
 {{% /tab %}}
 {{% tab name="React" %}}
 
-# Can't install deps 
+<!-- # Can't install deps  -->
 
 #### **Step 1:**  Link Click Tracking
 To enable link click tracking, first install the link tracking plugin.
