@@ -12,20 +12,20 @@
     <title>Setup dbt Package :: Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661515838" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661515838" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661515838"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -547,16 +547,22 @@
 </ul>
 <hr>
 <h4 id="step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</h4>
-<p>Edit the <code>dbt_project.yml</code> which can be found at <code>[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml</code> with the below options.</p>
+<p>The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&rsquo;s <code>dbt_project.yml</code> file. For details you can have a look at the installed package&rsquo;s default variables which can be found at <code>[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml</code>.</p>
+<p>For the sake of simplicity we have selected those variables that you will most likely need to overwrite, the rest can be adjusted at a later stage if and when it is needed.</p>
 <ul>
 <li><code>snowplow__start_date</code>: The date of the first tracked event inside your atomic.events table you would like to model.</li>
-<li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since the latest event processed. We suggest changing this to 1 whilst  working in your dev environment so that can test that your incremental runs work.</li>
+<li><code>snowplow__enable_iab</code>: Variable that by default is disabled but needed if the iab enrichment is used.</li>
+<li><code>snowplow__enable_ua</code>: Variable that by default is disabled but needed if the ua enrichment is used.</li>
+<li><code>snowplow__enable_yauaa</code>: Variable that by default is disabled but needed if the yauaa enrichment is used.</li>
 </ul>
-<p>Add the snippet to <code>dbt_project.yml</code>:</p>
+<p>Optional:</p>
+<ul>
+<li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since the latest event processed. We suggest changing this to 1 whilst working in your dev environment initially so that you can test how your incremental runs work as you will most likely only have a few days of data available at this stage and if you leave it at the default 30 days, you will model all your data in one go.</li>
+</ul>
+<p>Add the following snippet to the <code>dbt_project.yml</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__start_date</span>: {{<span style="color:#ae81ff">YYYY-MM-DD}}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__backfill_limit_days</span>: <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_iab</span>: <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_ua</span>: <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_yauaa</span>: <span style="color:#66d9ef">true</span>
@@ -565,9 +571,8 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__events</span>: <span style="color:#e6db74">&#39;SAMPLE_EVENTS&#39;</span>
-</span></span></code></pre></div><hr>
-<h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h4>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__events</span>: <span style="color:#e6db74">&#39;atomic.sample_events&#39;</span>
+</span></span></code></pre></div><h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h4>
 <p>The web package provides a suite of suggested selectors to help run and test the models.</p>
 <p>These are defined in the <a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors.yml</a> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
 <p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
@@ -575,7 +580,9 @@
 <h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
 <p>Execute the following either through your CLI or from within dbt Cloud</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>dbt run --selector snowplow_web
-</span></span></code></pre></div><p>This should take a couple of minutes to run.</p>
+</span></span></code></pre></div><p>This should take a couple of minutes to run. Depending on the period of data available since the <code>snowplow__start_date</code> and the <code>snowplow__backfill_limit_days</code> variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package gets saved in the <code>snowplow__incremental_manifest</code> table so you can always check the data processing state:</p>
+<p><code>snowplow__incremental_manifest</code> table:
+<img src="manifest.png" alt="manifest"></p>
 
 
 <footer class="footline">
@@ -865,16 +872,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661515838"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661515838"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

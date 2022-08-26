@@ -12,20 +12,20 @@
     <title>Load sample data (optional) :: Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661444664" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661444664" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661515837" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661515837" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661515837"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -531,7 +531,7 @@
         
 
 
-<p>In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data you can download and use our sample data:</p>
+<p>In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data, you can download and use our sample data:</p>
 <section class="attachments ">
   <label>
     <i class="fas fa-paperclip" aria-hidden="true"></i>
@@ -707,16 +707,16 @@
 <h4 id="step-3-load-the-data-using-the-web-interface"><strong>Step 3:</strong> Load the data using the web interface</h4>
 <p>3.1 Log into your web interface and click on <code>Databases</code> tab.</p>
 <p>3.2 Locate the <strong>SAMPLE_EVENTS_BASE</strong> table that you just created and select it.</p>
-<p>3.3 Click the <code>Load Table</code> button to open the Load Data wizard.</p>
+<p>3.3 Click the <code>Load Data</code> button to open the Load Data wizard.</p>
 <p>3.4 Select the relevant warehouse from the dropdown list. Click <code>Next</code>.</p>
 <p>3.5 Within the <code>Source Files</code> section select <code>Load files from your computer</code> option, and click the <code>Select Files</code> button.
-Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Open</code> then the <code>Next</code> button.</p>
-<p>3.6 Create a new File Format with the plus (+) symbol beside the dropdown list and change the following settings for the default csv file formats:</p>
+Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Upload</code> then the <code>Next</code> button.</p>
+<p>3.6 Create a new File Format with the plus (+) symbol beside the dropdown list, give it a name and change the following settings of the default csv file formats:</p>
 <ul>
 <li><code>Header lines to skip</code>= 1</li>
 <li><code>Field optionally enclosed by</code>= Double Quote</li>
 </ul>
-<p>3.7 Click the <code>Load button</code> (no need to alter the Load Options). Loading should take place within a couple of minutes.</p>
+<p>3.7 Click the <code>Load</code> button (no need to alter the Load Options). Loading should take place within a couple of minutes.</p>
 <p>For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
 <hr>
 <h4 id="step-4-create-the-atomicsample_events-table"><strong>Step 4:</strong> Create the <strong>ATOMIC.SAMPLE_EVENTS</strong> table</h4>
@@ -733,7 +733,7 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Open</cod
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS <span style="color:#66d9ef">AS</span> (
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS <span style="color:#66d9ef">AS</span> (
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span>	APP_ID,
@@ -876,7 +876,7 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Open</cod
 </div>
 <hr>
 <h4 id="step-5--drop-the-sample_events_base-table"><strong>Step 5:</strong>  Drop the <strong>SAMPLE_EVENTS_BASE</strong> table</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE
 </span></span></code></pre></div>
 
 <footer class="footline">
@@ -1163,16 +1163,16 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Open</cod
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661515838"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661444664"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661444664"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661515838"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661515838"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

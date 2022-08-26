@@ -25,7 +25,7 @@ IAB Use the IAB/ABC International Spiders and Bots List to determine whether an 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_0/</guid>
-      <description>In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data you can download and use our sample data:
+      <description>In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data, you can download and use our sample data:
 Attachments sample_events.csv (35 MB) In the below example we will be loading the data using the Snowflake Web Interface. For more details please check out the official Snowflake documentation.
 Step 1: Create the ATOMIC schema in your target database (unless it exists already): CREATE SCHEMA TARGET_DB.</description>
     </item>
@@ -91,8 +91,7 @@ The user performing an action The web page the action occured on A product that 
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_2/</guid>
       <description>At this stage you should EITHER:
-Have tracking and enrichment setup, as well as: Data in the ATOMIC.EVENTS table Enabled IAB, UA parser and YAUAA enrichments In case you skipped the tracking and enrichment steps and used our SAMPLE_DATA.csv instead you should have: Data in the ATOMIC.SAMPLE_EVENTS table Step 1: Setup Variables Edit the dbt_project.yml which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml with the below options.
-snowplow__start_date: The date of the first tracked event inside your atomic.</description>
+Have tracking and enrichment setup, as well as: Data in the ATOMIC.EVENTS table Enabled IAB, UA parser and YAUAA enrichments In case you skipped the tracking and enrichment steps and used our SAMPLE_DATA.csv instead you should have: Data in the ATOMIC.SAMPLE_EVENTS table Step 1: Setup Variables The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&amp;rsquo;s dbt_project.</description>
     </item>
     
     <item>
@@ -111,7 +110,7 @@ Step 1: Installation Install the Snowplow Chrome Extension, you may need to rest
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/modelling/modelling_3/</guid>
-      <description>Data should now be loaded into your warehouse, next we will check the models output.
+      <description>Data should now be loaded into your warehouse. In this section we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.
 Step 1: Check the output schemas Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&amp;rsquo;s output. You should be able to see three new schemas created:
 [your_custom_schema]_scratch: drop and recompute models that aid the incremental run [your_custom_schema]_derived: main output models you can use in your downstream models and reporting [your_custom_schema]_manifest: tables that help the integrity and core incremental logic of the model Step 2: Run dbt test Run our recommended selector specified tests to identify potential issues with the data:</description>
     </item>
