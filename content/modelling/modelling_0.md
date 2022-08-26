@@ -4,7 +4,7 @@ weight = 1
 post = ""
 +++
 
-In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data you can download and use our sample data:
+In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data, you can download and use our sample data:
 
 {{% attachments %}}
 {{% /attachments %}}
@@ -171,18 +171,18 @@ CREATE SCHEMA TARGET_DB.ATOMIC
 
 3.2 Locate the **SAMPLE_EVENTS_BASE** table that you just created and select it.
 
-3.3 Click the `Load Table` button to open the Load Data wizard.
+3.3 Click the `Load Data` button to open the Load Data wizard.
 
 3.4 Select the relevant warehouse from the dropdown list. Click `Next`.
 
 3.5 Within the `Source Files` section select `Load files from your computer` option, and click the `Select Files` button.
-Navigate to the **SAMPLE_EVENTS.csv** and click the `Open` then the `Next` button.
+Navigate to the **SAMPLE_EVENTS.csv** and click the `Upload` then the `Next` button.
 
-3.6 Create a new File Format with the plus (+) symbol beside the dropdown list and change the following settings for the default csv file formats:
+3.6 Create a new File Format with the plus (+) symbol beside the dropdown list, give it a name and change the following settings of the default csv file formats:
 - `Header lines to skip`= 1
 - `Field optionally enclosed by`= Double Quote
 
-3.7 Click the `Load button` (no need to alter the Load Options). Loading should take place within a couple of minutes.
+3.7 Click the `Load` button (no need to alter the Load Options). Loading should take place within a couple of minutes.
 
 For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
@@ -194,7 +194,7 @@ The Snowplow pipeline would create context fields as arrays not varchars for Sno
 
 {{% expand SQL_script %}}
 ```sql
-CREATE OR REPLACE TABLE ATOMIC.SAMPLE_EVENTS AS (
+CREATE OR REPLACE TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS AS (
 
 SELECT
 	APP_ID,
@@ -340,13 +340,5 @@ FROM ATOMIC.SAMPLE_EVENTS_BASE )
 #### **Step 5:**  Drop the **SAMPLE_EVENTS_BASE** table
 
 ```sql
-DROP TABLE ATOMIC.SAMPLE_EVENTS_BASE
+DROP TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS_BASE
 ```
-
-
-
-
-
-
-
-

@@ -4,7 +4,7 @@ weight = 3
 post = ""
 +++
 
-Data should now be loaded into your warehouse, next we will check the models output.
+Data should now be loaded into your warehouse. In this section we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.
 
 #### **Step 1:** Check the output schemas
 Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model's output. You should be able to see three new schemas created:
@@ -96,4 +96,4 @@ SELECT * FROM ENGAGEMENT
 
 ***
 
-Check out the **database** section of the [`documentation site`](https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web) for a breakdown of what the output should look like.
+Check out the **database** section of the [`documentation site`](https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web) for a full breakdown of what the output should look like.
