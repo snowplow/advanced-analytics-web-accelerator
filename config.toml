@@ -14,9 +14,9 @@
   disableSearch = true
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
   titleSeparator = "|"
-  baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator"
+  baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
   landingPageName = "Introduction" 
-  landingPageURL = "/advanced-analytics-web-accelerator/"
+  landingPageURL = "advanced-analytics-web-accelerator/"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
