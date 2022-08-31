@@ -34,7 +34,7 @@ titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction" 
-landingPageURL = "/advanced-analytics-web-accelerator/en/"
+landingPageURL = "/advanced-analytics-web-accelerator/"
 
 [Languages.fr]
 title = "Advanced Analytics for Web"
@@ -42,4 +42,4 @@ titleSeparator = "|"
 weight = 1
 languageName = "French"
 landingPageName = "Introduction" 
-landingPageURL = "/advanced-analytics-web-accelerator/fr/"
+landingPageURL = "/advanced-analytics-web-accelerator/"
