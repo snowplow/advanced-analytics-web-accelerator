@@ -2,55 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/fr/categories/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/fr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/categories/"
+                href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="/fr/categories/"
+                href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/fr/"
                 />
   </url><url>
-    <loc>/fr/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/fr/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/"
+                href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="/fr/"
+                href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/fr/categories/"
                 />
   </url><url>
-    <loc>/fr/tags/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/fr/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/zh/tags/"
+                href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="/fr/tags/"
+                href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/fr/tags/"
                 />
   </url>
 </urlset>
