@@ -4,9 +4,15 @@
 
 #### Introduction
 
-Welcome to the Advanced Analytics for Web accelerator. In this guide you'll learn how to set up tracking and enrichment as well as how to model and visualise Snowplow data. 
+Welcome to the Advanced Analytics for Web accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
 
-Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
+In this guide you'll learn how to:
+
+* Set up tracking and enrichment **(Optional)**
+* Model and Visualise Snowplow data
+
+If you do not have a Snowplow pipeline or a web app to implement tracking on you can skip straight to [**Step 3 - Modelling**](modelling/index.html) to understand how Snowplow data can be used for Advanced Analytics.
+
 
 ***
 
