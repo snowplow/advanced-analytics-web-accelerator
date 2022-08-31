@@ -7,7 +7,6 @@ defaultContentLanguageInSubdir= true
 baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
-landingPageURL = "/"
 landingPageName = "Introduction" 
 disableLandingPageButton = false
 
@@ -23,7 +22,6 @@ disableLandingPageButton = false
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
   titleSeparator = "|"
   baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
-  landingPageURL = "/"
 
 
 [outputs]
@@ -36,25 +34,12 @@ titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction" 
-landingPageURL = "/"
+landingPageURL = "/advanced-analytics-web-accelerator/en/"
 
 [Languages.fr]
 title = "Advanced Analytics for Web"
 titleSeparator = "|"
 weight = 1
-languageName = "English"
+languageName = "French"
 landingPageName = "Introduction" 
-landingPageURL = "fr/advanced-analytics-web-accelerator"
-
-
-[[Languages.en.menu.shortcuts]]
-name = "Try Snowplow"
-identifier = "ds"
-url = "https://try.snowplowanalytics.com/"
-weight = 10
-
-[[Languages.fr.menu.shortcuts]]
-name = "Try Snowplow"
-identifier = "ds"
-url = "https://try.snowplowanalytics.com/"
-weight = 10
+landingPageURL = "/advanced-analytics-web-accelerator/fr/"
