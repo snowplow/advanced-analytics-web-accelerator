@@ -34,22 +34,27 @@ gantt
         dateFormat  HH-mm
         axisFormat %M
         section 1. Track
-        8h          :track, 00-00, 6m
+        6h          :track, 00-00, 6m
         section 2. Enrich
-        4h          :enrich, after track, 2m
+        2h          :enrich, after track, 2m
         section 3. Model
-        2h          :model, after enrich, 4m
+        4h          :model, after enrich, 4m
         section 4. Visualise
-        5h          :visaualise, after model, 4m
+        4h          :visaualise, after model, 4m
 {{</mermaid >}}
 
 ***
 
 #### Prerequisites
-- Snowplow Pipeline
-- Web app to implement tracking on
+
+**To Complete Tracking Steps (Optional)**
+- Snowplow pipeline
+- Web app to implement tracking
+
+**To Complete Modelling and Visualisation**
 - dbt installed
-  - a new dbt project created and configured
-  - a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)
+  - New dbt project created and configured
+  - Dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) **or**  Provided sample data loaded into Snowflake
+- Python 3 Installed
 
 
