@@ -1,884 +1,920 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
-    <meta name="description" content="Advanced Analytics for Web">
-<meta name="author" content="Agnes Kiss and Jack Keene">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.101.0" />
+  <meta name="description" content="Advanced Analytics for Web">
+  <meta name="author" content="Agnes Kiss and Jack Keene">
 
-    <title>Setup dbt Package | Advanced Analytics for Web</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    
-    <link href="/css/nucleus.css?1661960711" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1661960711" rel="stylesheet">
-    <link href="/css/hybrid.css?1661960711" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1661960711" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1661960711" rel="stylesheet">
-    <link href="/css/auto-complete.css?1661960711" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1661960711" rel="stylesheet">
-    <link href="/css/theme.css?1661960711" rel="stylesheet">
-    <link href="/css/tabs.css?1661960711" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1661960711" rel="stylesheet">
-    
-    
+  <title>Setup dbt Package | Advanced Analytics for Web</title>
 
-    <script src="/js/jquery-3.3.1.min.js?1661960711"></script>
 
-    <style>
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
-      }
-      
-    </style>
-    
-  </head>
-  <body class="" data-url="/modelling/modelling_2/">
-    <nav id="sidebar" class="showVisitedLinks">
+  <link href="/css/nucleus.css?1661960711" rel="stylesheet">
+  <link href="/css/fontawesome-all.min.css?1661960711" rel="stylesheet">
+  <link href="/css/hybrid.css?1661960711" rel="stylesheet">
+  <link href="/css/featherlight.min.css?1661960711" rel="stylesheet">
+  <link href="/css/perfect-scrollbar.min.css?1661960711" rel="stylesheet">
+  <link href="/css/auto-complete.css?1661960711" rel="stylesheet">
+  <link href="/css/atom-one-dark-reasonable.css?1661960711" rel="stylesheet">
+  <link href="/css/theme.css?1661960711" rel="stylesheet">
+  <link href="/css/tabs.css?1661960711" rel="stylesheet">
+  <link href="/css/hugo-theme.css?1661960711" rel="stylesheet">
 
 
 
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="">
-    <img src="/images/logo.png" />
-</a>
+  <script src="/js/jquery-3.3.1.min.js?1661960711"></script>
+
+  <style>
+    :root #header+#content>#left>#rlblock_left {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body class="" data-url="/modelling/modelling_2/">
+  <nav id="sidebar" class="showVisitedLinks">
+
+
+
+    <div id="header-wrapper">
+      <div id="header">
+        <a id="logo" href="">
+          <img src="/images/logo.png" />
+        </a>
+      </div>
+
     </div>
-    
-  </div>
-  
+
     <section id="homelinks">
       <ul>
         <li>
-            <a class="padding" href='/'>Introduction</a>
+          <a class="padding" href='/'>Introduction</a>
         </li>
       </ul>
     </section>
-  
+
 
     <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
+      <ul class="topics">
 
 
 
 
- 
-  
-    
-    <li data-nav-id="/tracking/" title="Tracking" class="dd-item
-        
-        
-        
-        ">
-      <a href="/tracking/">
-          <b>1. </b>Tracking
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
 
 
 
 
- 
-  
-    
-      <li data-nav-id="/tracking/tracking_1/" title="Setup" class="dd-item ">
-        <a href="/tracking/tracking_1/">
-        Setup
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
 
 
 
-
- 
-  
-    
-      <li data-nav-id="/tracking/tracking_2/" title="Tracking Events" class="dd-item ">
-        <a href="/tracking/tracking_2/">
-        Tracking Events
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/tracking/tracking_3/" title="Adding Context" class="dd-item ">
-        <a href="/tracking/tracking_3/">
-        Adding Context
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/tracking/tracking_4/" title="Testing" class="dd-item ">
-        <a href="/tracking/tracking_4/">
-        Testing
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/enrich/" title="Enrich" class="dd-item
+        <li data-nav-id="/tracking/" title="Tracking" class="dd-item
         
         
         
         ">
-      <a href="/enrich/">
-          <b>2. </b>Enrich
-          
+          <a href="/tracking/">
+            <b>1. </b>Tracking
+
             <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
 
+          </a>
+
+
+          <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/tracking/tracking_1/" title="Setup" class="dd-item ">
+              <a href="/tracking/tracking_1/">
+                Setup
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/tracking/tracking_2/" title="Tracking Events" class="dd-item ">
+              <a href="/tracking/tracking_2/">
+                Tracking Events
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/tracking/tracking_3/" title="Adding Context" class="dd-item ">
+              <a href="/tracking/tracking_3/">
+                Adding Context
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/tracking/tracking_4/" title="Testing" class="dd-item ">
+              <a href="/tracking/tracking_4/">
+                Testing
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+          </ul>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+        <li data-nav-id="/enrich/" title="Enrich" class="dd-item
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/enrich/enrich_1/" title="Add Enrichments" class="dd-item ">
-        <a href="/enrich/enrich_1/">
-        Add Enrichments
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
-        </ul>
-      
-    </li>
-  
- 
+        
+        ">
+          <a href="/enrich/">
+            <b>2. </b>Enrich
 
-          
-          
+            <i class="fas fa-check read-icon"></i>
 
-
+          </a>
 
 
- 
-  
-    
-    <li data-nav-id="/modelling/" title="Modelling" class="dd-item
+          <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/enrich/enrich_1/" title="Add Enrichments" class="dd-item ">
+              <a href="/enrich/enrich_1/">
+                Add Enrichments
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+          </ul>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+        <li data-nav-id="/modelling/" title="Modelling" class="dd-item
         parent
         
         
         ">
-      <a href="/modelling/">
-          <b>3. </b>Modelling
-          
+          <a href="/modelling/">
+            <b>3. </b>Modelling
+
             <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
 
-        
-          
-            
-            
+          </a>
+
+
+          <ul>
 
 
 
 
- 
-  
-    
-      <li data-nav-id="/modelling/modelling_0/" title="Load sample data (optional)" class="dd-item ">
-        <a href="/modelling/modelling_0/">
-        Load sample data (optional)
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
 
 
 
 
- 
-  
-    
-      <li data-nav-id="/modelling/modelling_1/" title="Install Snowplow dbt Package" class="dd-item ">
-        <a href="/modelling/modelling_1/">
-        Install Snowplow dbt Package
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
 
 
 
 
- 
-  
-    
-      <li data-nav-id="/modelling/modelling_2/" title="Setup dbt Package" class="dd-item active">
-        <a href="/modelling/modelling_2/">
-        Setup dbt Package
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
 
-            
-          
-            
-            
+
+
+            <li data-nav-id="/modelling/modelling_0/" title="Load sample data (optional)" class="dd-item ">
+              <a href="/modelling/modelling_0/">
+                Load sample data (optional)
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
 
 
 
 
- 
-  
-    
-      <li data-nav-id="/modelling/modelling_3/" title="Testing the output" class="dd-item ">
-        <a href="/modelling/modelling_3/">
-        Testing the output
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
 
 
 
 
- 
-  
-    
-    <li data-nav-id="/visualisation/" title="Visualisation" class="dd-item
+
+
+
+
+
+
+
+            <li data-nav-id="/modelling/modelling_1/" title="Install Snowplow dbt Package" class="dd-item ">
+              <a href="/modelling/modelling_1/">
+                Install Snowplow dbt Package
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/modelling/modelling_2/" title="Setup dbt Package" class="dd-item active">
+              <a href="/modelling/modelling_2/">
+                Setup dbt Package
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/modelling/modelling_3/" title="Testing the output" class="dd-item ">
+              <a href="/modelling/modelling_3/">
+                Testing the output
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+          </ul>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+        <li data-nav-id="/visualisation/" title="Visualisation" class="dd-item
         
         
         
         ">
-      <a href="/visualisation/">
-          <b>4. </b>Visualisation
-          
+          <a href="/visualisation/">
+            <b>4. </b>Visualisation
+
             <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
+
+          </a>
+
+
+          <ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <li data-nav-id="/visualisation/visualisation_1/" title="Setup" class="dd-item ">
+              <a href="/visualisation/visualisation_1/">
+                Setup
+                <i class="fas fa-check read-icon"></i>
+              </a>
+            </li>
+
+
+
+
+
+
+
+          </ul>
+
+        </li>
+
+
+
+
+
+      </ul>
+
+
+
+
+
+      <section id="prefooter">
+        <hr />
         <ul>
-          
-          
-          
-
-        
-          
-            
-            
 
 
 
+          <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear
+              History</a></li>
 
- 
-  
-    
-      <li data-nav-id="/visualisation/visualisation_1/" title="Setup" class="dd-item ">
-        <a href="/visualisation/visualisation_1/">
-        Setup
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
         </ul>
-      
-    </li>
-  
- 
+      </section>
 
-          
-        
-    </ul>
+      <section id="footer">
 
-    
-    
-
-    
-    <section id="prefooter">
-      <hr/>
-      <ul>
-      
-
-      
-        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-      
-      </ul>
-    </section>
-    
-    <section id="footer">
-      
-    </section>
-  </div>
-</nav>
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'></a> > <a href='/modelling/'>Modelling</a> > Setup dbt Package
-          
-        
-          
-        
-          
-        
-                 
-                  </span>
-                </div>
-                
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      </section>
     </div>
-</div>
+  </nav>
 
-                
-              </div>
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+
+      <div>
+        <div id="top-bar">
+
+
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fas fa-bars"></i>
+              </a>
+            </span>
+
+            <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+
+            <span class="links">
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <a href='/'></a> > <a href='/modelling/'>Modelling</a> > Setup dbt Package
+
+
+
+
+
+
+
+            </span>
+          </div>
+
+          <div class="progress">
+            <div class="wrapper">
+              <nav id="TableOfContents">
+                <ul>
+                  <li>
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
-            
-        <div id="head-tags">
-        
+          </div>
+
+
         </div>
-        
-        <div id="body-inner">
-          
-            <h1>
-              
-              Setup dbt Package
-            </h1>
-          
+      </div>
 
-        
+      <div id="head-tags">
+
+      </div>
+
+      <div id="body-inner">
+
+        <h1>
+
+          Setup dbt Package
+        </h1>
 
 
-<p>At this stage you should EITHER:</p>
-<ol>
-<li>Have tracking and enrichment setup, as well as:</li>
-</ol>
-<ul>
-<li>Data in the <code>ATOMIC.EVENTS</code> table</li>
-<li>Enabled IAB, UA parser and YAUAA enrichments</li>
-</ul>
-<ol start="2">
-<li>In case you skipped the tracking and enrichment steps and used our SAMPLE_DATA.csv instead you should have:</li>
-</ol>
-<ul>
-<li>Data in the <code>ATOMIC.SAMPLE_EVENTS</code> table</li>
-</ul>
-<hr>
-<h4 id="step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</h4>
-<p>The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&rsquo;s <code>dbt_project.yml</code> file. For details you can have a look at the installed package&rsquo;s default variables which can be found at <code>[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml</code>.</p>
-<p>For the sake of simplicity we have selected those variables that you will most likely need to overwrite, the rest can be adjusted at a later stage if and when it is needed.</p>
-<ul>
-<li><code>snowplow__start_date</code>: The date of the first tracked event inside your atomic.events table you would like to model.</li>
-<li><code>snowplow__enable_iab</code>: Variable that by default is disabled but needed if the iab enrichment is used.</li>
-<li><code>snowplow__enable_ua</code>: Variable that by default is disabled but needed if the ua enrichment is used.</li>
-<li><code>snowplow__enable_yauaa</code>: Variable that by default is disabled but needed if the yauaa enrichment is used.</li>
-</ul>
-<p>Optional:</p>
-<ul>
-<li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since the latest event processed. We suggest changing this to 1 whilst working in your dev environment initially so that you can test how your incremental runs work as you will most likely only have a few days of data available at this stage and if you leave it at the default 30 days, you will model all your data in one go.</li>
-</ul>
-<p>Add the following snippet to the <code>dbt_project.yml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+
+
+
+        <p>At this stage you should EITHER:</p>
+        <ol>
+          <li>Have tracking and enrichment setup, as well as:</li>
+        </ol>
+        <ul>
+          <li>Data in the <code>ATOMIC.EVENTS</code> table</li>
+          <li>Enabled IAB, UA parser and YAUAA enrichments</li>
+        </ul>
+        <ol start="2">
+          <li>In case you skipped the tracking and enrichment steps and used our SAMPLE_DATA.csv instead you should
+            have:</li>
+        </ol>
+        <ul>
+          <li>Data in the <code>ATOMIC.SAMPLE_EVENTS</code> table</li>
+        </ul>
+        <hr>
+        <h4 id="step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</h4>
+        <p>The snowplow_web dbt package comes with a list of variables specified with a default value that you may need
+          to overwrite in your own dbt project&rsquo;s <code>dbt_project.yml</code> file. For details you can have a
+          look at the installed package&rsquo;s default variables which can be found at
+          <code>[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml</code>.</p>
+        <p>For the sake of simplicity we have selected those variables that you will most likely need to overwrite, the
+          rest can be adjusted at a later stage if and when it is needed.</p>
+        <ul>
+          <li><code>snowplow__start_date</code>: The date of the first tracked event inside your atomic.events table you
+            would like to model.</li>
+          <li><code>snowplow__enable_iab</code>: Variable that by default is disabled but needed if the iab enrichment
+            is used.</li>
+          <li><code>snowplow__enable_ua</code>: Variable that by default is disabled but needed if the ua enrichment is
+            used.</li>
+          <li><code>snowplow__enable_yauaa</code>: Variable that by default is disabled but needed if the yauaa
+            enrichment is used.</li>
+        </ul>
+        <p>Optional:</p>
+        <ul>
+          <li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since
+            the latest event processed. We suggest changing this to 1 whilst working in your dev environment initially
+            so that you can test how your incremental runs work as you will most likely only have a few days of data
+            available at this stage and if you leave it at the default 30 days, you will model all your data in one go.
+          </li>
+        </ul>
+        <p>Add the following snippet to the <code>dbt_project.yml</code>:</p>
+        <div class="highlight">
+          <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__start_date</span>: {{<span style="color:#ae81ff">YYYY-MM-DD}}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_iab</span>: <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_ua</span>: <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_yauaa</span>: <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><p>If you would like to use the <code>ATOMIC.SAMPLE_EVENTS</code> table as a base instead of <code>ATOMIC.EVENTS</code> where the data is sent through the pipeline, add the following variable as well:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span></code></pre>
+        </div>
+        <p>If you would like to use the <code>ATOMIC.SAMPLE_EVENTS</code> table as a base instead of
+          <code>ATOMIC.EVENTS</code> where the data is sent through the pipeline, add the following variable as well:
+        </p>
+        <div class="highlight">
+          <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__events</span>: <span style="color:#e6db74">&#39;atomic.sample_events&#39;</span>
-</span></span></code></pre></div><h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h4>
-<p>The web package provides a suite of suggested selectors to help run and test the models.</p>
-<p>These are defined in the <a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors.yml</a> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
-<p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
-<hr>
-<h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
-<p>Execute the following either through your CLI or from within dbt Cloud</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>dbt run --selector snowplow_web
-</span></span></code></pre></div><p>This should take a couple of minutes to run. Depending on the period of data available since the <code>snowplow__start_date</code> and the <code>snowplow__backfill_limit_days</code> variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package gets saved in the <code>snowplow__incremental_manifest</code> table so you can always check the data processing state:</p>
-<p><code>snowplow__incremental_manifest</code> table:
-<img src="manifest.png" alt="manifest"></p>
+</span></span></code></pre>
+        </div>
+        <h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your
+          project</h4>
+        <p>The web package provides a suite of suggested selectors to help run and test the models.</p>
+        <p>These are defined in the <a
+            href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors.yml</a> file within
+          the package, however to use these model selections you will need to copy this file into your own dbt project
+          directory.</p>
+        <p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
+        <hr>
+        <h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
+        <p>Execute the following either through your CLI or from within dbt Cloud</p>
+        <div class="highlight">
+          <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>dbt run --selector snowplow_web
+</span></span></code></pre>
+        </div>
+        <p>This should take a couple of minutes to run. Depending on the period of data available since the
+          <code>snowplow__start_date</code> and the <code>snowplow__backfill_limit_days</code> variable you might not
+          process all your data during your first run. Each time the model runs it should display the period it
+          processes and the timestamp of the last event processed for each model within the package gets saved in the
+          <code>snowplow__incremental_manifest</code> table so you can always check the data processing state:</p>
+        <p><code>snowplow__incremental_manifest</code> table:
+          <img src="manifest.png" alt="manifest">
+        </p>
 
 
-<footer class="footline">
-	
-</footer>
+        <footer class="footline">
+
+        </footer>
 
 
-</div>
+      </div>
 
 
-</div>
+    </div>
 
-<div id="navigation">
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
+    <div id="navigation">
 
 
-    
-    
-    
-    <a class="nav nav-prev" href="/modelling/modelling_1/" title="Install Snowplow dbt Package"> <i class="fa fa-chevron-left"></i></a>
-    
-    
-    <a class="nav nav-next" href="/modelling/modelling_3/" title="Testing the output" style="margin-right: 0px;"><i
-            class="fa fa-chevron-right"></i></a>
-    
-    
-</div>
 
-</section>
 
-<div
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <a class="nav nav-prev" href="/modelling/modelling_1/" title="Install Snowplow dbt Package"> <i
+          class="fa fa-chevron-left"></i></a>
+
+
+      <a class="nav nav-next" href="/modelling/modelling_3/" title="Testing the output" style="margin-right: 0px;"><i
+          class="fa fa-chevron-right"></i></a>
+
+
+    </div>
+
+  </section>
+
+  <div
     style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
     <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-</div>
-<script src="/%20js/clipboard.min.js?1661960711"></script>
-<script src="/%20js/perfect-scrollbar.min.js?1661960711"></script>
-<script src="/%20js/perfect-scrollbar.jquery.min.js?1661960711"></script>
-<script src="/%20js/jquery.sticky.js?1661960711"></script>
-<script src="/%20js/featherlight.min.js?1661960711"></script>
-<script src="/%20js/highlight.pack.js?1661960711"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script src="/%20js/modernizr.custom-3.6.0.js?1661960711"></script>
-<script src="/%20js/learn.js?1661960711"></script>
-<script src="/%20js/hugo-learn.js?1661960711"></script>
+  </div>
+  <script src="/clipboard.min.js?1661960711"></script>
+  <script src="/perfect-scrollbar.min.js?1661960711"></script>
+  <script src="/perfect-scrollbar.jquery.min.js?1661960711"></script>
+  <script src="/jquery.sticky.js?1661960711"></script>
+  <script src="/featherlight.min.js?1661960711"></script>
+  <script src="/highlight.pack.js?1661960711"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/modernizr.custom-3.6.0.js?1661960711"></script>
+  <script src="/learn.js?1661960711"></script>
+  <script src="/hugo-learn.js?1661960711"></script>
 
 
-<script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
+  <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
 
-<script>
+  <script>
     mermaid.initialize({ startOnLoad: true });
-</script>
+  </script>
 
 
 
