@@ -14,7 +14,7 @@ Together, these entities make up the context of an event.
 
 Similar to the predefined events, a number of entities are available to implement out of the box including:
 
-- **webPage Entity -** Explanation?
+- **webPage Entity -** Adds the Pageview ID 
 - **session Entity -** Information about the user session
 - **performanceTiming Entity -** Calculate page performance metrics
 - **geolocation Entity -** Information on the users location

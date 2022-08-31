@@ -1,16 +1,9 @@
-baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
-languageCode = "en-US"
-defaultContentLanguage = "en"
-landingPageURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
-
-
-title = "Advanced Analytics for Web"
-theme = "hugo-theme-learn"
-themesdir = "themes"
-metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= true
+  title = "Advanced Analytics for Web"
+  theme = "hugo-theme-learn"
 
 [params]
+  themesdir = "themes/hugo-theme-learn"
+  metaDataFormat = "yaml"
   description = "Advanced Analytics for Web"
   author = "Agnes Kiss and Jack Keene"
   showVisitedLinks = true
@@ -21,22 +14,14 @@ defaultContentLanguageInSubdir= true
   disableSearch = true
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
   titleSeparator = "|"
-  baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
-
+  baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator"
+  landingPageName = "Introduction" 
+  landingPageURL = "/advanced-analytics-web-accelerator/"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
-[Languages]
-[Languages.en]
-title = "Advanced Analytics for Web"
-titleSeparator = "|"
-weight = 1
-languageName = "English"
-landingPageName = "Introduction" 
-landingPageURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
-
-[[Languages.en.menu.shortcuts]]
+[[menu.shortcuts]]
 name = "Try Snowplow"
 identifier = "ds"
 url = "https://try.snowplowanalytics.com/"
