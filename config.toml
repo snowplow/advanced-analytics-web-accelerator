@@ -1,7 +1,7 @@
 baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
-landingPageURL = "/advanced-analytics-web-accelerator/"
+landingPageURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
 
 
 title = "Advanced Analytics for Web"
@@ -34,7 +34,7 @@ titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction" 
-landingPageURL = "/advanced-analytics-web-accelerator/"
+landingPageURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
 
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
