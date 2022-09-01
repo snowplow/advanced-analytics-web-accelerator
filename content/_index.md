@@ -10,12 +10,12 @@ title = "Snowplow Accelerators"
 
 Welcome to the Advanced Analytics for Web accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
 
-In this guide you'll learn how to:
+You'll learn to:
 
 * Set up Snowplow Tracking and Enrichment **(Optional)**
 * Model and Visualise Snowplow data using dbt and Streamlit
 
-If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the [**modelling step**](modelling/index.html) to understand how Snowplow data can be used for Advanced Analytics.
+If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the [**modelling step**](modelling/index.html) to understand how Snowplow data can be used for Advanced Analytics for web data.
 
 
 ***
@@ -51,14 +51,15 @@ gantt
 
 #### Prerequisites
 
-**To Complete Tracking Steps (Optional)**
+**Tracking and Enrichment (Optional)**
 - Snowplow pipeline
 - Web app to implement tracking
 
-**To Complete Modelling and Visualisation**
+**Modelling and Visualisation**
 - dbt installed
   - New dbt project created and configured
-  - Dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) **or**  Provided sample data loaded into Snowflake
+  - Dataset of web events from the Snowplow Javascript tracker in your data warehouse **or** sample data loaded into Snowflake
 - Python 3 Installed
 
+<!-- (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) -->
 
