@@ -4,14 +4,15 @@ weight = 3
 post = ""
 +++
 
-At this stage you should EITHER:
+At this stage you should either:
 
-1. Have tracking and enrichment setup, as well as:
-
+Have tracking and enrichment setup, as well as:
 - Data in the `ATOMIC.EVENTS` table
 - Enabled IAB, UA parser and YAUAA enrichments
 
-2. In case you skipped the tracking and enrichment steps and used our SAMPLE_DATA.csv instead you should have:
+**or**
+
+Loaded `sample_events.csv` to your warehouse, as well as:
 
 - Data in the `ATOMIC.SAMPLE_EVENTS` table
 
@@ -21,16 +22,20 @@ At this stage you should EITHER:
 
 The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project's `dbt_project.yml` file. For details you can have a look at the installed package's default variables which can be found at `[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml`.
 
-For the sake of simplicity we have selected those variables that you will most likely need to overwrite, the rest can be adjusted at a later stage if and when it is needed.
+For the sake of simplicity we have selected the variables that you will most likely need to overwrite, the rest can be changed at a later stage if and when it is needed.
 
 - `snowplow__start_date`: The date of the first tracked event inside your atomic.events table you would like to model.
-- `snowplow__enable_iab`: Variable that by default is disabled but needed if the iab enrichment is used.
-- `snowplow__enable_ua`: Variable that by default is disabled but needed if the ua enrichment is used.
-- `snowplow__enable_yauaa`: Variable that by default is disabled but needed if the yauaa enrichment is used.
+- `snowplow__enable_iab`: Variable that by default is disabled but needed if the IAB enrichment is used.
+- `snowplow__enable_ua`: Variable that by default is disabled but needed if the UA enrichment is used.
+- `snowplow__enable_yauaa`: Variable that by default is disabled but needed if the YAUAA enrichment is used.
 
 Optional:
 
-- `snowplow__backfill_limit_days`: The maximum number of days of new data to be processed since the latest event processed. We suggest changing this to 1 whilst working in your dev environment initially so that you can test how your incremental runs work as you will most likely only have a few days of data available at this stage and if you leave it at the default 30 days, you will model all your data in one go.
+- `snowplow__backfill_limit_days`: The maximum number of days of new data to be processed since the latest event processed. 
+
+{{% notice note %}}
+We suggest changing `snowplow__backfill_limit_days` to 1 whilst working in your dev environment initially so that you can test how your incremental runs work.  You will most likely only have a few days of data available at this stage and if you leave it at the default 30 days, you will model all your data in one go.
+{{% /notice %}}
 
 Add the following snippet to the `dbt_project.yml`:
 
@@ -42,7 +47,7 @@ vars:
     snowplow__enable_ua: true
     snowplow__enable_yauaa: true
 ```
-If you would like to use the `ATOMIC.SAMPLE_EVENTS` table as a base instead of `ATOMIC.EVENTS` where the data is sent through the pipeline, add the following variable as well:
+If you would like to use the `ATOMIC.SAMPLE_EVENTS` table as a base instead of `ATOMIC.EVENTS` where the data is sent through the pipeline, add the following variable:
 
 ```yml
 vars:
@@ -69,7 +74,6 @@ Execute the following either through your CLI or from within dbt Cloud
 dbt run --selector snowplow_web
 ```
 
-This should take a couple of minutes to run. Depending on the period of data available since the `snowplow__start_date` and the `snowplow__backfill_limit_days` variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package gets saved in the `snowplow__incremental_manifest` table so you can always check the data processing state:
+This should take a couple of minutes to run. Depending on the period of data available since the `snowplow__start_date` and the `snowplow__backfill_limit_days` variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package. This gets saved in the `snowplow__incremental_manifest` table so you can always check the data processing state (see below).
 
-`snowplow__incremental_manifest` table:
-![manifest](manifest.png)
+![manifest](../images/manifest.png)

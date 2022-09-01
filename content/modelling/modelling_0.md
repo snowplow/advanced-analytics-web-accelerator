@@ -4,23 +4,33 @@ weight = 1
 post = ""
 +++
 
-In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data, you can download and use our sample data:
+Skip to the [next step](/advanced-analytics-web-accelerator/en/modelling/modelling_1) if you have a Snowplow Pipline and data loaded in your warehouse.
 
-{{% attachments %}}
+If you don't have a Snowplow pipeline, you can load `sample_events.csv` to your warehouse to run the data model.
+
+<!-- In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data, you can download and use our sample data: -->
+
+{{% attachments style="blue" %}}
 {{% /attachments %}}
 
-In the below example we will be loading the data using the `Snowflake Web Interface`. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
+We will be loading the data using the `Snowflake Web Interface`. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
-#### **Step 1:**  Create the **ATOMIC** schema in your target database (unless it exists already):
+#### **Step 1:**  Create the ATOMIC schema
+If the ATOMIC schema doesn't exist, create it in your target database.
 
 ```sql
 CREATE SCHEMA TARGET_DB.ATOMIC
+
 ```
+
 ***
 
-#### **Step 2:**  Create the **SAMPLE_EVENTS_BASE** table to load data to:
+#### **Step 2:**  Create the SAMPLE_EVENTS_BASE table
+This is where you will load the sample data.
 
- {{% expand SQL_script %}}
+{{%expand "SQL Script" %}}
+
+
 ```sql
 
   CREATE OR REPLACE TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS_BASE (
@@ -162,10 +172,12 @@ CREATE SCHEMA TARGET_DB.ATOMIC
 );
 
 ```
-{{% /expand %}}
+
+{{% /expand%}}
+
 ***
 
-#### **Step 3:** Load the data using the web interface
+#### **Step 3:** Load the data
 
 3.1 Log into your web interface and click on `Databases` tab.
 
@@ -190,7 +202,9 @@ For more details please check out the official [Snowflake documentation](https:/
 
 #### **Step 4:** Create the **ATOMIC.SAMPLE_EVENTS** table
 
-The Snowplow pipeline would create context fields as arrays not varchars for Snowflake, therefore in order for the web data model to work they need to be converted. Run the below DDL statement in your SQL editor of choice:
+The Snowplow pipeline creates context fields as arrays however for the web data model to work, these need to be converted to varchars. Run the below DDL statement in your SQL editor:
+
+<!-- The Snowplow pipeline creates context fields as arrays not varchars for Snowflake, therefore in order for the web data model to work they need to be converted. Run the below DDL statement in your SQL editor of choice: -->
 
 {{% expand SQL_script %}}
 ```sql

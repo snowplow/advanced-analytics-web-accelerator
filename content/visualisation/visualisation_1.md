@@ -1,5 +1,5 @@
 +++
-title = "Setup"
+title = "Streamlit"
 post = ""
 weight = 1
 +++
@@ -9,6 +9,8 @@ Streamlit uses Python to build shareable dashboards without the need for front-e
 Download the `streamlit-visualisation` project template and copy the unzipped folder to your project directory to get started.
 
 {{% attachments style="blue" %}}
+{{% /attachments %}}
+
 
 #### **Step 1:** Install Requirements
 Run the command below to install the project requirements and run the virtual environment

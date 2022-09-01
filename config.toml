@@ -43,3 +43,16 @@ weight = 1
 languageName = "French"
 landingPageName = "Introduction" 
 landingPageURL = "/advanced-analytics-web-accelerator/"
+
+[[Languages.en.menu.shortcuts]]
+name = "Try Snowplow"
+identifier = "ds"
+url = "https://try.snowplowanalytics.com/"
+weight = 10
+
+[[Languages.fr.menu.shortcuts]]
+name = "Try Snowplow"
+identifier = "ds"
+url = "https://try.snowplowanalytics.com/"
+weight = 10
+

@@ -25,6 +25,7 @@ In this section, we will implement page views and page pings.
 {{< tabs groupId="select" >}}
 {{% tab name="JS" %}}
 
+
 #### **Step 1:** Enable Activity Tracking
 First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
 

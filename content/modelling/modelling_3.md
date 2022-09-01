@@ -6,6 +6,8 @@ post = ""
 
 Data should now be loaded into your warehouse. In this section we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.
 
+***
+
 #### **Step 1:** Check the output schemas
 Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model's output. You should be able to see three new schemas created:
 1. [your_custom_schema]_***scratch***: drop and recompute models that aid the incremental run
@@ -26,7 +28,7 @@ dbt test --selector snowplow_web_lean_tests
 Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below:
 
 **Find out the number of page reads using `derived.snowplow_web_page_views:`**
- {{% expand SQL_script %}}
+ {{% expand "SQL script" %}}
 ```sql
 
 WITH READS AS (
@@ -52,7 +54,7 @@ SELECT * FROM READS
 {{% /expand %}}
 
 **Calculate the bounce rate using `derived.snowplow_sessions:`**
- {{% expand SQL_script %}}
+ {{% expand "SQL script" %}}
 ```sql
 
 WITH BOUNCE_RATE AS (
@@ -75,7 +77,7 @@ SELECT * FROM BOUNCE_RATE
 {{% /expand %}}
 
 **Find out details about the highest engaged user using `derived.snowplow_users:`**
- {{% expand SQL_script %}}
+ {{% expand "SQL script" %}}
 ```sql
 
 WITH ENGAGEMENT AS (
@@ -96,4 +98,4 @@ SELECT * FROM ENGAGEMENT
 
 ***
 
-Check out the **database** section of the [`documentation site`](https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web) for a full breakdown of what the output should look like.
+Check out the **database** section of the [documentation site](https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web) for a full breakdown of what the output should look like.

@@ -16,7 +16,8 @@ flowchart LR
     style id4 fill:#f9f,stroke:#000,stroke-width:4px
 {{</mermaid >}}
 
-Streamlit 
+Use Streamlit to visualise your Snowplow data.
+<!-- Streamlit 
 Looker
 Databricks
-Datastudio
+Datastudio -->
