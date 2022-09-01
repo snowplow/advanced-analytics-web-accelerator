@@ -18,6 +18,6 @@ packages:
 #### **Step 2:** Install the package
 Install the package by running:
 
-```cmd
+```
 dbt deps
 ```

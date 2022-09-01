@@ -70,7 +70,7 @@ This is a top-level file and therefore should sit alongside your `dbt_project.ym
 
 Execute the following either through your CLI or from within dbt Cloud
 
-```cmd
+```
 dbt run --selector snowplow_web
 ```
 

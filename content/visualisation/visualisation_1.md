@@ -15,7 +15,7 @@ Download the `streamlit-visualisation` project template and copy the unzipped fo
 #### **Step 1:** Install Requirements
 Run the command below to install the project requirements and run the virtual environment
 
-```cmd
+```
 pipenv install
 pipenv shell
 ```
@@ -47,6 +47,6 @@ SELECT * FROM SCHEMA_NAME.snowplow_web_sessions
 #### **Step 4:** Run the Streamlit dashboard
 Run the command below to run the streamlit locally
 
-```cmd
+```
 streamlit run Dashboard.py
 ```

@@ -1,3 +1,7 @@
++++
+title = "Snowplow Accelerators"
++++
+
 # Advanced Analytics for Web
 
 !['logo-banner'](../images/logo_banner.png)
