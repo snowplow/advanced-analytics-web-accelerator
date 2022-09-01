@@ -63,7 +63,7 @@ window.snowplow('newTracker', 'sp', '{{Url for Collector}}', {
 
 Install the `@snowplow/browser-tracker` via npm by running:
 
-```cmd
+```bash
 npm install @snowplow/browser-tracker
 ```
 
@@ -116,7 +116,7 @@ let tracker = newTracker('sp', '{{Url for Collector}}', {
 
 Install the `@snowplow/browser-tracker` via npm by running:
 
-```cmd
+```bash
 npm install @snowplow/browser-tracker
 ```
 

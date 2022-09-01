@@ -20,4 +20,3 @@ Click on an event to get a breakdown of the data being captured.
 
 ![Chrome Extension](../images/extension_breakdown.png?width=40pc)
 
-***

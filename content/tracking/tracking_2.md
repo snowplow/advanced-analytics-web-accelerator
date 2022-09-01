@@ -108,7 +108,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { SnowplowService } from './snowplow.service';
 ```
 
-Add the constructor to the `AppComponent` class in `app.component.ts`
+Add the constructor to the `AppComponent` class in `app.component.ts`. This contains the call to `trackPageView()`.
 
 ```javascript
 constructor(router: Router, snowplow: SnowplowService) {
@@ -152,7 +152,11 @@ Add the snippet to your `snowplow.service.ts` file below the `activityTracking` 
 {{< /tabs >}}
 
 #### Optional Tracking
-In addition to page pings and pageviews, you can enable link and form tracking. This won't be used in the model in later steps but can be used in your own analysis
+In addition to page pings and pageviews, you can enable link and form tracking. This won't be used in the model in later steps but can be used in your own analysis.
+
+- **Link Tracking** - Captures the link's `href` by default as well as the `id`, `class` and `target` of the link.
+- **Form Tracking** - Tracks an event when a user focuses, changes or submits a form.
+
 
 {{< tabs groupId="select" >}}
 {{% tab name="JS" %}}
@@ -164,7 +168,7 @@ To enable link click tracking, call the `enableLinkClickTracking` method.
 snowplow('enableLinkClickTracking');
 ```
 
-You only need to call the method once to track all the links on a page. This will capture the links `href` by default as well as the `id`, `class` and `target` of the link.
+You only need to call the method once to track all the links on a page. 
   
 ***
 
@@ -174,84 +178,134 @@ To enable form tracking, simply call the `enableFormTracking` method.
 ```javascript
 snowplow('enableFormTracking');
 ```
-
-This will track an event when a user focuses, changes or submits a form.
 
 {{% /tab %}}
 {{% tab name="React" %}}
+#### **Step 1:**  Install Plugins
+First install the plugins via npm.
 
-#### **Step 1:**  Link Click Tracking
-To enable link click tracking, first install the link tracking plugin.
-
-```cmd
+```bash
 npm install @snowplow/browser-plugin-link-click-tracking
+npm install @snowplow/browser-plugin-form-tracking
 ```
 
-Next import the plugin to your `tracker.js` file
+***
+
+#### **Step 2:**  Import Plugins
+
+Next import the plugins to your `snowplow.service.ts` file.
 
 ```javascript
 import { LinkClickTrackingPlugin, enableLinkClickTracking } from '@snowplow/browser-plugin-link-click-tracking';
+import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin-form-tracking';
 
 ```
 
-# not finished
-
-call the `enableLinkClickTracking` method.
+Add the 2 plugins to your tracker intance.
 
 ```javascript
-enable
+
+  tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
+    ...
+    plugins: [LinkClickTrackingPlugin(), FormTrackingPlugin()],
+    ...
+  })
+
 ```
 
-You only need to call the method once to track all the links on a page. This will capture the links `href` by default as well as the `id`, `class` and `target` of the link.
-  
 ***
 
-#### **Step 2:** HTML Form Tracking
-To enable form tracking, simply call the `enableFormTracking` method.
+#### **Step 3:** Enable Tracking
+Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `SnowplowService` class in `snowplow.service.ts`. 
 
 ```javascript
-snowplow('enableFormTracking');
+public enableLinkClickTracking(): void { enableLinkClickTracking() }
+
+public enableLFormTracking(): void { enableFormTracking() }
+
 ```
 
-This will track an event when a user focuses, changes or submits a form.
+***
+
+#### **Step 4:** Add Tracking to App
+Finally, add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the constructor in the `AppComponent` class in `app.component.ts` as below. 
+  
+```javascript
+constructor(router: Router, snowplow: SnowplowService) {
+    router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        snowplow.enableLinkClickTracking(); // Enable link click tracking here
+        snowplow.enableFormTracking(); // Enable form tracking here
+        snowplow.trackPageView();
+      }
+    });
+  }
+```
 
 {{% /tab %}}
 {{% tab name="Angular" %}}
 
-#### **Step 1:**  Link Click Tracking
-To enable link click tracking, first install the link tracking plugin.
+#### **Step 1:**  Install Plugins
+First install the plugins via npm.
 
-```cmd
+```bash
 npm install @snowplow/browser-plugin-link-click-tracking
+npm install @snowplow/browser-plugin-form-tracking
 ```
 
-Next import the plugin to your `snowplow.service.ts` file
+***
+
+#### **Step 2:**  Import Plugins
+
+Next import the plugins to your `snowplow.service.ts` file.
 
 ```javascript
 import { LinkClickTrackingPlugin, enableLinkClickTracking } from '@snowplow/browser-plugin-link-click-tracking';
+import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin-form-tracking';
 
 ```
 
-# not finished
-
-call the `enableLinkClickTracking` method.
+Add the 2 plugins to your tracker intance.
 
 ```javascript
-enable
+
+  tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
+    ...
+    plugins: [LinkClickTrackingPlugin(), FormTrackingPlugin()],
+    ...
+  })
+
 ```
 
-You only need to call the method once to track all the links on a page. This will capture the links `href` by default as well as the `id`, `class` and `target` of the link.
-  
 ***
 
-#### **Step 2:** HTML Form Tracking
-To enable form tracking, simply call the `enableFormTracking` method.
+#### **Step 3:** Enable Tracking
+Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `SnowplowService` class in `snowplow.service.ts`. 
 
 ```javascript
-snowplow('enableFormTracking');
+public enableLinkClickTracking(): void { enableLinkClickTracking() }
+
+public enableLFormTracking(): void { enableFormTracking() }
+
 ```
 
-This will track an event when a user focuses, changes or submits a form.
+***
+
+#### **Step 4:** Add Tracking to App
+Finally, add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the constructor in the `AppComponent` class in `app.component.ts` as below. 
+  
+```javascript
+constructor(router: Router, snowplow: SnowplowService) {
+    router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        snowplow.enableLinkClickTracking(); // Enable link click tracking here
+        snowplow.enableFormTracking(); // Enable form tracking here
+        snowplow.trackPageView();
+      }
+    });
+  }
+```
+
 {{% /tab %}}
 {{< /tabs >}}
 
