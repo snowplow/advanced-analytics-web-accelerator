@@ -8,10 +8,10 @@ Welcome to the Advanced Analytics for Web accelerator. Once finished, you will b
 
 In this guide you'll learn how to:
 
-* Set up tracking and enrichment **(Optional)**
-* Model and Visualise Snowplow data
+* Set up Snowplow Tracking and Enrichment **(Optional)**
+* Model and Visualise Snowplow data using dbt and Streamlit
 
-If you do not have a Snowplow pipeline or a web app to implement tracking on you can skip straight to [**Step 3 - Modelling**](modelling/index.html) to understand how Snowplow data can be used for Advanced Analytics.
+If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the [**modelling step**](modelling/index.html) to understand how Snowplow data can be used for Advanced Analytics.
 
 
 ***

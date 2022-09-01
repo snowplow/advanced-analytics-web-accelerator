@@ -12,20 +12,20 @@
     <title> | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661963200" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661963200" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1662024743" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1662024743" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661963200"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1662024743"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -514,10 +514,10 @@
 <p>Welcome to the Advanced Analytics for Web accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
 <p>In this guide you&rsquo;ll learn how to:</p>
 <ul>
-<li>Set up tracking and enrichment <strong>(Optional)</strong></li>
-<li>Model and Visualise Snowplow data</li>
+<li>Set up Snowplow Tracking and Enrichment <strong>(Optional)</strong></li>
+<li>Model and Visualise Snowplow data using dbt and Streamlit</li>
 </ul>
-<p>If you do not have a Snowplow pipeline or a web app to implement tracking on you can skip straight to <a href="modelling/index.html"><strong>Step 3 - Modelling</strong></a> to understand how Snowplow data can be used for Advanced Analytics.</p>
+<p>If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the <a href="modelling/index.html"><strong>modelling step</strong></a> to understand how Snowplow data can be used for Advanced Analytics.</p>
 <hr>
 <h4 id="who-is-this-guide-for">Who is this guide for?</h4>
 <p>Data practicioners with or without Javascript developer experience who would like to set up tracking on their company&rsquo;s website or single page application and learn how to use the Snowplow web data model to gain insight from their customers&rsquo; behavioural data as quickly as possible.</p>
@@ -541,26 +541,31 @@ gantt
         dateFormat  HH-mm
         axisFormat %M
         section 1. Track
-        8h          :track, 00-00, 6m
+        6h          :track, 00-00, 6m
         section 2. Enrich
-        4h          :enrich, after track, 2m
+        2h          :enrich, after track, 2m
         section 3. Model
-        2h          :model, after enrich, 4m
+        4h          :model, after enrich, 4m
         section 4. Visualise
-        5h          :visaualise, after model, 4m
+        4h          :visaualise, after model, 4m
 
 </div>
 <hr>
 <h4 id="prerequisites">Prerequisites</h4>
+<p><strong>To Complete Tracking Steps (Optional)</strong></p>
 <ul>
-<li>Snowplow Pipeline</li>
-<li>Web app to implement tracking on</li>
+<li>Snowplow pipeline</li>
+<li>Web app to implement tracking</li>
+</ul>
+<p><strong>To Complete Modelling and Visualisation</strong></p>
+<ul>
 <li>dbt installed
 <ul>
-<li>a new dbt project created and configured</li>
-<li>a dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift)</li>
+<li>New dbt project created and configured</li>
+<li>Dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) <strong>or</strong>  Provided sample data loaded into Snowflake</li>
 </ul>
 </li>
+<li>Python 3 Installed</li>
 </ul>
 	
   
@@ -836,16 +841,16 @@ gantt
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661963200"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1662024743"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661963200"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661963200"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1662024743"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1662024743"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

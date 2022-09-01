@@ -125,6 +125,12 @@ npm install @snowplow/browser-tracker
 ####  **Step 2:** Generate Snowplow Service 
 Run `ng generate service snowplow` to create `snowplow.service.ts` and `snowplow.service.spec.ts` within `src/app`.
 
+Import the browser tracker to `snowplow.service.ts` by adding the snippet below.
+
+```javascript
+import { newTracker, trackPageView, enableActivityTracking, BrowserTracker } from "@snowplow/browser-tracker";
+```
+
 ***
 
 #### **Step 3:**  Configure the tracker

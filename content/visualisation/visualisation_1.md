@@ -4,7 +4,7 @@ post = ""
 weight = 1
 +++
 
-There are a number of options to visualise your modelled data. We will explore a few ideas to get started.
+Streamlit uses Python to build shareable dashboards without the need for front-end development experience. 
 
 Download the `streamlit-visualisation` project template and copy the unzipped folder to your project directory to get started.
 
