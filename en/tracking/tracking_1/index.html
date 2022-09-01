@@ -12,20 +12,20 @@
     <title>Setup | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1661963257" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1661963257" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1662024796" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1662024796" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1661963257"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1662024796"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -651,7 +651,9 @@
 </span></span></code></pre></div><hr>
 <h4 id="step-2-generate-snowplow-service"><strong>Step 2:</strong> Generate Snowplow Service</h4>
 <p>Run <code>ng generate service snowplow</code> to create <code>snowplow.service.ts</code> and <code>snowplow.service.spec.ts</code> within <code>src/app</code>.</p>
-<hr>
+<p>Import the browser tracker to <code>snowplow.service.ts</code> by adding the snippet below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">newTracker</span>, <span style="color:#a6e22e">trackPageView</span>, <span style="color:#a6e22e">enableActivityTracking</span>, <span style="color:#a6e22e">BrowserTracker</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@snowplow/browser-tracker&#34;</span>;
+</span></span></code></pre></div><hr>
 <h4 id="step-3--configure-the-tracker"><strong>Step 3:</strong>  Configure the tracker</h4>
 <p>Create the tracker with the with the following arguments. This creates an instance of a basic tracker without any additional context.</p>
 <ul>
@@ -964,16 +966,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1661963257"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1662024796"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1661963257"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1661963257"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1662024796"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1662024796"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
