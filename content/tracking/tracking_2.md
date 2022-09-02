@@ -74,9 +74,7 @@ enableActivityTracking({
 
 ***
 
-#### **Step 2:** Track Page View
-<!-- **react-router-dom is required** -->
-
+#### **Step 2:** Enable Pageview Tracking
 To track page views, we will first define a function called `useLocationChange`. This will take advantage of `useEffect`, the `useLocation` hook from `react-router-dom` and the `trackPageView` function from `browser-tracker`. 
 
 - `useLocation`: returns an object, `location`, describing the current page.
@@ -95,6 +93,24 @@ const useLocationChange = () => {
 
 export { tracker, useLocationChange };
 
+```
+
+### **Step 3:** Add Tracking to App
+Import `useLocationChange` to your `App.js` file.
+
+```javascript
+import { useLocationChange } from './tracker';
+```
+
+Add the `useLocationChange()` method to your `App()` function in `App.js`.
+
+```javascript
+function App() {
+  useLocationChange();
+...
+}
+
+export default App;
 ```
 
 {{% /tab %}}
@@ -127,7 +143,7 @@ Add the snippet to your `snowplow.service.ts` file below the constructor.
 ```javascript
 public trackPageView(): void {
     trackPageView()
-  }
+}
 ```
 
 ***
@@ -144,12 +160,12 @@ Add the constructor to the `AppComponent` class in `app.component.ts`. This cont
 
 ```javascript
 constructor(router: Router, snowplow: SnowplowService) {
-    router.events.subscribe((evt) => {
-        if (evt instanceof NavigationEnd) {
-          snowplow.trackPageView();
-        }
-    });
-  }
+  router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        snowplow.trackPageView();
+      }
+  });
+}
 ```
 
 {{% /tab %}}
@@ -197,7 +213,7 @@ npm install @snowplow/browser-plugin-form-tracking
 
 #### **Step 2:**  Import Plugins
 
-Next import the plugins to your `snowplow.service.ts` file.
+Next import the plugins to your `tracker.js` file.
 
 ```javascript
 import { LinkClickTrackingPlugin, enableLinkClickTracking } from '@snowplow/browser-plugin-link-click-tracking';
@@ -208,25 +224,25 @@ import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin
 Add the 2 plugins to your tracker instance.
 
 ```javascript
-
-  tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
-    ...
+let tracker = newTracker('sp', '{{Url for Collector}}', {
     plugins: [LinkClickTrackingPlugin(), FormTrackingPlugin()],
-    ...
-  })
-
+});
 ```
 
 ***
 
 #### **Step 3:** Enable Tracking
-Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `SnowplowService` class in `snowplow.service.ts`. 
+Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `useEffect` hook in `tracker.js`. 
 
 ```javascript
-public enableLinkClickTracking(): void { enableLinkClickTracking() }
-
-public enableLFormTracking(): void { enableFormTracking() }
-
+const useLocationChange = () => {
+  const location = useLocation();
+  React.useEffect(() => {
+    enableLinkClickTracking() // Enable link click tracking here
+    enableFormTracking() // Enable form tracking here
+    trackPageView();
+  }, [location]);
+};
 ```
 
 ***
