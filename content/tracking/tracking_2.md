@@ -100,7 +100,39 @@ export { tracker, useLocationChange };
 {{% /tab %}}
 {{% tab name="Angular" %}}
 
-#### **Step 1:** Import Snowplow Service
+#### **Step 1:** Enable Activity Tracking
+First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
+
+  - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
+  - `heartbeatDelay`: The number of seconds between page pings 
+
+Add the snippet to your `snowplow.service.ts` in the `SnowplowService class` below the tracker configuration. 
+
+```javascript
+constructor() {
+    enableActivityTracking({
+      minimumVisitLength: 5,
+      heartbeatDelay: 10,
+    });
+  }
+```
+
+***
+
+#### **Step 2:** Track Page View
+To track a page view, we will create a `trackPageView()` function which will make use of the built in Snowplow method.
+
+Add the snippet to your `snowplow.service.ts` file below the constructor. 
+
+```javascript
+public trackPageView(): void {
+    trackPageView()
+  }
+```
+
+***
+
+#### **Step 3:** Import Snowplow Service
 Add the below snippet to `app.component.ts`.
 
 ```javascript
@@ -117,34 +149,6 @@ constructor(router: Router, snowplow: SnowplowService) {
           snowplow.trackPageView();
         }
     });
-  }
-```
-
-#### **Step 2:** Enable Activity Tracking
-First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
-
-  - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
-  - `heartbeatDelay`: The number of seconds between page pings 
-
-Add the snippet to your `snowplow.service.ts` in the `SnowplowService class` below the tracker configuration. 
-
-```javascript
-  enableActivityTracking: void = enableActivityTracking({
-    minimumVisitLength: 5,
-    heartbeatDelay: 10,
-  });
-```
-
-***
-
-#### **Step 3:** Track Page View
-To track a page view, we will create a `trackPageView()` function which will make use of the built in Snowplow method.
-
-Add the snippet to your `snowplow.service.ts` file below the `activityTracking` function. 
-
-```javascript
-  public trackPageView(): void {
-    trackPageView()
   }
 ```
 
@@ -201,7 +205,7 @@ import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin
 
 ```
 
-Add the 2 plugins to your tracker intance.
+Add the 2 plugins to your tracker instance.
 
 ```javascript
 
@@ -264,12 +268,11 @@ import { LinkClickTrackingPlugin, enableLinkClickTracking } from '@snowplow/brow
 import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin-form-tracking';
 
 ```
-
-Add the 2 plugins to your tracker intance.
+ 
+Add the 2 plugins to your tracker instance in `snowplow.service.ts` .
 
 ```javascript
-
-  tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
+tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
     ...
     plugins: [LinkClickTrackingPlugin(), FormTrackingPlugin()],
     ...
