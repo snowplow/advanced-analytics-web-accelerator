@@ -22,7 +22,7 @@ disableLandingPageButton = true
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
   titleSeparator = "|"
   baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
-  themeVariant = "custom"
+
 
 
 
