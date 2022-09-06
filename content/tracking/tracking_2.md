@@ -75,9 +75,9 @@ enableActivityTracking({
 ***
 
 #### **Step 2:** Enable Pageview Tracking
-To track page views, we will first define a function called `useLocationChange`. This will take advantage of `useEffect`, the `useLocation` hook from `react-router-dom` and the `trackPageView` function from `browser-tracker`. 
+To track page views, we will first define a function called `useLocationChange()`. This will take advantage of `useEffect`, the `useLocation` hook from `react-router-dom` and the `trackPageView` function from `browser-tracker`. 
 
-- `useLocation`: returns an object, `location`, describing the current page.
+- `useLocation()`: returns an object, `location`, describing the current page.
 - `useEffect`: Exececutes a function whenever `location` changes. In this case `trackPageView()`
 - `trackPageView()`: Sends a Snowplow page view event to the collector URL.
 
@@ -95,7 +95,7 @@ export { tracker, useLocationChange };
 
 ```
 
-### **Step 3:** Add Tracking to App
+#### **Step 3:** Add Tracking to App
 Import `useLocationChange` to your `App.js` file.
 
 ```javascript
@@ -245,22 +245,6 @@ const useLocationChange = () => {
 };
 ```
 
-***
-
-#### **Step 4:** Add Tracking to App
-Finally, add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the constructor in the `AppComponent` class in `app.component.ts` as below. 
-  
-```javascript
-constructor(router: Router, snowplow: SnowplowService) {
-    router.events.subscribe((evt) => {
-      if (evt instanceof NavigationEnd) {
-        snowplow.enableLinkClickTracking(); // Enable link click tracking here
-        snowplow.enableFormTracking(); // Enable form tracking here
-        snowplow.trackPageView();
-      }
-    });
-  }
-```
 
 {{% /tab %}}
 {{% tab name="Angular" %}}

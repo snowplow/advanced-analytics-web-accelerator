@@ -59,6 +59,8 @@ window.snowplow('newTracker', 'sp', '{{Url for Collector}}', {
 {{% /tab %}}
 {{% tab name="React" %}}
 
+**NOTE: react-router-dom is required to implement tracking in a react app**
+
 #### **Step 1:** Install browser-tracker package
 
 Install the `@snowplow/browser-tracker` via npm by running:
@@ -67,7 +69,7 @@ Install the `@snowplow/browser-tracker` via npm by running:
 npm install @snowplow/browser-tracker
 ```
 
-**Have react router dom installed**
+<!-- **Have react router dom installed** -->
 
 ***
 
@@ -84,7 +86,7 @@ import { newTracker, trackPageView, enableActivityTracking } from "@snowplow/bro
 ***
 
 #### **Step 3:** Configure the tracker
-Create the tracker with the with the following arguments. This creates an instance of a basic tracker without any additional context.
+Create the tracker in `tracker.js` with the with the following arguments. This creates an instance of a basic tracker without any additional context.
 
 - Tracker Name: `'sp'`
 - Collector Url: `'{{Url for Collector}}'`
@@ -166,3 +168,4 @@ export class SnowplowService {
 ```
 {{% /tab %}}
 {{< /tabs >}}
+
