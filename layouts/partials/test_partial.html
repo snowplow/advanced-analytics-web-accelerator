@@ -1,0 +1,30 @@
+<form>
+    <legend>Do you have a Snowplow Pipeline setup?</legend>
+
+    <div class="flex">
+        <input type="radio" name="sp" id="yes" value="true" checked>
+        <label for="yes">Yes</label>
+    </div>
+
+    <div class="flex">
+        <input type="radio" name="sp" id="no" value="false">
+        <label for="no">No</label>
+    </div>
+</form>
+
+<script>
+    var form = document.querySelector('form');
+    var radios = document.getElementsByName('sp');
+
+    form.addEventListener('change', function () {
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                alert(radios[i].value)
+                localStorage.setItem("sp", radios[i].value)
+                break;
+            }
+        }
+    })
+
+</script>

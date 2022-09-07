@@ -20,3 +20,4 @@ Parse the useragent and attach detailed useragent information to each event.
 
 #### YAUAA
 Parse and analyse the user agent string of an event and extract as many relevant attributes as possible using YAUAA API.
+
