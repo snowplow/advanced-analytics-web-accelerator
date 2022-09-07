@@ -1,19 +1,15 @@
 +++
-title = "Load sample data (optional)"
+title = "Upload sample data"
 weight = 1
 post = ""
 +++
 
-Skip to the [next step](/advanced-analytics-web-accelerator/en/modelling/modelling_1) if you have a Snowplow Pipline and data loaded in your warehouse.
-
-If you don't have a Snowplow pipeline, you can load `sample_events.csv` to your warehouse to run the data model.
-
-<!-- In case you would like to see how datamodelling works and you do not yet have a running pipeline with enough test data, you can download and use our sample data: -->
+We will be loading the below sample data using the `Snowflake Web Interface`. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 {{% attachments style="blue" %}}
 {{% /attachments %}}
 
-We will be loading the data using the `Snowflake Web Interface`. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
+
 
 #### **Step 1:**  Create the ATOMIC schema
 If the ATOMIC schema doesn't exist, create it in your target database.
@@ -26,7 +22,7 @@ CREATE SCHEMA TARGET_DB.ATOMIC
 ***
 
 #### **Step 2:**  Create the SAMPLE_EVENTS_BASE table
-This is where you will load the sample data.
+This is where you will load the sample data to.
 
 {{%expand "SQL Script" %}}
 
@@ -187,7 +183,7 @@ This is where you will load the sample data.
 
 3.4 Select the relevant warehouse from the dropdown list. Click `Next`.
 
-3.5 Within the `Source Files` section select `Load files from your computer` option, and click the `Select Files` button.
+3.5 Within the `Source Files` section select `Load files from your computer` option, and click the `Select Files` button. If you have not saved the sample file provided as an attachment above please do so.
 Navigate to the **SAMPLE_EVENTS.csv** and click the `Upload` then the `Next` button.
 
 3.6 Create a new File Format with the plus (+) symbol beside the dropdown list, give it a name and change the following settings of the default csv file formats:

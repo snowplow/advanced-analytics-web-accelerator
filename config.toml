@@ -7,7 +7,7 @@ defaultContentLanguageInSubdir= true
 baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
-landingPageName = "Introduction" 
+landingPageName = "Introduction"
 disableLandingPageButton = true
 
 [params]
@@ -35,7 +35,7 @@ title = "Advanced Analytics for Web"
 titleSeparator = "|"
 weight = 1
 languageName = "English"
-landingPageName = "Introduction" 
+landingPageName = "Introduction"
 landingPageURL = "/advanced-analytics-web-accelerator/"
 
 [Languages.fr]
@@ -43,7 +43,7 @@ title = "Advanced Analytics for Web"
 titleSeparator = "|"
 weight = 1
 languageName = "French"
-landingPageName = "Introduction" 
+landingPageName = "Introduction"
 landingPageURL = "/advanced-analytics-web-accelerator/"
 
 [[Languages.en.menu.shortcuts]]

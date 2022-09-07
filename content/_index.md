@@ -8,58 +8,66 @@ title = "Snowplow Accelerators"
 
 #### Introduction
 
-Welcome to the Advanced Analytics for Web accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
+Welcome to the **Advanced Analytics for Web** accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
 
 You'll learn to:
 
-* Set up Snowplow Tracking and Enrichment **(Optional)**
-* Model and Visualise Snowplow data using dbt and Streamlit
-
-If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the [**modelling step**](modelling/index.html) to understand how Snowplow data can be used for Advanced Analytics for web data.
-
-
+* Model and Visualise Snowplow data
+  - using the [snowplow-web](https://hub.getdbt.com/snowplow/snowplow_web/latest/) dbt package and Streamlit
+  - using our sample data for Snowflake (no need to have a working pipeline)
+* Set up Snowplow Tracking and Enrichment
+* Apply what you have learned on your own pipeline to gain insight
 ***
 
 #### Who is this guide for?
-Data practicioners with or without Javascript developer experience who would like to set up tracking on their company's website or single page application and learn how to use the Snowplow web data model to gain insight from their customers' behavioural data as quickly as possible.
+Data practicioners with or without Javascript developer experience who would like to get familiar with Snowplow data, learn how to use the snowplow-web dbt package and set up tracking on their company's website or single page application to gain insight from their customers' behavioural data as quickly as possible.
 
 ***
 
 #### What you'll learn
-In approximately 2 working days you will learn to: 
+In approximately 2 working days (~13 working hours) you can achieve the following:
 
+- **Upload data -** Upload a sample Snowplow events dataset to your Snowflake warehouse
+- **Model -** Configure and run the snowplow-web data model
+- **Visualise -** Visualise the modelled data with Streamlit
 - **Track -** Setup and deploy tracking to your website or single page application
 - **Enrich -** Add enrichments to your data
-- **Model -** Configure the snowplow-web data model and run it against your Snowflake warehouse
-- **Visualise -** Visualise your output data with Streamlit 
+- **Next steps -** Gain value from your own pipeline data through modelling and visualisation
+
 
 {{<mermaid>}}
 gantt
         dateFormat  HH-mm
         axisFormat %M
-        section 1. Track
-        6h          :track, 00-00, 6m
-        section 2. Enrich
-        2h          :enrich, after track, 2m
-        section 3. Model
-        4h          :model, after enrich, 4m
-        section 4. Visualise
-        4h          :visaualise, after model, 4m
+        section 1. Upload
+        1h          :upload, 00-00, 1m
+        section 2. Model
+        2h          :model, after upload, 2m
+        section 3. Visualise
+        3h          :visualise, after model, 3m
+        section 4. Track
+        4h          :track, after visualise, 4m
+        section 5. Enrich
+        1h          :enrich, after track, 1m
+        section 6. Next steps
+        2h          :next steps, after enrich, 2m
+
 {{</mermaid >}}
 
 ***
 
 #### Prerequisites
 
-**Tracking and Enrichment (Optional)**
+**Modelling and Visualisation**
+- dbt CLI installed / dbt Cloud account available
+  - New dbt project created and configured
+- Python 3 Installed
+- Snowflake account and a user with access to create schemas and tables
+
+**Tracking and Enrichment**
 - Snowplow pipeline
 - Web app to implement tracking
 
-**Modelling and Visualisation**
-- dbt installed
-  - New dbt project created and configured
-  - Dataset of web events from the Snowplow Javascript tracker in your data warehouse **or** sample data loaded into Snowflake
-- Python 3 Installed
-
-<!-- (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) -->
-
+{{% notice info %}}
+Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Databricks, Postgres** and **Redshift**. Further adapter support for this accelerator coming shortly!
+{{% /notice %}}

@@ -1,6 +1,6 @@
 +++
 title = "Install Snowplow dbt Package"
-weight = 2
+weight = 1
 post = ""
 +++
 
@@ -21,3 +21,4 @@ Install the package by running:
 ```
 dbt deps
 ```
+
