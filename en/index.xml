@@ -51,7 +51,7 @@ Step 2: Add JS snippet Add the below snippet to all of the pages you would like 
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/</guid>
       <description>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
 Download the streamlit-visualisation project template and copy the unzipped folder to your project directory to get started.
-Attachments streamlit-visualisation.zip (28 KB) Step 1: Install Requirements Run the command below to install the project requirements and run the virtual environment
+Attachments streamlit-project-web.zip (30 KB) Step 1: Install Requirements Run the command below to install the project requirements and run the virtual environment
 pipenv install pipenv shell Step 2: Setup Database Connection Open secrets.toml and add your Snowflake account and database details.</description>
     </item>
     
