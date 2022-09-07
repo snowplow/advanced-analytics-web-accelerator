@@ -1,5 +1,5 @@
 +++
-title= "Testing the output"
+title= "Explore Snowplow data"
 weight = 3
 post = ""
 +++
