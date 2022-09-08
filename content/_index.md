@@ -16,7 +16,7 @@ You'll learn to:
   - using the [snowplow-web](https://hub.getdbt.com/snowplow/snowplow_web/latest/) dbt package and Streamlit
   - using our sample data for Snowflake (no need to have a working pipeline)
 * Set up Snowplow Tracking and Enrichment
-* Apply what you have learned on your own pipeline to gain insight
+* Apply what you have learned on your own pipeline to gain insights
 ***
 
 #### Who is this guide for?
@@ -32,7 +32,7 @@ In approximately 2 working days (~13 working hours) you can achieve the followin
 - **Visualise -** Visualise the modelled data with Streamlit
 - **Track -** Setup and deploy tracking to your website or single page application
 - **Enrich -** Add enrichments to your data
-- **Next steps -** Gain value from your own pipeline data through modelling and visualisation
+- **Next steps -** Gain value from your own pipeline data through modeling and visualisation
 
 
 {{<mermaid>}}
@@ -58,7 +58,7 @@ gantt
 
 #### Prerequisites
 
-**Modelling and Visualisation**
+**Modeling and Visualisation**
 - dbt CLI installed / dbt Cloud account available
   - New dbt project created and configured
 - Python 3 Installed

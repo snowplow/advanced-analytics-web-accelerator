@@ -7,7 +7,7 @@
 	"content": "Snowplow offers a large number of enrichments that can be used to enhance your event data. An enrichment either updates or populates fields of the atomic event or adds a self-describing context to derived_contexts.\nFor this project, we\u0026rsquo;ll enable the IAB, UA parser and YAUAA enrichments in your console:\nThe IAB enrichment requires purchase (included with Snowplow BDP)\nIAB Use the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its’ IP address and user agent.\nUA Parser Parse the useragent and attach detailed useragent information to each event.\nYAUAA Parse and analyse the user agent string of an event and extract as many relevant attributes as possible using YAUAA API.\n"
 },
 {
-	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_0/",
+	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modeling_0/",
 	"title": "Load sample data (optional)",
 	"tags": [],
 	"description": "",
@@ -42,7 +42,7 @@
 	"content": "Chapter 3 Enrich flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id2 fill:#f9f,stroke:#000,stroke-width:4px The enrichment process adds extra properties and values to your collected data.\n"
 },
 {
-	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_1/",
+	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modeling_1/",
 	"title": "Install Snowplow dbt Package",
 	"tags": [],
 	"description": "",
@@ -57,10 +57,10 @@
 },
 {
 	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/",
-	"title": "Modelling",
+	"title": "Modeling",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3 Modelling your Data flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id3 fill:#f9f,stroke:#000,stroke-width:4px The snowplow-web dbt package transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users.\nModelling the data makes it easier to digest and derive business value from the Snowplow data.\n"
+	"content": "Chapter 3 Modeling your Data flowchart LR id1(Track)--\u003eid2(Enrich)--\u003eid3(Model)--\u003eid4(Visualise) style id3 fill:#f9f,stroke:#000,stroke-width:4px The snowplow-web dbt package transforms and aggregates the raw web event data collected from the Snowplow JavaScript tracker into a set of derived tables: page views, sessions and users.\nModeling the data makes it easier to digest and derive business value from the Snowplow data.\n"
 },
 {
 	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_3/",
@@ -70,7 +70,7 @@
 	"content": "Whilst the tracking set up provides event data on user actions at a specific point in time, context describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual entities. For example:\nThe user performing an action The web page the action occured on A product that has been interacted with Together, these entities make up the context of an event.\nSimilar to the predefined events, a number of entities are available to implement out of the box including:\nwebPage Entity - Adds the Pageview ID session Entity - Information about the user session performanceTiming Entity - Calculate page performance metrics geolocation Entity - Information on the users location JS React Angular Step 1: Enable Predefined Entities The webPage entity is enabled by default in the JavaScript tracker. This is required for the dbt web model used in later steps.\nEnable the context by including the below context options in your tracker creation.\nwindow.snowplow(\u0026#39;newTracker\u0026#39;, \u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;, { ... contexts: { webPage: true, } ... }); Each event sent with this tracker will now contain the data from each of these entities.\nStep 1: Enable Predefined Entities The webPage entity is enabled by default in the JavaScript tracker. This is required for the dbt web model used in later steps.\nEnable the context by including the below context options in your tracker creation.\nlet tracker = newTracker(\u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;, { ... contexts: { webPage: true } ... }); Each event sent with this tracker will now contain the data from each of these entities.\nStep 1: Enable Predefined Entities The webPage entity is enabled by default in the JavaScript tracker. This is required for the dbt web model used in later steps.\nEnable the context by including the below context options in your tracker creation.\nexport class SnowplowService { tracker: BrowserTracker = newTracker(\u0026#39;sp\u0026#39;, \u0026#39;{{Url for Collector}}\u0026#39;, { ... contexts: { webPage: true, session: false } ... } }); Each event sent with this tracker will now contain the data from each of these entities.\n"
 },
 {
-	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_2/",
+	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modeling_2/",
 	"title": "Setup dbt Package",
 	"tags": [],
 	"description": "",
@@ -84,7 +84,7 @@
 	"content": "The Snowplow Chrome Extension can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.\nStep 1: Installation Install the Snowplow Chrome Extension, you may need to restart your browser. Step 2: Check your data Open up devtools (F12) and navigate to the Snowplow extension. You should see a list of Pageview and Page Ping events start to form as you interact with your site.\nClick on an event to get a breakdown of the data being captured.\n"
 },
 {
-	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_3/",
+	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modeling_3/",
 	"title": "Testing the output",
 	"tags": [],
 	"description": "",
@@ -102,7 +102,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "Advanced Analytics for Web Introduction Welcome to the Advanced Analytics for Web accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.\nIn this guide you\u0026rsquo;ll learn how to:\nSet up Snowplow Tracking and Enrichment (Optional) Model and Visualise Snowplow data using dbt and Streamlit If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the modelling step to understand how Snowplow data can be used for Advanced Analytics.\nWho is this guide for? Data practicioners with or without Javascript developer experience who would like to set up tracking on their company\u0026rsquo;s website or single page application and learn how to use the Snowplow web data model to gain insight from their customers\u0026rsquo; behavioural data as quickly as possible.\nWhat you\u0026rsquo;ll learn In approximately 2 working days you will learn to:\nTrack - Setup and deploy tracking to your website or single page application Enrich - Add enrichments to your data Model - Configure the snowplow-web data model and run it against your Snowflake warehouse Visualise - Visualise your output data with Streamlit gantt dateFormat HH-mm axisFormat %M section 1. Track 6h :track, 00-00, 6m section 2. Enrich 2h :enrich, after track, 2m section 3. Model 4h :model, after enrich, 4m section 4. Visualise 4h :visaualise, after model, 4m Prerequisites To Complete Tracking Steps (Optional)\nSnowplow pipeline Web app to implement tracking To Complete Modelling and Visualisation\ndbt installed New dbt project created and configured Dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) or Provided sample data loaded into Snowflake Python 3 Installed "
+	"content": "Advanced Analytics for Web Introduction Welcome to the Advanced Analytics for Web accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.\nIn this guide you\u0026rsquo;ll learn how to:\nSet up Snowplow Tracking and Enrichment (Optional) Model and Visualise Snowplow data using dbt and Streamlit If you do not have a Snowplow pipeline or a web app to implement tracking, you can skip straight to the modelling step to understand how Snowplow data can be used for Advanced Analytics.\nWho is this guide for? Data practicioners with or without Javascript developer experience who would like to set up tracking on their company\u0026rsquo;s website or single page application and learn how to use the Snowplow web data model to gain insight from their customers\u0026rsquo; behavioural data as quickly as possible.\nWhat you\u0026rsquo;ll learn In approximately 2 working days you will learn to:\nTrack - Setup and deploy tracking to your website or single page application Enrich - Add enrichments to your data Model - Configure the snowplow-web data model and run it against your Snowflake warehouse Visualise - Visualise your output data with Streamlit gantt dateFormat HH-mm axisFormat %M section 1. Track 6h :track, 00-00, 6m section 2. Enrich 2h :enrich, after track, 2m section 3. Model 4h :model, after enrich, 4m section 4. Visualise 4h :visaualise, after model, 4m Prerequisites To Complete Tracking Steps (Optional)\nSnowplow pipeline Web app to implement tracking To Complete Modeling and Visualisation\ndbt installed New dbt project created and configured Dataset of web events from the Snowplow Javascript tracker in your data warehouse (Snowflake will be used for illustration but the package also supports BigQuery, Databricks, Postgres and Redshift) or Provided sample data loaded into Snowflake Python 3 Installed "
 },
 {
 	"uri": "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/categories/",
