@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Streamlit | Advanced Analytics for Web</title>
+    <title>Install Snowplow dbt Package | Advanced Analytics for Web</title>
 
     
     <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1662629187" rel="stylesheet">
@@ -41,7 +41,7 @@
 
 
   </head>
-  <body class="" data-url="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/">
+  <body class="" data-url="/advanced-analytics-web-accelerator/en/modeling/modeling_1/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -136,7 +136,7 @@
   
     
     <li data-nav-id="/advanced-analytics-web-accelerator/en/modeling/" title="Modeling" class="dd-item
-        
+        parent
         
         
         ">
@@ -164,7 +164,7 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/en/modeling/modeling_1/" title="Install Snowplow dbt Package" class="dd-item ">
+      <li data-nav-id="/advanced-analytics-web-accelerator/en/modeling/modeling_1/" title="Install Snowplow dbt Package" class="dd-item active">
         <a href="/advanced-analytics-web-accelerator/en/modeling/modeling_1/">
         Install Snowplow dbt Package
         <i class="fas fa-check read-icon"></i>
@@ -235,7 +235,7 @@
   
     
     <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation" class="dd-item
-        parent
+        
         
         
         ">
@@ -263,7 +263,7 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" title="Streamlit" class="dd-item active">
+      <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" title="Streamlit" class="dd-item ">
         <a href="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/">
         Streamlit
         <i class="fas fa-check read-icon"></i>
@@ -594,7 +594,7 @@
                   
                     
                     
-                      <option id="en" value="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" selected>English</option>
+                      <option id="en" value="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/" selected>English</option>
                     
                   
               
@@ -661,7 +661,7 @@
             
           
           
-            <a href='/advanced-analytics-web-accelerator/en/'>Snowplow Accelerators</a> > <a href='/advanced-analytics-web-accelerator/en/visualisation/'>Visualisation</a> > Streamlit
+            <a href='/advanced-analytics-web-accelerator/en/'>Snowplow Accelerators</a> > <a href='/advanced-analytics-web-accelerator/en/modeling/'>Modeling</a> > Install Snowplow dbt Package
           
         
           
@@ -698,51 +698,23 @@
           
             <h1>
               
-              Streamlit
+              Install Snowplow dbt Package
             </h1>
           
 
         
 
 
-<p>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.</p>
-<p>Download the <code>streamlit-visualisation</code> project template and copy the unzipped folder to your project directory to get started.</p>
-<section class="attachments blue">
-  <label>
-    <i class="fas fa-paperclip" aria-hidden="true"></i>
-    Attachments
-  </label>
-  <div class="attachments-files">
-    <li>
-      <a href="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1.files/streamlit-project-web.zip">streamlit-project-web.zip</a>
-      (30 KB)
-    </li>
-  </div>
-</section>
-
-<h4 id="step-1-install-requirements"><strong>Step 1:</strong> Install Requirements</h4>
-<p>Run the command below to install the project requirements and run the virtual environment</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipenv install
-</span></span><span style="display:flex;"><span>pipenv shell
-</span></span></code></pre></div><h4 id="step-2-setup-database-connection"><strong>Step 2:</strong> Setup Database Connection</h4>
-<p>Open <code>secrets.toml</code> and add your Snowflake account and database details. <strong>Ensure <code>secrets.toml</code> is in <code>.gitignore</code> to keep your information safe.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># .streamlit/secrets.toml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">snowflake</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;xxx&#34;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">password</span> = <span style="color:#e6db74">&#34;xxx&#34;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">account</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">database</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">schema</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span></code></pre></div><h4 id="step-3-add-your-schema-to-queries"><strong>Step 3:</strong> Add your schema to queries</h4>
-<p>Open <code>pageviews.sql</code> and <code>sessions.sql</code>. Add your schema name to the queries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_page_views 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_sessions 
-</span></span></code></pre></div><h4 id="step-4-run-the-streamlit-dashboard"><strong>Step 4:</strong> Run the Streamlit dashboard</h4>
-<p>Run the command below to run the streamlit locally</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>streamlit run Dashboard.py
-</span></span></code></pre></div>
+<h4 id="step-1-add-snowplow-web-package"><strong>Step 1:</strong> Add snowplow-web package</h4>
+<p>Add the snowplow-web package to your packages.yml file. The latest version can be found <a href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">here</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">packages</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">package</span>: <span style="color:#ae81ff">snowplow/snowplow_web</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.9.1</span>
+</span></span></code></pre></div><hr>
+<h4 id="step-2-install-the-package"><strong>Step 2:</strong> Install the package</h4>
+<p>Install the package by running:</p>
+<pre tabindex="0"><code>dbt deps
+</code></pre>
 
 <footer class="footline">
 	
@@ -813,6 +785,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -825,6 +798,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -853,6 +846,22 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -876,43 +885,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1094,10 +1066,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/modeling/" title="Modeling"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/modeling/modeling_2/" title="Setup and run dbt Package" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

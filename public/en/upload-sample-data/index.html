@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Streamlit | Advanced Analytics for Web</title>
+    <title>Upload sample data | Advanced Analytics for Web</title>
 
     
     <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1662629187" rel="stylesheet">
@@ -41,7 +41,7 @@
 
 
   </head>
-  <body class="" data-url="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/">
+  <body class="" data-url="/advanced-analytics-web-accelerator/en/upload-sample-data/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -80,7 +80,7 @@
     
     <li data-nav-id="/advanced-analytics-web-accelerator/en/upload-sample-data/" title="Upload sample data" class="dd-item
         
-        
+        active
         
         ">
       <a href="/advanced-analytics-web-accelerator/en/upload-sample-data/">
@@ -235,7 +235,7 @@
   
     
     <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation" class="dd-item
-        parent
+        
         
         
         ">
@@ -263,7 +263,7 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" title="Streamlit" class="dd-item active">
+      <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" title="Streamlit" class="dd-item ">
         <a href="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/">
         Streamlit
         <i class="fas fa-check read-icon"></i>
@@ -594,7 +594,7 @@
                   
                     
                     
-                      <option id="en" value="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" selected>English</option>
+                      <option id="en" value="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload-sample-data/" selected>English</option>
                     
                   
               
@@ -645,8 +645,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -657,13 +655,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/advanced-analytics-web-accelerator/en/'>Snowplow Accelerators</a> > <a href='/advanced-analytics-web-accelerator/en/visualisation/'>Visualisation</a> > Streamlit
-          
-        
+            <a href='/advanced-analytics-web-accelerator/en/'>Snowplow Accelerators</a> > Upload sample data
           
         
           
@@ -672,21 +664,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -694,60 +671,42 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Streamlit
-            </h1>
           
 
         
 
 
-<p>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.</p>
-<p>Download the <code>streamlit-visualisation</code> project template and copy the unzipped folder to your project directory to get started.</p>
-<section class="attachments blue">
-  <label>
-    <i class="fas fa-paperclip" aria-hidden="true"></i>
-    Attachments
-  </label>
-  <div class="attachments-files">
-    <li>
-      <a href="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1.files/streamlit-project-web.zip">streamlit-project-web.zip</a>
-      (30 KB)
-    </li>
-  </div>
-</section>
 
-<h4 id="step-1-install-requirements"><strong>Step 1:</strong> Install Requirements</h4>
-<p>Run the command below to install the project requirements and run the virtual environment</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipenv install
-</span></span><span style="display:flex;"><span>pipenv shell
-</span></span></code></pre></div><h4 id="step-2-setup-database-connection"><strong>Step 2:</strong> Setup Database Connection</h4>
-<p>Open <code>secrets.toml</code> and add your Snowflake account and database details. <strong>Ensure <code>secrets.toml</code> is in <code>.gitignore</code> to keep your information safe.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># .streamlit/secrets.toml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">snowflake</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;xxx&#34;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">password</span> = <span style="color:#e6db74">&#34;xxx&#34;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">account</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">database</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">schema</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span></code></pre></div><h4 id="step-3-add-your-schema-to-queries"><strong>Step 3:</strong> Add your schema to queries</h4>
-<p>Open <code>pageviews.sql</code> and <code>sessions.sql</code>. Add your schema name to the queries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_page_views 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_sessions 
-</span></span></code></pre></div><h4 id="step-4-run-the-streamlit-dashboard"><strong>Step 4:</strong> Run the Streamlit dashboard</h4>
-<p>Run the command below to run the streamlit locally</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>streamlit run Dashboard.py
-</span></span></code></pre></div>
+	<h3 id="chapter-1">Chapter 1</h3>
+<h1 id="upload-sample-data">Upload sample data</h1>
 
-<footer class="footline">
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+flowchart LR
+    id1(Upload)-->id2(Model)-->id3(Visualise)-->id4(Track)-->id5(Enrich)-->id6(Next steps)
+    style id1 fill:#f9f,stroke:#000,stroke-width:4px
+
+</div>
+<p>To be able to start data modeling and getting familiar with Snowplow data even without having a working pipeline you would need to upload a sample events dataset to your Snowflake warehouse. This chapter will guide you through this process.</p>
+<p><img src="../images/sampledata.png" alt=""></p>
+
+
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -778,8 +737,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -793,6 +750,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -877,7 +837,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -890,7 +849,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -910,9 +868,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1094,10 +1049,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/" title="Snowplow Accelerators"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/upload-sample-data/upload_1/" title="Upload sample data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1129,4 +1084,3 @@
 
   </body>
 </html>
-

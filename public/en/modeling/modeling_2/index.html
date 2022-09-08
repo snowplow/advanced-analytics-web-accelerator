@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Streamlit | Advanced Analytics for Web</title>
+    <title>Setup and run dbt Package | Advanced Analytics for Web</title>
 
     
     <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1662629187" rel="stylesheet">
@@ -41,7 +41,7 @@
 
 
   </head>
-  <body class="" data-url="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/">
+  <body class="" data-url="/advanced-analytics-web-accelerator/en/modeling/modeling_2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -136,7 +136,7 @@
   
     
     <li data-nav-id="/advanced-analytics-web-accelerator/en/modeling/" title="Modeling" class="dd-item
-        
+        parent
         
         
         ">
@@ -185,7 +185,7 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/en/modeling/modeling_2/" title="Setup and run dbt Package" class="dd-item ">
+      <li data-nav-id="/advanced-analytics-web-accelerator/en/modeling/modeling_2/" title="Setup and run dbt Package" class="dd-item active">
         <a href="/advanced-analytics-web-accelerator/en/modeling/modeling_2/">
         Setup and run dbt Package
         <i class="fas fa-check read-icon"></i>
@@ -235,7 +235,7 @@
   
     
     <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation" class="dd-item
-        parent
+        
         
         
         ">
@@ -263,7 +263,7 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" title="Streamlit" class="dd-item active">
+      <li data-nav-id="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" title="Streamlit" class="dd-item ">
         <a href="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/">
         Streamlit
         <i class="fas fa-check read-icon"></i>
@@ -594,7 +594,7 @@
                   
                     
                     
-                      <option id="en" value="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/" selected>English</option>
+                      <option id="en" value="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/" selected>English</option>
                     
                   
               
@@ -661,7 +661,7 @@
             
           
           
-            <a href='/advanced-analytics-web-accelerator/en/'>Snowplow Accelerators</a> > <a href='/advanced-analytics-web-accelerator/en/visualisation/'>Visualisation</a> > Streamlit
+            <a href='/advanced-analytics-web-accelerator/en/'>Snowplow Accelerators</a> > <a href='/advanced-analytics-web-accelerator/en/modeling/'>Modeling</a> > Setup and run dbt Package
           
         
           
@@ -698,51 +698,43 @@
           
             <h1>
               
-              Streamlit
+              Setup and run dbt Package
             </h1>
           
 
         
 
 
-<p>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.</p>
-<p>Download the <code>streamlit-visualisation</code> project template and copy the unzipped folder to your project directory to get started.</p>
-<section class="attachments blue">
-  <label>
-    <i class="fas fa-paperclip" aria-hidden="true"></i>
-    Attachments
-  </label>
-  <div class="attachments-files">
-    <li>
-      <a href="/advanced-analytics-web-accelerator/en/visualisation/visualisation_1.files/streamlit-project-web.zip">streamlit-project-web.zip</a>
-      (30 KB)
-    </li>
-  </div>
-</section>
+<p>This step assumes you have data in the <code>ATOMIC.SAMPLE_EVENTS</code> table which will be used to demonstrate how to set up and run the snowplow-web dbt package to model Snowplow web data.</p>
+<hr>
+<h4 id="step-1-setup-variables"><strong>Step 1:</strong> Setup Variables</h4>
+<p>The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&rsquo;s <code>dbt_project.yml</code> file. For details you can have a look at the installed package&rsquo;s default variables which can be found at <code>[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml</code>.</p>
+<p>For the sake of simplicity we have selected the variables that you will most likely need to overwrite, the rest can be changed at a later stage if and when it is needed.</p>
+<ul>
+<li><code>snowplow__start_date</code>: The date of the first tracked event.</li>
+<li><code>snowplow__enable_iab</code>: Variable that by default is disabled but needed if the IAB enrichment is used.</li>
+<li><code>snowplow__enable_ua</code>: Variable that by default is disabled but needed if the UA enrichment is used.</li>
+<li><code>snowplow__enable_yauaa</code>: Variable that by default is disabled but needed if the YAUAA enrichment is used.</li>
+<li><code>snowplow__events</code>: Variable to overwrite the events table in case it is named differently. It would have to be modified when using the <em>sample_events</em> table as a base.</li>
+</ul>
+<p>Add the following snippet to the <code>dbt_project.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">snowplow_web</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__start_date</span>: <span style="color:#e6db74">&#39;2022-08-19&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_iab</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_ua</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__enable_yauaa</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">snowplow__events</span>: <span style="color:#e6db74">&#39;atomic.sample_events&#39;</span>
+</span></span></code></pre></div><h4 id="step-2-add-the-selectorsyml-to-your-project"><strong>Step 2:</strong> Add the selectors.yml to your project</h4>
+<p>The web package provides a suite of suggested selectors to help run and test the models.</p>
+<p>These are defined in the <a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml">selectors.yml</a> file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.</p>
+<p>This is a top-level file and therefore should sit alongside your <code>dbt_project.yml</code> file.</p>
+<hr>
+<h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
+<p>Execute the following either through your CLI or from within dbt Cloud</p>
+<pre tabindex="0"><code>dbt run --selector snowplow_web
+</code></pre><p>This should take a couple of minutes to run.</p>
 
-<h4 id="step-1-install-requirements"><strong>Step 1:</strong> Install Requirements</h4>
-<p>Run the command below to install the project requirements and run the virtual environment</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipenv install
-</span></span><span style="display:flex;"><span>pipenv shell
-</span></span></code></pre></div><h4 id="step-2-setup-database-connection"><strong>Step 2:</strong> Setup Database Connection</h4>
-<p>Open <code>secrets.toml</code> and add your Snowflake account and database details. <strong>Ensure <code>secrets.toml</code> is in <code>.gitignore</code> to keep your information safe.</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># .streamlit/secrets.toml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">snowflake</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span> = <span style="color:#e6db74">&#34;xxx&#34;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">password</span> = <span style="color:#e6db74">&#34;xxx&#34;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">account</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">database</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">schema</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
-</span></span></code></pre></div><h4 id="step-3-add-your-schema-to-queries"><strong>Step 3:</strong> Add your schema to queries</h4>
-<p>Open <code>pageviews.sql</code> and <code>sessions.sql</code>. Add your schema name to the queries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_page_views 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_sessions 
-</span></span></code></pre></div><h4 id="step-4-run-the-streamlit-dashboard"><strong>Step 4:</strong> Run the Streamlit dashboard</h4>
-<p>Run the command below to run the streamlit locally</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>streamlit run Dashboard.py
-</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -813,6 +805,78 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -837,19 +901,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -857,62 +908,6 @@
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1094,10 +1089,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/modeling/modeling_1/" title="Install Snowplow dbt Package"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/tracking/" title="Tracking" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/modeling/modeling_3/" title="Explore Snowplow data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
