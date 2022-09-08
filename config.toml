@@ -48,13 +48,60 @@ landingPageURL = "/advanced-analytics-web-accelerator/"
 
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
-identifier = "ds"
+identifier = "ts"
+url = "https://try.snowplowanalytics.com/"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "Book a demo"
+identifier = "b"
+url = "https://snowplow.io/get-started/book-a-demo-of-snowplow-bdp/"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "Documentation"
+identifier = "d"
+url = "https://docs.snowplow.io/docs/"
+weight = 30
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github"
+identifier = "g"
+url = "https://github.com/snowplow"
+weight = 40
+
+[[Languages.en.menu.shortcuts]]
+name = "Discourse"
+identifier = "di"
+url = "https://discourse.snowplow.io/"
+weight = 50
+
+[[Languages.fr.menu.shortcuts]]
+name = "Try Snowplow"
+identifier = "ts"
 url = "https://try.snowplowanalytics.com/"
 weight = 10
 
 [[Languages.fr.menu.shortcuts]]
-name = "Try Snowplow"
-identifier = "ds"
-url = "https://try.snowplowanalytics.com/"
-weight = 10
+name = "Book a demo"
+identifier = "b"
+url = "https://snowplow.io/get-started/book-a-demo-of-snowplow-bdp/"
+weight = 20
 
+[[Languages.fr.menu.shortcuts]]
+name = "Documentation"
+identifier = "d"
+url = "https://docs.snowplow.io/docs/"
+weight = 30
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github"
+identifier = "g"
+url = "https://github.com/snowplow"
+weight = 40
+
+[[Languages.fr.menu.shortcuts]]
+name = "Discourse"
+identifier = "di"
+url = "https://discourse.snowplow.io/"
+weight = 50
