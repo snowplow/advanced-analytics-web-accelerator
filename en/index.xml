@@ -21,10 +21,10 @@ IAB Use the IAB/ABC International Spiders and Bots List to determine whether an 
     
     <item>
       <title>Install Snowplow dbt Package</title>
-      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_1/</link>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_1/</guid>
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</guid>
       <description>Step 1: Add snowplow-web package Add the snowplow-web package to your packages.yml file. The latest version can be found here
 packages: - package: snowplow/snowplow_web version: 0.9.1 Step 2: Install the package Install the package by running:
 dbt deps </description>
@@ -78,10 +78,10 @@ SQL Script CREATE OR REPLACE TABLE TARGET_DB.</description>
     
     <item>
       <title>Setup and run dbt Package</title>
-      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_2/</link>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_2/</guid>
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/</guid>
       <description>This step assumes you have data in the ATOMIC.SAMPLE_EVENTS table which will be used to demonstrate how to set up and run the snowplow-web dbt package to model Snowplow web data.
 Step 1: Setup Variables The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&amp;rsquo;s dbt_project.yml file. For details you can have a look at the installed package&amp;rsquo;s default variables which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.</description>
     </item>
@@ -131,10 +131,10 @@ As a next step you might want to check out our detailed guide on how to create c
     
     <item>
       <title>Explore Snowplow data</title>
-      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_3/</link>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modelling/modelling_3/</guid>
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_3/</guid>
       <description>Data should now be loaded into your warehouse. In this section we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.
 Step 1: Check the output schemas Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&amp;rsquo;s output. You should be able to see three new schemas created:
 [your_custom_schema]_scratch: drop and recompute models that aid the incremental run [your_custom_schema]_derived: main output models you can use in your downstream models and reporting [your_custom_schema]_manifest: tables that help the integrity and core incremental logic of the model Step 2: Run dbt test Run our recommended selector specified tests to identify potential issues with the data:</description>
