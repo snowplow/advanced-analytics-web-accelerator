@@ -10,21 +10,21 @@ title = "Snowplow Accelerators"
 
 Welcome to the **Advanced Analytics for Web** accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
 
-You'll learn to:
+Here you will learn to:
 
 * Model and Visualise Snowplow data
   - using the [snowplow-web](https://hub.getdbt.com/snowplow/snowplow_web/latest/) dbt package and Streamlit
   - using our sample data for Snowflake (no need to have a working pipeline)
-* Set up Snowplow Tracking and Enrichment
+* Set-up Snowplow Tracking and Enrichment
 * Apply what you have learned on your own pipeline to gain insights
 ***
 
 #### Who is this guide for?
-Data practicioners with or without Javascript developer experience who would like to get familiar with Snowplow data, learn how to use the snowplow-web dbt package and set up tracking on their company's website or single page application to gain insight from their customers' behavioural data as quickly as possible.
+Data practitioners with or without Javascript developer experience who would like to get familiar with Snowplow data. Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible..
 
 ***
 
-#### What you'll learn
+#### What you will learn
 In approximately 2 working days (~13 working hours) you can achieve the following:
 
 - **Upload data -** Upload a sample Snowplow events dataset to your Snowflake warehouse
@@ -69,5 +69,5 @@ gantt
 - Web app to implement tracking
 
 {{% notice info %}}
-Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Databricks, Postgres** and **Redshift**. Further adapter support for this accelerator coming shortly!
+Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Databricks, Postgres** and **Redshift**. Further adapter support for this accelerator coming soon!
 {{% /notice %}}

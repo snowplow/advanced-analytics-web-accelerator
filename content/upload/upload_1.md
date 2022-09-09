@@ -60,7 +60,7 @@ Data loaded into staging table
 Target table: YOUR_DB.ATOMIC.SAMPLE_EVENTS is created
 Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
 ```
-Now you should have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
+You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% /tab %}}
 
@@ -239,7 +239,7 @@ This is where you will load the sample data to.
 
 3.4 Select the relevant warehouse from the dropdown list. Click `Next`.
 
-3.5 Within the `Source Files` section select `Load files from your computer` option, and click the `Select Files` button. If you have not saved the sample file provided as an attachment above please do so.
+3.5 Within the `Source Files` section select `Load files from your computer` option and click the `Select Files` button. If you have not saved the sample file provided as an attachment above please do so.
 Navigate to the **SAMPLE_EVENTS.csv** and click the `Upload` then the `Next` button.
 
 3.6 Create a new File Format with the plus (+) symbol beside the dropdown list, give it a name and change the following settings of the default csv file formats:
@@ -254,7 +254,7 @@ For more details please check out the official [Snowflake documentation](https:/
 
 #### **Step 4:** Create the **ATOMIC.SAMPLE_EVENTS** table
 
-The Snowplow pipeline creates context fields as arrays however for the web data model to work, these need to be converted to varchars. Run the below DDL statement in your SQL editor:
+The Snowplow pipeline creates context fields as arrays, however for the web data model to work, these need to be converted to varchars. Run the below DDL statement in your SQL editor:
 
 <!-- The Snowplow pipeline creates context fields as arrays not varchars for Snowflake, therefore in order for the web data model to work they need to be converted. Run the below DDL statement in your SQL editor of choice: -->
 
@@ -408,6 +408,6 @@ FROM ATOMIC.SAMPLE_EVENTS_BASE )
 ```sql
 DROP TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS_BASE
 ```
-Now you should have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
+You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% /tab %}}

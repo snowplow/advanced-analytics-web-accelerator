@@ -16,6 +16,6 @@ flowchart LR
     style id1 fill:#f9f,stroke:#000,stroke-width:4px
 {{</mermaid >}}
 
-To be able to start data modeling and getting familiar with Snowplow data even without having a working pipeline you would need to upload a sample events dataset to your Snowflake warehouse. This chapter will guide you through this process.
+A sample events dataset for your Snowflake warehouse has been provided. This will allow you to be able to start data modeling and getting familiar with Snowplow event data, without the need to have a working pipeline. This chapter will guide you through this process.
 
 ![](../images/sampledata.png)
