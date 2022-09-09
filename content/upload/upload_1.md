@@ -411,3 +411,4 @@ DROP TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS_BASE
 You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% /tab %}}
+{{< /tabs >}}
