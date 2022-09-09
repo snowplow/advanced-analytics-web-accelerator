@@ -20,6 +20,16 @@ IAB Use the IAB/ABC International Spiders and Bots List to determine whether an 
     </item>
     
     <item>
+      <title>Data upload</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload/upload_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload/upload_1/</guid>
+      <description>Attachments sample_events.csv (35 MB) snowflake_upload.py (9 KB) Python Snowflake Web Interface One option is to load the sample data to the warehouse using Python as described in the below steps. Please download both the sample_events.csv and the snowflake_upload.py files from the attachments at the top of this page as you will need both.
+Step 1: Set up your environment Set up a virtual environment (recommended) and install the snowflake-connector-python package (tested with version 2.</description>
+    </item>
+    
+    <item>
       <title>Install Snowplow dbt Package</title>
       <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -62,18 +72,6 @@ Step 2: Add JS snippet Add the below snippet to all of the pages you would like 
 Download the streamlit-visualisation project template and copy the unzipped folder to your project directory to get started.
 Attachments streamlit-project-web.zip (30 KB) Step 1: Install Requirements Run the command below to install the project requirements and run the virtual environment
 pipenv install pipenv shell Step 2: Setup Database Connection Open secrets.toml and add your Snowflake account and database details.</description>
-    </item>
-    
-    <item>
-      <title>Upload sample data</title>
-      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload-sample-data/upload_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload-sample-data/upload_1/</guid>
-      <description>We will be loading the below sample data using the Snowflake Web Interface. For more details please check out the official Snowflake documentation.
-Attachments sample_events.csv (35 MB) Step 1: Create the ATOMIC schema If the ATOMIC schema doesn&amp;rsquo;t exist, create it in your target database.
-CREATE SCHEMA TARGET_DB.ATOMIC Step 2: Create the SAMPLE_EVENTS_BASE table This is where you will load the sample data to.
-SQL Script CREATE OR REPLACE TABLE TARGET_DB.</description>
     </item>
     
     <item>
