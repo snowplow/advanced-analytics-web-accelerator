@@ -30,7 +30,7 @@ In approximately 2 working days (~13 working hours) you can achieve the followin
 - **Upload data -** Upload a sample Snowplow events dataset to your Snowflake warehouse
 - **Model -** Configure and run the snowplow-web data model
 - **Visualise -** Visualise the modelled data with Streamlit
-- **Track -** Setup and deploy tracking to your website or single page application
+- **Track -** Set-up and deploy tracking to your website or single page application
 - **Enrich -** Add enrichments to your data
 - **Next steps -** Gain value from your own pipeline data through modeling and visualisation
 

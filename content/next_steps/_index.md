@@ -15,4 +15,4 @@ flowchart LR
     style id6 fill:#f9f,stroke:#000,stroke-width:4px
 {{</mermaid >}}
 
-Now that you have set up tracking and enrichment on your pipeline and generated some test events it is time to make use of what you have learned so far by modelling and visualising your own pipeline data.
+Now that you have set-up tracking and enrichment on your pipeline and generated some test events it is time to make use of what you have learned so far by modelling and visualising your own pipeline data.

@@ -4,7 +4,7 @@ weight = 1
 post = ""
 +++
 
-There are a number of options to implement Snowplow tracking in your website or single page application. 
+There are a number of options to implement Snowplow tracking in your website or single page application.
 
 Select the required pathway to implement tracking on your project.
 
@@ -12,9 +12,9 @@ Select the required pathway to implement tracking on your project.
 {{% tab name="JS" %}}
 
 #### **Step 1:** Download sp.js
-Add the sp.js file to your project directory. The latest version can be found [here](https://github.com/snowplow/snowplow-javascript-tracker/releases). 
+Add the sp.js file to your project directory. The latest version can be found [here](https://github.com/snowplow/snowplow-javascript-tracker/releases).
 
-*** 
+***
 
 #### **Step 2:** Add JS snippet
 Add the below snippet to all of the pages you would like to track. **Make sure to update the link to the sp.js file**
@@ -35,7 +35,7 @@ Call `newTracker` in the `<script>` tag, with the following arguments. This crea
 - Tracker Name: `'sp'`
 - Collector Url: `'{{Url for Collector}}'`
 
-```javascript 
+```javascript
 window.snowplow('newTracker', 'sp', '{{Url for Collector}}')
 ```
 
@@ -48,8 +48,8 @@ In addition to the basic tracker, add the below optional arguments to the tracke
   - `platform`: Identify the platform the event occurred on, in this case `web`
   - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recommended**
 
-```javascript 
-window.snowplow('newTracker', 'sp', '{{Url for Collector}}', { 
+```javascript
+window.snowplow('newTracker', 'sp', '{{Url for Collector}}', {
     appId: 'appId',
     platform: 'web',
     cookieSameSite: 'Lax',
@@ -74,7 +74,7 @@ npm install @snowplow/browser-tracker
 ***
 
 #### **Step 2:** Import the tracker package
-In your `src` folder, create a file called `tracker.js`. 
+In your `src` folder, create a file called `tracker.js`.
 
 Import the browser tracker into `tracker.js` with the below snippet:
 
@@ -91,7 +91,7 @@ Create the tracker in `tracker.js` with the with the following arguments. This c
 - Tracker Name: `'sp'`
 - Collector Url: `'{{Url for Collector}}'`
 
-```javascript 
+```javascript
 let tracker = newTracker('sp', '{{Url for Collector}}')
 ```
 
@@ -101,16 +101,16 @@ In addition to the basic tracker, add the below optional arguments to the tracke
   - `appId`: Identify events that occur on different applications
   - `platform`: Identify the platform the event occurred on, in this case `web`
   - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recommended**
-  
-```javascript 
-let tracker = newTracker('sp', '{{Url for Collector}}', { 
+
+```javascript
+let tracker = newTracker('sp', '{{Url for Collector}}', {
     appId: 'appId',
     platform: 'web',
     cookieSameSite: 'Lax',
 });
 
 ```
- 
+
 {{% /tab %}}
 {{% tab name="Angular" %}}
 
@@ -124,7 +124,7 @@ npm install @snowplow/browser-tracker
 
 ***
 
-####  **Step 2:** Generate Snowplow Service 
+####  **Step 2:** Generate Snowplow service
 Run `ng generate service snowplow` to create `snowplow.service.ts` and `snowplow.service.spec.ts` within `src/app`.
 
 Import the browser tracker to `snowplow.service.ts` by adding the snippet below.
@@ -156,8 +156,8 @@ In addition to the basic tracker, add the below optional arguments to the tracke
   - `appId`: Identify events that occur on different applications
   - `platform`: Identify the platform the event occurred on, in this case `web`
   - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recommended**
-  
-```javascript 
+
+```javascript
 export class SnowplowService {
   tracker: BrowserTracker = newTracker('sp',  '{{Url for Collector}}', {
     appId: 'appId',

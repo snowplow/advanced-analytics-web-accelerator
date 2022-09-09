@@ -27,17 +27,17 @@ In this section, we will implement page views and page pings.
 
 
 #### **Step 1:** Enable Activity Tracking
-First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
+First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.
 
   - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
-  - `heartbeatDelay`: The number of seconds between page pings 
+  - `heartbeatDelay`: The number of seconds between page pings
 
-Add the snippet to your `<script>` tag below the tracker instance. 
+Add the snippet to your `<script>` tag below the tracker instance.
 
 ```javascript
-snowplow('enableActivityTracking', { 
-  minimumVisitLength: 5, 
-  heartbeatDelay: 10 
+snowplow('enableActivityTracking', {
+  minimumVisitLength: 5,
+  heartbeatDelay: 10
 });
 ```
 
@@ -46,7 +46,7 @@ snowplow('enableActivityTracking', {
 ***
 
 #### **Step 2:** Track Page View
-To track a page view, simply call `trackPageView'. 
+To track a page view, simply call `trackPageView'.
 
 ```javascript
 snowplow('trackPageView')
@@ -58,12 +58,12 @@ snowplow('trackPageView')
 {{% tab name="React" %}}
 
 #### **Step 1:** Enable Activity Tracking
-First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
+First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.
 
   - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
-  - `heartbeatDelay`: The number of seconds between page pings 
+  - `heartbeatDelay`: The number of seconds between page pings
 
-Add the snippet to your `tracker.js` file below the tracker instance. 
+Add the snippet to your `tracker.js` file below the tracker instance.
 
 ```javascript
 enableActivityTracking({
@@ -75,7 +75,7 @@ enableActivityTracking({
 ***
 
 #### **Step 2:** Enable Pageview Tracking
-To track page views, we will first define a function called `useLocationChange()`. This will take advantage of `useEffect`, the `useLocation` hook from `react-router-dom` and the `trackPageView` function from `browser-tracker`. 
+To track page views, we will first define a function called `useLocationChange()`. This will take advantage of `useEffect`, the `useLocation` hook from `react-router-dom` and the `trackPageView` function from `browser-tracker`.
 
 - `useLocation()`: returns an object, `location`, describing the current page.
 - `useEffect`: Exececutes a function whenever `location` changes. In this case `trackPageView()`
@@ -86,7 +86,7 @@ Add the below snippet to `tracker.js`
 ```javascript
 const useLocationChange = () => {
   const location = useLocation();
-  React.useEffect(() => { 
+  React.useEffect(() => {
     trackPageView();
    }, [location]);
 };
@@ -117,12 +117,12 @@ export default App;
 {{% tab name="Angular" %}}
 
 #### **Step 1:** Enable Activity Tracking
-First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time. 
+First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.
 
   - `minimumVisitLength` : The number of seconds from page load before the first page ping occurs
-  - `heartbeatDelay`: The number of seconds between page pings 
+  - `heartbeatDelay`: The number of seconds between page pings
 
-Add the snippet to your `snowplow.service.ts` in the `SnowplowService class` below the tracker configuration. 
+Add the snippet to your `snowplow.service.ts` in the `SnowplowService class` below the tracker configuration.
 
 ```javascript
 constructor() {
@@ -138,7 +138,7 @@ constructor() {
 #### **Step 2:** Track Page View
 To track a page view, we will create a `trackPageView()` function which will make use of the built in Snowplow method.
 
-Add the snippet to your `snowplow.service.ts` file below the constructor. 
+Add the snippet to your `snowplow.service.ts` file below the constructor.
 
 ```javascript
 public trackPageView(): void {
@@ -188,8 +188,8 @@ To enable link click tracking, call the `enableLinkClickTracking` method.
 snowplow('enableLinkClickTracking');
 ```
 
-You only need to call the method once to track all the links on a page. 
-  
+You only need to call the method once to track all the links on a page.
+
 ***
 
 #### **Step 2:** HTML Form Tracking
@@ -221,7 +221,7 @@ import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin
 
 ```
 
-Add the 2 plugins to your tracker instance.
+Add the two plugins to your tracker instance.
 
 ```javascript
 let tracker = newTracker('sp', '{{Url for Collector}}', {
@@ -232,7 +232,7 @@ let tracker = newTracker('sp', '{{Url for Collector}}', {
 ***
 
 #### **Step 3:** Enable Tracking
-Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `useEffect` hook in `tracker.js`. 
+Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `useEffect` hook in `tracker.js`.
 
 ```javascript
 const useLocationChange = () => {
@@ -268,8 +268,8 @@ import { LinkClickTrackingPlugin, enableLinkClickTracking } from '@snowplow/brow
 import { FormTrackingPlugin, enableFormTracking } from '@snowplow/browser-plugin-form-tracking';
 
 ```
- 
-Add the 2 plugins to your tracker instance in `snowplow.service.ts` .
+
+Add the two plugins to your tracker instance in `snowplow.service.ts` .
 
 ```javascript
 tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
@@ -283,7 +283,7 @@ tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}', {
 ***
 
 #### **Step 3:** Enable Tracking
-Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `SnowplowService` class in `snowplow.service.ts`. 
+Add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the `SnowplowService` class in `snowplow.service.ts`.
 
 ```javascript
 public enableLinkClickTracking(): void { enableLinkClickTracking() }
@@ -295,8 +295,8 @@ public enableLFormTracking(): void { enableFormTracking() }
 ***
 
 #### **Step 4:** Add Tracking to App
-Finally, add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the constructor in the `AppComponent` class in `app.component.ts` as below. 
-  
+Finally, add the `enableLinkClickTracking()` and `enableFormTracking()` methods to the constructor in the `AppComponent` class in `app.component.ts` as below.
+
 ```javascript
 constructor(router: Router, snowplow: SnowplowService) {
     router.events.subscribe((evt) => {

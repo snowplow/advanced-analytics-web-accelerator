@@ -10,7 +10,7 @@ output:
 
 
 
-<p>Whilst the tracking set up provides event data on user <strong>actions</strong> at a specific point in time, <strong>context</strong> describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual <strong>entities</strong>. For example:</p>
+<p>Whilst the tracking set-up provides event data on user <strong>actions</strong> at a specific point in time, <strong>context</strong> describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual <strong>entities</strong>. For example:</p>
 <ul>
 <li>The user performing an action</li>
 <li>The web page the action occured on</li>
@@ -29,8 +29,8 @@ output:
 <h3><strong>Step 1:</strong> Enable Predefined Entities</h3>
 <p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker.</p>
 <p>To enable <code>session</code>, <code>performanceTiming</code> and <code>geolocation</code> use the options below.</p>
-<pre class="javascript"><code>window.snowplow(&#39;newTracker&#39;, &#39;sp&#39;, &#39;{{Url for Collector}}&#39;, { 
-...    
+<pre class="javascript"><code>window.snowplow(&#39;newTracker&#39;, &#39;sp&#39;, &#39;{{Url for Collector}}&#39;, {
+...
 contexts: {
       webPage: true,
       session: true,

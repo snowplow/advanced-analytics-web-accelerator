@@ -6,14 +6,14 @@ post = ""
 
 At this stage you should:
 
-- Have tracking and enrichment setup
+- Have tracking and enrichment set-up
 - Have some data in the `ATOMIC.EVENTS` table
 - Enabled IAB, UA parser and YAUAA enrichments
 - Have a working dbt project with the web model configurations for the sample data
 
 #### **Step 1:** Complete refresh of your Snowplow web package (Optional)
 
-If you would like to use your current dbt environment that you set up during modelling the sample data you might want to start from scratch.
+If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.
 
 While you can drop and recompute the incremental tables within this package using the standard `--full-refresh` flag, all manifest tables are protected from being dropped in production. Without dropping the manifest during a full refresh, the selected derived incremental tables would be dropped but the processing of events would resume from where the package left off (as captured by the `snowplow_web_incremental_manifest` table) rather than your `snowplow__start_date`.
 
@@ -27,7 +27,7 @@ dbt run --selector snowplow_web --full-refresh --vars 'snowplow__allow_refresh: 
 
 #### **Step 2:** Modify variables
 
-Assuming that you followed the guide on how to run the data model on the sample data, here we will only highlight the differences in the setup:
+Assuming that you followed the guide on how to run the data model on the sample data, here we will only highlight the differences in the set-up:
 
 - Remove the `snowplow__events` variable. This time the base table will be the default `atomic.events`, therefore no need to overwrite it.
 

@@ -20,6 +20,6 @@ flowchart LR
 
 Getting started with sending events using the JavaScript tracker is very similar to other web analytics vendors like Google Analytics and Adobe Analytics.
 
-Once setup, you will have the ability to send behavioral data to your Snowplow pipeline.
+Once set-up, you will have the ability to send behavioral data to your Snowplow pipeline.
 
 ### React Notes from agnes

@@ -19,4 +19,4 @@ flowchart LR
 
 The [snowplow-web dbt package](https://hub.getdbt.com/snowplow/snowplow_web/latest/) transforms and aggregates the raw web event data collected from the [Snowplow JavaScript tracker](https://github.com/snowplow/snowplow-javascript-tracker) into a set of derived tables: *page views, sessions* and *users*. Modeling the data makes it easier to digest and derive business value from the Snowplow data either through AI or BI.
 
-In this chapter you will learn how to set up an run the snowplow-web package to model the sample data.
+In this chapter you will learn how to set-up an run the snowplow-web package to model the sample data.
