@@ -19,13 +19,13 @@ dbt deps </description>
     </item>
     
     <item>
-      <title>Setup and run dbt Package</title>
+      <title>Set-up and run dbt Package</title>
       <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/</guid>
-      <description>This step assumes you have data in the ATOMIC.SAMPLE_EVENTS table which will be used to demonstrate how to set up and run the snowplow-web dbt package to model Snowplow web data.
-Step 1: Setup Variables The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&amp;rsquo;s dbt_project.yml file. For details you can have a look at the installed package&amp;rsquo;s default variables which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.</description>
+      <description>This step assumes you have data in the ATOMIC.SAMPLE_EVENTS table which will be used to demonstrate how to set-up and run the snowplow-web dbt package to model Snowplow web data.
+Step 1: Set-up Variables The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&amp;rsquo;s dbt_project.yml file. For details you can have a look at the installed package&amp;rsquo;s default variables which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.</description>
     </item>
     
     <item>

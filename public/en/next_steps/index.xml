@@ -13,7 +13,7 @@
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/</guid>
       <description>At this stage you should:
-Have tracking and enrichment setup Have some data in the ATOMIC.EVENTS table Enabled IAB, UA parser and YAUAA enrichments Have a working dbt project with the web model configurations for the sample data Step 1: Complete refresh of your Snowplow web package (Optional) If you would like to use your current dbt environment that you set up during modelling the sample data you might want to start from scratch.</description>
+Have tracking and enrichment set-up Have some data in the ATOMIC.EVENTS table Enabled IAB, UA parser and YAUAA enrichments Have a working dbt project with the web model configurations for the sample data Step 1: Complete refresh of your Snowplow web package (Optional) If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@ Have tracking and enrichment setup Have some data in the ATOMIC.EVENTS table Ena
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_2/</guid>
-      <description>Visualise your pipeline data Assuming you have already set up your Streamlit project all you have to do is change the schema within the queries used to generate the visualisations.
+      <description>Assuming you have already set-up your Streamlit project all you have to do is change the schema within the queries used to generate the visualisations.
 Open pageviews.sql and sessions.sql. Change your schema name within the queries.
 SELECT * FROM NEW_SCHEMA_NAME.snowplow_web_page_views SELECT * FROM NEW_SCHEMA_NAME.snowplow_web_sessions </description>
     </item>
