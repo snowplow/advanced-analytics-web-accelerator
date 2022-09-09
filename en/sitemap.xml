@@ -2,10 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload-sample-data/</loc>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload/</loc>
     <lastmod>2022-08-16T17:24:05+01:00</lastmod>
   </url><url>
     <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/enrich/enrich_1/</loc>
+  </url><url>
+    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload/upload_1/</loc>
   </url><url>
     <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</loc>
   </url><url>
@@ -14,8 +16,6 @@
     <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_1/</loc>
   </url><url>
     <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/</loc>
-  </url><url>
-    <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload-sample-data/upload_1/</loc>
   </url><url>
     <loc>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/</loc>
     <lastmod>2022-08-16T17:24:05+01:00</lastmod>
