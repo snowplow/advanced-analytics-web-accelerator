@@ -22,4 +22,4 @@ flowchart LR
 {{</mermaid >}}
 
 
-The enrichment process adds extra properties and values to your collected data.
+The enrichment process adds extra properties and values to your collected data. In this chapter we will highlight the most important ones that you are advised to enable.
