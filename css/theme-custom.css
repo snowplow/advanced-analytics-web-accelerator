@@ -611,6 +611,16 @@ pre {
     }
 }
 
+@media only all and (max-width: 580px) {
+    #logo img {
+        height: 15px !important;
+    }
+
+    #logo h1 {
+        font-size: 20px;
+    }
+}
+
 #top-bar {
     position: relative;
     background: #F0EBF8;
@@ -684,4 +694,3 @@ pre .copy-to-clipboard:hover {
     background-color: #734eb2;
     color: #fff;
 }
-
