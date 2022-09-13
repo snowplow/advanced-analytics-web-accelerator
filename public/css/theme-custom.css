@@ -54,6 +54,10 @@
 
 }
 
+.mermaid {
+    font-family: 'Roboto';
+}
+
 body {
     color: var(--MAIN-TEXT-color) !important;
     background-color: var(--MAIN-BODY-BG-color);
@@ -73,6 +77,8 @@ body {
     max-width: 100%;
 }
 
+#chapter #body-inner p {}
+
 #chapter {
     padding: 0;
 }
@@ -80,6 +86,8 @@ body {
 #chapter #body-inner h1 {
     text-align: left;
     font-size: 42px;
+    padding-bottom: 10px;
+    border-bottom: none;
 }
 
 #body .padding {
@@ -331,12 +339,16 @@ a:hover {
     display: flex;
 }
 
+pre {
+    max-height: 250px;
+}
+
 #sidebar .highlightable {
     position: absolute;
     left: 25px;
     right: 0px;
     top: 36px;
-    height: auto !important;
+    height: 60% !important;
     /* bottom: 50.7%; */
     /* White */
 
@@ -638,7 +650,7 @@ a:hover {
     /* bottom: -1px !important; */
     vertical-align: middle;
     text-align: right;
-    position: relative;
+    position: absolute;
     color: #6638B8;
     font-family: 'Roboto';
     font-size: 14px;
@@ -672,3 +684,4 @@ pre .copy-to-clipboard:hover {
     background-color: #734eb2;
     color: #fff;
 }
+
