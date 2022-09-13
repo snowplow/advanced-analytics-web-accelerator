@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tracking on Advanced Analytics for Web</title>
-    <link>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/</link>
+    <link>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/</link>
     <description>Recent content in Tracking on Advanced Analytics for Web</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language><atom:link href="https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup your tracking</title>
-      <link>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_1/</link>
+      <link>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_1/</guid>
+      <guid>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_1/</guid>
       <description>There are a number of options to implement Snowplow tracking in your website or single page application.
 Select the required pathway to implement tracking on your project.
 Javascript React Angular Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.
@@ -20,10 +20,10 @@ Step 2: Add JS snippet Add the below snippet to all of the pages you would like 
     
     <item>
       <title>Tracking Events</title>
-      <link>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_2/</link>
+      <link>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_2/</guid>
+      <guid>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_2/</guid>
       <description>The trackers create data on user actions at a specific point in time. For example:
 Loading a web page Clicking a link Submitting a form A number of tracking events are available out of the box. These include, but aren&amp;rsquo;t limited to:
 Page views Heartbeats (Page Pings) Link clicks HTML form actions Pageviews and Page Pings In this section, we will implement page views and page pings.
@@ -32,20 +32,20 @@ JS React Angular Step 1: Enable Activity Tracking First we will enable activity 
     
     <item>
       <title>Adding Context</title>
-      <link>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_3/</link>
+      <link>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_3/</guid>
+      <guid>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_3/</guid>
       <description>Whilst the tracking set-up provides event data on user actions at a specific point in time, context describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual entities. For example:
 The user performing an action The web page the action occured on A product that has been interacted with Together, these entities make up the context of an event.</description>
     </item>
     
     <item>
       <title>Testing</title>
-      <link>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_4/</link>
+      <link>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.snowplow.io//advanced-analytics-web-accelerator/en/tracking/tracking_4/</guid>
+      <guid>https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/tracking/tracking_4/</guid>
       <description>The Snowplow Chrome Extension can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.
 Step 1: Installation Install the Snowplow Chrome Extension, you may need to restart your browser. Step 2: Check your data Open up devtools (F12) and navigate to the Snowplow extension. You should see a list of Pageview and Page Ping events start to form as you interact with your site.</description>
     </item>
