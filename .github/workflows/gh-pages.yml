@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - feature/create_hugo_site
-  pull_request:
 
 jobs:
   deploy:
