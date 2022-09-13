@@ -7,7 +7,7 @@ post = ""
 {{% attachments style="blue" %}}
 {{% /attachments %}}
 
-{{< tabs groupId="select" >}}
+{{< tabs groupId="data_select" >}}
 
 {{% tab name="Python" %}}
 

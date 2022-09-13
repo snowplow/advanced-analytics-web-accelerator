@@ -1,5 +1,5 @@
 +++
-title = "Setup"
+title = "Setup your tracking"
 weight = 1
 post = ""
 +++
@@ -8,8 +8,8 @@ There are a number of options to implement Snowplow tracking in your website or 
 
 Select the required pathway to implement tracking on your project.
 
-{{< tabs groupId="select" >}}
-{{% tab name="JS" %}}
+{{< tabs groupId="select_js" >}}
+{{% tab name="Javascript" %}}
 
 #### **Step 1:** Download sp.js
 Add the sp.js file to your project directory. The latest version can be found [here](https://github.com/snowplow/snowplow-javascript-tracker/releases).

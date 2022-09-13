@@ -4,24 +4,26 @@ themesdir = "themes"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
-baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
+baseURL = "https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 landingPageName = "Introduction"
 disableLandingPageButton = true
+disableKinds = ["home"]
+
 
 [params]
   description = "Advanced Analytics for Web"
   author = "Agnes Kiss and Jack Keene"
   showVisitedLinks = true
   disableBreadcrumb = false
-  disableNextPrev = false
-  disableLandingPageButton = false
+  disableNextPrev = true
+  disableLandingPageButton = true
   disableMermaid = false
   disableSearch = true
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
   titleSeparator = "|"
-  baseURL = "https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/"
+  baseURL = "https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/"
   themeVariant = "custom"
 
 
@@ -36,7 +38,7 @@ titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction"
-landingPageURL = "/advanced-analytics-web-accelerator/"
+landingPageURL = "/accelerators/advanced-analytics-web-accelerator/en/introduction/"
 
 [Languages.fr]
 title = "Advanced Analytics for Web"
