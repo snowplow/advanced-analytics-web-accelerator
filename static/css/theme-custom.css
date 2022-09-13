@@ -198,3 +198,5 @@ a:hover {
 .flex {
     display: flex;
 }
+
+pre { max-height: 250px}
