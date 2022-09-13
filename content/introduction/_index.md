@@ -1,10 +1,12 @@
 +++
-title = "Snowplow Accelerators"
+title = "Advanced Analytics for Web"
+menuTitle="Introduction"
+chapter = false
+weight = 1
+post = ""
 +++
 
-# Advanced Analytics for Web
-
-!['logo-banner'](../images/logo_banner.png)
+!['logo-banner'](images/logo_banner.png)
 
 #### Introduction
 
