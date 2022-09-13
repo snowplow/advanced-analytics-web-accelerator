@@ -694,3 +694,29 @@ pre .copy-to-clipboard:hover {
     background-color: #734eb2;
     color: #fff;
 }
+
+.mermaid .section0,
+.mermaid .section2 {
+    fill: #fff !important;
+}
+
+.mermaid .sectionTitle {
+    font-family: 'Roboto' !important;
+    font-weight: 400;
+}
+
+.mermaid .task0,
+.mermaid .task1,
+.mermaid .task2,
+.mermaid .task3 {
+    fill: #d9c8f6 !important;
+    stroke: #6638b8 !important;
+    color: #000 !important;
+}
+
+code {
+    background: #efefef;
+    border: none;
+    color: #000;
+    vertical-align: middle;
+}
