@@ -714,6 +714,14 @@ pre .copy-to-clipboard:hover {
     color: #000 !important;
 }
 
+.mermaid .taskText0,
+.mermaid .taskText1,
+.mermaid .taskText2,
+.mermaid .taskText3,
+.mermaid .taskText4 {
+    fill: #000 !important;
+}
+
 code {
     background: #efefef;
     border: none;
