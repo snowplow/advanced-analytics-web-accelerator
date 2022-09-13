@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/accelerators/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Model your pipeline data | Advanced Analytics for Web</title>
+    <title>Advanced Analytics for Web | Advanced Analytics for Web</title>
 
     
     <link href="/accelerators/advanced-analytics-web-accelerator/css/nucleus.css?1663081960" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/accelerators/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/">
+  <body class="" data-url="/accelerators/advanced-analytics-web-accelerator/en/introduction/">
     
 
 <div id="header-wrapper">
@@ -107,7 +107,7 @@
             
             
             
-            <option id="en" value="https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/" selected>English</option>
+            <option id="en" value="https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/en/introduction/" selected>English</option>
             
             
             
@@ -182,7 +182,7 @@
 
 <li data-nav-id="/accelerators/advanced-analytics-web-accelerator/en/introduction/" title="Advanced Analytics for Web" class="dd-item
         
-        
+        active
         
         ">
   <a href="/accelerators/advanced-analytics-web-accelerator/en/introduction/">
@@ -695,7 +695,7 @@
 
 
 <li data-nav-id="/accelerators/advanced-analytics-web-accelerator/en/next_steps/" title="Next steps" class="dd-item
-        parent
+        
         
         
         ">
@@ -728,7 +728,7 @@
 
 
 <li data-nav-id="/accelerators/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/" title="Model your pipeline data"
-  class="dd-item active">
+  class="dd-item ">
   <a href="/accelerators/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/">
     Model your pipeline data
     
@@ -874,13 +874,7 @@
             
           
           
-            
-            
-          
-          
-            <a href=''>Advanced Analytics for Web</a> / <a href='/accelerators/advanced-analytics-web-accelerator/en/next_steps/'>Next steps</a> / Model your pipeline data
-          
-        
+            <a href=''>Advanced Analytics for Web</a> / Advanced Analytics for Web
           
         
           
@@ -915,52 +909,93 @@
           
             <h1>
               
-              Model your pipeline data
+              Advanced Analytics for Web
             </h1>
           
 
         
 
 
-<p>At this stage you should:</p>
+
+	<p><img src="images/logo_banner.png" alt="&amp;rsquo;logo-banner&amp;rsquo;"></p>
+<h4 id="introduction">Introduction</h4>
+<p>Welcome to the <strong>Advanced Analytics for Web</strong> accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.</p>
+<p>Here you will learn to:</p>
 <ul>
-<li>Have tracking and enrichment set-up</li>
-<li>Have some data in the <code>ATOMIC.EVENTS</code> table</li>
-<li>Enabled IAB, UA parser and YAUAA enrichments</li>
-<li>Have a working dbt project with the web model configurations for the sample data</li>
+<li>Model and Visualise Snowplow data
+<ul>
+<li>using the <a href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">snowplow-web</a> dbt package and Streamlit</li>
+<li>using our sample data for Snowflake (no need to have a working pipeline)</li>
 </ul>
-<h4 id="step-1-complete-refresh-of-your-snowplow-web-package-optional"><strong>Step 1:</strong> Complete refresh of your Snowplow web package (Optional)</h4>
-<p>If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.</p>
-<p>While you can drop and recompute the incremental tables within this package using the standard <code>--full-refresh</code> flag, all manifest tables are protected from being dropped in production. Without dropping the manifest during a full refresh, the selected derived incremental tables would be dropped but the processing of events would resume from where the package left off (as captured by the <code>snowplow_web_incremental_manifest</code> table) rather than your <code>snowplow__start_date</code>.</p>
-<p>In order to drop all the manifest tables and start again set the <code>snowplow__allow_refresh</code> variable to <code>true</code> at run time:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dbt run --select snowplow_web tag:snowplow_web_incremental --full-refresh --vars <span style="color:#e6db74">&#39;snowplow__allow_refresh: true&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or using selector flag</span>
-</span></span><span style="display:flex;"><span>dbt run --selector snowplow_web --full-refresh --vars <span style="color:#e6db74">&#39;snowplow__allow_refresh: true&#39;</span>
-</span></span></code></pre></div><h4 id="step-2-modify-variables"><strong>Step 2:</strong> Modify variables</h4>
-<p>Assuming that you followed the guide on how to run the data model on the sample data, here we will only highlight the differences in the set-up:</p>
-<ul>
-<li>
-<p>Remove the <code>snowplow__events</code> variable. This time the base table will be the default <code>atomic.events</code>, therefore no need to overwrite it.</p>
 </li>
-<li>
-<p>Change the <code>snowplow__start_date</code> variable according to the data you have in your events table.</p>
-</li>
+<li>Set-up Snowplow Tracking and Enrichment</li>
+<li>Apply what you have learned on your own pipeline to gain insights</li>
 </ul>
-<p>Optional:</p>
+<hr>
+<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
+<p>Data practitioners with or without Javascript developer experience who would like to get familiar with Snowplow data. Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible..</p>
+<hr>
+<h4 id="what-you-will-learn">What you will learn</h4>
+<p>In approximately 2 working days (~13 working hours) you can achieve the following:</p>
 <ul>
-<li><code>snowplow__backfill_limit_days</code>: The maximum number of days of new data to be processed since the latest event processed. Set it to 1.</li>
+<li><strong>Upload data -</strong> Upload a sample Snowplow events dataset to your Snowflake warehouse</li>
+<li><strong>Model -</strong> Configure and run the snowplow-web data model</li>
+<li><strong>Visualise -</strong> Visualise the modelled data with Streamlit</li>
+<li><strong>Track -</strong> Set-up and deploy tracking to your website or single page application</li>
+<li><strong>Enrich -</strong> Add enrichments to your data</li>
+<li><strong>Next steps -</strong> Gain value from your own pipeline data through modeling and visualisation</li>
 </ul>
 
-<div class="notices note" ><p>We suggest changing <code>snowplow__backfill_limit_days</code> to 1 whilst working in your dev environment initially so that you can test how your incremental runs work. You will only have a few days of data available at this stage and if you leave it at the default 30 days, you will model all your data in one go.</p>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+gantt
+        dateFormat  HH-mm
+        axisFormat %M
+        section 1. Upload
+        1h          :upload, 00-00, 1m
+        section 2. Model
+        2h          :model, after upload, 2m
+        section 3. Visualise
+        3h          :visualise, after model, 3m
+        section 4. Track
+        4h          :track, after visualise, 4m
+        section 5. Enrich
+        1h          :enrich, after track, 1m
+        section 6. Next steps
+        2h          :next steps, after enrich, 2m
+
+
 </div>
-<h4 id="step-3-run-the-model"><strong>Step 3:</strong> Run the model</h4>
-<p>Execute the following either through your CLI or from within dbt Cloud</p>
-<pre tabindex="0"><code>dbt run --selector snowplow_web
-</code></pre><p>Depending on the period of data available since the <code>snowplow__start_date</code> and the <code>snowplow__backfill_limit_days</code> variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package. This gets saved in the <code>snowplow__incremental_manifest</code> table so you can always check the data processing state (see below).</p>
-<p><img src="../images/manifest.png" alt="manifest"></p>
+<hr>
+<h4 id="prerequisites">Prerequisites</h4>
+<p><strong>Modeling and Visualisation</strong></p>
+<ul>
+<li>dbt CLI installed / dbt Cloud account available
+<ul>
+<li>New dbt project created and configured</li>
+</ul>
+</li>
+<li>Python 3 Installed</li>
+<li>Snowflake account and a user with access to create schemas and tables</li>
+</ul>
+<p><strong>Tracking and Enrichment</strong></p>
+<ul>
+<li>Snowplow pipeline</li>
+<li>Web app to implement tracking</li>
+</ul>
+
+<div class="notices info" ><p>Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports <strong>BigQuery, Databricks, Postgres</strong> and <strong>Redshift</strong>. Further adapter support for this accelerator coming soon!</p>
+</div>
 
 
-<footer class="footline">
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
@@ -994,6 +1029,23 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -1004,6 +1056,86 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1101,102 +1233,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1253,7 +1289,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1266,7 +1301,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -1283,9 +1317,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1353,4 +1384,3 @@
     
   </body>
 </html>
-
