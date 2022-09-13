@@ -1,5 +1,5 @@
 +++
-title = "Setup"
+title = "Set-up"
 weight = 1
 post = ""
 +++
