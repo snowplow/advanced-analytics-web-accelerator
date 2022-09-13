@@ -20,7 +20,7 @@ pipenv install
 pipenv shell
 ```
 
-#### **Step 2:** Setup Database Connection
+#### **Step 2:** Set-up Database Connection
 Open `secrets.toml` and add your Snowflake account and database details.
 {{% notice warning %}}
 Ensure `secrets.toml` is in `.gitignore` to keep your information safe.

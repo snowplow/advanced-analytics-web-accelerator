@@ -28,7 +28,7 @@ dbt test --selector snowplow_web_lean_tests
 Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below:
 
 **Find out the number of page reads using `derived.snowplow_web_page_views:`**
- {{% expand "SQL script" %}}
+
 ```sql
 
 WITH READS AS (
@@ -51,10 +51,8 @@ WITH READS AS (
 SELECT * FROM READS
 
 ```
-{{% /expand %}}
 
 **Calculate the bounce rate using `derived.snowplow_sessions:`**
- {{% expand "SQL script" %}}
 ```sql
 
 WITH BOUNCE_RATE AS (
@@ -74,10 +72,9 @@ WITH BOUNCE_RATE AS (
 
 SELECT * FROM BOUNCE_RATE
 ```
-{{% /expand %}}
+
 
 **Find out details about the highest engaged user using `derived.snowplow_users:`**
- {{% expand "SQL script" %}}
 ```sql
 
 WITH ENGAGEMENT AS (
@@ -94,7 +91,6 @@ WITH ENGAGEMENT AS (
 
 SELECT * FROM ENGAGEMENT
 ```
-{{% /expand %}}
 
 ***
 
