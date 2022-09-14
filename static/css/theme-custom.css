@@ -631,6 +631,16 @@ pre {
     }
 }
 
+@media only all and (max-width: 333px) {
+    #logo img {
+        height: 12px !important;
+    }
+
+    #logo h1 {
+        font-size: 18px;
+    }
+}
+
 #top-bar {
     position: relative;
     background: #F0EBF8;
