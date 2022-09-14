@@ -233,7 +233,7 @@ This is where you will load the sample data to. You will need to modify the TARG
 #### **Step 3:** Load the data
 
 {{% notice info %}}
-Please note that the instructions are only valid when using Snowflake Classic Console!
+Please note that the instructions are only valid when using the Snowflake Classic Console!
 {{% /notice %}}
 
 3.1 Log into your web interface and click on `Databases` tab.
