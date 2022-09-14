@@ -13,8 +13,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/upload/upload_1/</guid>
-      <description>Attachments sample_events.csv (36 MB) snowflake_upload.py (9 KB) Python Snowflake Web Interface One option is to load the sample data to the warehouse using Python as described in the below steps. Please download both the sample_events.csv and the snowflake_upload.py files from the attachments at the top of this page as you will need both.
-Step 1: Set up your environment Set up a virtual environment (recommended) and install the snowflake-connector-python package (tested with version 2.</description>
+      <description>Attachments upload.zip (2 MB) Python Snowflake Web Interface One option is to load the sample data to the warehouse using Python as described in the below steps. Please download the upload.zip file from the attachments above which contains the files needed for the below steps (sample_events.csv, snowflake_upload.py).
+Step 1: Set up your environment Set up a virtual environment (recommended) and install the snowflake-connector-python package (tested with version 2.7.12).
+python3 -m venv env source env/bin/activate pip install snowflake-connector-python==2.</description>
     </item>
     
   </channel>
