@@ -15,8 +15,7 @@
       <description>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
 Download the streamlit-visualisation project template and copy the unzipped folder to your project directory to get started.
 Attachments streamlit-project-web.zip (32 KB) Step 1: Install requirements Run the command below to install the project requirements and run the virtual environment
-pipenv install pipenv shell Please note that this implementation has been tested with the following dependencies:
-python=3.9.13 streamlit=1.</description>
+pipenv install pipenv shell Please note that this implementation has been tested with the following dependencies: python=3.9.13, streamlit=1.</description>
     </item>
     
   </channel>
