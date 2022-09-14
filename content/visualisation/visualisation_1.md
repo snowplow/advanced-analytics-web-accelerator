@@ -20,11 +20,7 @@ pipenv install
 pipenv shell
 ```
 {{% notice note %}}
-Please note that this implementation has been tested with the following dependencies:
-- python=3.9.13
-- streamlit=1.12.0
-- snowflake-connector-python==2.7.9
-In case you run into package compatibility issues or encounter any errors you can try using them to build your own environment.
+Please note that this implementation has been tested with the following dependencies: *python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9* In case you run into package compatibility issues or encounter any errors you can try using them to build your own environment.
 {{% /notice %}}
 #### **Step 2:** Set-up Database Connection
 Open `secrets.toml` and add your Snowflake account and database details.
