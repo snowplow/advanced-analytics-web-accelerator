@@ -82,7 +82,7 @@ CREATE SCHEMA IF NOT EXISTS TARGET_DB.ATOMIC
 ***
 
 #### **Step 2:**  Create the SAMPLE_EVENTS_BASE table
-This is where you will load the sample data to.
+This is where you will load the sample data to. You will need to modify the TARGET_DB according to your own database.
 
 
 ```sql
