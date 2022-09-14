@@ -69,7 +69,7 @@ You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% tab name="Snowflake Web Interface" %}}
 
-Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will only need `sample_events.csv` to load the sample data to the Snowflake warehouse using the `Snowflake Web Interface`. 
+Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will only need `sample_events.csv` to load the sample data to the Snowflake warehouse using the `Snowflake Web Interface`.
 
 For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
@@ -231,6 +231,10 @@ This is where you will load the sample data to. You will need to modify the TARG
 ***
 
 #### **Step 3:** Load the data
+
+{{% notice info %}}
+Please note that the instructions are only valid when using Snowflake Classic Console!
+{{% /notice %}}
 
 3.1 Log into your web interface and click on `Databases` tab.
 
