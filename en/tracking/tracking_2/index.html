@@ -12,22 +12,22 @@
     <title>Tracking Events | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663149803" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663149803" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663150616" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663149803" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663150616" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663149803"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663150616"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -944,30 +944,30 @@
     <div class="tab-nav">
     
         <button
-          data-tab-item="JS"
-          data-tab-group="select"
+          data-tab-item="Javascript"
+          data-tab-group="select_js"
           class="tab-nav-button btn active"
-          onclick="switchTab('select','JS')"
-         >JS</button>
+          onclick="switchTab('select_js','Javascript')"
+         >Javascript</button>
     
         <button
           data-tab-item="React"
-          data-tab-group="select"
+          data-tab-group="select_js"
           class="tab-nav-button btn "
-          onclick="switchTab('select','React')"
+          onclick="switchTab('select_js','React')"
          >React</button>
     
         <button
           data-tab-item="Angular"
-          data-tab-group="select"
+          data-tab-group="select_js"
           class="tab-nav-button btn "
-          onclick="switchTab('select','Angular')"
+          onclick="switchTab('select_js','Angular')"
          >Angular</button>
     
     </div>
     <div class="tab-content">
         
-        <div data-tab-item="JS" data-tab-group="select" class="tab-item active">
+        <div data-tab-item="Javascript" data-tab-group="select_js" class="tab-item active">
             <h4 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h4>
 <p>First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.</p>
 <ul>
@@ -984,11 +984,11 @@
 <h4 id="step-2-track-page-view"><strong>Step 2:</strong> Track Page View</h4>
 <p>To track a page view, simply call `trackPageView'.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;trackPageView&#39;</span>)
-</span></span></code></pre></div><p><strong>Note:</strong> <code>trackPageView</code> should go after the page ping event in step 1</p>
+</span></span></code></pre></div><p>❗❗<strong>Note: <code>trackPageView</code> should go after the page ping event in step 1</strong></p>
 
         </div>
         
-        <div data-tab-item="React" data-tab-group="select" class="tab-item ">
+        <div data-tab-item="React" data-tab-group="select_js" class="tab-item ">
             <h4 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h4>
 <p>First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.</p>
 <ul>
@@ -1004,11 +1004,11 @@
 <h4 id="step-2-enable-pageview-tracking"><strong>Step 2:</strong> Enable Pageview Tracking</h4>
 <p>To track page views, we will first define a function called <code>useLocationChange()</code>. This will take advantage of <code>useEffect</code>, the <code>useLocation</code> hook from <code>react-router-dom</code> and the <code>trackPageView</code> function from <code>browser-tracker</code>.</p>
 <ul>
-<li><code>useLocation()</code>: returns an object, <code>location</code>, describing the current page.</li>
+<li><code>useLocation()</code>: returns an object, <code>location</code>, describing the current page</li>
 <li><code>useEffect</code>: Exececutes a function whenever <code>location</code> changes. In this case <code>trackPageView()</code></li>
-<li><code>trackPageView()</code>: Sends a Snowplow page view event to the collector URL.</li>
+<li><code>trackPageView()</code>: Sends a Snowplow page view event to the collector URL</li>
 </ul>
-<p>Add the below snippet to <code>tracker.js</code></p>
+<p>Add the below snippet to <code>tracker.js</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useLocationChange</span> <span style="color:#f92672">=</span> () =&gt; {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useLocation</span>();
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">useEffect</span>(() =&gt; {
@@ -1030,7 +1030,7 @@
 </span></span></code></pre></div>
         </div>
         
-        <div data-tab-item="Angular" data-tab-group="select" class="tab-item ">
+        <div data-tab-item="Angular" data-tab-group="select_js" class="tab-item ">
             <h4 id="step-1-enable-activity-tracking"><strong>Step 1:</strong> Enable Activity Tracking</h4>
 <p>First we will enable activity tracking to collect page ping events. This will allow us to monitor engagement and record how a user digests content on the page over time.</p>
 <ul>
@@ -1073,8 +1073,8 @@
 <h4 id="optional-tracking">Optional Tracking</h4>
 <p>In addition to page pings and pageviews, you can enable link and form tracking. This won&rsquo;t be used in the model in later steps but can be used in your own analysis.</p>
 <ul>
-<li><strong>Link Tracking</strong> - Captures the link&rsquo;s <code>href</code> by default as well as the <code>id</code>, <code>class</code> and <code>target</code> of the link.</li>
-<li><strong>Form Tracking</strong> - Tracks an event when a user focuses, changes or submits a form.</li>
+<li><strong>Link Tracking</strong> - Captures the link&rsquo;s <code>href</code> by default as well as the <code>id</code>, <code>class</code> and <code>target</code> of the link</li>
+<li><strong>Form Tracking</strong> - Tracks an event when a user focuses, changes or submits a form</li>
 </ul>
 
 
@@ -1082,30 +1082,30 @@
     <div class="tab-nav">
     
         <button
-          data-tab-item="JS"
-          data-tab-group="select"
+          data-tab-item="Javascript"
+          data-tab-group="select_js"
           class="tab-nav-button btn active"
-          onclick="switchTab('select','JS')"
-         >JS</button>
+          onclick="switchTab('select_js','Javascript')"
+         >Javascript</button>
     
         <button
           data-tab-item="React"
-          data-tab-group="select"
+          data-tab-group="select_js"
           class="tab-nav-button btn "
-          onclick="switchTab('select','React')"
+          onclick="switchTab('select_js','React')"
          >React</button>
     
         <button
           data-tab-item="Angular"
-          data-tab-group="select"
+          data-tab-group="select_js"
           class="tab-nav-button btn "
-          onclick="switchTab('select','Angular')"
+          onclick="switchTab('select_js','Angular')"
          >Angular</button>
     
     </div>
     <div class="tab-content">
         
-        <div data-tab-item="JS" data-tab-group="select" class="tab-item active">
+        <div data-tab-item="Javascript" data-tab-group="select_js" class="tab-item active">
             <h4 id="step-1--link-click-tracking"><strong>Step 1:</strong>  Link Click Tracking</h4>
 <p>To enable link click tracking, call the <code>enableLinkClickTracking</code> method.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">snowplow</span>(<span style="color:#e6db74">&#39;enableLinkClickTracking&#39;</span>);
@@ -1117,9 +1117,9 @@
 </span></span></code></pre></div>
         </div>
         
-        <div data-tab-item="React" data-tab-group="select" class="tab-item ">
+        <div data-tab-item="React" data-tab-group="select_js" class="tab-item ">
             <h4 id="step-1--install-plugins"><strong>Step 1:</strong>  Install Plugins</h4>
-<p>First install the plugins via npm.</p>
+<p>First install the plugins via npm:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install @snowplow/browser-plugin-link-click-tracking
 </span></span><span style="display:flex;"><span>npm install @snowplow/browser-plugin-form-tracking
 </span></span></code></pre></div><hr>
@@ -1145,9 +1145,9 @@
 </span></span></code></pre></div>
         </div>
         
-        <div data-tab-item="Angular" data-tab-group="select" class="tab-item ">
+        <div data-tab-item="Angular" data-tab-group="select_js" class="tab-item ">
             <h4 id="step-1--install-plugins"><strong>Step 1:</strong>  Install Plugins</h4>
-<p>First install the plugins via npm.</p>
+<p>First install the plugins via npm:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install @snowplow/browser-plugin-link-click-tracking
 </span></span><span style="display:flex;"><span>npm install @snowplow/browser-plugin-form-tracking
 </span></span></code></pre></div><hr>
@@ -1555,6 +1555,13 @@
 
 	 
 	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/tracking/tracking_1/" title="Setup your tracking"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/tracking/tracking_3/" title="Adding Context" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1562,16 +1569,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663149803"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663150616"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663149803"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663149803"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663150616"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
