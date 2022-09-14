@@ -15,7 +15,7 @@
       <description>There are a number of options to implement Snowplow tracking in your website or single page application.
 Select the required pathway to implement tracking on your project.
 Javascript React Angular Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.
-Step 2: Add JS snippet Add the below snippet to all of the pages you would like to track. Make sure to update the link to the sp.</description>
+Step 2: Add JS snippet Add the below snippet to all of the pages you would like to track. Make sure to update the {{Link to the sp.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ Step 2: Add JS snippet Add the below snippet to all of the pages you would like 
       <description>The trackers create data on user actions at a specific point in time. For example:
 Loading a web page Clicking a link Submitting a form A number of tracking events are available out of the box. These include, but aren&amp;rsquo;t limited to:
 Page views Heartbeats (Page Pings) Link clicks HTML form actions Pageviews and Page Pings In this section, we will implement page views and page pings.
-JS React Angular Step 1: Enable Activity Tracking First we will enable activity tracking to collect page ping events.</description>
+Javascript React Angular Step 1: Enable Activity Tracking First we will enable activity tracking to collect page ping events.</description>
     </item>
     
     <item>

@@ -14,7 +14,7 @@
       
       <guid>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</guid>
       <description>Step 1: Add snowplow-web package Add the snowplow-web package to your packages.yml file. The latest version can be found here
-packages: - package: snowplow/snowplow_web version: 0.9.1 Step 2: Install the package Install the package by running:
+packages: - package: snowplow/snowplow_web version: 0.9.2 Step 2: Install the package Install the package by running:
 dbt deps </description>
     </item>
     
@@ -36,7 +36,7 @@ Step 1: Set-up Variables The snowplow_web dbt package comes with a list of varia
       <guid>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/modeling/modeling_3/</guid>
       <description>Data should now be loaded into your warehouse. In this section we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.
 Step 1: Check the output schemas Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&amp;rsquo;s output. You should be able to see three new schemas created:
-[your_custom_schema]_scratch: drop and recompute models that aid the incremental run [your_custom_schema]_derived: main output models you can use in your downstream models and reporting [your_custom_schema]_manifest: tables that help the integrity and core incremental logic of the model Step 2: Run dbt test Run our recommended selector specified tests to identify potential issues with the data:</description>
+[your_custom_schema]_scratch: drop and recompute models that aid the incremental run [your_custom_schema]_derived: main output models you can use in your downstream models and reporting [your_custom_schema]_manifest: tables that help the integrity and core incremental logic of the model Step 2: Explore your data Take some time to familiarise yourself with the derived tables.</description>
     </item>
     
   </channel>
