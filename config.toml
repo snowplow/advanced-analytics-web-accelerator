@@ -4,7 +4,7 @@ themesdir = "themes"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
-baseURL = "https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/"
+baseURL = "https://docs.snowplow.io/advanced-analytics-web-accelerator/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 landingPageName = "Introduction"
@@ -23,7 +23,7 @@ disableKinds = ["home"]
   disableSearch = true
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
   titleSeparator = "|"
-  baseURL = "https://docs.snowplow.io/accelerators/advanced-analytics-web-accelerator/"
+  baseURL = "https://docs.snowplow.io/advanced-analytics-web-accelerator/"
   themeVariant = "custom"
 
 
@@ -38,7 +38,7 @@ titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction"
-landingPageURL = "/accelerators/advanced-analytics-web-accelerator/en/introduction/"
+landingPageURL = "/advanced-analytics-web-accelerator/en/introduction/"
 
 [Languages.fr]
 title = "Advanced Analytics for Web"
@@ -46,7 +46,7 @@ titleSeparator = "|"
 weight = 1
 languageName = "French"
 landingPageName = "Introduction"
-landingPageURL = "/accelerators/advanced-analytics-web-accelerator/"
+landingPageURL = "/advanced-analytics-web-accelerator/"
 
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
