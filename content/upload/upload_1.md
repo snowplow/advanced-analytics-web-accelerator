@@ -69,7 +69,7 @@ You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% tab name="Snowflake Web Interface" %}}
 
-Download the `sample_events.csv` and follow the steps below to load to the warehouse using the `Snowflake Web Interface`. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
+Another option is to load the sample data to the warehouse using the `Snowflake Web Interface` as described in the below steps. Please download the *upload.zip* file from the attachments above which contains the *sample_events.csv* file needed for the below steps. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 
 #### **Step 1:**  Create the ATOMIC schema
