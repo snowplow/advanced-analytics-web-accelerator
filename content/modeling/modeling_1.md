@@ -10,7 +10,7 @@ Add the snowplow-web package to your packages.yml file. The latest version can b
 ```yml
 packages:
   - package: snowplow/snowplow_web
-    version: 0.9.1
+    version: 0.9.2
 ```
 
 ***
