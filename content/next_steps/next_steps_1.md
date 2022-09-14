@@ -53,3 +53,12 @@ Depending on the period of data available since the `snowplow__start_date` and t
 
 ![manifest](../images/manifest.png)
 
+#### **Step 4:** Run dbt test
+
+Run our recommended selector specified tests to identify potential issues with the data:
+
+```bash
+dbt test --selector snowplow_web_lean_tests
+```
+***
+

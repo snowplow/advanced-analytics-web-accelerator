@@ -15,15 +15,7 @@ Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the mode
 3. [your_custom_schema]_***manifest***: tables that help the integrity and core incremental logic of the model
 
 ***
-#### **Step 2:** Run dbt test
-
-Run our recommended selector specified tests to identify potential issues with the data:
-
-```bash
-dbt test --selector snowplow_web_lean_tests
-```
-***
-#### **Step 3:** Explore your data
+#### **Step 2:** Explore your data
 
 Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below:
 
