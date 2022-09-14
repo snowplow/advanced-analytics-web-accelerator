@@ -12,22 +12,22 @@
     <title>Data upload | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663150616" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663150937" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663150937" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663150616" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663150937" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663150937"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -989,7 +989,7 @@ Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">SCHEMA</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>
 </span></span></code></pre></div><hr>
 <h4 id="step-2--create-the-sample_events_base-table"><strong>Step 2:</strong>  Create the SAMPLE_EVENTS_BASE table</h4>
-<p>This is where you will load the sample data to.</p>
+<p>This is where you will load the sample data to. You will need to modify the TARGET_DB according to your own database.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE (
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	APP_ID VARCHAR(<span style="color:#ae81ff">255</span>),
@@ -1675,16 +1675,16 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Upload</c
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663150937"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663150616"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663150616"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663150937"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663150937"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
