@@ -19,7 +19,7 @@ Run the command below to install the project requirements and run the virtual en
 pipenv install
 pipenv shell
 ```
-{{% notice %}}
+{{% notice note %}}
 Please note that this implementation has been tested with the following dependencies:
 - python=3.9.13
 - streamlit=1.12.0
