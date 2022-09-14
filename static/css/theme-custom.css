@@ -77,7 +77,10 @@ body {
     max-width: 100%;
 }
 
-#chapter #body-inner p {}
+#body .nav.nav-next,
+#body .nav.nav-prev {
+    display: none;
+}
 
 #chapter {
     padding: 0;
@@ -509,6 +512,12 @@ pre {
     #sidebar {
         /* width: 0px; */
         left: -354px;
+    }
+
+    #body .nav.nav-next,
+    #body .nav.nav-prev {
+        display: table-cell;
+        ;
     }
 
     #sidebar #header-wrapper {

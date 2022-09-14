@@ -19,11 +19,11 @@ Similar to the predefined events, a number of entities are available to implemen
 - **performanceTiming Entity -** Calculate page performance metrics
 - **geolocation Entity -** Information on the users location
 
-{{< tabs groupId="select" >}}
-{{% tab name="JS" %}}
+{{< tabs groupId="select_js" >}}
+{{% tab name="Javascript" %}}
 
 #### **Step 1:** Enable predefined entities
-The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for the dbt web model used in later steps.
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for modelling your data using the `dbt-web-model`.
 
 Enable the context by including the below context options in your tracker creation.
 
@@ -53,7 +53,7 @@ These are defined using JSON schemas uploaded to your iglu repository
 {{% /tab %}}
 {{% tab name="React" %}}
 #### **Step 1:** Enable predefined entities
-The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for the dbt web model used in later steps.
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for modelling your data using the `dbt-web-model`.
 
 Enable the context by including the below context options in your tracker creation.
 
@@ -75,7 +75,7 @@ Each event sent with this tracker will now contain the data from each of these e
 {{% tab name="Angular" %}}
 
 #### **Step 1:** Enable predefined entities
-The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for the dbt web model used in later steps.
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for modelling your data using the `dbt-web-model`.
 
 Enable the context by including the below context options in your tracker creation.
 

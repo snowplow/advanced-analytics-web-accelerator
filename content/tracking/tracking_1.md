@@ -12,19 +12,21 @@ Select the required pathway to implement tracking on your project.
 {{% tab name="Javascript" %}}
 
 #### **Step 1:** Download sp.js
-Add the sp.js file to your project directory. The latest version can be found [here](https://github.com/snowplow/snowplow-javascript-tracker/releases).
+Add the sp.js file to your project directory. The latest version can be found **[here](https://github.com/snowplow/snowplow-javascript-tracker/releases).**
 
 ***
 
 #### **Step 2:** Add JS snippet
-Add the below snippet to all of the pages you would like to track. **Make sure to update the link to the sp.js file**
+Add the below snippet to all of the pages you would like to track. **Make sure to update the {{Link to the sp.js file}} variable.**
 
-Typically this will be placed into the `<head>` element of your page or in a similar, suitable, location if using a Single Page Application framework.
+Place the `<script>` tag into the `<head>` element of your page.
 
-```javascript
+<!-- Typically this will be placed into the `<head>` element of your page or in a similar, suitable, location if using a Single Page Application framework. -->
+
+```html
 <script type="text/javascript" async=1 >
 ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "{{Link to sp.js file}}", "snowplow"));
-<script>
+</script>
 ```
 
 ***
@@ -43,10 +45,10 @@ window.snowplow('newTracker', 'sp', '{{Url for Collector}}')
 
 In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow's more advanced features.
 
-**Optional Settings (JSON):**
+<!-- **Optional Settings (JSON):** -->
   - `appId`: Identify events that occur on different applications
   - `platform`: Identify the platform the event occurred on, in this case `web`
-  - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recommended**
+  - `cookieSameSite`: Protects cookies from being accessed by third party domains
 
 ```javascript
 window.snowplow('newTracker', 'sp', '{{Url for Collector}}', {
@@ -59,7 +61,7 @@ window.snowplow('newTracker', 'sp', '{{Url for Collector}}', {
 {{% /tab %}}
 {{% tab name="React" %}}
 
-**NOTE: react-router-dom is required to implement tracking in a react app**
+❗❗**NOTE: `react-router-dom` is required to implement tracking in a react app**
 
 #### **Step 1:** Install browser-tracker package
 
@@ -97,10 +99,9 @@ let tracker = newTracker('sp', '{{Url for Collector}}')
 
 In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow's more advanced features.
 
-**Optional Settings (JSON):**
   - `appId`: Identify events that occur on different applications
   - `platform`: Identify the platform the event occurred on, in this case `web`
-  - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recommended**
+  - `cookieSameSite`: Protects cookies from being accessed by third party domains
 
 ```javascript
 let tracker = newTracker('sp', '{{Url for Collector}}', {
@@ -152,10 +153,9 @@ export class SnowplowService {
 
 In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow's more advanced features.
 
-**Optional Settings (JSON):**
   - `appId`: Identify events that occur on different applications
   - `platform`: Identify the platform the event occurred on, in this case `web`
-  - `cookieSameSite`: Lax **Not sure why, or what explanation to give, but is recommended**
+  - `cookieSameSite`: Protects cookies from being accessed by third party domains
 
 ```javascript
 export class SnowplowService {
@@ -168,4 +168,5 @@ export class SnowplowService {
 ```
 {{% /tab %}}
 {{< /tabs >}}
+
 

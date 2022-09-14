@@ -4,6 +4,8 @@ weight = 1
 post = ""
 +++
 
+There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below with Python.
+
 {{% attachments style="blue" %}}
 {{% /attachments %}}
 
@@ -11,13 +13,13 @@ post = ""
 
 {{% tab name="Python" %}}
 
-One option is to load the sample data to the warehouse using Python as described in the below steps. Please download both the *sample_events.csv* and the *snowflake_upload.py* files from the attachments at the top of this page as you will need both.
+Download the `sample_events.csv` and the `snowflake_upload.py` files at the top of this page, you will need both to load the sample data to the Snowflake warehouse.
 
 #### **Step 1:**  Set up your environment
 
 Set up a virtual environment (recommended) and install the [snowflake-connector-python](https://pypi.org/project/snowflake-connector-python/) package (tested with version 2.7.12).
 
-```python
+```bash
 python3 -m venv env
 source env/bin/activate
 pip install snowflake-connector-python==2.7.12
@@ -26,27 +28,28 @@ pip install snowflake-connector-python==2.7.12
 
 #### **Step 2:** Change variables and connection details
 
-Open the snowflake_upload.py file and edit the following before you execute it:
+Open the `snowflake_upload.py` file and edit the following before you execute it:
 
 ##### 2.1 Connection details - update username, password and account
 ```python
-# Connection details - to be modified, where needed!
 conn=sf.connect(user='your_username',password='your_password',account='your_account')
 ```
 
 ##### 2.2 Variables to be modified - warehouse and database
 ```python
-# Variables - to be modified, where needed!
 warehouse='YOUR_WAREHOUSE'
 database = 'YOUR_DB
 ```
 ##### 2.3 Path to the sample_data.csv
 ```python
-# Path to be modified:
 csv_file = '/Users/your_user/path_to_csv/sample_events.csv'
 ```
 
-#### **Step 3:** Execute snowflake_upload.py
+#### **Step 3:** Upload Data
+Run `snowflake_upload.py`.
+```bash
+python3 snowflake_upload.py
+```
 
 It should finish execution within a minute. You should be alerted as soon as each intermediary step finishes:
 
@@ -66,7 +69,7 @@ You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% tab name="Snowflake Web Interface" %}}
 
-Another option is to load the sample data to the warehouse using the `Snowflake Web Interface` as described in the below steps. Please download the *sample_events.csv* from the attachments. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
+Download the `sample_events.csv` and follow the steps below to load to the warehouse using the `Snowflake Web Interface`. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 
 #### **Step 1:**  Create the ATOMIC schema
@@ -74,7 +77,6 @@ If the ATOMIC schema doesn't exist, create it in your target database.
 
 ```sql
 CREATE SCHEMA IF NOT EXISTS TARGET_DB.ATOMIC
-
 ```
 
 ***
@@ -84,7 +86,6 @@ This is where you will load the sample data to.
 
 
 ```sql
-
   CREATE OR REPLACE TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS_BASE (
 
 	APP_ID VARCHAR(255),
@@ -222,7 +223,6 @@ This is where you will load the sample data to.
 	CONTEXTS_NL_BASJES_YAUAA_CONTEXT_1 VARCHAR,
 	constraint EVENT_ID_PK primary key (EVENT_ID)
 );
-
 ```
 
 

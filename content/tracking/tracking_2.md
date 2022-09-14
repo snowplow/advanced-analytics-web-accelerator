@@ -22,8 +22,8 @@ A number of tracking events are available out of the box. These include, but are
 #### Pageviews and Page Pings
 In this section, we will implement page views and page pings.
 
-{{< tabs groupId="select" >}}
-{{% tab name="JS" %}}
+{{< tabs groupId="select_js" >}}
+{{% tab name="Javascript" %}}
 
 
 #### **Step 1:** Enable Activity Tracking
@@ -51,7 +51,7 @@ To track a page view, simply call `trackPageView'.
 ```javascript
 snowplow('trackPageView')
 ```
-**Note:** `trackPageView` should go after the page ping event in step 1
+❗❗**Note: `trackPageView` should go after the page ping event in step 1**
 
 
 {{% /tab %}}
@@ -77,11 +77,11 @@ enableActivityTracking({
 #### **Step 2:** Enable Pageview Tracking
 To track page views, we will first define a function called `useLocationChange()`. This will take advantage of `useEffect`, the `useLocation` hook from `react-router-dom` and the `trackPageView` function from `browser-tracker`.
 
-- `useLocation()`: returns an object, `location`, describing the current page.
+- `useLocation()`: returns an object, `location`, describing the current page
 - `useEffect`: Exececutes a function whenever `location` changes. In this case `trackPageView()`
-- `trackPageView()`: Sends a Snowplow page view event to the collector URL.
+- `trackPageView()`: Sends a Snowplow page view event to the collector URL
 
-Add the below snippet to `tracker.js`
+Add the below snippet to `tracker.js`.
 
 ```javascript
 const useLocationChange = () => {
@@ -174,12 +174,12 @@ constructor(router: Router, snowplow: SnowplowService) {
 #### Optional Tracking
 In addition to page pings and pageviews, you can enable link and form tracking. This won't be used in the model in later steps but can be used in your own analysis.
 
-- **Link Tracking** - Captures the link's `href` by default as well as the `id`, `class` and `target` of the link.
-- **Form Tracking** - Tracks an event when a user focuses, changes or submits a form.
+- **Link Tracking** - Captures the link's `href` by default as well as the `id`, `class` and `target` of the link
+- **Form Tracking** - Tracks an event when a user focuses, changes or submits a form
 
 
-{{< tabs groupId="select" >}}
-{{% tab name="JS" %}}
+{{< tabs groupId="select_js" >}}
+{{% tab name="Javascript" %}}
 
 #### **Step 1:**  Link Click Tracking
 To enable link click tracking, call the `enableLinkClickTracking` method.
@@ -202,7 +202,7 @@ snowplow('enableFormTracking');
 {{% /tab %}}
 {{% tab name="React" %}}
 #### **Step 1:**  Install Plugins
-First install the plugins via npm.
+First install the plugins via npm:
 
 ```bash
 npm install @snowplow/browser-plugin-link-click-tracking
@@ -250,7 +250,7 @@ const useLocationChange = () => {
 {{% tab name="Angular" %}}
 
 #### **Step 1:**  Install Plugins
-First install the plugins via npm.
+First install the plugins via npm:
 
 ```bash
 npm install @snowplow/browser-plugin-link-click-tracking
