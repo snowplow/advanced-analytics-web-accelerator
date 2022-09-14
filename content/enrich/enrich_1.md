@@ -34,7 +34,7 @@ For BDP Cloud users adding enrichments is fairly straightforward: Simply click o
 
 For Open Source users adding enrichments can be achieved by adding the following json files to their enrichment configuration:
 
-`enrich/config/enrichments/iab_spiders_and_robots_enrichment.json`:
+`iab_spiders_and_robots_enrichment.json`:
 
 ##### IAB
 
@@ -62,7 +62,7 @@ For Open Source users adding enrichments can be achieved by adding the following
   }
 }
 ```
-`enrich/config/enrichments/ua_parser_config.json`:
+`ua_parser_config.json`:
 ##### UA Parser
 ```json
 {
@@ -78,7 +78,7 @@ For Open Source users adding enrichments can be achieved by adding the following
   }
 }
 ```
-`enrich/config/enrichments/yauaa_enrichment_config.json`
+`yauaa_enrichment_config.json`
 ##### YAUAA
 ```json
 {
