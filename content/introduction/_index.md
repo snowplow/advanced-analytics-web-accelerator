@@ -10,7 +10,7 @@ post = ""
 
 #### Introduction
 
-Welcome to the **Advanced Analytics for Web** accelerator. Once finished, you will be able to build a deeper understanding of customer behavior on your website and use your data to influence business decisions.
+Welcome to the **Advanced Analytics for Web** accelerator. Once finished, you will be able to build a deeper understanding of customer behaviour on your website and use your data to influence business decisions.
 
 Here you will learn to:
 
@@ -22,7 +22,8 @@ Here you will learn to:
 ***
 
 #### Who is this guide for?
-Data practitioners with or without Javascript developer experience who would like to get familiar with Snowplow data. Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible..
+- Data practitioners who would like to get familiar with Snowplow data. 
+- Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible.
 
 ***
 

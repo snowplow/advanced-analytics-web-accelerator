@@ -15,13 +15,14 @@ Download the `streamlit-visualisation` project template and copy the unzipped fo
 #### **Step 1:** Install requirements
 Run the command below to install the project requirements and run the virtual environment
 
+❗❗ **This implementation has been tested with the following dependencies: *python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9*. If you run into package compatibility issues or encounter any errors try using them to build your own environment.**
+
+
 ```bash
 pipenv install
 pipenv shell
 ```
-{{% notice note %}}
-Please note that this implementation has been tested with the following dependencies: *python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9* In case you run into package compatibility issues or encounter any errors you can try using them to build your own environment.
-{{% /notice %}}
+
 #### **Step 2:** Set-up Database Connection
 Open `secrets.toml` and add your Snowflake account and database details.
 {{% notice warning %}}
@@ -41,12 +42,12 @@ schema = "xxx"
 ```
 
 #### **Step 3:** Add your schema to queries
-Open `pageviews.sql` and `sessions.sql`. Add your schema name to the queries.
+Add your schema name to the queries found in `queries/pageviews`, `queries/sessions` and `queries/users`. For example:
 
 ```sql
-SELECT * FROM SCHEMA_NAME.snowplow_web_page_views
-
-SELECT * FROM SCHEMA_NAME.snowplow_web_sessions
+SELECT count(1) AS number_of_sessions
+FROM YOUR_SCHEMA.snowplow_web_sessions
+WHERE START_TSTAMP BETWEEN DATEADD(day, -7, GETDATE()) AND  DATEADD(day, -1, GETDATE())
 ```
 
 #### **Step 4:** Run the Streamlit dashboard

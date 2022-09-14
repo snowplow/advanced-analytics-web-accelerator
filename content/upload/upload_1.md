@@ -4,7 +4,7 @@ weight = 1
 post = ""
 +++
 
-There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below with Python.
+There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below.
 
 {{% attachments style="blue" %}}
 {{% /attachments %}}
@@ -13,7 +13,7 @@ There are a number of options to load the sample Snowplow data to your Snowflake
 
 {{% tab name="Python" %}}
 
-Download the `sample_events.csv` and the `snowflake_upload.py` files at the top of this page, you will need both to load the sample data to the Snowflake warehouse.
+Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will need both to load the sample data to the Snowflake warehouse with Python.
 
 #### **Step 1:**  Set up your environment
 
@@ -28,7 +28,7 @@ pip install snowflake-connector-python==2.7.12
 
 #### **Step 2:** Change variables and connection details
 
-Open the `snowflake_upload.py` file and edit the following before you execute it:
+Open the `snowflake_upload.py` file and edit the following variables.
 
 ##### 2.1 Connection details - update username, password and account
 ```python
@@ -69,8 +69,9 @@ You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% tab name="Snowflake Web Interface" %}}
 
-Another option is to load the sample data to the warehouse using the `Snowflake Web Interface` as described in the below steps. Please download the *upload.zip* file from the attachments above which contains the *sample_events.csv* file needed for the below steps. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
+Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will only need `sample_events.csv` to load the sample data to the Snowflake warehouse using the `Snowflake Web Interface`. 
 
+For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 #### **Step 1:**  Create the ATOMIC schema
 If the ATOMIC schema doesn't exist, create it in your target database.
