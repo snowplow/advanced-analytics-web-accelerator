@@ -12,22 +12,22 @@
     <title>Data upload | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663082972" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663159508" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663082972" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663159508" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663082972"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663159508"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -914,6 +914,7 @@
         
 
 
+<p>There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below.</p>
 <section class="attachments blue">
   <label>
     <i class="fas fa-paperclip" aria-hidden="true"></i>
@@ -921,12 +922,8 @@
   </label>
   <div class="attachments-files">
     <li>
-      <a href="/advanced-analytics-web-accelerator/en/upload/upload_1.files/sample_events.csv">sample_events.csv</a>
-      (36 MB)
-    </li>
-    <li>
-      <a href="/advanced-analytics-web-accelerator/en/upload/upload_1.files/snowflake_upload.py">snowflake_upload.py</a>
-      (9 KB)
+      <a href="/advanced-analytics-web-accelerator/en/upload/upload_1.files/upload.zip">upload.zip</a>
+      (2 MB)
     </li>
   </div>
 </section>
@@ -954,26 +951,25 @@
     <div class="tab-content">
         
         <div data-tab-item="Python" data-tab-group="select_upload_sf" class="tab-item active">
-            <p>One option is to load the sample data to the warehouse using Python as described in the below steps. Please download both the <em>sample_events.csv</em> and the <em>snowflake_upload.py</em> files from the attachments at the top of this page as you will need both.</p>
+            <p>Download the <code>upload.zip</code> folder which contains the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files. You will need both to load the sample data to the Snowflake warehouse with Python.</p>
 <h4 id="step-1--set-up-your-environment"><strong>Step 1:</strong>  Set up your environment</h4>
 <p>Set up a virtual environment (recommended) and install the <a href="https://pypi.org/project/snowflake-connector-python/">snowflake-connector-python</a> package (tested with version 2.7.12).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>python3 <span style="color:#f92672">-</span>m venv env
-</span></span><span style="display:flex;"><span>source env<span style="color:#f92672">/</span>bin<span style="color:#f92672">/</span>activate
-</span></span><span style="display:flex;"><span>pip install snowflake<span style="color:#f92672">-</span>connector<span style="color:#f92672">-</span>python<span style="color:#f92672">==</span><span style="color:#ae81ff">2.7.12</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -m venv env
+</span></span><span style="display:flex;"><span>source env/bin/activate
+</span></span><span style="display:flex;"><span>pip install snowflake-connector-python<span style="color:#f92672">==</span>2.7.12
 </span></span></code></pre></div><h4 id="step-2-change-variables-and-connection-details"><strong>Step 2:</strong> Change variables and connection details</h4>
-<p>Open the snowflake_upload.py file and edit the following before you execute it:</p>
+<p>Open the <code>snowflake_upload.py</code> file and edit the following variables.</p>
 <h5 id="21-connection-details---update-username-password-and-account">2.1 Connection details - update username, password and account</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Connection details - to be modified, where needed!</span>
-</span></span><span style="display:flex;"><span>conn<span style="color:#f92672">=</span>sf<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_username&#39;</span>,password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_password&#39;</span>,account<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_account&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conn<span style="color:#f92672">=</span>sf<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_username&#39;</span>,password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_password&#39;</span>,account<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_account&#39;</span>)
 </span></span></code></pre></div><h5 id="22-variables-to-be-modified---warehouse-and-database">2.2 Variables to be modified - warehouse and database</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Variables - to be modified, where needed!</span>
-</span></span><span style="display:flex;"><span>warehouse<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YOUR_WAREHOUSE&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>warehouse<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YOUR_WAREHOUSE&#39;</span>
 </span></span><span style="display:flex;"><span>database <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_DB</span>
 </span></span></code></pre></div><h5 id="23-path-to-the-sample_datacsv">2.3 Path to the sample_data.csv</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Path to be modified:</span>
-</span></span><span style="display:flex;"><span>csv_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Users/your_user/path_to_csv/sample_events.csv&#39;</span>
-</span></span></code></pre></div><h4 id="step-3-execute-snowflake_uploadpy"><strong>Step 3:</strong> Execute snowflake_upload.py</h4>
-<p>It should finish execution within a minute. You should be alerted as soon as each intermediary step finishes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>csv_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Users/your_user/path_to_csv/sample_events.csv&#39;</span>
+</span></span></code></pre></div><h4 id="step-3-upload-data"><strong>Step 3:</strong> Upload Data</h4>
+<p>Run <code>snowflake_upload.py</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 snowflake_upload.py
+</span></span></code></pre></div><p>It should finish execution within a minute. You should be alerted as soon as each intermediary step finishes:</p>
 <pre tabindex="0"><code>Schema created
 Staging table YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is created
 Stage dropped, if applicable
@@ -987,15 +983,15 @@ Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
         </div>
         
         <div data-tab-item="Snowflake Web Interface" data-tab-group="select_upload_sf" class="tab-item ">
-            <p>Another option is to load the sample data to the warehouse using the <code>Snowflake Web Interface</code> as described in the below steps. Please download the <em>sample_events.csv</em> from the attachments. For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
+            <p>Download the <code>upload.zip</code> folder which contains the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files. You will only need <code>sample_events.csv</code> to load the sample data to the Snowflake warehouse using the <code>Snowflake Web Interface</code>.</p>
+<p>For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
 <h4 id="step-1--create-the-atomic-schema"><strong>Step 1:</strong>  Create the ATOMIC schema</h4>
 <p>If the ATOMIC schema doesn&rsquo;t exist, create it in your target database.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">SCHEMA</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>
 </span></span></code></pre></div><hr>
 <h4 id="step-2--create-the-sample_events_base-table"><strong>Step 2:</strong>  Create the SAMPLE_EVENTS_BASE table</h4>
-<p>This is where you will load the sample data to.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE (
+<p>This is where you will load the sample data to. You will need to modify the TARGET_DB according to your own database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">OR</span> <span style="color:#66d9ef">REPLACE</span> <span style="color:#66d9ef">TABLE</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>.SAMPLE_EVENTS_BASE (
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>	APP_ID VARCHAR(<span style="color:#ae81ff">255</span>),
 </span></span><span style="display:flex;"><span>	PLATFORM VARCHAR(<span style="color:#ae81ff">255</span>),
@@ -1666,6 +1662,13 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Upload</c
 
 	 
 	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/upload/" title="Upload sample data"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/modeling/" title="Modeling" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1673,16 +1676,16 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Upload</c
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663082972"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663159508"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663082972"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663159508"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

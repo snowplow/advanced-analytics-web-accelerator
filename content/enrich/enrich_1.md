@@ -34,7 +34,6 @@ For BDP Cloud users adding enrichments is fairly straightforward: Simply click o
 
 For Open Source users adding enrichments can be achieved by adding the following json files to their enrichment configuration:
 
-`enrich/config/enrichments/iab_spiders_and_robots_enrichment.json`:
 `iab_spiders_and_robots_enrichment.json`:
 
 ##### IAB

@@ -77,7 +77,10 @@ body {
     max-width: 100%;
 }
 
-#chapter #body-inner p {}
+#body .nav.nav-next,
+#body .nav.nav-prev {
+    display: none;
+}
 
 #chapter {
     padding: 0;
@@ -364,6 +367,7 @@ pre {
     left: 25px;
     right: 0px;
     bottom: 25px;
+    min-height: 205px;
     height: 25vh !important;
     background-color: #fff;
     box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 0px 2px rgba(16, 24, 40, 0.06);
@@ -510,6 +514,12 @@ pre {
         left: -354px;
     }
 
+    #body .nav.nav-next,
+    #body .nav.nav-prev {
+        display: table-cell;
+        ;
+    }
+
     #sidebar #header-wrapper {
         right: 0px
     }
@@ -611,6 +621,29 @@ pre {
     }
 }
 
+@media only all and (max-width: 580px) {
+    #logo img {
+        height: 15px !important;
+    }
+
+    #logo h1 {
+        font-size: 20px;
+
+    }
+}
+
+@media only all and (max-width: 333px) {
+    #logo img {
+        height: 12px !important;
+        top: 14px !important;
+    }
+
+    #logo h1 {
+        font-size: 18px;
+
+    }
+}
+
 #top-bar {
     position: relative;
     background: #F0EBF8;
@@ -685,3 +718,36 @@ pre .copy-to-clipboard:hover {
     color: #fff;
 }
 
+.mermaid .section0,
+.mermaid .section2 {
+    fill: #fff !important;
+}
+
+.mermaid .sectionTitle {
+    font-family: 'Roboto' !important;
+    font-weight: 400;
+}
+
+.mermaid .task0,
+.mermaid .task1,
+.mermaid .task2,
+.mermaid .task3 {
+    fill: #d9c8f6 !important;
+    stroke: #6638b8 !important;
+    color: #000 !important;
+}
+
+.mermaid .taskText0,
+.mermaid .taskText1,
+.mermaid .taskText2,
+.mermaid .taskText3,
+.mermaid .taskText4 {
+    fill: #000 !important;
+}
+
+code {
+    background: #efefef;
+    border: none;
+    color: #000;
+    vertical-align: middle;
+}

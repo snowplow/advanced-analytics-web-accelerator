@@ -12,22 +12,22 @@
     <title>Explore Snowplow data | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663082972" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663082972" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663159508" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663159508" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663082972" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663159508" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663082972"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663159508"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -932,12 +932,8 @@
 <li>[your_custom_schema]_<em><strong>manifest</strong></em>: tables that help the integrity and core incremental logic of the model</li>
 </ol>
 <hr>
-<h4 id="step-2-run-dbt-test"><strong>Step 2:</strong> Run dbt test</h4>
-<p>Run our recommended selector specified tests to identify potential issues with the data:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dbt test --selector snowplow_web_lean_tests
-</span></span></code></pre></div><hr>
-<h4 id="step-3-explore-your-data"><strong>Step 3:</strong> Explore your data</h4>
-<p>Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below:</p>
+<h4 id="step-2-explore-your-data"><strong>Step 2:</strong> Explore your data</h4>
+<p>Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below. Make sure to modify the schema to be aligned with your custom dbt schema.</p>
 <p><strong>Find out the number of page reads using <code>derived.snowplow_web_page_views:</code></strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">READS</span> <span style="color:#66d9ef">AS</span> (
@@ -947,7 +943,7 @@
 </span></span><span style="display:flex;"><span>    PAGE_TITLE,
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> [YOUR_CUSTOM_SCHEMA]_DERIVED.SNOWPLOW_WEB_PAGE_VIEWS
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_WEB_PAGE_VIEWS
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">WHERE</span> ENGAGED_TIME_IN_S <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">60</span>
 </span></span><span style="display:flex;"><span>
@@ -968,7 +964,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> DOMAIN_SESSIONID) <span style="color:#66d9ef">AS</span> SESSIONS,
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> <span style="color:#66d9ef">CASE</span> <span style="color:#66d9ef">WHEN</span> PAGE_VIEWS <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">THEN</span> DOMAIN_SESSIONID <span style="color:#66d9ef">END</span>) <span style="color:#f92672">/</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> DOMAIN_SESSIONID) <span style="color:#66d9ef">AS</span> BOUNCE_RATE
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> DERIVED.SNOWPLOW_WEB_SESSIONS
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_WEB_SESSIONS
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> SESSIONS <span style="color:#66d9ef">DESC</span>
@@ -982,7 +978,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> DERIVED.SNOWPLOW_WEB_USERS
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">FROM</span> YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_WEB_USERS
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> ENGAGED_TIME_IN_S <span style="color:#66d9ef">DESC</span>
 </span></span><span style="display:flex;"><span>
@@ -1363,6 +1359,13 @@
 
 	 
 	 
+		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/modeling/modeling_2/" title="Set-up and run dbt Package"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/visualisation/" title="Visualisation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1370,16 +1373,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663082972"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663159508"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663082972"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663082972"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663159508"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663159508"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
