@@ -11,7 +11,7 @@ post = ""
 
 {{% tab name="Python" %}}
 
-One option is to load the sample data to the warehouse using Python as described in the below steps. Please download both the *sample_events.csv* and the *snowflake_upload.py* files from the attachments at the top of this page as you will need both.
+One option is to load the sample data to the warehouse using Python as described in the below steps. Please download the *upload.zip* file from the attachments above which contains the files needed for the below steps (*sample_events.csv*, *snowflake_upload.py*).
 
 #### **Step 1:**  Set up your environment
 
@@ -66,7 +66,7 @@ You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
 {{% tab name="Snowflake Web Interface" %}}
 
-Another option is to load the sample data to the warehouse using the `Snowflake Web Interface` as described in the below steps. Please download the *sample_events.csv* from the attachments. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
+Another option is to load the sample data to the warehouse using the `Snowflake Web Interface` as described in the below steps. Please download the *upload.zip* file from the attachments above which contains the *sample_events.csv* file needed for the below steps. For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 
 #### **Step 1:**  Create the ATOMIC schema
