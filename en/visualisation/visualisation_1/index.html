@@ -12,22 +12,22 @@
     <title>Streamlit | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663158154" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663159588" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663158154" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663159588" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663158154"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663159588"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -938,10 +938,8 @@
 </section>
 
 <h4 id="step-1-install-requirements"><strong>Step 1:</strong> Install requirements</h4>
-<p>Run the command below to install the project requirements and run the virtual environment.</p>
-
-<div class="notices tip" ><p>Please note that this implementation has been tested with the following dependencies: <em>python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9</em> In case you run into package compatibility issues or encounter any errors you can try using them to build your own environment.</p>
-</div>
+<p>Run the command below to install the project requirements and run the virtual environment</p>
+<p>❗❗ <strong>This implementation has been tested with the following dependencies: <em>python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9</em>. If you run into package compatibility issues or encounter any errors try using them to build your own environment.</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipenv install
 </span></span><span style="display:flex;"><span>pipenv shell
 </span></span></code></pre></div><h4 id="step-2-set-up-database-connection"><strong>Step 2:</strong> Set-up Database Connection</h4>
@@ -958,10 +956,10 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">database</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">schema</span> = <span style="color:#e6db74">&#34;xxx&#34;</span>
 </span></span></code></pre></div><h4 id="step-3-add-your-schema-to-queries"><strong>Step 3:</strong> Add your schema to queries</h4>
-<p>Open <code>pageviews.sql</code> and <code>sessions.sql</code>. Add your schema name to the queries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_page_views
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">SCHEMA_NAME</span>.snowplow_web_sessions
+<p>Add your schema name to the queries found in <code>queries/pageviews</code>, <code>queries/sessions</code> and <code>queries/users</code>. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">count</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">AS</span> number_of_sessions
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> YOUR_SCHEMA.snowplow_web_sessions
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> START_TSTAMP <span style="color:#66d9ef">BETWEEN</span> DATEADD(<span style="color:#66d9ef">day</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">7</span>, GETDATE()) <span style="color:#66d9ef">AND</span>  DATEADD(<span style="color:#66d9ef">day</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, GETDATE())
 </span></span></code></pre></div><h4 id="step-4-run-the-streamlit-dashboard"><strong>Step 4:</strong> Run the Streamlit dashboard</h4>
 <p>Run the command below to run the streamlit locally</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>streamlit run Dashboard.py
@@ -1346,16 +1344,16 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663158154"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663159588"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663158154"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663159588"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

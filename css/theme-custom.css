@@ -628,16 +628,19 @@ pre {
 
     #logo h1 {
         font-size: 20px;
+
     }
 }
 
 @media only all and (max-width: 333px) {
     #logo img {
         height: 12px !important;
+        top: 14px !important;
     }
 
     #logo h1 {
         font-size: 18px;
+
     }
 }
 

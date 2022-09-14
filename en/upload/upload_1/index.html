@@ -12,22 +12,22 @@
     <title>Data upload | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663158154" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663158154" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663159588" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663159588" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663158154" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663159588" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663158154"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663159588"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -914,7 +914,7 @@
         
 
 
-<p>There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below with Python.</p>
+<p>There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below.</p>
 <section class="attachments blue">
   <label>
     <i class="fas fa-paperclip" aria-hidden="true"></i>
@@ -951,14 +951,14 @@
     <div class="tab-content">
         
         <div data-tab-item="Python" data-tab-group="select_upload_sf" class="tab-item active">
-            <p>Download the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files at the top of this page, you will need both to load the sample data to the Snowflake warehouse.</p>
+            <p>Download the <code>upload.zip</code> folder which contains the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files. You will need both to load the sample data to the Snowflake warehouse with Python.</p>
 <h4 id="step-1--set-up-your-environment"><strong>Step 1:</strong>  Set up your environment</h4>
 <p>Set up a virtual environment (recommended) and install the <a href="https://pypi.org/project/snowflake-connector-python/">snowflake-connector-python</a> package (tested with version 2.7.12).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -m venv env
 </span></span><span style="display:flex;"><span>source env/bin/activate
 </span></span><span style="display:flex;"><span>pip install snowflake-connector-python<span style="color:#f92672">==</span>2.7.12
 </span></span></code></pre></div><h4 id="step-2-change-variables-and-connection-details"><strong>Step 2:</strong> Change variables and connection details</h4>
-<p>Open the <code>snowflake_upload.py</code> file and edit the following before you execute it:</p>
+<p>Open the <code>snowflake_upload.py</code> file and edit the following variables.</p>
 <h5 id="21-connection-details---update-username-password-and-account">2.1 Connection details - update username, password and account</h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conn<span style="color:#f92672">=</span>sf<span style="color:#f92672">.</span>connect(user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_username&#39;</span>,password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_password&#39;</span>,account<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;your_account&#39;</span>)
 </span></span></code></pre></div><h5 id="22-variables-to-be-modified---warehouse-and-database">2.2 Variables to be modified - warehouse and database</h5>
@@ -983,7 +983,8 @@ Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
         </div>
         
         <div data-tab-item="Snowflake Web Interface" data-tab-group="select_upload_sf" class="tab-item ">
-            <p>Another option is to load the sample data to the warehouse using the <code>Snowflake Web Interface</code> as described in the below steps. Please download the <em>upload.zip</em> file from the attachments above which contains the <em>sample_events.csv</em> file needed for the below steps. For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
+            <p>Download the <code>upload.zip</code> folder which contains the <code>sample_events.csv</code> and the <code>snowflake_upload.py</code> files. You will only need <code>sample_events.csv</code> to load the sample data to the Snowflake warehouse using the <code>Snowflake Web Interface</code>.</p>
+<p>For more details please check out the official <a href="https://docs.snowflake.com/en/user-guide/data-load-web-ui.html">Snowflake documentation</a>.</p>
 <h4 id="step-1--create-the-atomic-schema"><strong>Step 1:</strong>  Create the ATOMIC schema</h4>
 <p>If the ATOMIC schema doesn&rsquo;t exist, create it in your target database.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">SCHEMA</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> TARGET_DB.<span style="color:#66d9ef">ATOMIC</span>
@@ -1675,16 +1676,16 @@ Navigate to the <strong>SAMPLE_EVENTS.csv</strong> and click the <code>Upload</c
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663158154"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663159588"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663158154"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663158154"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663159588"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663159588"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>

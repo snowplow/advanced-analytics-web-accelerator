@@ -14,8 +14,8 @@
       <guid>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/</guid>
       <description>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
 Download the streamlit-visualisation project template and copy the unzipped folder to your project directory to get started.
-Attachments streamlit-project-web.zip (32 KB) Step 1: Install requirements Run the command below to install the project requirements and run the virtual environment.
-Please note that this implementation has been tested with the following dependencies: python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9 In case you run into package compatibility issues or encounter any errors you can try using them to build your own environment.</description>
+Attachments streamlit-project-web.zip (32 KB) Step 1: Install requirements Run the command below to install the project requirements and run the virtual environment
+❗❗ This implementation has been tested with the following dependencies: python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9. If you run into package compatibility issues or encounter any errors try using them to build your own environment.</description>
     </item>
     
   </channel>
