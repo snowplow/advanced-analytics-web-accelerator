@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
-    <title>Advanced Analytics for Web :: Advanced Analytics for Web</title>
+    <title>Visualise your pipeline data :: Advanced Analytics for Web</title>
 
     
     <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663248571" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/advanced-analytics-web-accelerator/">
+  <body class="" data-url="/advanced-analytics-web-accelerator/next_steps/next_steps_2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -488,7 +488,7 @@
   
     
     <li data-nav-id="/advanced-analytics-web-accelerator/next_steps/" title="Next steps" class="dd-item
-        
+        parent
         
         
         ">
@@ -537,7 +537,7 @@
  
   
     
-      <li data-nav-id="/advanced-analytics-web-accelerator/next_steps/next_steps_2/" title="Visualise your pipeline data" class="dd-item ">
+      <li data-nav-id="/advanced-analytics-web-accelerator/next_steps/next_steps_2/" title="Visualise your pipeline data" class="dd-item active">
         <a href="/advanced-analytics-web-accelerator/next_steps/next_steps_2/">
         Visualise your pipeline data
         <i class="fas fa-check read-icon"></i>
@@ -621,32 +621,80 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'>Advanced Analytics for Web</a> > <a href='/advanced-analytics-web-accelerator/next_steps/'>Next steps</a> > Visualise your pipeline data
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Visualise your pipeline data
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p>Assuming you have already set-up your Streamlit project all you have to do is change the schema within the queries used to generate the visualisations.</p>
+<p>Update your schema name in the queries found in <code>queries/pageviews</code>, <code>queries/sessions</code> and <code>queries/users</code>. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">count</span>(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">AS</span> number_of_sessions
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> NEW_SCHEMA_NAME.snowplow_web_sessions
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> START_TSTAMP <span style="color:#66d9ef">BETWEEN</span> DATEADD(<span style="color:#66d9ef">day</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">7</span>, GETDATE()) <span style="color:#66d9ef">AND</span>  DATEADD(<span style="color:#66d9ef">day</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, GETDATE())
+</span></span></code></pre></div>
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -937,6 +985,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -949,6 +998,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -966,6 +1018,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -981,6 +1034,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1005,8 +1061,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/next_steps/next_steps_1/" title="Model your pipeline data"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/introduction/" title="Advanced Analytics for Web" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/next_steps/next_steps_3/" title="Custom models" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
