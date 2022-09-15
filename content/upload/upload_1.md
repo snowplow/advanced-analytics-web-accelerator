@@ -259,10 +259,7 @@ For more details please check out the official [Snowflake documentation](https:/
 
 #### **Step 4:** Create the **ATOMIC.SAMPLE_EVENTS** table
 
-The Snowplow pipeline creates context fields as arrays, however for the web data model to work, these need to be converted to varchars. Run the below DDL statement in your SQL editor:
-
-<!-- The Snowplow pipeline creates context fields as arrays not varchars for Snowflake, therefore in order for the web data model to work they need to be converted. Run the below DDL statement in your SQL editor of choice: -->
-
+The Snowplow pipeline creates context fields as arrays but uploading the test data can be achieved through string/varchar data type first. Run the below DDL statement in your SQL editor to create the sample_events table from the base table including the necessary conversions:
 
 ```sql
 CREATE OR REPLACE TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS AS (
