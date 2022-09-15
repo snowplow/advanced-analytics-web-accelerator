@@ -1,0 +1,54 @@
+---
+title: "Adding Context"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [includes/navbar.html, includes/navbar_left.html]
+
+---
+
+
+
+<p>Whilst the tracking set-up provides event data on user <strong>actions</strong> at a specific point in time, <strong>context</strong> describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual <strong>entities</strong>. For example:</p>
+<ul>
+<li>The user performing an action</li>
+<li>The web page the action occured on</li>
+<li>A product that has been interacted with</li>
+</ul>
+<p>Together, these entities make up the context of an event.</p>
+<p>Similar to the predefined events, a number of entities are available to implement out of the box including:</p>
+<ul>
+<li><strong>webPage Entity -</strong> Explanation?</li>
+<li><strong>session Entity -</strong> Information about the user session</li>
+<li><strong>performanceTiming Entity -</strong> Calculate page performance metrics</li>
+<li><strong>geolocation Entity -</strong> Information on the users location</li>
+</ul>
+<hr />
+<div id="step-1-enable-predefined-entities" class="section level3">
+<h3><strong>Step 1:</strong> Enable Predefined Entities</h3>
+<p>The <code>webPage</code> entity is enabled by default in the JavaScript tracker.</p>
+<p>To enable <code>session</code>, <code>performanceTiming</code> and <code>geolocation</code> use the options below.</p>
+<pre class="javascript"><code>window.snowplow(&#39;newTracker&#39;, &#39;sp&#39;, &#39;{{Url for Collector}}&#39;, {
+...
+contexts: {
+      webPage: true,
+      session: true,
+      performanceTiming: true,
+      geolocation: true,
+    }
+...
+});</code></pre>
+<p>Each event sent with this tracker will now contain the data from each of these entities.</p>
+<hr />
+</div>
+<div id="step-2-custom-entities" class="section level3">
+<h3><strong>Step 2:</strong> Custom Entities</h3>
+<p><strong>Do we want to do this?</strong>
+In addition to the out of the box entities, Snowplow lets you add custom entities to provide additional information surrounding an event.</p>
+<p>These are defined using JSON schemas uploaded to your iglu repository</p>
+<hr />
+</div>
+<div id="next---testing-using-snowplow-mini" class="section level3">
+<h3><a href="tracking_5.html">NEXT -&gt; Testing using Snowplow Mini</a></h3>
+</div>
