@@ -16,12 +16,13 @@ defaultContentLanguageInSubdir= true
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  disableLandingPageButton = false
+  disableLandingPageButton = true
   disableMermaid = false
   disableSearch = true
   customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
-  titleSeparator = ""
+  titleSeparator = "|"
   baseURL = "ACCELERATOR_BASE_URL"
+  themeVariant = "custom"
 
 
 [outputs]
@@ -30,7 +31,7 @@ home = [ "HTML", "RSS", "JSON"]
 [Languages]
 [Languages.en]
 title = "ACCELERATOR_TITLE"
-titleSeparator = ""
+titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction" 
@@ -38,7 +39,31 @@ landingPageURL = "ACCELERATOR_LANDING_PAGE_URL"
 
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
-identifier = "ds"
+identifier = "ts"
 url = "https://try.snowplowanalytics.com/"
 weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "Book a demo"
+identifier = "b"
+url = "https://snowplow.io/get-started/book-a-demo-of-snowplow-bdp/"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "Documentation"
+identifier = "d"
+url = "https://docs.snowplow.io/docs/"
+weight = 30
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github"
+identifier = "g"
+url = "https://github.com/snowplow"
+weight = 40
+
+[[Languages.en.menu.shortcuts]]
+name = "Discourse"
+identifier = "di"
+url = "https://discourse.snowplow.io/"
+weight = 50
 
