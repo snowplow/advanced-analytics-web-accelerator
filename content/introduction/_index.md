@@ -22,13 +22,13 @@ Here you will learn to:
 
 * Model and Visualise Snowplow data
   - using the [snowplow-web](https://hub.getdbt.com/snowplow/snowplow_web/latest/) dbt package and Streamlit
-  - using our sample data for Snowflake (no need to have a working pipeline)
+  - using our sample data for Snowflake or Databricks (no need to have a working pipeline)
 * Set-up Snowplow Tracking and Enrichment
 * Apply what you have learned on your own pipeline to gain insights
 ***
 
 #### Who is this guide for?
-- Data practitioners who would like to get familiar with Snowplow data. 
+- Data practitioners who would like to get familiar with Snowplow data.
 - Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible.
 
 ***
@@ -36,7 +36,7 @@ Here you will learn to:
 #### What you will learn
 In approximately 2 working days (~13 working hours) you can achieve the following:
 
-- **Upload data -** Upload a sample Snowplow events dataset to your Snowflake warehouse
+- **Upload data -** Upload a sample Snowplow events dataset to your warehouse
 - **Model -** Configure and run the snowplow-web data model
 - **Visualise -** Visualise the modeled data with Streamlit
 - **Track -** Set-up and deploy tracking to your website or single page application
@@ -71,12 +71,12 @@ gantt
 - dbt CLI installed / dbt Cloud account available
   - New dbt project created and configured
 - Python 3 Installed
-- Snowflake account and a user with access to create schemas and tables
+- Snowflake / Databricks account and a user with access to create schemas and tables
 
 **Tracking and Enrichment**
 - Snowplow pipeline
 - Web app to implement tracking
 
 {{% notice info %}}
-Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Databricks, Postgres** and **Redshift**. Further adapter support for this accelerator coming soon!
+Please note that Snowflake and Databricks will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Postgres** and **Redshift**. Further adapter support for this accelerator coming soon!
 {{% /notice %}}
