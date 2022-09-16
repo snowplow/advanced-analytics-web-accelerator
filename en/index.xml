@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advanced Analytics for Web</title>
+    <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/</link>
+    <description>Recent content on Advanced Analytics for Web</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 16 Aug 2022 17:24:05 +0100</lastBuildDate><atom:link href="https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Enrichments</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/enrich/enrich_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/enrich/enrich_1/</guid>
+      <description>Snowplow offers a large number of enrichments that can be used to enhance your event data. An enrichment either updates or populates fields of the atomic event or adds a self-describing context to derived_contexts.
+For this project, we&amp;rsquo;ll enable the IAB, UA parser and YAUAA enrichments in your console:
+The IAB enrichment requires purchase (included with Snowplow BDP)
+IAB Use the IAB/ABC International Spiders and Bots List to determine whether an event was produced by a user or a robot/spider based on its’ IP address and user agent.</description>
+    </item>
+    
+    <item>
+      <title>Data upload</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload/upload_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/upload/upload_1/</guid>
+      <description>There are a number of options to load the sample Snowplow data to your Snowflake warehouse. Select the most suitable for your project below.
+Attachments upload.zip (2 MB) Python Snowflake Web Interface Download the upload.zip folder which contains the sample_events.csv and the snowflake_upload.py files. You will need both to load the sample data to the Snowflake warehouse with Python.
+Step 1: Set up your environment Set up a virtual environment (recommended) and install the snowflake-connector-python package (tested with version 2.</description>
+    </item>
+    
+    <item>
+      <title>Install Snowplow dbt Package</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_1/</guid>
+      <description>Step 1: Add snowplow-web package Add the snowplow-web package to your packages.yml file. The latest version can be found here
+packages: - package: snowplow/snowplow_web version: 0.9.2 Step 2: Install the package Install the package by running:
+dbt deps </description>
+    </item>
+    
+    <item>
+      <title>Model your pipeline data</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_1/</guid>
+      <description>At this stage you should:
+Have tracking and enrichment set-up Have some data in the ATOMIC.EVENTS table Enabled IAB, UA parser and YAUAA enrichments Have a working dbt project with the web model configurations for the sample data Step 1: Complete refresh of your Snowplow web package (Optional) If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.</description>
+    </item>
+    
+    <item>
+      <title>Setup your tracking</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_1/</guid>
+      <description>There are a number of options to implement Snowplow tracking in your website or single page application.
+Select the required pathway to implement tracking on your project.
+Javascript React Angular Step 1: Download sp.js Add the sp.js file to your project directory. The latest version can be found here.
+Step 2: Add JS snippet Add the below snippet to all of the pages you would like to track. Make sure to update the {{Link to the sp.</description>
+    </item>
+    
+    <item>
+      <title>Streamlit</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/visualisation/visualisation_1/</guid>
+      <description>Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
+Download the streamlit-visualisation project template and copy the unzipped folder to your project directory to get started.
+Attachments streamlit-project-web.zip (32 KB) Step 1: Install requirements Run the command below to install the project requirements and run the virtual environment
+❗❗ This implementation has been tested with the following dependencies: python=3.9.13, streamlit=1.12.0, snowflake-connector-python==2.7.9. If you run into package compatibility issues or encounter any errors try using them to build your own environment.</description>
+    </item>
+    
+    <item>
+      <title>Set-up and run dbt Package</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_2/</guid>
+      <description>This step assumes you have data in the ATOMIC.SAMPLE_EVENTS table which will be used to demonstrate how to set-up and run the snowplow-web dbt package to model Snowplow web data.
+Step 1: Set-up Variables The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project&amp;rsquo;s dbt_project.yml file. For details you can have a look at the installed package&amp;rsquo;s default variables which can be found at [dbt_project_name]/dbt_packages/snowplow_web/dbt_project.</description>
+    </item>
+    
+    <item>
+      <title>Tracking Events</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_2/</guid>
+      <description>The trackers create data on user actions at a specific point in time. For example:
+Loading a web page Clicking a link Submitting a form A number of tracking events are available out of the box. These include, but aren&amp;rsquo;t limited to:
+Page views Heartbeats (Page Pings) Link clicks HTML form actions Pageviews and Page Pings In this section, we will implement page views and page pings.
+Javascript React Angular Step 1: Enable Activity Tracking First we will enable activity tracking to collect page ping events.</description>
+    </item>
+    
+    <item>
+      <title>Visualise your pipeline data</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_2/</guid>
+      <description>Assuming you have already set-up your Streamlit project all you have to do is change the schema within the queries used to generate the visualisations.
+Update your schema name in the queries found in queries/pageviews, queries/sessions and queries/users. For example:
+SELECT count(1) AS number_of_sessions FROM NEW_SCHEMA_NAME.snowplow_web_sessions WHERE START_TSTAMP BETWEEN DATEADD(day, -7, GETDATE()) AND DATEADD(day, -1, GETDATE()) </description>
+    </item>
+    
+    <item>
+      <title>Adding Context</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_3/</guid>
+      <description>Whilst the tracking set-up provides event data on user actions at a specific point in time, context describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual entities. For example:
+The user performing an action The web page the action occured on A product that has been interacted with Together, these entities make up the context of an event.</description>
+    </item>
+    
+    <item>
+      <title>Custom models</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/next_steps/next_steps_3/</guid>
+      <description>If you have got to this stage, congratulations! You are ready to take action and use your Snowplow generated data to help your business grow.
+As a next step you might want to check out our detailed guide on how to create custom models to adjust the snowplow-web data model to your own needs if the out-of-the box solution does not fully fit your needs.</description>
+    </item>
+    
+    <item>
+      <title>Explore Snowplow data</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/modeling/modeling_3/</guid>
+      <description>Data should now be loaded into your warehouse. In this section we will take a closer look at the output to mitigate data issues and get familiar with the derived tables.
+Step 1: Check the output schemas Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model&amp;rsquo;s output. You should be able to see three new schemas created:
+[your_custom_schema]_scratch: drop and recompute models that aid the incremental run [your_custom_schema]_derived: main output models you can use in your downstream models and reporting [your_custom_schema]_manifest: tables that help the integrity and core incremental logic of the model Step 2: Explore your data Take some time to familiarise yourself with the derived tables.</description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://snowplow-incubator.github.io/advanced-analytics-web-accelerator/en/tracking/tracking_4/</guid>
+      <description>The Snowplow Chrome Extension can be used to ensure the event was emitted correctly but the browser extension does not check that the event was processed correctly.
+Step 1: Installation Install the Snowplow Chrome Extension, you may need to restart your browser. Step 2: Check your data Open up devtools (F12) and navigate to the Snowplow extension. You should see a list of Pageview and Page Ping events start to form as you interact with your site.</description>
+    </item>
+    
+  </channel>
+</rss>
