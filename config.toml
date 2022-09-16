@@ -37,6 +37,14 @@ languageName = "English"
 landingPageName = "Introduction" 
 landingPageURL = "ACCELERATOR_LANDING_PAGE_URL"
 
+[Languages.fr]
+title = "Advanced Analytics for Web"
+titleSeparator = "|"
+weight = 1
+languageName = "French"
+landingPageName = "Introduction"
+landingPageURL = "/advanced-analytics-web-accelerator/en/introduction"
+
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
 identifier = "ts"
