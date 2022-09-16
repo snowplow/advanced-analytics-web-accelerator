@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/advanced-analytics-web-accelerator/">
+  <body class="" data-url="/advanced-analytics-web-accelerator/introduction/">
     
 
 <div id="header-wrapper">
@@ -154,7 +154,7 @@
 
 <li data-nav-id="/advanced-analytics-web-accelerator/introduction/" title="Advanced Analytics for Web" class="dd-item
         
-        
+        active
         
         ">
   <a href="/advanced-analytics-web-accelerator/introduction/">
@@ -828,32 +828,151 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+               
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/advanced-analytics-web-accelerator/'>Advanced Analytics for Web</a> / Advanced Analytics for Web
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Advanced Analytics for Web
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+
+	<p><img src="images/logo_banner.png" alt="&amp;rsquo;logo-banner&amp;rsquo;"></p>
+<h4 id="introduction">Introduction</h4>
+<p>Welcome to the <strong>Advanced Analytics for Web</strong> accelerator. Once finished, you will be able to build a deeper understanding of customer behaviour on your website and use your data to influence business decisions.</p>
+<p>Here you will learn to:</p>
+<ul>
+<li>Model and Visualise Snowplow data
+<ul>
+<li>using the <a href="https://hub.getdbt.com/snowplow/snowplow_web/latest/">snowplow-web</a> dbt package and Streamlit</li>
+<li>using our sample data for Snowflake (no need to have a working pipeline)</li>
+</ul>
+</li>
+<li>Set-up Snowplow Tracking and Enrichment</li>
+<li>Apply what you have learned on your own pipeline to gain insights</li>
+</ul>
+<hr>
+<h4 id="who-is-this-guide-for">Who is this guide for?</h4>
+<ul>
+<li>Data practitioners who would like to get familiar with Snowplow data.</li>
+<li>Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible.</li>
+</ul>
+<hr>
+<h4 id="what-you-will-learn">What you will learn</h4>
+<p>In approximately 2 working days (~13 working hours) you can achieve the following:</p>
+<ul>
+<li><strong>Upload data -</strong> Upload a sample Snowplow events dataset to your Snowflake warehouse</li>
+<li><strong>Model -</strong> Configure and run the snowplow-web data model</li>
+<li><strong>Visualise -</strong> Visualise the modeled data with Streamlit</li>
+<li><strong>Track -</strong> Set-up and deploy tracking to your website or single page application</li>
+<li><strong>Enrich -</strong> Add enrichments to your data</li>
+<li><strong>Next steps -</strong> Gain value from your own pipeline data through modeling and visualisation</li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid" align="center">
+    
+gantt
+        dateFormat  HH-mm
+        axisFormat %M
+        section 1. Upload
+        1h          :upload, 00-00, 1m
+        section 2. Model
+        2h          :model, after upload, 2m
+        section 3. Visualise
+        3h          :visualise, after model, 3m
+        section 4. Track
+        4h          :track, after visualise, 4m
+        section 5. Enrich
+        1h          :enrich, after track, 1m
+        section 6. Next steps
+        2h          :next steps, after enrich, 2m
+
+
+</div>
+<hr>
+<h4 id="prerequisites">Prerequisites</h4>
+<p><strong>Modeling and Visualisation</strong></p>
+<ul>
+<li>dbt CLI installed / dbt Cloud account available
+<ul>
+<li>New dbt project created and configured</li>
+</ul>
+</li>
+<li>Python 3 Installed</li>
+<li>Snowflake account and a user with access to create schemas and tables</li>
+</ul>
+<p><strong>Tracking and Enrichment</strong></p>
+<ul>
+<li>Snowplow pipeline</li>
+<li>Web app to implement tracking</li>
+</ul>
+
+<div class="notices info" ><p>Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports <strong>BigQuery, Databricks, Postgres</strong> and <strong>Redshift</strong>. Further adapter support for this accelerator coming soon!</p>
+</div>
+
+
+
+
+
+<footer class=" footline" >
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -885,8 +1004,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -903,6 +1020,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1212,8 +1332,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/" title="Advanced Analytics for Web"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/introduction/" title="Advanced Analytics for Web" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/upload/" title="Upload sample data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1245,4 +1367,3 @@
 
   </body>
 </html>
-
