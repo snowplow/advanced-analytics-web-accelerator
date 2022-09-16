@@ -6,7 +6,7 @@ weight = 1
 
 You can create custom visualisations including dashboards using a Datrabricks notebook.
 
-Download the `databricks_notebook` from the attachments to get started.
+Download the `snowplow_advanced_analytics_for_web` ipython notebook from the attachments to get started.
 
 {{% attachments style="blue" %}}
 {{% /attachments %}}
