@@ -37,7 +37,7 @@ You can do this quickly by using the `Edit/ Find and replace` functionality.
 {{% /notice %}}
 
 #### **Step 4:** Run the notebook
-Click on `Run all` which you can find in the toolbar at the top of the page. It should take a minute or so to have everything refreshed. Once finished you can go to `View` and click on `Results onl`y` to see the outcome without the code snippets.
+Click on `Run all` which you can find in the toolbar at the top of the page. It should take a minute or so to have everything refreshed. Once finished you can go to `View` and click on `Results only` to see the outcome without the code snippets.
 
 #### **Step 5:** Check out the dashboard
 Head over to `Views/web_accelerator` under dashboards to open the corresponding dashboard as well.
