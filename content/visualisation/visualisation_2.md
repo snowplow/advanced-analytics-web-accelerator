@@ -30,6 +30,12 @@ To attach a notebook to a cluster:
 #### **Step 3:** Change source table schemas and or variables
 The predefined SQL statements all refer to the `derived` schema. Make sure to update this to your own schema before attempting to run the notebook. It should be `[your_dbt_schema]_derived`.
 
+{{% notice info %}}
+
+You can do this quickly by using the `Edit/ Find and replace` functionality.
+
+{{% /notice %}}
+
 #### **Step 4:** Run the notebook
 Click on `Run all` which you can find in the toolbar at the top of the page. It should take a minute or so to have everything refreshed. Once finished you can go to `View` and click on `Results onl`y` to see the outcome without the code snippets.
 
