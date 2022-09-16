@@ -26,8 +26,6 @@ disableKinds = ["home"]
   baseURL = "https://docs.snowplow.io/advanced-analytics-web-accelerator/"
   themeVariant = "custom"
 
-
-
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
