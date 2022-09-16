@@ -9,7 +9,7 @@ You can create custom visualisations including dashboards using a Datrabricks no
 {{% attachments style="blue" %}}
 {{% /attachments %}}
 
-Download the `snowplow_advanced_analytics_for_web` ipython notebook from the attachments to get started.
+Download the `snowplow_advanced_analytics_for_web` IPython notebook from the attachments to get started.
 
 #### **Step 1:** Import the notebook
 Go to your Databricks `Workspace` and click on the Down Arrowhead sign then select `Import`.
