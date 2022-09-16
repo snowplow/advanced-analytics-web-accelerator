@@ -28,6 +28,8 @@
 
     <script src="{{"js/jquery-3.3.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 
+   
+
     <style>
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
@@ -41,6 +43,23 @@
     {{ partial "custom-header.html" . }}
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
+    <script type="text/javascript" async=1 >
+      ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "/advanced-analytics-web-accelerator/js/sp.js", "snowplow"));
+      
+    
+      window.snowplow('newTracker', 'sp', 'localhost:9090', {
+        appId: 'appId',
+        platform: 'web',
+        cookieSameSite: 'Lax',
+        contexts: {
+          webPage: true,
+        }
+
+      });
+
+      snowplow('trackPageView')
+
+    </script>
     {{ partial "navbar.html" . }}
     {{ partial "menu.html" . }}
         <section id="body">
