@@ -29,7 +29,7 @@ jobs:
           DESCRIPTION: Tutorial for setting up advanced analytics on a website
           BASE_URL: https://docs.snowplow.io/advanced-analytics-web-accelerator/
           AUTHOR: Agnes Kiss & Jack Keene 
-          LANDING_PAGE_URL: /advanced-analytics-web-accelerator/en/introduction
+          LANDING_PAGE_URL: /advanced-analytics-web-accelerator/en/introduction/
         run: |
           sed -i 's|ACCELERATOR_TITLE|${{ env.TITLE }}|g' config.toml
           sed -i 's|ACCELERATOR_DESCRIPTION|${{ env.DESCRIPTION }}|g' config.toml
