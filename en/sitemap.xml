@@ -44,6 +44,19 @@
   </url><url>
     <loc>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/next_steps/</loc>
   </url><url>
+    <loc>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/</loc>
+    <lastmod>2022-08-16T17:24:05+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://docs.snowplow.io/advanced-analytics-web-accelerator/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.snowplow.io/advanced-analytics-web-accelerator/en/"
+                />
+  </url><url>
     <loc>https://docs.snowplow.io/advanced-analytics-web-accelerator/en/categories/</loc>
     <xhtml:link
                 rel="alternate"

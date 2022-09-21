@@ -4,32 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.103.1" />
-    <meta name="description" content="Advanced Analytics for Web">
-<meta name="author" content="Agnes Kiss and Jack Keene">
+    <meta name="description" content="Tutorial for setting up advanced analytics on a website">
+<meta name="author" content="Agnes Kiss ACCELERATOR_AUTHOR Jack Keene">
 
     <link rel="icon" href="/advanced-analytics-web-accelerator/images/favicon.png" type="image/png">
 
     <title>Advanced Analytics for Web | Advanced Analytics for Web</title>
 
     
-    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663748627" rel="stylesheet">
-    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663748627" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/nucleus.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/fontawesome-all.min.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hybrid.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/featherlight.min.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/perfect-scrollbar.min.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/auto-complete.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/atom-one-dark-reasonable.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/tabs.css?1663771002" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/hugo-theme.css?1663771002" rel="stylesheet">
     
-    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663748627" rel="stylesheet">
+    <link href="/advanced-analytics-web-accelerator/css/theme-custom.css?1663771002" rel="stylesheet">
     
     
 
-    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663748627"></script>
-
-   
+    <script src="/advanced-analytics-web-accelerator/js/jquery-3.3.1.min.js?1663771002"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -40,18 +38,27 @@
     
   </head>
   <body class="" data-url="/advanced-analytics-web-accelerator/en/introduction/">
-     <script type="text/javascript" async=1 >
+    <script type="text/javascript" async=1 >
       ;(function (p, l, o, w, i, n, g) { if (!p[i]) { p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || []; p.GlobalSnowplowNamespace.push(i); p[i] = function () { (p[i].q = p[i].q || []).push(arguments) }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1; n.src = w; g.parentNode.insertBefore(n, g) } }(window, document, "script", "https:\/\/docs.snowplow.io\/advanced-analytics-web-accelerator\//js/sp.js", "snowplow"));
       
-    
-      window.snowplow('newTracker', 'sp', 'localhost:9090', {
-        appId: 'appId',
-        platform: 'web',
-        cookieSameSite: 'Lax',
+      const trackerConfig = {
+        appId,
+        cookieDomain: `.snowplow.io`,
+        cookieName: '_sp5_',
         contexts: {
           webPage: true,
-        }
+          performanceTiming: true,
+          gaCookies: true,
+        },
+      }
+    
+      window.snowplow('newTracker', 'snplow5', 'collector.snowplow.io', trackerConfig);
 
+      window.snowplow('newTracker', 'biz1', 'c.snowplow.io', trackerConfig)
+
+      snowplow('enableActivityTracking', {
+        minimumVisitLength: 10,
+        heartbeatDelay: 10
       });
 
       snowplow('trackPageView')
@@ -871,7 +878,6 @@
 
 
         <section id="body">
-          
 
         <div id="overlay"></div>
         <div class="padding highlightable">
@@ -893,7 +899,7 @@
             
           
           
-            <a href=''>Advanced Analytics for Web</a> / Advanced Analytics for Web
+            <a href='/advanced-analytics-web-accelerator/en/'>Advanced Analytics for Web</a> / Advanced Analytics for Web
           
         
           
@@ -1024,6 +1030,7 @@ gantt
         
         </div>
         
+
       </div>
 
     <div id="navigation">
@@ -1379,7 +1386,7 @@ gantt
 	 
 	 
 		
-			<a class="nav nav-prev" href="" title="Advanced Analytics for Web"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/advanced-analytics-web-accelerator/en/" title="Advanced Analytics for Web"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/advanced-analytics-web-accelerator/en/upload/" title="Upload sample data" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1392,16 +1399,16 @@ gantt
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663748627"></script>
+    <script src="/advanced-analytics-web-accelerator/js/clipboard.min.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.min.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/perfect-scrollbar.jquery.min.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/jquery.sticky.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/featherlight.min.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/highlight.pack.js?1663771002"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663748627"></script>
-    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663748627"></script>
+    <script src="/advanced-analytics-web-accelerator/js/modernizr.custom-3.6.0.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/learn.js?1663771002"></script>
+    <script src="/advanced-analytics-web-accelerator/js/hugo-learn.js?1663771002"></script>
     
         
             <script src="https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"></script>
@@ -1411,5 +1418,6 @@ gantt
         </script>
     
     
+
   </body>
 </html>
