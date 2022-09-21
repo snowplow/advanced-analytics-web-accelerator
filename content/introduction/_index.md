@@ -7,7 +7,7 @@ post = ""
 
 aliases = [
     "/en/",
-    "/en/introduction/"
+    "/en/introduction"
 ]
 +++
 
