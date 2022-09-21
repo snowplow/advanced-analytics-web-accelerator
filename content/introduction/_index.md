@@ -6,10 +6,9 @@ weight = 1
 post = ""
 
 aliases = [
-    "en/",
-    "en/introduction"
+    "/en/",
+    "/en/introduction"
 ]
-
 +++
 
 !['logo-banner'](images/logo_banner.png)

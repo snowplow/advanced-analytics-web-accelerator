@@ -148,7 +148,6 @@ Add the below snippet to `snowplow.service.ts`
 export class SnowplowService {
   tracker: BrowserTracker = newTracker('sp', '{{Url for Collector}}')
 }
-
 ```
 
 In addition to the basic tracker, add the below optional arguments to the tracker to make use of some of Snowplow's more advanced features.
