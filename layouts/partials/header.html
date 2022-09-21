@@ -55,6 +55,12 @@
 
       });
 
+      snowplow('enableActivityTracking', {
+        minimumVisitLength: 5,
+        heartbeatDelay: 10
+      });
+
+
       snowplow('trackPageView')
 
     </script>
