@@ -2,6 +2,8 @@ baseURL = "ACCELERATOR_BASE_URL"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 landingPageURL = "ACCELERATOR_LANDING_PAGE_URL/"
+disableKinds = ["home"]
+
 
 
 title = "ACCELERATOR_TITLE"
