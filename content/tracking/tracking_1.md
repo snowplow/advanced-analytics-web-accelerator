@@ -1,7 +1,6 @@
 +++
 title = "Setup your tracking"
 weight = 1
-post = ""
 +++
 
 There are a number of options to implement Snowplow tracking in your website or single page application.
