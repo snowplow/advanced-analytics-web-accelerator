@@ -50,11 +50,11 @@ gantt
         section 1. Upload
         1h          :upload, 00-00, 1m
         section 2. Model
-        2h          :model, after upload, 2m
+        1h          :model, after upload, 1m
         section 3. Visualise
-        3h          :visualise, after model, 3m
+        1h          :visualise, after model, 1m
         section 4. Track
-        4h          :track, after visualise, 4m
+        2h          :track, after visualise, 2m
         section 5. Enrich
         1h          :enrich, after track, 1m
         section 6. Next steps
