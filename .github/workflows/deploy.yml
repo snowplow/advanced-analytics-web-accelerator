@@ -12,7 +12,7 @@ jobs:
         with:
           hugo-version: 'latest'
       - name: Build
-         run: ./.github/scripts/build.sh
+        run: ./.github/scripts/build.sh
       - name: Deploy
         if: success()
         uses: peaceiris/actions-gh-pages@v3
