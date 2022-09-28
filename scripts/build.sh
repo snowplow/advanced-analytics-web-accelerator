@@ -26,6 +26,14 @@ sed -i -e "s|ACCELERATOR_LANDING_PAGE_URL|$LANDING_PAGE_URL|g" config.toml
 hugo
 cp -R public ../
 cd ..
+mkdir temp
+cp -R public/* temp
+rm -r public/*
+cd public
+mkdir advanced-analytics-web-accelerator
+cd ..
+cp -R temp/* public/advanced-analytics-web-accelerator/
 rm -r main
+rm -r temp
 
 
