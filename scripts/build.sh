@@ -1,39 +1,20 @@
 #!/bin/bash
-echo "Bash script to deploy hugo website to github"
-echo "Setting Local Variables..."
-TITLE="Advanced Analytics for Web"
-DESCRIPTION="Tutorial for setting up advanced analytics on a website"
-BASE_URL="https://deploy-preview-7--snowplow-axl-advanced-analytics-web.netlify.app/advanced-analytics-web-accelerator/"
-AUTHOR="Agnes Kiss and Jack Keene" 
-LANDING_PAGE_URL="/advanced-analytics-web-accelerator/en/introduction"
+mkdir build
+
+echo "Importing config..."
+cp accelerator-web-ui-template/config.toml build/baseconfig.toml
+cp config.toml build/config.toml
+cp -R content build/
+
 echo "Importing themes..."
-mkdir main
-mkdir main/themes
-cp -R content main/
-cp -R accelerator-web-ui-template/themes/hugo-theme-learn main/themes/
-cp -R accelerator-web-ui-template/layouts main/
-cp -R accelerator-web-ui-template/static main/
-cp -R accelerator-web-ui-template/config.toml main/
-cp -R accelerator-web-ui-template/netlify.toml main/
-cd main
+mkdir build/themes
+cp -R accelerator-web-ui-template/themes/hugo-theme-learn build/themes/
+cp -R accelerator-web-ui-template/layouts build/
+cp -R accelerator-web-ui-template/static build/
+cd build
 git submodule update --init --recursive
+
 echo "Creating Hugo site..."
-sed -i -e "s|ACCELERATOR_TITLE|$TITLE|g" config.toml
-sed -i -e "s|ACCELERATOR_DESCRIPTION|$DESCRIPTION|g" config.toml
-sed -i -e "s|ACCELERATOR_BASE_URL|$BASE_URL|g" config.toml
-sed -i -e "s|ACCELERATOR_AUTHOR|$AUTHOR|g" config.toml
-sed -i -e "s|ACCELERATOR_LANDING_PAGE_URL|$LANDING_PAGE_URL|g" config.toml
-hugo
-cp -R public ../
+hugo --config baseconfig.toml,config.toml --gc --minify -d ../public
 cd ..
-mkdir temp
-cp -R public/* temp
-rm -r public/*
-cd public
-mkdir advanced-analytics-web-accelerator
-cd ..
-cp -R temp/* public/advanced-analytics-web-accelerator/
-rm -r main
-rm -r temp
-
-
+rm -r build

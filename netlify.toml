@@ -1,0 +1,15 @@
+[build]
+publish = 'public'
+command = './scripts/build.sh'
+[build.environment]
+HUGO_VERSION = '0.104.1'
+HUGO_TITLE='Advanced Analytics for Web'
+HUGO_DESCRIPTION='Tutorial for setting up advanced analytics on a website'
+HUGO_AUTHOR='Agnes Kiss and Jack Keene' 
+HUGO_BASE_URL='$DEPLOY_PRIME_URL/advanced-analytics-web-accelerator/'
+HUGO_LANDING_PAGE_URL='/advanced-analytics-web-accelerator/en/introduction'
+
+[context.production]
+[context.production.environment]
+HUGO_ENV = 'production'
+HUGO_BASE_URL='$URL/advanced-analytics-web-accelerator/'
