@@ -1,51 +1,32 @@
-baseURL = "ACCELERATOR_BASE_URL"
 languageCode = "en-US"
 defaultContentLanguage = "en"
-landingPageURL = "ACCELERATOR_LANDING_PAGE_URL/"
 disableKinds = ["home"]
 
-
-
-title = "ACCELERATOR_TITLE"
 theme = "hugo-theme-learn"
 themesdir = "themes"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
 [params]
-  description = "ACCELERATOR_DESCRIPTION"
-  author = "ACCELERATOR_AUTHOR"
-  showVisitedLinks = true
-  disableBreadcrumb = false
-  disableNextPrev = false
-  disableLandingPageButton = true
-  disableMermaid = false
-  disableSearch = true
-  customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
-  titleSeparator = "|"
-  baseURL = "ACCELERATOR_BASE_URL"
-  themeVariant = "custom"
-
+showVisitedLinks = true
+disableBreadcrumb = false
+disableNextPrev = false
+disableLandingPageButton = true
+disableMermaid = false
+disableSearch = true
+customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
+titleSeparator = "|"
+themeVariant = "custom"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-title = "ACCELERATOR_TITLE"
 titleSeparator = "|"
 weight = 1
 languageName = "English"
 landingPageName = "Introduction" 
-landingPageURL = "ACCELERATOR_LANDING_PAGE_URL/"
-
-[Languages.fr]
-title = "Advanced Analytics for Web"
-titleSeparator = "|"
-weight = 1
-languageName = "French"
-landingPageName = "Introduction"
-landingPageURL = "ACCELERATOR_LANDING_PAGE_URL/"
 
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
@@ -76,4 +57,3 @@ name = "Discourse"
 identifier = "di"
 url = "https://discourse.snowplow.io/"
 weight = 50
-
