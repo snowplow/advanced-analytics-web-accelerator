@@ -1,3 +1,4 @@
 [submodule "accelerator-web-ui-template"]
 	path = accelerator-web-ui-template
 	url = https://github.com/snowplow-incubator/accelerator-web-ui-template.git
+	branch = tweak-build-toml
