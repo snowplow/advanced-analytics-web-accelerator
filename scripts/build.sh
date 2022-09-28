@@ -4,7 +4,7 @@ echo "Setting Local Variables..."
 export TITLE="Advanced Analytics for Web"
 export DESCRIPTION="Tutorial for setting up advanced analytics on a website"
 export BASE_URL="https://docs.snowplow.io/advanced-analytics-web-accelerator/"
-export AUTHOR="Agnes Kiss & Jack Keene" 
+export AUTHOR="Agnes Kiss and Jack Keene" 
 export LANDING_PAGE_URL="/advanced-analytics-web-accelerator/en/introduction"
 
 echo "Importing themes..."
@@ -16,11 +16,11 @@ cp -R accelerator-web-ui-template/layouts main/
 cp -R accelerator-web-ui-template/static main/
 cp -R accelerator-web-ui-template/config.toml main/
 cd main
-sed -i '' "s|ACCELERATOR_TITLE|$TITLE|g" config.toml
-sed -i '' "s|ACCELERATOR_DESCRIPTION|$DESCRIPTION|g" config.toml
-sed -i '' "s|ACCELERATOR_BASE_URL|$BASE_URL|g" config.toml
-sed -i '' "s|ACCELERATOR_AUTHOR|$AUTHOR|g" config.toml
-sed -i '' "s|ACCELERATOR_LANDING_PAGE_URL|$LANDING_PAGE_URL|g" config.toml
+sed  "s|ACCELERATOR_TITLE|$TITLE|g" config.toml | sponge config.toml
+sed  "s|ACCELERATOR_DESCRIPTION|$DESCRIPTION|g" config.toml | sponge config.toml
+sed "s|ACCELERATOR_BASE_URL|$BASE_URL|g" config.toml | sponge config.toml
+sed "s|ACCELERATOR_AUTHOR|$AUTHOR|g" config.toml | sponge config.toml
+sed  "s|ACCELERATOR_LANDING_PAGE_URL|$LANDING_PAGE_URL|g" config.toml | sponge config.toml
 echo "Creating Hugo site..."
 hugo
 cp -R public ../
