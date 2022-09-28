@@ -15,6 +15,8 @@ Download the `snowplow_advanced_analytics_for_web` IPython notebook from the att
 Go to your Databricks `Workspace` and click on the Down Arrowhead sign then select `Import`.
 Browse to the downloaded databricks notebook and click `Import`.
 
+![image alt text](https://docs.databricks.com/_images/import-notebook.png)
+
 For further information on this, check out the official Databricks [documentation](https://docs.databricks.com/notebooks/notebooks-manage.html)
 
 #### **Step 2:** Attach the notebook to your cluster
@@ -31,7 +33,7 @@ The predefined SQL statements all refer to the `derived` schema. Make sure to up
 
 {{% notice info %}}
 
-You can do this quickly by using the `Edit/ Find and replace` functionality.
+You can do this quickly by using the `Edit / Find and replace` functionality.
 
 {{% /notice %}}
 

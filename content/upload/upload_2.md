@@ -28,7 +28,7 @@ CREATE SCHEMA IF NOT EXISTS ATOMIC
 
 2.3 Once you see the preview, choose the catalog, the schema (atomic) and change the name to sample_events**_base**.
 
-2.4 Go to `advanced attributes` and change the column delimiter to tab then X out of the window. After this the data reloads, which should now be separated correctly column by column.
+2.4 Go to `advanced attributes` and change the column delimiter to tab then X out of the window. After this the data reloads, which will now be separated correctly column by column.
 
 2.5 Locate the column **DOC_WIDTH** on the far right side of the table and change the proposed column type from `string` to `bigint`. This is needed for the data model to work later on.
 

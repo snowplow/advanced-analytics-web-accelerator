@@ -24,7 +24,7 @@ WHERE START_TSTAMP BETWEEN DATEADD(day, -7, GETDATE()) AND  DATEADD(day, -1, GET
 
 Assuming you have already imported the IPython notebook provided in the chapter about visualisations, all you have to do is change the schema within the queries used to generate the graphs.
 
-You can do this quickly by using the `Edit/ Find and replace` functionality.
+You can do this quickly by using the `Edit / Find and replace` functionality.
 
 {{% /tab %}}
 
