@@ -16,6 +16,7 @@ cp -R accelerator-web-ui-template/layouts main/
 cp -R accelerator-web-ui-template/static main/
 cp -R accelerator-web-ui-template/config.toml main/
 cd main
+git submodule update --init --recursive
 sed  "s|ACCELERATOR_TITLE|$TITLE|g" config.toml | sponge config.toml
 sed  "s|ACCELERATOR_DESCRIPTION|$DESCRIPTION|g" config.toml | sponge config.toml
 sed "s|ACCELERATOR_BASE_URL|$BASE_URL|g" config.toml | sponge config.toml
