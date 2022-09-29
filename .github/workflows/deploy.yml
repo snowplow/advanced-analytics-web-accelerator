@@ -1,4 +1,8 @@
 on: [push]
+
+env:
+  HUGO_BASEURL: 'https://snowplow.github.io/advanced-analytics-web-accelerator/'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
