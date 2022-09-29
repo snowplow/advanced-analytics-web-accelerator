@@ -11,17 +11,11 @@ HUGO_ENV = 'production'
 [[redirects]]
 from = "/"
 to = "/introduction"
-status = 200
-force = true
-
-[[redirects]]
-from = "/introduction"
-to = "/"
 status = 301
 force = true
 
 [[redirects]]
 # redirect from language specific page following restructure
 from = "/en/introduction"
-to = "/"
+to = "/introduction"
 status = 301
