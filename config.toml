@@ -1,7 +1,5 @@
-landingPageURL = "/advanced-analytics-web-accelerator/en/introduction"
 title = "Advanced Analytics for Web"
 
 [params]
-description = "Tutorial for setting up advanced analytics on a website"
-author = "Agnes Kiss and Jack Keene"
-baseURL = "https://docs.snowplow.io/advanced-analytics-web-accelerator/"
+  description = "Tutorial for setting up Snowplow for advanced analytics on the web"
+  author = "Snowplow, Agnes Kiss, Jack Keene"

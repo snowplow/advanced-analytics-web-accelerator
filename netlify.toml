@@ -3,14 +3,12 @@ publish = 'public'
 command = './scripts/build.sh'
 [build.environment]
 HUGO_VERSION = '0.104.1'
-HUGO_BASE_URL='$DEPLOY_PRIME_URL/advanced-analytics-web-accelerator/'
 
 [context.production]
 [context.production.environment]
 HUGO_ENV = 'production'
-HUGO_BASE_URL='$URL/advanced-analytics-web-accelerator/'
 
 [[redirects]]
-from = "/"
-to = "/introduction"
+from = "/en/introduction"
+to = "/"
 status = 301

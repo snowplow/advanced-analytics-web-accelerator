@@ -1,19 +1,14 @@
 +++
-title = "Advanced Analytics for Web"
-menuTitle="Introduction"
-chapter = false
+title = "Introduction"
+menuTitle = "Introduction"
+pre = "<i class='fas fa-rocket'></i> "
+chapter = true
 weight = 1
-post = ""
-
-aliases = [
-    "/en/",
-    "/en/introduction/"
-]
 +++
 
 !['logo-banner'](images/logo_banner.png)
 
-#### Introduction 
+#### Introduction
 
 Welcome to the **Advanced Analytics for Web** accelerator. Once finished, you will be able to build a deeper understanding of customer behaviour on your website and use your data to influence business decisions.
 
@@ -27,12 +22,14 @@ Here you will learn to:
 ***
 
 #### Who is this guide for?
-- Data practitioners who would like to get familiar with Snowplow data. 
+
+- Data practitioners who would like to get familiar with Snowplow data.
 - Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible.
 
 ***
 
 #### What you will learn
+
 In approximately 2 working days (~13 working hours) you can achieve the following:
 
 - **Upload data -** Upload a sample Snowplow events dataset to your Snowflake warehouse
