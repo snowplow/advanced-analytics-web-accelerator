@@ -8,12 +8,12 @@ jobs:
     name: Deploy
     steps:
     
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        ref: main
-        submodules: true
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+          submodules: true
     
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
