@@ -1,7 +1,6 @@
 +++
 title = "Testing"
 weight = 3
-post = ""
 +++
 
 

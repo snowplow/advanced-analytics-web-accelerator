@@ -1,0 +1,5 @@
+title = "Advanced Analytics for Web"
+
+[params]
+  description = "Tutorial for setting up Snowplow for advanced analytics on the web"
+  author = "Snowplow, Agnes Kiss, Jack Keene"
