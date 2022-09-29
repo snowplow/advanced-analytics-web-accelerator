@@ -1,22 +1,16 @@
-languageCode = "en-US"
-defaultContentLanguage = "en"
-disableKinds = ["home"]
-
 theme = "hugo-theme-learn"
 themesdir = "themes"
-metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= true
 
 [params]
-showVisitedLinks = true
-disableBreadcrumb = false
-disableNextPrev = false
-disableLandingPageButton = true
-disableMermaid = false
-disableSearch = true
-customMermaidURL = "https://unpkg.com/browse/mermaid@8.1.0/dist/mermaid.min.js"
-titleSeparator = "|"
-themeVariant = "custom"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  disableLandingPageButton = true
+  disableMermaid = false
+  disableSearch = true
+  customMermaidURL = "/js/mermaid/9.1.7/mermaid.min.js"
+  titleSeparator = "|"
+  themeVariant = "custom"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
@@ -26,7 +20,6 @@ home = [ "HTML", "RSS", "JSON"]
 titleSeparator = "|"
 weight = 1
 languageName = "English"
-landingPageName = "Introduction" 
 
 [[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
