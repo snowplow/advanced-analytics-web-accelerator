@@ -1,7 +1,6 @@
 +++
 title = "Adding Context"
 weight = 3
-post = ""
 +++
 
 Whilst the tracking set-up provides event data on user **actions** at a specific point in time, **context** describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual **entities**. For example:

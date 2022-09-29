@@ -1,7 +1,6 @@
 +++
 title = "Tracking Events"
 weight = 2
-post = ""
 +++
 
 The trackers create data on user **actions** at a specific point in time. For example:
@@ -311,4 +310,3 @@ constructor(router: Router, snowplow: SnowplowService) {
 
 {{% /tab %}}
 {{< /tabs >}}
-
