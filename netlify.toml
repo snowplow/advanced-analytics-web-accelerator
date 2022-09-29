@@ -10,5 +10,5 @@ HUGO_ENV = 'production'
 
 [[redirects]]
 from = "/en/introduction"
-to = "/"
+to = "/introduction"
 status = 301
