@@ -7,14 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+    
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           
       - name: Build
-        working-directory: scripts
-        run: ./build.sh
+        run: ./scripts/build.sh
         
       - name: Deploy
         if: success()
