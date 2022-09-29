@@ -15,7 +15,12 @@ status = 200
 force = true
 
 [[redirects]]
+from = "/introduction"
+to = "/"
+status = 301
+
+[[redirects]]
 # redirect from language specific page following restructure
 from = "/en/introduction"
-to = "/introduction"
+to = "/"
 status = 301
