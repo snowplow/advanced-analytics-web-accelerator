@@ -18,6 +18,7 @@ force = true
 from = "/introduction"
 to = "/"
 status = 301
+force = true
 
 [[redirects]]
 # redirect from language specific page following restructure
