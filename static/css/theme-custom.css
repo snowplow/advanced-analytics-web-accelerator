@@ -503,7 +503,12 @@ pre {
     fill: #fff;
 }
 
-#sidebar-toggle-span #sidebar-toggle {
+#top-sidebar-toggle-span {
+    padding-right: 0.5rem !important;
+    margin-right: 1rem !important;
+  }
+
+#top-sidebar-toggle-span #top-sidebar-toggle {
     line-height: 40px;
     vertical-align: middle;
 }
@@ -524,7 +529,7 @@ pre {
         right: 0px
     }
 
-    #top-bar {
+    #top-breadcrumbs {
         display: none;
     }
 
@@ -571,19 +576,9 @@ pre {
         cursor: pointer;
     }
 
-
     #sidebar-toggle-span {
-        display: inline;
-        border-right: none !important;
-        ;
+        display: none;
     }
-
-    #sidebar-toggle-span #sidebar-toggle {
-        line-height: 40px;
-        vertical-align: middle;
-    }
-
-
 }
 
 
