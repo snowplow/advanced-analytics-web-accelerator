@@ -5,10 +5,9 @@ themesdir = "themes"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  disableLandingPageButton = true
-  disableMermaid = false
+  disableLandingPageButton = false
+  disableMermaid = true
   disableSearch = true
-  customMermaidURL = "/js/mermaid/9.1.7/mermaid.min.js"
   titleSeparator = "|"
   themeVariant = "custom"
 

@@ -8,7 +8,7 @@
     <ul class="introduction">
       <a
         href='{{ (cond (and (ne .Site.Params.landingPageURL nil) (.Site.IsMultiLingual)) .Site.Params.landingPageURL "/") }}'>{{safeHTML
-        (cond (ne .Site.Params.landingPageName nil) .Site.Params.landingPageName "<i class='fas fa-home'></i> Home")
+        (cond (ne .Site.Params.landingPageName nil) .Site.Params.landingPageName "<i class='fas fa-rocket'></i> Introduction")
         }}</a>
     </ul>
     {{end}}

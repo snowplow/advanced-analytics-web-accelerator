@@ -75,6 +75,7 @@ body {
 
 #chapter #body-inner {
     max-width: 100%;
+    width: 100%
 }
 
 #body .nav.nav-next,
@@ -103,7 +104,6 @@ body {
 #body-inner {
     padding: 20px 50px;
     background-color: #ffffff;
-    margin-top: 20px;
     box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 0px 2px rgba(16, 24, 40, 0.06);
     border-radius: 4px;
 }
@@ -543,12 +543,6 @@ pre {
         padding-top: 28px;
     }
 
-
-
-    .sticky-wrapper {
-        height: 0px !important;
-    }
-
     #body-inner {
         margin: 0;
     }
@@ -644,12 +638,14 @@ pre {
     }
 }
 
-#top-bar {
-    position: relative;
+#top-breadcrumbs {
+    border-radius: 2px;
+    padding: 0 1rem;
     background: #F0EBF8;
     font-size: 14px;
     min-height: 40px;
-    height: 40px;
+    height: 2rem;
+    margin-bottom: 1rem;
 }
 
 .is-sticky {
@@ -663,7 +659,6 @@ pre {
     text-align: center;
     min-width: 100px;
     width: auto;
-
 }
 
 .select-style select {
