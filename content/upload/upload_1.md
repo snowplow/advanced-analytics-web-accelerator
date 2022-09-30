@@ -11,62 +11,6 @@ There are a number of options to load the sample Snowplow data to your Snowflake
 
 {{< tabs groupId="select_upload_sf" >}}
 
-{{% tab name="Python" %}}
-
-Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will need both to load the sample data to the Snowflake warehouse with Python.
-
-#### **Step 1:**  Set up your environment
-
-Set up a virtual environment (recommended) and install the [snowflake-connector-python](https://pypi.org/project/snowflake-connector-python/) package (tested with version 2.7.12).
-
-```bash
-python3 -m venv env
-source env/bin/activate
-pip install snowflake-connector-python==2.7.12
-```
-
-
-#### **Step 2:** Change variables and connection details
-
-Open the `snowflake_upload.py` file and edit the following variables.
-
-##### 2.1 Connection details - update username, password and account
-```python
-conn=sf.connect(user='your_username',password='your_password',account='your_account')
-```
-
-##### 2.2 Variables to be modified - warehouse and database
-```python
-warehouse='YOUR_WAREHOUSE'
-database = 'YOUR_DB
-```
-##### 2.3 Path to the sample_data.csv
-```python
-csv_file = '/Users/your_user/path_to_csv/sample_events.csv'
-```
-
-#### **Step 3:** Upload Data
-Run `snowflake_upload.py`.
-```bash
-python3 snowflake_upload.py
-```
-
-It should finish execution within a minute. You should be alerted as soon as each intermediary step finishes:
-
-```
-Schema created
-Staging table YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is created
-Stage dropped, if applicable
-Stage created
-File put to stage
-Data loaded into staging table
-Target table: YOUR_DB.ATOMIC.SAMPLE_EVENTS is created
-Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
-```
-You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
-
-{{% /tab %}}
-
 {{% tab name="Snowflake Web Interface" %}}
 
 Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will only need `sample_events.csv` to load the sample data to the Snowflake warehouse using the `Snowflake Web Interface`.
@@ -412,6 +356,64 @@ FROM ATOMIC.SAMPLE_EVENTS_BASE )
 
 ```sql
 DROP TABLE TARGET_DB.ATOMIC.SAMPLE_EVENTS_BASE
+```
+You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
+
+{{% /tab %}}
+
+{{% tab name="Python" %}}
+
+Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will need both to load the sample data to the Snowflake warehouse with Python.
+
+#### **Step 1:**  Set up your environment
+
+Set up a virtual environment (recommended) and install the [snowflake-connector-python](https://pypi.org/project/snowflake-connector-python/) package (tested with version 2.7.12).
+
+```bash
+python3 -m venv env
+source env/bin/activate
+pip install snowflake-connector-python==2.7.12
+```
+
+
+#### **Step 2:** Change variables and connection details
+
+Open the `snowflake_upload.py` file and edit the following variables.
+
+##### 2.1 Connection details - update username, password and account
+```python
+user = 'YOUR_USERNAME'
+password = 'YOUR_PASSWORD'
+account = 'YOUR_ACCOUNT'
+```
+
+##### 2.2 Variables to be modified - warehouse and database
+```python
+warehouse='YOUR_WAREHOUSE'
+database = 'YOUR_DB
+```
+##### 2.3 Path to the sample_events.csv
+```python
+csv_file = '/path/to/sample_events.csv'
+```
+
+#### **Step 3:** Upload Data
+Run `snowflake_upload.py`.
+```bash
+python3 snowflake_upload.py
+```
+
+It should finish execution within a minute. You should be alerted as soon as each intermediary step finishes:
+
+```
+Schema created
+Staging table YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is created
+Stage dropped, if applicable
+Stage created
+File put to stage
+Data loaded into staging table
+Target table: YOUR_DB.ATOMIC.SAMPLE_EVENTS is created
+Staging table: YOUR_DB.ATOMIC.SAMPLE_EVENTS_STAGED is dropped
 ```
 You will now have the ATOMIC.SAMPLE_EVENTS created and loaded with sample data.
 
