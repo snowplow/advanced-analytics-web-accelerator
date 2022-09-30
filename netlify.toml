@@ -8,14 +8,8 @@ HUGO_VERSION = '0.104.1'
 [context.production.environment]
 HUGO_ENV = 'production'
 
-[[redirects]]
-from = "/"
-to = "/introduction"
-status = 301
-force = true
+[context.deploy-preview]
+command = './scripts/build.sh $DEPLOY_PRIME_URL'
 
-[[redirects]]
-# redirect from language specific page following restructure
-from = "/en/introduction"
-to = "/introduction"
-status = 301
+[context.branch-deploy]
+command = './scripts/build.sh $DEPLOY_PRIME_URL'
