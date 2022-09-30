@@ -369,12 +369,14 @@ Download the `upload.zip` folder which contains the `sample_events.csv` and the 
 
 Set up a virtual environment (recommended) and install the [snowflake-connector-python](https://pypi.org/project/snowflake-connector-python/) package (tested with version 2.7.12).
 
-```bash
-python3 -m venv env
-source env/bin/activate
-pip install snowflake-connector-python==2.7.12
-```
+Unzip the downloaded `upload.zip` file then navigate to the upload folder that contains the `snowflake_upload.py` script.
 
+Create and activate the virtual environment, then install `snowflake-connector-python`:
+
+```bash
+pipenv shell
+pipenv install snowflake-connector-python==2.7.12
+```
 
 #### **Step 2:** Change variables and connection details
 
