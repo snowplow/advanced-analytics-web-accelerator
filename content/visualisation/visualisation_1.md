@@ -41,12 +41,12 @@ schema = "xxx"
 
 ```
 
-#### **Step 3:** Add your schema to queries
-Add your schema name to the queries found in `queries/pageviews`, `queries/sessions` and `queries/users`. For example:
+#### **Step 3:** Add your derived schema to queries
+Add your derived schema name to the queries found in `queries/pageviews`, `queries/sessions` and `queries/users`. For example:
 
 ```sql
 SELECT COUNT(1) AS number_of_sessions
-FROM YOUR_SCHEMA.snowplow_web_sessions
+FROM YOUR_DERIVED_SCHEMA.snowplow_web_sessions
 WHERE START_TSTAMP BETWEEN DATEADD(day, -7, GETDATE()) AND  DATEADD(day, -1, GETDATE())
 ```
 
