@@ -7,9 +7,14 @@ HUGO_VERSION = '0.104.1'
 [context.production]
 [context.production.environment]
 HUGO_ENV = 'production'
+HUGO_BASEURL = 'https://docs.snowplow.io/accelerators/advanced-analytics-web/'
 
 [context.deploy-preview]
-command = './scripts/build.sh $DEPLOY_PRIME_URL'
+command = './scripts/build.sh'
+[content.deploy-preview.environment]
+HUGO_BASEURL = '$DEPLOY_PRIME_URL'
 
 [context.branch-deploy]
-command = './scripts/build.sh $DEPLOY_PRIME_URL'
+command = './scripts/build.sh'
+[content.branch-deploy.environment]
+HUGO_BASEURL = '$DEPLOY_PRIME_URL'
