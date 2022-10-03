@@ -80,4 +80,4 @@ Please note that Snowflake will be used for illustration but the snowplow-web db
 
 **Custom Advanced Analytics for Web Dashboard**
 
-!['logo-banner' ](images/dashboard.png?width=20pc)
+!['logo-banner' ](images/dashboard.png?width=100pc)
