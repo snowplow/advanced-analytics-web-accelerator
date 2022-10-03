@@ -74,3 +74,9 @@ gantt
 {{% notice info %}}
 Please note that Snowflake will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Databricks, Postgres** and **Redshift**. Further adapter support for this accelerator coming soon!
 {{% /notice %}}
+
+#### What you will get
+
+**Custom Advanced Analytics for Web Dashboard**
+
+!['logo-banner'](images/dashboard.png)
