@@ -1,5 +1,5 @@
 <a id="logo"
-   href='{{ (cond (and (ne .Site.Params.landingPageURL nil) (.Site.IsMultiLingual)) .Site.Params.landingPageURL "/") }}'>
+   href='{{ (cond (and (ne .Site.Params.landingPageURL nil) (.Site.IsMultiLingual)) .Site.Params.landingPageURL "") | relURL }}'>
    <img src="{{"images/snowplow-logo.svg" | relURL}}"
       style="height: 20px; margin-left: 24px; margin-right: 8px;" />
    <h1>Accelerators</h1>
