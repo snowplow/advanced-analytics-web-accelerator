@@ -12,7 +12,7 @@ Data should now be loaded into your warehouse. In this section we will take a cl
 Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model's output. You should be able to see three new schemas created:
 1. [your_custom_schema]_***scratch***: drop and recompute models that aid the incremental run
 2. [your_custom_schema]_***derived***: main output models you can use in your downstream models and reporting
-3. [your_custom_schema]_***manifest***: tables that help the integrity and core incremental logic of the model
+3. [your_custom_schema]_***snowplow_manifest***: tables that help the integrity and core incremental logic of the model
 
 ***
 #### **Step 2:** Explore your data
@@ -28,12 +28,12 @@ WITH READS AS (
   SELECT
     PAGE_TITLE,
     COUNT(*)
-  FROM 
+  FROM
     YOUR_CUSTOM_SCHEMA_DERIVED.SNOWPLOW_WEB_PAGE_VIEWS
-  WHERE 
+  WHERE
     ENGAGED_TIME_IN_S > 60
     AND VERTICAL_PIXELS_SCROLLED > 5000
-  GROUP BY 1 
+  GROUP BY 1
   ORDER BY 2 DESC
 )
 

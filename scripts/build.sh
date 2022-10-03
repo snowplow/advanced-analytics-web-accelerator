@@ -15,6 +15,11 @@ cd build
 git submodule update --init --recursive
 
 echo "Creating Hugo site..."
+if [ $# -eq 0 ]
+then
 hugo --config baseconfig.toml,config.toml --gc --minify -d ../public
+else
+hugo --config baseconfig.toml,config.toml --gc --minify -d ../public -b $1
+fi
 cd ..
 rm -r build
