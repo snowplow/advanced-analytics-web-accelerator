@@ -76,8 +76,8 @@ Please note that Snowflake will be used for illustration but the snowplow-web db
 {{% /notice %}}
 
 ***
-#### What you will get
+#### What you will build
 
-**Custom Advanced Analytics for Web Dashboard**
+**Advanced Analytics for Web Dashboard**
 
 !['logo-banner' ](images/dashboard.png?width=100pc)
