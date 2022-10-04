@@ -40,7 +40,8 @@
     /* Color of links in menu */
     --MENU-SECTIONS-LINK-HOVER-color: #000;
     /* Color of links in menu, when hovered */
-    --MENU-SECTION-ACTIVE-CATEGORY-color: #6638b8;
+    /* --MENU-SECTION-ACTIVE-CATEGORY-color: #6638b8; */
+    --MENU-SECTION-ACTIVE-CATEGORY-color: red;
     /* Color of active category text */
     --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff;
     /* Color of background for the active category (only) */
@@ -506,7 +507,7 @@ pre {
 #top-sidebar-toggle-span {
     padding-right: 0.5rem !important;
     margin-right: 1rem !important;
-  }
+}
 
 #top-sidebar-toggle-span #top-sidebar-toggle {
     line-height: 40px;
