@@ -41,7 +41,7 @@
     --MENU-SECTIONS-LINK-HOVER-color: #000;
     /* Color of links in menu, when hovered */
     /* --MENU-SECTION-ACTIVE-CATEGORY-color: #6638b8; */
-    --MENU-SECTION-ACTIVE-CATEGORY-color: red;
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #6638b8;
     /* Color of active category text */
     --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff;
     /* Color of background for the active category (only) */
@@ -476,6 +476,12 @@ pre {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+#sidebar ul.introduction.active a {
+    font-weight: 500;
+    color: #000;
+}
+
 
 #sidebar ul li {
     padding-left: 27px;

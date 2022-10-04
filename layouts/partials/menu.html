@@ -5,7 +5,7 @@
 
   <div class="highlightable">
     {{if not .Site.Params.disableLandingPageButton }}
-    <ul class="introduction">
+    <ul class="introduction {{if eq .Site.BaseURL .Page.Permalink}}active{{end}}">
       <a
         href='{{ (cond (and (ne .Site.Params.landingPageURL nil) (.Site.IsMultiLingual)) .Site.Params.landingPageURL "") | relURL }}'>{{safeHTML
         (cond (ne .Site.Params.landingPageName nil) .Site.Params.landingPageName "<i class='fas fa-rocket'></i> Introduction")
