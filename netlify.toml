@@ -1,16 +1,23 @@
 [build]
 publish = 'public'
-command = './scripts/build.sh'
+command = './scripts/build.sh $BUILD_OUTPUT_PATH'
 [build.environment]
 HUGO_VERSION = '0.104.1'
+HUGO_BASEURL = 'https://docs.snowplow.io/accelerators/advanced-analytics-web/'
+BUILD_OUTPUT_PATH = '/accelerators/advanced-analytics-web/'
 
 [context.production]
 [context.production.environment]
 HUGO_ENV = 'production'
-HUGO_BASEURL = 'https://docs.snowplow.io/accelerators/advanced-analytics-web/'
 
 [context.deploy-preview]
-command = './scripts/build.sh $DEPLOY_PRIME_URL'
+command = './scripts/build.sh $BUILD_OUTPUT_PATH $DEPLOY_PRIME_URL'
 
 [context.branch-deploy]
-command = './scripts/build.sh $DEPLOY_PRIME_URL'
+command = './scripts/build.sh $BUILD_OUTPUT_PATH $DEPLOY_PRIME_URL'
+
+[[redirects]]
+from = "/*"
+to = "/accelerators/advanced-analytics-web/:splat"
+force = true
+status = 301
