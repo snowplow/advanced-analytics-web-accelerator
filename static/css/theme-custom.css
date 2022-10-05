@@ -476,6 +476,12 @@ pre {
     padding-bottom: 15px;
 }
 
+#sidebar ul.introduction.active a {
+    font-weight: 500;
+    color: #000;
+}
+
+
 #sidebar ul li {
     padding-left: 27px;
 
@@ -506,7 +512,7 @@ pre {
 #top-sidebar-toggle-span {
     padding-right: 0.5rem !important;
     margin-right: 1rem !important;
-  }
+}
 
 #top-sidebar-toggle-span #top-sidebar-toggle {
     line-height: 40px;
@@ -693,7 +699,8 @@ pre {
 }
 
 pre .copy-to-clipboard {
-    position: absolute;
+    position: sticky;
+    float: right;
     right: 8px;
     top: auto;
     bottom: 8px !important;
