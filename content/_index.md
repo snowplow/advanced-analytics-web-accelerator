@@ -28,7 +28,7 @@ Here you will learn to:
 
 #### What you will learn
 
-In approximately 2 working days (~13 working hours) you can achieve the following:
+In approximately 8 working hours you can achieve the following:
 
 - **Upload data -** Upload a sample Snowplow events dataset to your Snowflake warehouse
 - **Model -** Configure and run the snowplow-web data model
@@ -80,4 +80,4 @@ Please note that Snowflake will be used for illustration but the snowplow-web db
 
 **Advanced Analytics for Web Dashboard**
 
-!['logo-banner' ](images/dashboard.png?width=100pc)
+!['logo-banner' ](images/dashboard.png)
