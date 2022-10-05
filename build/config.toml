@@ -1,0 +1,6 @@
+title = "Advanced Analytics for Web"
+baseURL = "https://docs.snowplow.io/accelerators/advanced-analytics-web/"
+
+[params]
+  description = "Tutorial for setting up Snowplow for advanced analytics on the web"
+  author = "Snowplow, Agnes Kiss, Jack Keene"

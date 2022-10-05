@@ -1,0 +1,23 @@
+---
+title: "Testing"
+output:
+  html_document:
+    toc_float: false
+    includes:
+      before_body: [includes/navbar.html, includes/navbar_left.html]
+
+---
+
+
+
+<p>Data should now be loaded into your warehouse, next we will check the models output.</p>
+<div id="step-1-check-the-output" class="section level3">
+<h3><strong>Step 1:</strong> Check the output</h3>
+<p>Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the model’s output. You should be able to see three new schemas created:
+1. your_custom_schema_name_<em>scratch</em>: drop and recompute models that aid the incremental run
+2. your_custom_schema_name_<em>derived</em>: main output models you can use in your downstream models and reporting
+3. your_custom_schema_name_<em>manifest</em>: tables that help the integrity and core incremental logic of the model
+Check out the <code>database</code> section of the [<code>documentation site</code>][snowplow-web-documentation] for a breakdown of what the output should look like.
+[selectors-yml-file]: <a href="https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml" class="uri">https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml</a>
+[snowplow-web-documentation]: <a href="https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web" class="uri">https://snowplow.github.io/dbt-snowplow-web/#!/overview/snowplow_web</a></p>
+</div>
