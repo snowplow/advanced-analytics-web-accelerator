@@ -1,6 +1,6 @@
 [build]
 publish = 'public'
-command = './scripts/build.sh $BUILD_OUTPUT_PATH'
+command = './scripts/build.sh build $BUILD_OUTPUT_PATH'
 [build.environment]
 HUGO_VERSION = '0.104.1'
 HUGO_BASEURL = 'https://docs.snowplow.io/accelerators/web/'
