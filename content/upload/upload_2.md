@@ -22,19 +22,23 @@ CREATE SCHEMA IF NOT EXISTS ATOMIC
 ***
 
 #### **Step 2:**  Upload the SAMPLE_DATA.CSV file
-2.1 Select `+Create` -> `table` to get started.
+2.1 Make sure you are within the SQL workspace:
 
-2.2 Locate the sample_events.csv file and click `Upload`. It should take a minute or two.
+![sql_workspace](../images/sql_workspace.png)
 
-2.3 Once you see the preview, choose the catalog, the schema (atomic) and change the name to sample_events**_base**.
+2.2 Select `+Create` -> `table` to get started.
 
-2.4 Go to `advanced attributes` and change the column delimiter to tab then X out of the window. After this the data reloads, which will now be separated correctly column by column.
+2.3 Locate the sample_events.csv file and click `Upload`. It should take a minute or two.
 
-2.5 Locate the column **DOC_WIDTH** on the far right side of the table and change the proposed column type from `string` to `bigint`. This is needed for the data model to work later on.
+2.4 Once you see the preview, choose the catalog, the schema (atomic) and change the name to sample_events**_base**.
 
-2.6 Locate the column **DERIVED_TSTAMP** on the far right side of the table and changed the proposed column type from `string` to `datetime`.
+2.5 Go to `advanced attributes` and change the column delimiter to tab then X out of the window. After this the data reloads, which will now be separated correctly column by column.
 
-2.6 Click create.
+2.6 Locate the column **DOC_WIDTH** on the far right side of the table and change the proposed column type from `string` to `bigint`. This is needed for the data model to work later on.
+
+2.7 Locate the column **DERIVED_TSTAMP** on the far right side of the table and changed the proposed column type from `string` to `datetime`.
+
+2.8 Click create.
 
 
 
