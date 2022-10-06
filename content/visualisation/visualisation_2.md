@@ -26,6 +26,8 @@ To attach a notebook to a cluster:
 
 1. In the notebook toolbar, click `Detached`.
 
+![sql_workspace](../images/toolbar.png)
+
 2. From the drop-down, select a cluster.
 
 #### **Step 3:** Change source table schemas and or variables
