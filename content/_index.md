@@ -62,10 +62,10 @@ gantt
 #### Prerequisites
 
 **Modeling and Visualisation**
-- dbt CLI installed / dbt Cloud account available
+- dbt CLI installed or dbt Cloud account available
   - New dbt project created and configured
 - Python 3 Installed
-- Snowflake / Databricks account and a user with access to create schemas and tables
+- Snowflake or Databricks account and a user with access to create schemas and tables
 
 **Tracking and Enrichment**
 - Snowplow pipeline

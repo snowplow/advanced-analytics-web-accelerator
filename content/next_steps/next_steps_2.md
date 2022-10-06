@@ -6,7 +6,7 @@ post = ""
 
 {{< tabs groupId="visualise" >}}
 
-{{% tab name="Streamlit Dashboard" %}}
+{{% tab name="Streamlit" %}}
 
 Assuming you have already set-up your Streamlit project all you have to do is change the `schema` variable within the `secrets.toml` file under the streamlit-project-web folder and rerun the dashboard.
 
@@ -27,7 +27,7 @@ streamlit run Dashboard.py
 ```
 {{% /tab %}}
 
-{{% tab name="Databricks Notebook" %}}
+{{% tab name="Databricks" %}}
 
 Assuming you have already imported the IPython notebook provided in the chapter about visualisations, all you have to do is change the schema within the queries used to generate the graphs.
 
