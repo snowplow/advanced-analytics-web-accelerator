@@ -24,7 +24,7 @@ CREATE SCHEMA IF NOT EXISTS ATOMIC
 #### **Step 2:**  Upload the SAMPLE_DATA.CSV file
 2.1 Make sure you are within the SQL workspace:
 
-![sql_workspace](../images/sql_workspace.png)
+![sql_workspace](../images/sql_workspace.png?width=20pc)
 
 2.2 Select `+Create` -> `table` to get started.
 
