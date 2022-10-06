@@ -78,6 +78,18 @@ Please note that Snowflake and Databricks will be used for illustration but the 
 ***
 #### What you will build
 
-**Advanced Analytics for Web Dashboard**
+**Advanced Analytics for Web Dashboard** - with Streamlit or Databricks
 
-!['logo-banner' ](images/dashboard.png)
+{{< tabs groupId="dashboard_images" >}}
+
+{{% tab name="Streamlit" %}}
+
+!['logo-banner' ](images/streamlit_dashboard.png)
+
+{{% /tab %}}
+
+{{% tab name="Databricks" %}}
+
+!['logo-banner' ](images/databricks_dashboard.png)
+
+{{< /tabs >}}
