@@ -1,5 +1,5 @@
 +++
-title = "Data upload"
+title = "Data upload - Snowflake"
 weight = 1
 post = ""
 +++
