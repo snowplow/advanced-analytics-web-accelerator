@@ -21,4 +21,4 @@ flowchart LR
     style id6 fill:#f5f5f5,stroke:#333,stroke-width:1px
 {{</mermaid >}}
 
-Use Streamlit to visualise your Snowplow data to make it easier to identify patterns and trends in your data.
+Use Streamlit or Databricks to visualise your Snowplow data to make it easier to identify patterns and trends in your data.
