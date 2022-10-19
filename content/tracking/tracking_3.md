@@ -94,4 +94,17 @@ export class SnowplowService {
 Each event sent with this tracker will now contain the data from each of these entities.
 
 {{% /tab %}}
+{{% tab name="GTM" %}}
+
+#### **Step 1:** Enable predefined entities
+The `webPage` entity is enabled by default in GTM. This is **required** for modelling your data using the `dbt-web-model`.
+
+Enable the context by including the below context options in your variable template editor, under predefined contexts.
+
+![Webpage Context](../images/webpage_context.png?classes=shadow)
+
+
+Each event sent with this tracker will now contain the data from each of these entities.
+
+{{% /tab %}}
 {{< /tabs >}}
