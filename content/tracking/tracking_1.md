@@ -174,26 +174,9 @@ Create a web container for your site.
 ![Create container](../images/create_container.png?classes=shadow)
 
 #### **Step 2:** Add Tags to site
-Add the code snippet below to every page of your website, it should be placed as high as possible in the `<head>` tag. Make sure to update the link to your GTM workspace, this can be found on the header of the tag manager site and has the format `GTM-XXXXXXX`.
+Install Google Tag Manager on your site by following the [installation guide](https://tagmanager.google.com/) as below:
 
-```html
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-<!-- End Google Tag Manager →
-```
-
-Additionally, add the below code immediately after the opening of the `<body>` tag, again make sure to update the link to the GTM workspace:
-
-```html
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-```
+![Install GTM](../images/google_tag.png)
 
 #### **Step 3:** Add New Template Variable
 Go to `Templates` and click `Search Gallery` under `Variable Templates`.
@@ -205,8 +188,11 @@ Search `Snowplow V3 Settings` in the search bar.
 Add the template to your workspace.
 ![Add to workspace](../images/template_to_workspace.png?classes=shadow)
 
-Add the collector endpoint and link to sp.js file to the variables template.
-![Template Variables](../images/template_variables.png?classes=shadow)
+Navigate to Variables, and edit the `Snowplow v3 Settings`
+![Template Variables](../images/user_defined_variables.png?classes=shadow)
+
+Add your collector endpoint and link to your `sp.js` file.
+![Edit Variables](../images/edit_variables.png?classes=shadow)
 
 #### **Step 4:** Add New Tag Template
 Go to `Templates` and click `Search Gallery` under `Tag Templates`.
