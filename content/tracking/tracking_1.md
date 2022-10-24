@@ -175,7 +175,9 @@ Create a web container for your site.
 ![Create container](../images/create_container.png?classes=shadow)
 
 #### **Step 2:** Add Tags to site
-Install Google Tag Manager on your site by following the [installation guide](https://tagmanager.google.com/) as below:
+Install Google Tag Manager on your site by following the [installation guide](https://support.google.com/tagmanager/answer/6103696?hl=en#install) in the Install Tag Manager Box.
+
+Tip: Near the top of the window, find your container ID, formatted as "GTM-XXXXXX". Click your container ID to launch the Install Tag Manager box.
 
 ![Install GTM](../images/google_tag.png)
 
