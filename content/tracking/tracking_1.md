@@ -166,6 +166,49 @@ export class SnowplowService {
 }
 ```
 {{% /tab %}}
+{{% tab name="GTM" %}}
+
+❗❗**NOTE: A Google Tag Manager Account is required for this pathway**
+
+#### **Step 1:** Create container
+Create a web container for your site.
+![Create container](../images/create_container.png?classes=shadow)
+
+#### **Step 2:** Add Tags to site
+Install Google Tag Manager on your site by following the [installation guide](https://support.google.com/tagmanager/answer/6103696?hl=en#install) in the Install Tag Manager Box.
+
+Tip: Near the top of the window, find your container ID, formatted as "GTM-XXXXXX". Click your container ID to launch the Install Tag Manager box.
+
+![Install GTM](../images/google_tag.png)
+
+#### **Step 3:** Add New Template Variable
+Go to `Templates` and click `Search Gallery` under `Variable Templates`.
+![Variable Template](../images/add_variable_template.png?classes=shadow)
+
+Search `Snowplow V3 Settings` in the search bar.
+![Variable Search](../images/variable_search.png?classes=shadow)
+
+Add the template to your workspace.
+![Add to workspace](../images/template_to_workspace.png?classes=shadow)
+
+Navigate to Variables, click new and select `Snowplow v3 Settings`.
+![Add Variable](../images/add_variable_config.png?classes=shadow)
+
+Add your collector endpoint and link to your `sp.js` file.
+![Edit Variables](../images/edit_variables.png?classes=shadow)
+
+#### **Step 4:** Add New Tag Template
+Go to `Templates` and click `Search Gallery` under `Tag Templates`.
+![Tag Template](../images/add_tag_template.png?classes=shadow)
+
+Search `Snowplow V3` in the search bar.
+![Tag Search](../images/tag_search.png?classes=shadow)
+
+Add the template to your workspace.
+![Tag to workspace](../images/tag_to_workspace.png?classes=shadow)
+
+
+{{% /tab %}}
 {{< /tabs >}}
 
 

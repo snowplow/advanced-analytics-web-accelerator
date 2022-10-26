@@ -168,6 +168,29 @@ constructor(router: Router, snowplow: SnowplowService) {
 ```
 
 {{% /tab %}}
+{{% tab name="GTM" %}}
+#### **Step 1:** Create New Tag
+Select `Tags` from the sidebar and click `New` to add a new tag to the workspace.
+![New Tag](../images/new_tag.png?classes=shadow)
+
+Import the Snowplow tag template.
+![Snowplow tag](../images/snowplow_tag.png?classes=shadow)
+
+#### **Step 2:** Configure Pageview and Page Pings
+Select the `Page View` option under `Tag Type`, and add the below settings to enable `Page Pings` as well as `Page Views`.
+![Pageview tag](../images/pageview_tag.png?classes=shadow)
+
+Add the variable template settings to your tracker configuration.
+![Tracker settings](../images/tracker_settings.png?classes=shadow)
+
+#### **Step 3:** Configure Trigger
+Add a new trigger to the tag.
+![Add trigger](../images/add_trigger.png?classes=shadow)
+
+Set trigger to `All Pages`
+![Trigger settings](../images/trigger_settings.png?classes=shadow)
+
+{{% /tab %}}
 {{< /tabs >}}
 
 #### Optional Tracking
@@ -307,6 +330,29 @@ constructor(router: Router, snowplow: SnowplowService) {
     });
   }
 ```
+
+{{% /tab %}}
+{{% tab name="GTM" %}}
+#### **Step 1:** Create a New Tag
+Add a new tag to the workspace.
+![New Tag](../images/new_tag.png?classes=shadow)
+
+Import the Snowplow tag template.
+![Snowplow tag](../images/snowplow_tag.png?classes=shadow)
+
+#### **Step 2:** Configure Link Tracking/Form Tracking
+Select the `Link Click Tracking` or`Form Tracking` option under `Tag Type`.
+![Link Click tag](../images/link_click_tracking.png?classes=shadow)
+
+Add the variable template settings to your tracker configuration.
+![Tracker settings](../images/tracker_settings.png?classes=shadow)
+
+#### **Step 3:** Configure Trigger
+Add a new trigger to the tag.
+![Add trigger](../images/add_trigger.png?classes=shadow)
+
+Set trigger to `All Pages`
+![Trigger settings](../images/trigger_settings.png?classes=shadow)
 
 {{% /tab %}}
 {{< /tabs >}}
