@@ -8,7 +8,7 @@ post = ""
 {{% /attachments %}}
 
 
-You can load the sample data to the warehouse using your `Databricks Workspace` as described in the below steps. Please download the *sample_events.csv* from the attachments. For more details please check out the official [Databricks documentation](https://docs.databricks.com/ingestion/add-data/index.html).
+You can load the sample data to the warehouse using your `Databricks Workspace` as described in the below steps. Please download the `upload.zip` folder from the attachments which contains `sample_events.csv`. For more details please check out the official [Databricks documentation](https://docs.databricks.com/ingestion/add-data/index.html).
 
 
 #### **Step 1:**  Create the ATOMIC schema
@@ -28,7 +28,7 @@ CREATE SCHEMA IF NOT EXISTS ATOMIC
 
 2.2 Select `+Create` -> `table` to get started.
 
-2.3 Locate the sample_events.csv file and click `Upload`. It should take a minute or two.
+2.3 Locate the `sample_events.csv` file and click `Upload`. It should take a minute or two.
 
 2.4 Once you see the preview, choose the catalog, the schema (atomic) and change the name to sample_events**_base**.
 
