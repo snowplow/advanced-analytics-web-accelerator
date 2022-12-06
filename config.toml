@@ -21,6 +21,12 @@ weight = 1
 languageName = "English"
 
 [[Languages.en.menu.shortcuts]]
+name = "More Snowplow Accelerators"
+identifier = "sa"
+url = "https://snowplow.io/data-product-accelerators/"
+weight = 9
+
+[[Languages.en.menu.shortcuts]]
 name = "Try Snowplow"
 identifier = "ts"
 url = "https://try.snowplowanalytics.com/"
