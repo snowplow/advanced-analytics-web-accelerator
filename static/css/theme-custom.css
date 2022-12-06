@@ -517,12 +517,17 @@ pre {
 #top-sidebar-toggle-span #top-sidebar-toggle {
     line-height: 40px;
     vertical-align: middle;
+    display: none;
 }
 
 @media only all and (max-width: 958px) {
     #sidebar {
         /* width: 0px; */
         left: -354px;
+    }
+
+    #top-sidebar-toggle-span #top-sidebar-toggle {
+        display: inline;
     }
 
     #body .nav.nav-next,
