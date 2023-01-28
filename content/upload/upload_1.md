@@ -15,6 +15,8 @@ There are a number of options to load the sample Snowplow data to your Snowflake
 
 Download the `upload.zip` folder which contains the `sample_events.csv` and the `snowflake_upload.py` files. You will only need `sample_events.csv` to load the sample data to the Snowflake warehouse using the `Snowflake Web Interface`.
 
+❗❗**NOTE: Please switch back to using the Classic Console if you are using Snowflake's latest UI (Snowsight) to follow the instructions.**
+
 For more details please check out the official [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-load-web-ui.html).
 
 #### **Step 1:**  Create the ATOMIC schema
