@@ -27,8 +27,6 @@ Run the command below to install the project requirements and run the virtual en
 
 
 ```bash
-cd advanced-analytics-web-accelerator/snowflake/streamlit
-
 pipenv install
 pipenv shell
 ```
