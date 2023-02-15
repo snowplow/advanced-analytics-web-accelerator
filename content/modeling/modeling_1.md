@@ -10,10 +10,8 @@ Add the snowplow-web package to your packages.yml file. The latest version can b
 ```yml
 packages:
   - package: snowplow/snowplow_web
-    version: 0.9.2
+    version: {{< component name="snowplow_web_latest">}}
 ```
-
-***
 
 #### **Step 2:** Install the package
 Install the package by running:
