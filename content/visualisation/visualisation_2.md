@@ -1,7 +1,7 @@
 +++
 title = "Databricks Notebook"
 post = ""
-weight = 2
+weight = 20
 +++
 
 You can create custom visualisations including dashboards using a Datrabricks notebook.

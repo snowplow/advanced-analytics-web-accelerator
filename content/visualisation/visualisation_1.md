@@ -1,7 +1,7 @@
 +++
 title = "Streamlit"
 post = ""
-weight = 1
+weight = 10
 +++
 
 Streamlit uses Python to build shareable dashboards without the need for front-end development experience.
