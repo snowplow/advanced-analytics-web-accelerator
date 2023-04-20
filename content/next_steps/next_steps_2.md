@@ -14,10 +14,13 @@ Assuming you have already set-up your Streamlit project all you have to do is ch
 ```toml
 # .streamlit/secrets.toml
 
-[snowflake]
+# Snowflake or Databricks
 ...
 schema = "YOUR_NEW_DERIVED_SCHEMA"
 
+# BigQuery
+...
+dataset = "YOUR_NEW_DERIVED_SCHEMA"
 ```
 
 Run the command below to run the streamlit locally:
