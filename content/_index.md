@@ -72,7 +72,7 @@ gantt
 - Web app to implement tracking
 
 {{% notice info %}}
-Please note that Snowflake, Databricks, or BigQuery will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Postgres** and **Redshift**.
+Please note that Snowflake, Databricks, or BigQuery will be used for illustration but the snowplow-web dbt package also supports **Postgres** and **Redshift**.
 {{% /notice %}}
 
 ***
