@@ -65,14 +65,14 @@ gantt
 - dbt CLI installed or dbt Cloud account available
   - New dbt project created and configured
 - Python 3 Installed
-- Snowflake or Databricks account and a user with access to create schemas and tables
+- Snowflake, Databricks, or BigQuery account and a user with access to create schemas and tables
 
 **Tracking and Enrichment**
 - Snowplow pipeline
 - Web app to implement tracking
 
 {{% notice info %}}
-Please note that Snowflake and Databricks will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Postgres** and **Redshift**. Further adapter support for this accelerator coming soon!
+Please note that Snowflake, Databricks, or BigQuery will be used for illustration but the snowplow-web dbt package also supports **BigQuery, Postgres** and **Redshift**.
 {{% /notice %}}
 
 ***
