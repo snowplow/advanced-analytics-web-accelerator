@@ -566,7 +566,7 @@ CREATE SCHEMA IF NOT EXISTS ATOMIC
 
 2.3 In the `Details` panel, click `Create table`.
 
-3.4 On the `Create table` page fill out the sections:
+2.4 On the `Create table` page fill out the sections:
 
 In the `Source` section:
 

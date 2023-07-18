@@ -17,7 +17,7 @@ Head to the SQL editor of your choice (e.g.: Snowflake Web UI) to check the mode
 ***
 #### **Step 2:** Explore your data
 
-Take some time to familiarise yourself with the derived tables. You could run a few simple queries such as the ones listed below. Make sure to modify the schema to be aligned with your custom dbt schema.
+Take some time to familiarize yourself with the derived tables. You could run a few simple queries such as the ones listed below. Make sure to modify the schema to be aligned with your custom dbt schema.
 
 **Find out the number of page reads using `derived.snowplow_web_page_views:`**
 

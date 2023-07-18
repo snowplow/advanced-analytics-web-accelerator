@@ -13,7 +13,7 @@ At this stage you should:
 
 #### **Step 1:** Complete refresh of your Snowplow web package (Optional)
 
-If you would like to use your current dbt environment that you set-up during modelling the sample data you might want to start from scratch.
+If you would like to use your current dbt environment that you set-up during modeling the sample data you might want to start from scratch.
 
 While you can drop and recompute the incremental tables within this package using the standard `--full-refresh` flag, all manifest tables are protected from being dropped in production. Without dropping the manifest during a full refresh, the selected derived incremental tables would be dropped but the processing of events would resume from where the package left off (as captured by the `snowplow_web_incremental_manifest` table) rather than your `snowplow__start_date`.
 
@@ -49,6 +49,8 @@ Execute the following either through your CLI or from within dbt Cloud
 dbt run --selector snowplow_web
 ```
 
+> Note there is no need to re-seed the data unless you change the schema names or dropped the tables in your warehouse
+
 Depending on the period of data available since the `snowplow__start_date` and the `snowplow__backfill_limit_days` variable you might not process all your data during your first run. Each time the model runs it should display the period it processes and the timestamp of the last event processed for each model within the package. This gets saved in the `snowplow__incremental_manifest` table so you can always check the data processing state (see below).
 
 ![manifest](../images/manifest.png)
@@ -61,4 +63,3 @@ Run our recommended selector specified tests to identify potential issues with t
 dbt test --selector snowplow_web_lean_tests
 ```
 ***
-
