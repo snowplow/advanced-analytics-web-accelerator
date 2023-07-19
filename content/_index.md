@@ -32,7 +32,7 @@ In approximately 8 working hours you can achieve the following:
 
 - **Upload data -** Upload a sample Snowplow events dataset to your warehouse
 - **Model -** Configure and run the snowplow-web data model
-- **Visualize -** Visualize the modeled data with Streamlit
+- **Visualize -** Visualize the modeled data with Streamlit or Databricks notebook
 - **Track -** Set-up and deploy tracking to your website or single page application
 - **Enrich -** Add enrichments to your data
 - **Next steps -** Gain value from your own pipeline data through modeling and visualization
