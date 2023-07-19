@@ -4,13 +4,13 @@ weight = 2
 post = ""
 +++
 
-This step assumes you have data in the `ATOMIC.SAMPLE_EVENTS` table which will be used to demonstrate how to set-up and run the snowplow-web dbt package to model Snowplow web data.
+> This step assumes you have data in the `ATOMIC.SAMPLE_EVENTS` table which will be used to demonstrate how to set-up and run the snowplow-web dbt package to model Snowplow web data.
 
 ***
 
 #### **Step 1:** Set-up Variables
 
-The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project's `dbt_project.yml` file. For details you can have a look at the installed package's default variables which can be found at `[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml`.
+The snowplow_web dbt package comes with a list of variables specified with a default value that you may need to overwrite in your own dbt project's `dbt_project.yml` file. For details you can have a look at our [docs](https://docs.snowplow.io/docs/modeling-your-data/modeling-your-data-with-dbt/dbt-configuration/web/) which contains descriptions and default values of each variable, or you can look in the installed package's project file which can be found at `[dbt_project_name]/dbt_packages/snowplow_web/dbt_project.yml`.
 
 For the sake of simplicity we have selected the variables that you will most likely need to overwrite, the rest can be changed at a later stage if and when it is needed.
 
@@ -33,7 +33,7 @@ vars:
 ```
 #### **Step 2:** Add the selectors.yml to your project
 
-The web package provides a suite of suggested selectors to help run and test the models.
+The web package provides a suite of suggested selectors to help run and test the models, these group our (and any custom) models together in a single identifier.
 
 These are defined in the [selectors.yml](https://github.com/snowplow/dbt-snowplow-web/blob/main/selectors.yml) file within the package, however to use these model selections you will need to copy this file into your own dbt project directory.
 
@@ -45,7 +45,8 @@ This is a top-level file and therefore should sit alongside your `dbt_project.ym
 Execute the following either through your CLI or from within dbt Cloud
 
 ```
+dbt seed --select snowplow_web --full-refresh
 dbt run --selector snowplow_web
 ```
 
-This should take a couple of minutes to run.
+This should take a couple of minutes to run. The first step is only required to be run once, as we have some reference tables that need to be loaded (seeded) into your data warehouse. The second line then runs all our models to process the raw Snowplow events data into derived tables for analytics and visualization.

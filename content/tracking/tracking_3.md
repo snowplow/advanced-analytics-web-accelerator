@@ -6,7 +6,7 @@ weight = 3
 Whilst the tracking set-up provides event data on user **actions** at a specific point in time, **context** describes the setting in which an event takes place. To describe the context of an event, we need to define and capture individual **entities**. For example:
 
 - The user performing an action
-- The web page the action occured on
+- The web page the action occurred on
 - A product that has been interacted with
 
 Together, these entities make up the context of an event.
@@ -52,7 +52,7 @@ These are defined using JSON schemas uploaded to your iglu repository
 {{% /tab %}}
 {{% tab name="React" %}}
 #### **Step 1:** Enable predefined entities
-The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for modelling your data using the `dbt-web-model`.
+The `webPage` entity is enabled by default in the JavaScript tracker. This is **required** for modeling your data using the `dbt-web-model`.
 
 Enable the context by including the below context options in your tracker creation.
 
@@ -97,7 +97,7 @@ Each event sent with this tracker will now contain the data from each of these e
 {{% tab name="GTM" %}}
 
 #### **Step 1:** Enable predefined entities
-The `webPage` entity is enabled by default in GTM. This is **required** for modelling your data using the `dbt-web-model`.
+The `webPage` entity is enabled by default in GTM. This is **required** for modeling your data using the `dbt-web-model`.
 
 Enable the context by including the below context options in your variable template editor, under predefined contexts.
 

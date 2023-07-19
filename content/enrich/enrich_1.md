@@ -19,7 +19,7 @@ Use the IAB/ABC International Spiders and Bots List to determine whether an even
 Parse the useragent and attach detailed useragent information to each event.
 
 #### YAUAA
-Parse and analyse the user agent string of an event and extract as many relevant attributes as possible using YAUAA API.
+Parse and analyze the user agent string of an event and extract as many relevant attributes as possible using YAUAA API.
 
 {{< tabs groupId="enrich" >}}
 {{% tab name="BDP Cloud" %}}

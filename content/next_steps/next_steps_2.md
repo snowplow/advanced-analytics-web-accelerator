@@ -1,10 +1,10 @@
 +++
-title = "Visualise your pipeline data"
+title = "Visualize your pipeline data"
 weight = 2
 post = ""
 +++
 
-{{< tabs groupId="visualise" >}}
+{{< tabs groupId="visualize" >}}
 
 {{% tab name="Streamlit" %}}
 
@@ -32,7 +32,7 @@ streamlit run Dashboard.py
 
 {{% tab name="Databricks" %}}
 
-Assuming you have already imported the IPython notebook provided in the chapter about visualisations, all you have to do is change the schema within the queries used to generate the graphs.
+Assuming you have already imported the IPython notebook provided in the chapter about visualizations, all you have to do is change the schema within the queries used to generate the graphs.
 
 You can do this quickly by using the `Edit/ Find and replace` functionality.
 

@@ -12,7 +12,7 @@ Welcome to the **Advanced Analytics for Web** accelerator. Once finished, you wi
 
 Here you will learn to:
 
-* Model and Visualise Snowplow data
+* Model and Visualize Snowplow data
   - using the [snowplow-web](https://hub.getdbt.com/snowplow/snowplow_web/latest/) dbt package and Streamlit
   - using our sample data for Snowflake or Databricks (no need to have a working pipeline)
 * Set-up Snowplow Tracking and Enrichment
@@ -22,7 +22,7 @@ Here you will learn to:
 #### Who is this guide for?
 
 - Data practitioners who would like to get familiar with Snowplow data.
-- Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioural data as quickly as possible.
+- Data practitioners who want to learn how to use the snowplow-web dbt package and set-up tracking using their companies website or single page application, to gain insight from their customers’ behavioral data as quickly as possible.
 
 ***
 
@@ -32,10 +32,10 @@ In approximately 8 working hours you can achieve the following:
 
 - **Upload data -** Upload a sample Snowplow events dataset to your warehouse
 - **Model -** Configure and run the snowplow-web data model
-- **Visualise -** Visualise the modeled data with Streamlit
+- **Visualize -** Visualize the modeled data with Streamlit or Databricks notebook
 - **Track -** Set-up and deploy tracking to your website or single page application
 - **Enrich -** Add enrichments to your data
-- **Next steps -** Gain value from your own pipeline data through modeling and visualisation
+- **Next steps -** Gain value from your own pipeline data through modeling and visualization
 
 
 {{<mermaid>}}
@@ -46,10 +46,10 @@ gantt
         1h          :upload, 00-00, 1m
         section 2. Model
         1h          :model, after upload, 1m
-        section 3. Visualise
-        1h          :visualise, after model, 1m
+        section 3. Visualize
+        1h          :visualize, after model, 1m
         section 4. Track
-        2h          :track, after visualise, 2m
+        2h          :track, after visualize, 2m
         section 5. Enrich
         1h          :enrich, after track, 1m
         section 6. Next steps
@@ -61,9 +61,9 @@ gantt
 
 #### Prerequisites
 
-**Modeling and Visualisation**
-- dbt CLI installed or dbt Cloud account available
-  - New dbt project created and configured
+**Modeling and Visualization**
+- [dbt CLI](https://docs.getdbt.com/docs/core/installation) installed or [dbt Cloud](https://docs.getdbt.com/docs/cloud/about-cloud-setup) account available
+  - New dbt [project](https://docs.getdbt.com/docs/build/projects) created and configured
 - Python 3 Installed
 - Snowflake, Databricks, or BigQuery account and a user with access to create schemas and tables
 
